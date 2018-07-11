@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 4.3em 21em;
+    background-size: 4.3em 61.4em;
 }
 
 .no-svg .sprite:before {
@@ -17,35 +17,152 @@
 
 
 
-  .sprite.facebook:before {
+  .sprite.brick-and-stone:before {
       background-position: 0em 0em;
+      width: 3.4em;
+      height: 1.6em;
+  }
+
+
+
+
+  .sprite.facebook:before {
+      background-position: 0em -1.6em;
       width: 4.2em;
       height: 4.2em;
+  }
+
+
+
+
+  .sprite.fence:before {
+      background-position: 0em -5.8em;
+      width: 2.7em;
+      height: 2.7em;
+  }
+
+
+
+
+  .sprite.fire-protect:before {
+      background-position: 0em -8.5em;
+      width: 2.2em;
+      height: 2.7em;
+  }
+
+
+
+
+  .sprite.flat-roof:before {
+      background-position: 0em -11.2em;
+      width: 3.8em;
+      height: 2.3em;
+  }
+
+
+
+
+  .sprite.gidro-vetro:before {
+      background-position: 0em -13.5em;
+      width: 1.4em;
+      height: 3em;
+  }
+
+
+
+
+  .sprite.group-5:before {
+      background-position: 0em -16.5em;
+      width: 3em;
+      height: 2.3em;
+  }
+
+
+
+
+  .sprite.group-9:before {
+      background-position: 0em -18.8em;
+      width: 3.5em;
+      height: 2.4em;
+  }
+
+
+
+
+  .sprite.inside:before {
+      background-position: 0em -21.2em;
+      width: 2.4em;
+      height: 3em;
   }
 
 
 
 
   .sprite.instagram:before {
-      background-position: 0em -4.2em;
+      background-position: 0em -24.2em;
       width: 4.2em;
       height: 4.2em;
+  }
+
+
+
+
+  .sprite.list:before {
+      background-position: 0em -28.4em;
+      width: 2.9em;
+      height: 2.6em;
+  }
+
+
+
+
+  .sprite.mansard:before {
+      background-position: 0em -31em;
+      width: 2.8em;
+      height: 2.1em;
+  }
+
+
+
+
+  .sprite.roof:before {
+      background-position: 0em -33.1em;
+      width: 2.9em;
+      height: 2em;
+  }
+
+
+
+
+  .sprite.technical-iso:before {
+      background-position: 0em -35.1em;
+      width: 2.8em;
+      height: 1.9em;
   }
 
 
 
 
   .sprite.twitter:before {
-      background-position: 0em -8.4em;
+      background-position: 0em -37em;
       width: 4.2em;
       height: 4.2em;
+  }
+
+
+
+
+  .sprite.vent-house:before {
+      background-position: 0em -41.2em;
+      width: 2.3em;
+      height: 2.9em;
   }
 
 
 
 
   .sprite.vk:before {
-      background-position: 0em -12.6em;
+      background-position: 0em -44.1em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -53,8 +170,35 @@
 
 
 
+  .sprite.warmth:before {
+      background-position: 0em -48.3em;
+      width: 2.4em;
+      height: 3.3em;
+  }
+
+
+
+
+  .sprite.wat:before {
+      background-position: 0em -51.6em;
+      width: 2.7em;
+      height: 2.8em;
+  }
+
+
+
+
+  .sprite.waterproof:before {
+      background-position: 0em -54.4em;
+      width: 2.8em;
+      height: 2.8em;
+  }
+
+
+
+
   .sprite.youtube:before {
-      background-position: 0em -16.8em;
+      background-position: 0em -57.2em;
       width: 4.3em;
       height: 4.2em;
   }

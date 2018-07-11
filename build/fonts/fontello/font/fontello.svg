@@ -33,6 +33,8 @@
 <glyph glyph-name="close" unicode="&#xe80c;" d="M0-59l909 909 91-91-909-909z m91 909l909-909-91-91-909 909z" horiz-adv-x="1000" />
 
 <glyph glyph-name="menu" unicode="&#xe80d;" d="M0-7h1429v-143h-1429z m0 428h1429v-142h-1429z m0 429h1429v-143h-1429z" horiz-adv-x="1429" />
+
+<glyph glyph-name="slideup" unicode="&#xe80e;" d="M571 171q0-14-10-25t-25-10h-500q-15 0-25 10t-11 25 11 26l250 250q10 10 25 10t25-10l250-250q10-11 10-26z" horiz-adv-x="571.4" />
 </font>
 </defs>
 </svg>
