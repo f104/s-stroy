@@ -12,6 +12,7 @@ var app = {
         this.initCut();
         this.initHover();
         this.initScrollbar();
+//        this.initCatalog();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -109,6 +110,24 @@ var app = {
     },
 
     initSliders: function () {
+        $('.js-main-slider').slick({
+            dots: true,
+            arrows: false,
+            infinite: true,
+//                slidesToShow: 1,
+//                slidesToScroll: 1,
+//                centerMode: false,
+//                variableWidth: true,
+            mobileFirst: true,
+            responsive: [
+                {
+                    breakpoint: appConfig.breakpoint.md - 1,
+                    settings: {
+                        arrows: true,
+                    }
+                },
+            ]
+        });
         $('.js-slider').each(function () {
             var slides = $(this).data('slides');
             $(this).slick({

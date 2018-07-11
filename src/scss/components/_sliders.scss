@@ -1,6 +1,54 @@
 .slick-slide {
     height: auto;
 }
+
+.slick-dots {
+    @include list-unstyled;
+    margin-bottom: 0;
+    text-align: center;
+    bottom: 15px;
+    position: absolute;
+    width: 100%;
+    li {
+        display: inline-block;
+        text-align: center;
+        margin: 0 4px;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 8px;
+            width: 8px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                background-color: $white;
+                border-radius: 50%;
+                @include transition(background-color);
+            }
+        }
+        &.slick-active {
+            button {
+                &:after {
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+}
+
 .slick-arrow {
     display: block;
     background: transparent;

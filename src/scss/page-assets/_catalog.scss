@@ -173,3 +173,104 @@
         }
     }
 }
+
+$catalog-menu-padding: 17px;
+.catalog-menu {
+    background-color: $white;
+    border-radius: $border-radius;
+    margin-bottom: 20px;
+    &__h {
+        border-radius: $border-radius;
+        line-height: 42px;
+        background-color: $primary;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        color: rgba($white, .8);
+        text-transform: uppercase;
+        padding: 0 $catalog-menu-padding;
+        margin: 0;
+        &:after {
+            content: '+';
+            position: absolute;
+            right: $catalog-menu-padding;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &__f {
+        display: block;
+        line-height: 29px;
+        border-radius: $border-radius;
+        border-top: 1px solid #d8d8d8;
+        text-align: center;
+        color: #989faa;
+    }
+    &._opened {
+        .catalog-menu__h:after {
+            content: '-';
+        }
+    }
+    &__list {
+        @include list-unstyled;
+        margin-bottom: 0;
+        padding: 10px 0;
+        &__link {
+            display: block;
+            line-height: 48px;
+            color: #51555b;
+            padding: 0 $catalog-menu-padding;
+            &:hover {
+                color: inherit;
+            }
+            .sprite {
+                width: 62px - $catalog-menu-padding;
+                display: inline-block;
+            }
+        }
+        &__item {
+            &._expandable {
+                .catalog-menu__list__link:after {
+                    content: '\e810';
+                    font-family: "fontello";
+                    position: absolute;
+                    right: $catalog-menu-padding;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: $white;
+                }
+                &:hover, &._active {
+                    .catalog-menu__list__link {
+                        background-color: $primary;
+                        color: $white;
+                        opacity: 1;
+                    }
+                    .catalog-menu__list__second {
+                        display: block;
+                    }
+                }
+            }
+        }
+        &__second {
+            display: none;
+            @include list-unstyled;
+            width: 276px;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: $white;
+            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+            z-index: 100;
+            padding: $catalog-menu-padding;
+            &__item {
+                margin-bottom: 23px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &__link {
+                color: $body-color;
+            }
+        }
+    }
+}

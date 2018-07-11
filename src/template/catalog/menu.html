@@ -1,11 +1,14 @@
-<div class="catalog-menu">
+<div class="catalog-menu _opened">
     <h3 class="catalog-menu__h">Каталог товаров</h3>
     <ul class="catalog-menu__list">
-        <li>
-            <a class="catalog-menu__list__link">
+        <li class="catalog-menu__list__item _expandable">
+            <a href="#" class="catalog-menu__list__link">
                 <i class="sprite roof"></i> Скатная кровля
             </a>
-            <a class="catalog-menu__list__link">
+            @@include('menu-second.html')
+        </li>
+        <li class="catalog-menu__list__item">
+            <a href="#" class="catalog-menu__list__link">
                 <i class="sprite waterproof"></i> Гидроизоляция
             </a>
         </li>
