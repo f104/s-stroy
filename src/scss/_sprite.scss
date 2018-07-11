@@ -1,0 +1,65 @@
+.sprite {
+    font-size: 10px;
+}
+
+.sprite:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 4.3em 21em;
+}
+
+.no-svg .sprite:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .sprite.facebook:before {
+      background-position: 0em 0em;
+      width: 4.2em;
+      height: 4.2em;
+  }
+
+
+
+
+  .sprite.instagram:before {
+      background-position: 0em -4.2em;
+      width: 4.2em;
+      height: 4.2em;
+  }
+
+
+
+
+  .sprite.twitter:before {
+      background-position: 0em -8.4em;
+      width: 4.2em;
+      height: 4.2em;
+  }
+
+
+
+
+  .sprite.vk:before {
+      background-position: 0em -12.6em;
+      width: 4.2em;
+      height: 4.2em;
+  }
+
+
+
+
+  .sprite.youtube:before {
+      background-position: 0em -16.8em;
+      width: 4.3em;
+      height: 4.2em;
+  }
+
+
+
+
+

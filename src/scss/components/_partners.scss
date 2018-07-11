@@ -1,0 +1,35 @@
+.partners-list {
+    display: flex;
+    &__item {
+        display: block;
+        border-right: 1px solid $gray-border;
+        width: 142px;
+        height: 114px;
+        @include media-breakpoint-up(lg) {
+            width: 149px;
+        }
+        &:last-child {
+            border-right: none;
+        }
+        &__content {
+            width: 142px;
+            height: 114px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%);
+            opacity: .6;
+            transition: all .2s ease-in-out;
+            &._hover {
+                background-color: $white;
+                filter: grayscale(0);
+                opacity: 1;
+                box-shadow: 0px 0px 10px rgba($body-color, .3);
+                z-index: 10;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 149px;
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: .85;
+    color: $body-color;
+}
+form {
+    margin: 0;
+}
+.btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: $border-radius;
+    padding: 0 .5em;
+    background: transparent;
+    color: $body-color;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .2s ease-in-out;
+    border: solid 1px $body-color;
+    &._solid {
+        background-color: $body-color;
+        color: $white;
+    }
+    &:hover {
+        color: inherit;
+        opacity: 1;
+    }
+    &._primary {
+        border: solid 1px $primary;        
+        color: $primary;        
+        &:hover {
+            background-color: $primary;
+            color: $white;            
+        }
+        &._solid {
+            background-color: $primary;
+            color: $white;
+            &:hover {
+                background-color: #3c76cf;
+                border-color: #3c76cf;
+            }
+        }
+    }
+    &._secondary {
+        border: solid 1px $secondary;
+        color: $secondary;
+        &:hover {
+            background-color: $secondary;
+            color: $white;            
+        }
+        &._solid {
+            background-color: $secondary;
+            color: $white;
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+    &._sm {
+        line-height: 40px;
+    }
+}

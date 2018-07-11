@@ -1,0 +1,40 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 320px,
+  md: 768px,
+  lg: 1280px
+);
+$header-margin-bottom: (
+  sm: 15px,
+  md: 30px,
+  lg: 40px
+);
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 1280px
+);
+$container-padding-sm: 15px;
+$container-padding-md: 30px;
+$container-padding-lg: 40px;
+
+$primary: #2057ac; // основной синий
+$secondary: #ff6716; // основной оранжевый
+$white: white;
+$red: #eb3848;
+$gray-border: #dce2e7;
+$body-bg: #efefef;
+$body-color: #2a2a2a;
+$link-hover-opacity: .9;
+$link-color: $primary;
+$link-hover-color: $primary;
+$link-hover-decoration: none;
+$headings-color: $body-color;
+$border-radius: 3px;
+
+$font-size-base-px: 14px;
+$font-size-base: $font-size-base-px;
+$font-weight-base: normal;
+$line-height-base: normal;
+$font-family-base: 'Lato', sans-serif;
+$font-family-alt: 'Gilroy', 'Lato', sans-serif;

@@ -1,0 +1,70 @@
+.slick-slide {
+    height: auto;
+}
+.slick-arrow {
+    display: block;
+    background: transparent;
+    border: transparent;
+    color: $primary;
+    width: 15px;
+    height: 15px;
+    font-size: 0;
+    position: absolute;
+    top: -25px;
+    transform: translateY(-50%);
+    left: auto;
+    right: 40px;
+    cursor: pointer;
+    outline: none;
+    z-index: 1;
+    transition: all .2s ease-in-out;
+    @include media-breakpoint-up(md) {
+        width: 34px;
+        height: 34px;
+        top: 50%;
+        left: -24px;
+        right: auto;
+        background-color: $white;
+        border-radius: 50%;
+        border: 4px solid $body-bg;
+        &:hover {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+    &:before {
+        content: '';
+        font-family: "fontello";
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 10px;
+        @include media-breakpoint-up(md) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    &.slick-prev {
+        &:before {
+            content: '\e809';
+        }
+    }
+    &.slick-next {
+        left: auto;
+        right: $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            right: -24px;
+        }
+        &:before {
+            content: '\e808';
+        }
+    }
+    &.slick-disabled {
+        color: #c2c1c1;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,77 @@
+<header class="header">
+    <div class="header__top">
+        <div class="container header__row">
+            <div class="header__row__col _1">
+                <a href="#" class="header__top__region"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
+            </div>
+            <div class="header__row__col _2">
+                <ul class="header__top__menu">
+                    <li class="hidden-md"><a href="#">Расчет доставки</a></li>
+                    <li class="hidden-md"><a href="#">Оплата</a></li>
+                    <li><a href="#">Скачать прайс-лист <i class="icon-download"></i></a></li>
+                </ul>
+            </div>
+            <div class="header__row__col _3">
+                <a href="#" class="hidden-md">Контакты</a>
+                <ul class="header__log-in">
+                    <li><a href="#">Вход<i class="icon-log-in"></i></a></li>
+                    <li><a href="#">Регистрация</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header__main">
+        <div class="container header__row">
+            <div class="header__row__col _1">
+                <a href="#menu" class="header__main__menu-toggler js-menu-toggler"><i class="icon-menu"></i></a>
+                <a href="index.html">
+                    <img class="header__main__logo-sm" src="img/logo-sm.svg" alt="alt text">
+                    <img class="header__main__logo" src="img/logo.svg" alt="alt text">
+                </a>
+                <a href="#" class="btn _secondary _sm header__action-btn"><i class="icon-sale"></i> Акции</a>
+            </div>
+            <div class="header__row__col _2">
+                <form class="search-form">
+                    <input class="search-form__input" placeholder="Поиск строительных и отделочных материалов">
+                    <button class="search-form__submit"><i class="icon-search"></i></button>
+                </form>
+                <a href="#" class="header__main__download">Скачать прайс-лист <i class="icon-download"></i></a>
+            </div>
+            <div class="header__row__col _3">
+                <div class="header__main__callme">
+                    <a href="#" class="header__main__phone">
+                        <span class="header__main__phone__muted">+7 (831) </span>
+                        418-04-85
+                    </a>
+                    <a href="#" class="btn _primary header__callme-btn">
+                        <i class="icon-phone"></i> 
+                        <span class="header__callme-btn__text">Перезвоните мне</span>
+                    </a>
+                </div>
+                <div class="header__main__minicart">
+                    Корзина <span class="header__main__minicart__counter">2</span>
+                    <span class="header__main__minicart__cost">15 450 <span class="rub">₽</span></span>
+                </div>
+                <a href="#" class="header__main__minicart-sm">
+                    <i class="icon-cart"></i>
+                    <span class="header__main__minicart-sm__counter">2</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="menu" class="mobile-menu js-menu">
+    <div class="scrollbar-outer js-scrollbar">
+        <div class="mobile-menu__inner">
+            <div class="mobile-menu__top">
+                <a href="#"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
+                <ul class="header__log-in">
+                    <li><a href="#">Вход<i class="icon-log-in"></i></a></li>
+                    <li><a href="#">Регистрация</a></li>
+                </ul>
+                <a href="#" class="btn _secondary _sm header__action-btn"><i class="icon-sale"></i> Акции</a>
+            </div>
+            @@include('./chunks/menu.html')
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.profits-list {
+    display: flex;
+    &__item {
+        display: flex !important;
+        border-right: 1px solid $gray-border;
+        width: 177px;
+        min-height: 152px;
+        @include media-breakpoint-up(lg) {
+            width: 224px;
+            min-height: 194px;
+            font-size: 18px;
+        }
+        &:last-child {
+            border-right: none;
+        }
+        &__content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+            color: $body-color;
+            padding: 15px;
+            @include transition(backgroud-color);
+            &:hover {
+                color: $body-color;
+                opacity: 1;
+                background-color: #f9f9f9;
+                /*                background-color: $white;
+                                padding: 10px;
+                                width: 169px;
+                                height: 134px;
+                                filter: grayscale(0);
+                                opacity: 1;
+                                box-shadow: 0px 0px 10px rgba($body-color, .3);
+                                z-index: 10;
+                                transform: translate(-10px,-10px);*/
+            }
+            &__img {
+                margin-bottom: 10px;
+                height: 52px;
+                display: flex;
+                @include media-breakpoint-up(lg) {
+                    height: 65px;
+                }
+                > img {
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

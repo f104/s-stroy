@@ -1,0 +1,175 @@
+.catalog-list {
+    display: flex;
+    .slick-track {
+        display: flex;
+    }
+    &__item {
+        display: flex !important;
+        border-right: 1px solid $gray-border;
+        width: 177px;
+        @include media-breakpoint-up(lg) {
+            width: 179px;
+        }
+        &:last-child {
+            border-right: none;
+        }
+        &__content {
+            overflow: hidden;
+            width: 177px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all .2s ease-in-out;
+            padding: 15px 12px 15px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            &._hover {
+                background-color: $white;
+                box-shadow: 0px 0px 10px rgba($body-color, .3);
+                z-index: 10;
+                padding: 25px 22px 25px 25px;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 179px;
+            }
+        }
+        &__head {
+            margin-bottom: 30px;
+        }
+        &__img {
+            height: 120px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+        &__link {
+            color: $body-color;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.23;
+            &:hover {
+                color: $body-color;
+            }
+        }
+        &__avail {
+            display: block;
+            opacity: 0.5;
+            font-size: 12px;
+            color: #2a2a2a;
+        }
+        &__price {
+            margin-bottom: 13px;
+            &__variant {
+                @include list-unstyled;
+                font-size: 13px;
+                line-height: 17px;
+                color: $primary;
+                li {
+                    display: inline-block;
+                    cursor: pointer;
+                    &._active {
+                        background-color: #ededed;
+                        color: $body-color;
+                        cursor: default;
+                        padding: 0 5px;
+                    }
+                }
+                margin-bottom: 7px;
+            }
+            &__row {
+                display: flex;
+                align-items: flex-end;
+            }
+            &__col {
+                flex-basis: 50%;
+                &:first-child {
+                    padding-right: 10px;
+                }
+            }
+            &__help {
+                display: block;
+                font-size: 10px;
+                font-weight: 500;
+                color: #7b7b7b;
+                white-space: nowrap;
+            }
+            &__del {
+                font-size: 14px;
+                line-height: 1;
+                font-weight: 500;
+                color: #7b7b7b;
+                text-decoration: none;
+                white-space: nowrap;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    height: 1px;
+                    background-color: #7b7b7b;
+                }
+            }
+            &__cost {
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 0.8;
+                white-space: nowrap;
+                color: $red;
+            }
+        }
+        &__buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__btn-cart {
+            width: 42px;
+            font-size: 19px;
+        }
+        &__btn-one-click {
+            font-size: 13px;
+            line-height: 1.31;
+        }
+        &__badges {
+            @include list-unstyled;
+            position: absolute;
+            top: 0;
+            left: -3px;
+            font-size: 0;
+            &__item {
+                margin-bottom: 2px;
+            }
+            &__wrapper {
+                transform: skewX(-15deg);
+                display: inline-block;
+                border-radius: 0 0 5px;
+                &._action {
+                    background-color: $red;
+                }
+                &._hit {
+                    background-color: $primary;
+                    .catalog-list__item__badges__text {
+                        padding-right: 15px;
+                    }
+                }
+            }
+            &__text {
+                transform: skewX(15deg);
+                color: $white;
+                font-size: 11px;
+                font-weight: bold;
+                line-height: 18px;
+                display: inline-block;
+                padding: 0 8px;
+            }
+        }
+    }
+}

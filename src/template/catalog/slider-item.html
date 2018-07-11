@@ -1,0 +1,60 @@
+<div class="catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
+        <div class="catalog-list__item__head">
+            <a href="#" class="catalog-list__item__link">
+                <span class="catalog-list__item__img">
+                    <img src="img/products/@@img" 
+                         alt="alt text">            
+                </span>
+                @@title
+            </a>
+            <span class="catalog-list__item__avail">В наличии</span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            @@price_old <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            @@price <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+            </div>
+        </div>
+        <ul class="catalog-list__item__badges">
+            @@if (action == 1) {
+            <li class="catalog-list__item__badges__item">
+                <span class="catalog-list__item__badges__wrapper _action">
+                    <span class="catalog-list__item__badges__text">Акция</span>
+                </span>
+            </li>
+            }
+            @@if (hit == 1) {
+            <li class="catalog-list__item__badges__item">
+                <span class="catalog-list__item__badges__wrapper _hit">
+                    <span class="catalog-list__item__badges__text">Хит</span>
+                </span>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
