@@ -1,3 +1,7 @@
+jQuery.expr[':'].focus = function (elem) {
+    return elem === document.activeElement && (elem.type || elem.href);
+};
+
 $(document).ready(function () {
     app.initialize();
 });
@@ -13,6 +17,7 @@ var app = {
         this.initHover();
         this.initScrollbar();
         this.initCatalog();
+        this.initSearch();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -102,8 +107,8 @@ var app = {
         $('.js-cut').each(function () {
             $(this).find('.js-cut__trigger').on('click', function () {
                 var $content = $(this).siblings('.js-cut__content'),
-                    textShow = $(this).data('textshow') || 'show text',
-                    textHide = $(this).data('texthide') || 'hide text';
+                        textShow = $(this).data('textshow') || 'show text',
+                        textHide = $(this).data('texthide') || 'hide text';
                 $(this).text($content.is(':visible') ? textShow : textHide);
                 $(this).toggleClass('_opened');
                 $(this).siblings('.js-cut__content').slideToggle();
@@ -224,6 +229,19 @@ var app = {
         $('.js-scrollbar').scrollbar();
     },
 
+    initSearch: function () {
+        var $input = $('.js-search-form__input');
+        $input.on('focus', function () {
+            $(this).siblings('.js-search-res').addClass('_active');
+        });
+        $input.on('blur', function () {
+            $(this).siblings('.js-search-res').removeClass('_active');
+        });
+//        $(window).on('scroll', function () {
+//            $input.blur();
+//        });
+    },
+
     initCatalog: function () {
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
                 $slide = $('.js-cm__slide'),
@@ -291,6 +309,7 @@ var app = {
                     $slideTrigger.off('click', slideMenu);
                     $secondLink.on('click', showSecond);
                     $secondLink.off('mouseenter mouseleave');
+                    $secondLink.parent().off('mouseenter mouseleave');
                     initScrollbar();
                 } else {
                     $wrapper.removeClass('_active');
@@ -299,6 +318,9 @@ var app = {
                     $secondLink.parent().hover(hoverIcon, unhoverIcon);
                     destroyScrollbar();
                 }
+            }
+            if (newSize) {
+                $scrollbar.css({'height': $(window).outerHeight() - $('.header').outerHeight()});
             }
         }
         $(window).on('resize', function () {

@@ -10,6 +10,11 @@
                 <div class="container main-row">
 
                     <aside class="main-row__left">
+                        <form class="search-form _aside">
+                            <input class="search-form__input js-search-form__input" placeholder="Поиск в каталоге">
+                            <button class="search-form__submit"><i class="icon-search"></i></button>
+                            @@include('./template/chunks/search-results.html')
+                        </form>
                         @@include('./template/catalog/menu.html')
                     </aside>
 
