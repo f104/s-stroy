@@ -101,9 +101,12 @@ var app = {
     initCut: function () {
         $('.js-cut').each(function () {
             $(this).find('.js-cut__trigger').on('click', function () {
-                $(this).hide(200, function () {
-                    $(this).siblings('.js-cut__content').slideDown();
-                })
+                var $content = $(this).siblings('.js-cut__content'),
+                    textShow = $(this).data('textshow') || 'show text',
+                    textHide = $(this).data('texthide') || 'hide text';
+                $(this).text($content.is(':visible') ? textShow : textHide);
+                $(this).toggleClass('_opened');
+                $(this).siblings('.js-cut__content').slideToggle();
                 return false;
             })
         })
@@ -184,7 +187,7 @@ var app = {
             });
         }
     },
-    
+
     initHover: function () {
         $('.js-hover').unbind('mouseenter mouseleave');
         if ($(window).outerWidth() >= appConfig.breakpoint.lg) {

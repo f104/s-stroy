@@ -2,6 +2,19 @@
     &__trigger {
         font-size: 15px;
         margin-bottom: 0;
+        &:after {
+            content: '\e801';
+            font-family: 'fontello';
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 4px;
+            bottom: 1px;
+        }
+        &._opened {
+            &:after {
+                content: '\e80e';
+            }            
+        }
     }
     &__content {
         display: none;
