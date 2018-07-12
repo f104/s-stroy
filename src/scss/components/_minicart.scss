@@ -1,0 +1,157 @@
+.minicart {
+    display: none;
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+    background-color: #3c76cf;
+    font-size: 16px;
+    color: $white;
+    padding: 11px 12px 11px 40px;
+    @include transition(background-color);
+    &:hover {
+        background-color: $primary;
+    }
+    &:before {
+        position: absolute;
+        font-family: "fontello";
+        content: '\e806';
+        left: 10px;
+        font-size: 18px;
+        top: 12px;
+    }
+    &__counter {
+        font-size: 13px;
+        font-weight: bold;
+        color: #1f56aa;
+        display: inline-block;
+        width: 21px;
+        line-height: 21px;
+        background-color: $white;
+        border-radius: 50%;
+        text-align: center;
+    }
+    &__cost {
+        display: block;
+        opacity: 0.6;
+        font-size: 12px;
+        font-weight: 500;
+        color: #ffffff;
+    }
+    .minicart-popup {
+        display: none;
+    }
+    &:hover {
+        .minicart-popup {
+            display: block;
+        }        
+    }
+}
+
+.minicart-popup {
+    width: 335px;
+    background-color: $white;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.05);
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 500;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    color: $body-color;
+    &__h {
+        padding: 0 25px;
+        margin-bottom: 22px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    &__t {
+        margin: 0 25px;
+        img {
+            display: block;
+            max-width: 100%;
+        }
+        td {
+            vertical-align: top;
+            &:first-of-type {
+                width: 40px;
+                padding-right: 10px;
+            }
+            &:last-of-type {
+                width: 20px;
+                text-align: right;
+            }
+        }
+        &__title {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: $body-color;
+            &:hover {
+                color: $body-color;
+            }
+        }
+        &__remove {
+            font-size: 12px;
+            top: 2px;
+            color: $red;
+            &:hover {
+                color: $red;
+            }
+        }
+        &__price {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 0.8;
+            margin-bottom: 22px;
+            display: inline-block;
+        }
+        &__variant {
+            font-size: 12px;
+        }
+        &__count {
+            white-space: nowrap;
+            width: 70px;
+            text-align: left;
+        }
+        &__total {
+            font-size: 18px;
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+        }
+        &__change {
+            color: #7b7b7b;
+            &:hover {
+                color: #7b7b7b;
+            }
+        }
+    }
+    &__f {
+        border-top: 1px solid #dce2e7;
+        padding: 20px 25px 0 65px;
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 17px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__total {
+            font-size: 17px;
+        }
+        &__cost {
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 0.64;
+        }
+        &__link {
+            font-size: 14px;
+            font-weight: 500;
+            &._remove {
+                color: $red;
+            }
+        }
+    }
+}

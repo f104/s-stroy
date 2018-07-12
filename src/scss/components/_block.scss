@@ -44,7 +44,6 @@
         }
     }
     &__content {
-        line-height: 1.43;
         > :last-child {
             margin-bottom: 0;
         }
@@ -60,6 +59,9 @@
             @include media-breakpoint-up(md) {
                 padding: 24px;
             }
+        }
+        &._rte {
+            line-height: 1.43;
         }
     }
     &__list {

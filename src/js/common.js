@@ -12,7 +12,7 @@ var app = {
         this.initCut();
         this.initHover();
         this.initScrollbar();
-//        this.initCatalog();
+        this.initCatalog();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -114,10 +114,6 @@ var app = {
             dots: true,
             arrows: false,
             infinite: true,
-//                slidesToShow: 1,
-//                slidesToScroll: 1,
-//                centerMode: false,
-//                variableWidth: true,
             mobileFirst: true,
             responsive: [
                 {
@@ -157,6 +153,38 @@ var app = {
         })
     },
 
+    initHover1: function () {
+        $('.js-hover').unbind('mouseenter mouseleave');
+        if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
+            var zoom = appConfig.hoverZoom || 10;
+            $('.js-hover').each(function () {
+                var $parent, h, w;
+                $(this).hover(
+                        function () {
+                            if ($(this).hasClass('_hover'))
+                                return;
+                            var offset = $(this).offset();
+                            $parent = $(this).parent();
+                            h = $(this).outerHeight();
+                            w = $(this).outerWidth();
+                            $(this).appendTo('body').css({
+                                'position': 'absolute',
+                                'top': offset.top,
+                                'left': offset.left,
+                                'width': w,
+                                'height': h,
+                            }).addClass('_hover');
+                        },
+                        function () {
+                            $(this).removeClass('_hover')
+                                    .appendTo($parent)
+                                    .removeAttr('style');
+                        }
+                );
+            });
+        }
+    },
+    
     initHover: function () {
         $('.js-hover').unbind('mouseenter mouseleave');
         if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
@@ -165,6 +193,8 @@ var app = {
                 var $parent, h, w;
                 $(this).hover(
                         function () {
+                            if ($(this).hasClass('_hover'))
+                                return;
                             var offset = $(this).offset();
                             $parent = $(this).parent();
                             h = $(this).outerHeight();
@@ -191,37 +221,86 @@ var app = {
         $('.js-scrollbar').scrollbar();
     },
 
-    /**
-     * Функция возвращает окончание для множественного числа слова на основании числа и массива окончаний
-     * @param  iNumber Integer Число на основе которого нужно сформировать окончание
-     * @param  aEndings Array Массив слов или окончаний для чисел (1, 4, 5),
-     *         например ['яблоко', 'яблока', 'яблок']
-     * @return String
-     * 
-     * https://habrahabr.ru/post/105428/
-     */
-    getNumEnding: function (iNumber, aEndings) {
-        var sEnding, i;
-        iNumber = iNumber % 100;
-        if (iNumber >= 11 && iNumber <= 19) {
-            sEnding = aEndings[2];
+    initCatalog: function () {
+        var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
+                $slide = $('.js-cm__slide'),
+                $slideTrigger = $('.js-cm__slide__trigger'),
+                $menu = $('.js-cm__menu'),
+                $scrollbar = $('.js-cm__scrollbar'),
+                $mobileToggler = $('.js-cm__mobile-toggler'),
+                $secondLink = $('.js-cm__second-link'),
+                $secondClose = $('.js-cm__menu-second__close'),
+                $wrapper = $('.js-cm__menu-wrapper');
+
+        var slideMenu = function () {
+            $slide.slideToggle();
+            $menu.toggleClass('_opened');
+            return false;
+        }
+
+        var showSecond = function () {
+            $(this).siblings('.js-cm__menu-second').addClass('_active');
+            return false;
+        }
+
+        var hoverIcon = function () {
+            var $icon = $(this).find('.sprite');
+            $icon.addClass($icon.data('hover'));
+        }
+
+        var unhoverIcon = function () {
+            var $icon = $(this).find('.sprite');
+            $icon.removeClass($icon.data('hover'));
+        }
+
+        var initScrollbar = function () {
+            $scrollbar.scrollbar();
+            $scrollbar.css({'height': $(window).outerHeight() - $('.header').outerHeight()});
+        }
+
+        var destroyScrollbar = function () {
+            $scrollbar.scrollbar('destroy');
+        }
+
+        if (!isMobile) {
+            $slideTrigger.on('click', slideMenu);
+            $secondLink.parent().hover(hoverIcon, unhoverIcon)
         } else {
-            i = iNumber % 10;
-            switch (i)
-            {
-                case (1):
-                    sEnding = aEndings[0];
-                    break;
-                case (2):
-                case (3):
-                case (4):
-                    sEnding = aEndings[1];
-                    break;
-                default:
-                    sEnding = aEndings[2];
+            $secondLink.on('click', showSecond);
+            initScrollbar();
+        }
+        $mobileToggler.on('click', function () {
+            $wrapper.toggleClass('_active');
+            return false;
+        });
+        $secondClose.on('click', function () {
+            $(this).parents('.js-cm__menu-second').removeClass('_active');
+            return false;
+        });
+
+        var checkMenu = function () {
+            var newSize = $(window).outerWidth() < appConfig.breakpoint.lg;
+            if (newSize != isMobile) {
+                isMobile = newSize;
+                if (isMobile) {
+                    $slide.show();
+                    $menu.addClass('_opened');
+                    $slideTrigger.off('click', slideMenu);
+                    $secondLink.on('click', showSecond);
+                    $secondLink.off('mouseenter mouseleave');
+                    initScrollbar();
+                } else {
+                    $wrapper.removeClass('_active');
+                    $slideTrigger.on('click', slideMenu);
+                    $secondLink.off('click', showSecond);
+                    $secondLink.parent().hover(hoverIcon, unhoverIcon);
+                    destroyScrollbar();
+                }
             }
         }
-        return sEnding;
+        $(window).on('resize', function () {
+            checkMenu();
+        });
     },
 
 }

@@ -19,7 +19,7 @@
             justify-content: center;
             filter: grayscale(100%);
             opacity: .6;
-            transition: all .2s ease-in-out;
+            /*transition: all .2s ease-in-out;*/
             &._hover {
                 background-color: $white;
                 filter: grayscale(0);

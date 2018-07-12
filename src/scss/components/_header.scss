@@ -10,7 +10,7 @@ body {
 .header {
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 999;
     @include media-breakpoint-up(lg) {
         position: relative;
@@ -114,10 +114,11 @@ body {
 
     &__action-btn {
         font-size: 11px;
+        height: 42px;
         .icon-sale {
             font-size: 20px;
             vertical-align: middle;
-            line-height: 1;
+            /*line-height: 1;*/
         }
     }
     &__callme-btn {
@@ -222,40 +223,6 @@ body {
             @include media-breakpoint-up(md) {
                 display: block;
             }
-            background-color: #3c76cf;
-            font-size: 16px;
-            color: $white;
-            padding: 11px 12px 11px 40px;
-            @include transition(background-color);
-            &:hover {
-                background-color: $primary;
-            }
-            &:before {
-                position: absolute;
-                font-family: "fontello";
-                content: '\e806';
-                left: 10px;
-                font-size: 18px;
-                top: 12px;
-            }
-            &__counter {
-                font-size: 13px;
-                font-weight: bold;
-                color: #1f56aa;
-                display: inline-block;
-                width: 21px;
-                line-height: 21px;
-                background-color: $white;
-                border-radius: 50%;
-                text-align: center;
-            }
-            &__cost {
-                display: block;
-                opacity: 0.6;
-                font-size: 12px;
-                font-weight: 500;
-                color: #ffffff;
-            }
         }
         &__minicart-sm {
             @include media-breakpoint-up(md) {
@@ -290,12 +257,12 @@ body {
     @include transition(transform);
     top: 0;
     background-color: $white;
-    box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.06);
     z-index: 998;
     height: 100vh;
     padding-top: 50px;
     &._active {
         transform: translateX(100%);
+        box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.06);
     }
     @include media-breakpoint-up(md) {
         padding-top: 89px;

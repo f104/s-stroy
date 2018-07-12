@@ -211,6 +211,24 @@
       "css": "right-dir",
       "code": 59408,
       "src": "fontawesome"
+    },
+    {
+      "uid": "70370693ada58ef0a60fa0984fe8d52a",
+      "css": "plus",
+      "code": 59409,
+      "src": "entypo"
+    },
+    {
+      "uid": "1256e3054823e304d7e452a589cf8bb8",
+      "css": "minus",
+      "code": 59410,
+      "src": "entypo"
+    },
+    {
+      "uid": "0f4cae16f34ae243a6144c18a003f2d8",
+      "css": "close-circled",
+      "code": 59411,
+      "src": "fontawesome"
     }
   ]
 }

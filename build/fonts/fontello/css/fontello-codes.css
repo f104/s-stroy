@@ -16,3 +16,6 @@
 .icon-slideup:before { content: '\e80e'; } /* '' */
 .icon-left-dir:before { content: '\e80f'; } /* '' */
 .icon-right-dir:before { content: '\e810'; } /* '' */
+.icon-plus:before { content: '\e811'; } /* '' */
+.icon-minus:before { content: '\e812'; } /* '' */
+.icon-close-circled:before { content: '\e813'; } /* '' */
