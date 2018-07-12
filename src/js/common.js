@@ -161,66 +161,57 @@ var app = {
         })
     },
 
-    initHover1: function () {
+    initHover: function () {
         $('.js-hover').unbind('mouseenter mouseleave');
         if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
-            var zoom = appConfig.hoverZoom || 10;
             $('.js-hover').each(function () {
-                var $parent, h, w;
-                $(this).hover(
-                        function () {
-                            if ($(this).hasClass('_hover'))
-                                return;
-                            var offset = $(this).offset();
-                            $parent = $(this).parent();
-                            h = $(this).outerHeight();
-                            w = $(this).outerWidth();
-                            $(this).appendTo('body').css({
+                var $this, $parent, $wrap, $hover, h, w;
+                $(this).on('mouseenter', function () {
+                    $this = $(this);
+                    if ($this.hasClass('_hover')) {
+                        return;
+                    }
+                    var offset = $this.offset();
+                    $parent = $this.parent();
+                    h = $this.outerHeight();
+                    w = $this.outerWidth();
+                    $this.css({
+                        'width': w,
+                        'height': h,
+                    });
+                    $wrap = $('<div/>')
+                            .appendTo('body')
+                            .css({
                                 'position': 'absolute',
                                 'top': offset.top,
                                 'left': offset.left,
                                 'width': w,
                                 'height': h,
-                            }).addClass('_hover');
-                        },
-                        function () {
-                            $(this).removeClass('_hover')
+                            });
+                    $hover = $('<div/>').appendTo($wrap);
+                    $hover.addClass('hover');
+                    $this.appendTo($wrap).addClass('_hover');
+                    $hover.animate({
+                        top: '-10px',
+                        left: '-10px',
+                        right: '-10px',
+                        bottom: '-10px',
+                    }, 200);
+                    $wrap.on('mouseleave', function () {
+                        $hover.animate({
+                            top: '0',
+                            left: '0',
+                            right: '0',
+                            bottom: '0',
+                        }, 200, function () {
+                            $this
                                     .appendTo($parent)
+                                    .removeClass('_hover')
                                     .removeAttr('style');
-                        }
-                );
-            });
-        }
-    },
-
-    initHover: function () {
-        $('.js-hover').unbind('mouseenter mouseleave');
-        if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
-            var zoom = appConfig.hoverZoom || 10;
-            $('.js-hover').each(function () {
-                var $parent, h, w;
-                $(this).hover(
-                        function () {
-                            if ($(this).hasClass('_hover'))
-                                return;
-                            var offset = $(this).offset();
-                            $parent = $(this).parent();
-                            h = $(this).outerHeight();
-                            w = $(this).outerWidth();
-                            $(this).appendTo('body').css({
-                                'position': 'absolute',
-                                'top': offset.top - zoom,
-                                'left': offset.left - zoom,
-                                'width': w + zoom * 2,
-                                'height': h + zoom * 2,
-                            }).addClass('_hover');
-                        },
-                        function () {
-                            $(this).removeClass('_hover')
-                                    .appendTo($parent)
-                                    .removeAttr('style');
-                        }
-                );
+                            $wrap.remove();
+                        });
+                    });
+                });
             });
         }
     },

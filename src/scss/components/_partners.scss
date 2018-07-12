@@ -19,13 +19,12 @@
             justify-content: center;
             filter: grayscale(100%);
             opacity: .6;
-            /*transition: all .2s ease-in-out;*/
+            background-color: $white;
+            transition: none;
+            @include transition(all);
             &._hover {
-                background-color: $white;
                 filter: grayscale(0);
                 opacity: 1;
-                box-shadow: 0px 0px 10px rgba($body-color, .3);
-                z-index: 10;
             }
             @include media-breakpoint-up(lg) {
                 width: 149px;
