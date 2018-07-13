@@ -18,6 +18,7 @@ var app = {
         this.initScrollbar();
         this.initCatalog();
         this.initSearch();
+        this.initPopup();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -317,6 +318,25 @@ var app = {
         $(window).on('resize', function () {
             checkMenu();
         });
+    },
+
+    initPopup: function () {
+        var options = {
+            baseClass: '_popup',
+            autoFocus: false,
+//            btnTpl: {
+//                smallBtn: '<span data-fancybox-close class="fancybox-close-small"></span>',
+//            },
+        };
+        $('.js-popup').on('click', function () {
+            $.fancybox.close();
+        }).fancybox(options);
+        if (window.location.hash) {
+            var $cnt = $(window.location.hash);
+            if ($cnt.length && $cnt.hasClass('popup')) {
+                $.fancybox.open($cnt, options);
+            }
+        }
     },
 
 }

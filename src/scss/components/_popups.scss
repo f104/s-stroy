@@ -1,0 +1,81 @@
+.fancybox-container._popup {
+    .fancybox-is-open .fancybox-bg {
+        opacity: .95;
+    }
+    .fancybox-bg {
+        background: $white;
+    }
+    .fancybox-close-small {
+        right: 12px;
+        top: 12px;
+        width: auto;
+        height: auto;
+        outline: none;
+        &:after {
+            content: "\e813";
+            font-family: 'fontello';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+            line-height: 18px;
+            color: $primary;
+            @include transition(opacity);
+            z-index: 2;
+        }
+        &:hover:after {
+            opacity: $link-hover-opacity;
+        }
+    }
+    .fancybox-slide > div {
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 10px 63px 0 rgba(0, 0, 0, 0.1);
+        background-color: transparent;
+        max-width: 100%;
+    }
+}
+
+.popup {
+    &__inner {
+        padding: 28px 20px;
+        @include media-breakpoint-up(md) {
+            padding: 26px 40px;
+        }
+    }
+}
+
+.login {
+    width: 657px;
+    max-width: 100%;
+    display: flex;
+    &__help {
+        background-color: #f6f6f6;
+        width: 289px;
+        flex-shrink: 0;
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+        &__h {
+            font-family: $font-family-alt;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 27px;
+        }
+        &__list {
+            padding-left: 16px;
+            li {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    &__form {
+        background-color: $white;        
+    }
+    .form {
+        margin-bottom: 23px;
+    }
+}

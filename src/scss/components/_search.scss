@@ -1,4 +1,7 @@
 .search-form {
+    ::placeholder {
+        opacity: .85;
+    }
     &._aside {
         margin-bottom: 10px;
         @include media-breakpoint-up(lg) {
