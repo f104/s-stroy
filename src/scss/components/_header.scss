@@ -212,6 +212,8 @@ body {
             @include media-breakpoint-up(md) {
                 display: block;
                 font-size: 17px;
+                top: -2px;
+                line-height: 1;
             }
             &__muted {
                 font-weight: normal;
