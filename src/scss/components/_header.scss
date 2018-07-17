@@ -118,7 +118,6 @@ body {
         .icon-sale {
             font-size: 20px;
             vertical-align: middle;
-            /*line-height: 1;*/
         }
     }
     &__callme-btn {
@@ -250,6 +249,11 @@ body {
     }
 
 
+}
+.mac-os {
+    .header__action-btn .icon-sale {
+        top: -2px;
+    }
 }
 
 .mobile-menu {

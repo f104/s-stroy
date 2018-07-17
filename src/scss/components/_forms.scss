@@ -148,6 +148,16 @@ form {
     }
 
 }
+.mac-os {
+    .form input {
+        line-height: unset;
+        height: 48px;
+        padding-bottom: 3px;
+    }
+    .form__label label {
+        top: 14px;
+    }
+}
 
 .checkbox {
     display: inline-block;
