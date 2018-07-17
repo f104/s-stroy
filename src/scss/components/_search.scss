@@ -50,6 +50,13 @@
         }
     }
 }
+.mac-os {
+    .search-form .search-form__input {
+        height: 42px;
+        line-height: unset;
+        padding-bottom: 3px;
+    }
+}
 
 .search-res {
     height: 450px;

@@ -10,6 +10,14 @@ var app = {
     initialized: false,
 
     initialize: function () {
+        if (navigator.userAgent.indexOf('Mac') > 0) {
+            var elemHTML = document.getElementsByTagName('html')[0];
+            elemHTML.className += " mac-os";
+            if (navigator.userAgent.indexOf('Safari') > 0)
+                elemHTML.className += " mac-safari";
+            if (navigator.userAgent.indexOf('Chrome') > 0)
+                elemHTML.className += " mac-chrome";
+        }
         this.initSliders(); // must be first!
         this.initMenu();
         this.initFooter();
