@@ -1,0 +1,67 @@
+<div id="register" class="popup">
+    <div class="popup__wrapper _register">
+        <div class="popup__help popup__inner">
+            <h3 class="popup__help__h">Зачем мне регистрироваться на сайте?</h3>
+            <ul class="popup__help__list">
+                <li>Выгодные предложения только для зарегистрированных пользователей.</li>
+                <li>Персональная рассылка с выгодными предложениями на электронную почту.</li>
+                <li>Быстрое оформление заказов. Не нужно постоянно вводить личные данные.</li>
+                <li>Подробная информация об истории всех ваших заказов.</li>
+            </ul>
+        </div>
+        <div class="popup__form popup__inner">
+            <form class="form">
+                <h3 class="form__h">Регистрация</h3>
+                <div class="form__group form__row">
+                    <div class="form__group">
+                        <span class="form__label js-form__label">
+                            <input>
+                            <label>Имя</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input>
+                            <label>Фамилия</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Адрес E-mail</label>                        
+                        </span>
+                    </div>
+                    <div class="form__group">
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Логин</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input type="password" value="qwerty" required>
+                            <label>Пароль</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input type="password" required>
+                            <label>Подтверждение пароля</label>                        
+                        </span>
+                        <span class="form__input-help">Пароль должен быть не менее 6 символов длиной</span>
+                    </div>
+                    <p class="form__help">* Поля, обязательные для заполнения</p>
+                </div>
+                <div class="form__group _checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">
+                            Подтверждаю свое согласие на <a href="#">обработку персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="form__row">
+                    <div class="form__group">
+                        <img src="img/newCaptchaAnchor.gif" style="max-width: 100%">
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" class="btn _secondary _solid">Регистрация</button>
+                        <p><a href="#login" class="js-popup">Уже зарегистрированы?</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

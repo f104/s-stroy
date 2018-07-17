@@ -44,12 +44,24 @@
             padding: 26px 40px;
         }
     }
-}
-
-.login {
-    width: 657px;
-    max-width: 100%;
-    display: flex;
+    &__wrapper {
+        max-width: 100%;
+        display: flex;
+        background-color: $white;        
+        &._login {
+            width: 657px;            
+        }
+        &._register {
+            width: 1004px;  
+            .form__help {
+                @include media-breakpoint-up(md) {
+                    position: absolute;
+                    left: 20px;
+                    bottom: -2px;
+                }
+            }
+        }
+    }
     &__help {
         background-color: #f6f6f6;
         width: 289px;
@@ -73,7 +85,7 @@
         }
     }
     &__form {
-        background-color: $white;        
+        flex: 1;
     }
     .form {
         margin-bottom: 23px;

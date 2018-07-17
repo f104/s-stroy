@@ -78,17 +78,34 @@ form {
             margin-bottom: 33px;
         }
     }
-    &__input-group {
+    &__group {
         margin-bottom: 22px;
         &:last-child {
             margin-bottom: 0;
         }
-        input {
+        input, button {
             margin-bottom: 15px;
             &:last-child {
                 margin-bottom: 0;
             }
         }
+    }
+    &__row {
+        @include media-breakpoint-up(md) {
+            @include row(40px);
+            .form__group {
+                @include col(50%, 40px);
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__input-help {
+        display: block;
+        opacity: 0.5;
+        font-size: 12px;
+    }
+    &__help {
+        margin: 0;
     }
     input, textarea {
         display: block;
@@ -137,7 +154,17 @@ form {
         input:focus + label, input:valid + label {
             font-size: 10px;
             transform: translate(-10px,-13px);
-            
+
+        }
+        &__empty {
+            font-size: 14px !important;
+            transform: none !important;
+        }
+        input:required {
+            + label:after {
+                content: '*';
+                display: inline;
+            }
         }
     }
 

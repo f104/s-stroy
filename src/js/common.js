@@ -27,6 +27,7 @@ var app = {
         this.initCatalog();
         this.initSearch();
         this.initPopup();
+        this.initFormLabel();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -345,6 +346,20 @@ var app = {
                 $.fancybox.open($cnt, options);
             }
         }
+    },
+
+    initFormLabel: function () {
+        var $inputs = $('.js-form__label').find('input:not([required])');
+        $inputs
+                .on('focus', function () {
+                    $(this).siblings('label').removeClass('form__label__empty');
+                })
+                .on('blur', function () {
+                    if (!$(this).val()) {
+                        $(this).siblings('label').addClass('form__label__empty');
+                    }
+                })
+                .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
     },
 
 }
