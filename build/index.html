@@ -18,7 +18,7 @@
     <div class="header__top">
         <div class="container header__row">
             <div class="header__row__col _1">
-                <a href="#" class="header__top__region"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
+                <a href="#" class="header__top__region js-region-toggler" data-toggle=".header .region-select"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
             </div>
             <div class="header__row__col _2">
                 <ul class="header__top__menu">
@@ -36,6 +36,41 @@
             </div>
         </div>
     </div>
+    <div class="region-select">
+    <div class="region-select__inner">
+        <h3 class="region-select__h">Выберите свой регион</h3>
+        <div class="region-select__row">
+            <ul class="region-select__list">
+                <li>
+                    <a href="#" class="region-select__link _active">Нижний Новгород</a>
+                    <ul class="region-select__list _sub">
+                        <li><a href="#" class="region-select__link _sub">Богородск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Бор</a></li>
+                        <li><a href="#" class="region-select__link _sub _active">Выкса</a></li>
+                        <li><a href="#" class="region-select__link _sub">Дзержинск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Кстово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Павлово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Саров</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="region-select__list">
+                <li><a href="#" class="region-select__link">Воронеж</a></li>
+                <li><a href="#" class="region-select__link">Йошкар-Ола</a></li>
+                <li><a href="#" class="region-select__link">Казань</a></li>
+                <li><a href="#" class="region-select__link">Тверь</a></li>
+                <li><a href="#" class="region-select__link">Муром</a></li>
+                <li><a href="#" class="region-select__link">Набережные Челны</a></li>
+                <li><a href="#" class="region-select__link">Самара</a></li>
+                <li><a href="#" class="region-select__link">Санкт-Петербург</a></li>
+                <li><a href="#" class="region-select__link">Саранск</a></li>
+                <li><a href="#" class="region-select__link">Чебоксары</a></li>
+            </ul>
+        </div>
+        <a href="#" class="region-select__nf">Моего города нет в списке, остаться на основном сайте</a>
+        <button class="region-select__close js-region-closer"><i class="icon-close-circled"></i></button>
+    </div>
+</div>
     <div class="header__main">
         <div class="container header__row">
             <div class="header__row__col _1">
@@ -131,7 +166,7 @@
                         <span class="header__main__phone__muted">+7 (831) </span>
                         418-04-85
                     </a>
-                    <a href="#" class="btn _primary header__callme-btn">
+                    <a href="#call" class="btn _primary header__callme-btn js-popup">
                         <i class="icon-phone"></i> 
                         <span class="header__callme-btn__text">Перезвоните мне</span>
                     </a>
@@ -248,7 +283,44 @@
     <div class="scrollbar-outer js-scrollbar">
         <div class="mobile-menu__inner">
             <div class="mobile-menu__top">
-                <a href="#"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
+                <div class="header__region-toggler">
+                    <a href="#" class="js-region-toggler" data-toggle=".mobile-menu .region-select"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
+                </div>
+                <div class="region-select">
+    <div class="region-select__inner">
+        <h3 class="region-select__h">Выберите свой регион</h3>
+        <div class="region-select__row">
+            <ul class="region-select__list">
+                <li>
+                    <a href="#" class="region-select__link _active">Нижний Новгород</a>
+                    <ul class="region-select__list _sub">
+                        <li><a href="#" class="region-select__link _sub">Богородск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Бор</a></li>
+                        <li><a href="#" class="region-select__link _sub _active">Выкса</a></li>
+                        <li><a href="#" class="region-select__link _sub">Дзержинск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Кстово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Павлово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Саров</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="region-select__list">
+                <li><a href="#" class="region-select__link">Воронеж</a></li>
+                <li><a href="#" class="region-select__link">Йошкар-Ола</a></li>
+                <li><a href="#" class="region-select__link">Казань</a></li>
+                <li><a href="#" class="region-select__link">Тверь</a></li>
+                <li><a href="#" class="region-select__link">Муром</a></li>
+                <li><a href="#" class="region-select__link">Набережные Челны</a></li>
+                <li><a href="#" class="region-select__link">Самара</a></li>
+                <li><a href="#" class="region-select__link">Санкт-Петербург</a></li>
+                <li><a href="#" class="region-select__link">Саранск</a></li>
+                <li><a href="#" class="region-select__link">Чебоксары</a></li>
+            </ul>
+        </div>
+        <a href="#" class="region-select__nf">Моего города нет в списке, остаться на основном сайте</a>
+        <button class="region-select__close js-region-closer"><i class="icon-close-circled"></i></button>
+    </div>
+</div>
                 <ul class="header__log-in">
                     <li><a href="#login" class="js-popup">Вход<i class="icon-log-in"></i></a></li>
                     <li><a href="#register" class="js-popup">Регистрация</a></li>
@@ -1193,10 +1265,10 @@
                 </div>
                 <div class="form__group">
                     <button type="submit" class="btn _secondary _solid">Войти</button>
+                    <p><a href="#">Забыли свой пароль?</a></p>
+                    <p><a href="#register" class="js-popup">Регистрация</a></p>
                 </div>
             </form>
-            <p><a href="#">Забыли свой пароль?</a></p>
-            <p><a href="#register" class="js-popup">Регистрация</a></p>
         </div>
     </div>
 </div>
@@ -1262,6 +1334,42 @@
                         <button type="submit" class="btn _secondary _solid">Регистрация</button>
                         <p><a href="#login" class="js-popup">Уже зарегистрированы?</a></p>
                     </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div id="call" class="popup">
+    <div class="popup__wrapper _call">
+        <div class="popup__form popup__inner">
+            <form class="form">
+                <h3 class="form__h">Мы вам перезвоним</h3>
+                <div class="form__group">
+                    <div class="form__group">
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Ваше имя</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Телефон</label>                        
+                        </span>
+                    </div>
+                    <p class="form__help">* Поля, обязательные для заполнения</p>
+                </div>
+                <div class="form__group _checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">
+                            Подтверждаю свое согласие на <a href="#">обработку персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <img src="img/newCaptchaAnchor.gif" style="max-width: 100%">
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn _secondary _solid">Жду звонка</button>
                 </div>
             </form>
         </div>

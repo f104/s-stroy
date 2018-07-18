@@ -248,7 +248,7 @@ body {
         }
     }
 
-
+    
 }
 .mac-os {
     .header__action-btn .icon-sale {
@@ -286,8 +286,11 @@ body {
         font-weight: 500;
         margin-bottom: $container-padding-sm;
     }
+    .header__region-toggler {
+        margin-bottom: 15px;
+    }
     .header__log-in {
-        margin: 20px 0;
+        margin-bottom: 20px;
     }
     .header__action-btn {
         width: 100%;
@@ -304,5 +307,9 @@ body {
             padding-top: $container-padding-sm;
             margin-bottom: $container-padding-sm;
         }
+    }
+    .scrollbar-outer > .scroll-content.scroll-scrolly_visible {
+         left: 0; 
+         margin-left: 0; 
     }
 }

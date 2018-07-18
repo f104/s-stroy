@@ -41,7 +41,7 @@
     &__inner {
         padding: 28px 20px;
         @include media-breakpoint-up(md) {
-            padding: 26px 40px;
+            padding: 26px 40px 40px;
         }
     }
     &__wrapper {
@@ -50,6 +50,9 @@
         background-color: $white;        
         &._login {
             width: 657px;            
+        }
+        &._call {
+            width: 368px;            
         }
         &._register {
             width: 1004px;  
@@ -86,8 +89,5 @@
     }
     &__form {
         flex: 1;
-    }
-    .form {
-        margin-bottom: 23px;
     }
 }

@@ -28,6 +28,7 @@ var app = {
         this.initSearch();
         this.initPopup();
         this.initFormLabel();
+        this.initRegionSelect();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -362,4 +363,23 @@ var app = {
                 .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
     },
 
+    initRegionSelect: function () {
+        $('.js-region-toggler').on('click', function(){
+            var sel = $(this).data('toggle');
+            if (sel) {
+                $(sel).slideToggle();
+            }
+            return false;
+        });
+        $('.js-region-closer').on('click', function(){
+            $(this).parents('.region-select').slideUp();
+        });
+        var $headerRegionSelect = $('.header .region-select');
+        $(window).on('scroll', function(){
+            if ($headerRegionSelect.is(':visible')) {
+                $headerRegionSelect.slideUp();
+            }
+        });
+    }
+    
 }

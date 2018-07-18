@@ -83,7 +83,7 @@ form {
         &:last-child {
             margin-bottom: 0;
         }
-        input, button {
+        > * {
             margin-bottom: 15px;
             &:last-child {
                 margin-bottom: 0;
