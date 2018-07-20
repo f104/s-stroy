@@ -106,7 +106,7 @@ $catalog-menu-padding: 17px;
                 display: none;
             }
             &:after {
-                content: '\e811';
+                content: '\e801';
                 font-family: "fontello";
                 font-size: 13px;
                 position: absolute;
@@ -119,7 +119,7 @@ $catalog-menu-padding: 17px;
     &._opened {
         @include media-breakpoint-up(lg) {
             .catalog-menu__h:after {
-                content: '\e812';
+                content: '\e80e';
             }
         }
     }
