@@ -1,0 +1,24 @@
+<div class="list__item">
+    <div class="list__item__inner">
+        <img class="list__item__img" src="img/content/@@img.jpg"
+             srcset="img/content/@@img@2x.jpg 2x,
+             img/content/@@img@3x.jpg 3x"
+             alt="alt text">
+        <div class="list__item__content">
+            <div class="list__item__content__head">
+                @@if (title != "") {
+                <div class="list__item__title">@@title</div>
+                }
+                @@if (muted != "") {
+                <div class="list__item__muted">@@muted</div>
+                }
+                @@if (text != "") {
+                <div class="list__item__text">@@text</div>
+                }
+            </div>
+            <div class="list__item__content__foot">
+                <a class="btn _sm _primary _solid" href="#">@@btnText</a>
+            </div>
+        </div>
+    </div>
+</div>
