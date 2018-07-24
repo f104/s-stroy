@@ -169,7 +169,50 @@ var app = {
                     },
                 ]
             })
-        })
+        });
+        $('.js-rte-slider__main').slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            asNavFor: '.js-rte-slider__nav',
+//            mobileFirst: true,
+//            responsive: [
+//                {
+//                    breakpoint: appConfig.breakpoint.md - 1,
+//                    settings: {
+//                        arrows: true,
+//                    }
+//                },
+//            ]
+        });
+        $('.js-rte-slider__nav').slick({
+            dots: false,
+            arrows: true,
+            infinite: true,
+            asNavFor: '.js-rte-slider__main',
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            focusOnSelect: true,
+            mobileFirst: true,
+            responsive: [
+                {
+                    breakpoint: appConfig.breakpoint.md - 1,
+                    settings: {
+                        vertical: true,
+                        verticalSwiping: true,
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: appConfig.breakpoint.lg - 1,
+                    settings: {
+                        vertical: true,
+                        verticalSwiping: true,
+                        slidesToShow: 5,
+                    }
+                },
+            ]
+        });
     },
 
     initHover: function () {
@@ -364,22 +407,22 @@ var app = {
     },
 
     initRegionSelect: function () {
-        $('.js-region-toggler').on('click', function(){
+        $('.js-region-toggler').on('click', function () {
             var sel = $(this).data('toggle');
             if (sel) {
                 $(sel).slideToggle();
             }
             return false;
         });
-        $('.js-region-closer').on('click', function(){
+        $('.js-region-closer').on('click', function () {
             $(this).parents('.region-select').slideUp();
         });
         var $headerRegionSelect = $('.header .region-select');
-        $(window).on('scroll', function(){
+        $(window).on('scroll', function () {
             if ($headerRegionSelect.is(':visible')) {
                 $headerRegionSelect.slideUp();
             }
         });
     }
-    
+
 }

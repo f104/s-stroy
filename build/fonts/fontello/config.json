@@ -229,6 +229,34 @@
       "css": "close-circled",
       "code": 59411,
       "src": "fontawesome"
+    },
+    {
+      "uid": "f2a59c3d26403e0b4bd2abc413bea67d",
+      "css": "arrow-down",
+      "code": 59412,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M357.1 1000L306 953.2 0 675.2 102.3 560.4 280.6 722.5V0H433.6V722.5L612 560.4 714.3 675.2 408.3 953.2Z",
+        "width": 714
+      },
+      "search": [
+        "arrow-down"
+      ]
+    },
+    {
+      "uid": "f459d25bb016f700fb192ce8750d2a21",
+      "css": "arrow-up",
+      "code": 59413,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M357.1 0L306 46.8 0 324.8 102.3 439.6 280.6 277.5V1000H433.6V277.5L612 439.6 714.3 324.8 408.3 46.8Z",
+        "width": 714
+      },
+      "search": [
+        "arrow-up"
+      ]
     }
   ]
 }
