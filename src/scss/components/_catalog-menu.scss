@@ -54,6 +54,9 @@ $catalog-menu-padding: 17px;
     @include media-breakpoint-down(sm) {
         margin-top: 50px;
     }
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 35px;
+    }
 }
 
 .catalog-menu {

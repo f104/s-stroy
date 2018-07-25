@@ -1,0 +1,79 @@
+.im-menu {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+    background-color: $white;
+    &__h {
+        padding: 16px 19px 14px;
+        font-family: $font-family-alt;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.28;
+        margin-bottom: 0;
+        cursor: pointer;
+        &:after {
+            content: '\e801';
+            font-family: 'fontello';
+            position: absolute;
+            right: 19px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $primary;
+            font-size: 16px;
+        }
+        &._opened {
+            &:after {
+                content: '\e80e';
+            }
+        }
+    }
+    &__list {
+        @include list-unstyled;
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 1.44;
+        &__inner, &__toggler {
+            display: block;
+            padding: 10px 19px;
+        }
+        &__toggler {
+            color: $primary;
+            cursor: pointer;
+            &:after {
+                content: '\e801';
+                font-family: 'fontello';
+                position: absolute;
+                right: 19px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 16px;
+            }
+            &._opened {
+                &:after {
+                    content: '\e80e';
+                }
+            }
+        }
+        &__inner {
+            &._active {
+                background-color: #f8f8f8;
+            }
+        }
+        &._level1 {
+            padding: 10px 0;
+            border-top: 1px solid $gray-border;
+        }
+        &._level2 {
+            font-size: 15px;
+            .im-menu__list__inner, .im-menu__list__toggler {
+                padding: 7px 19px 7px 39px;
+            }
+        }
+        &._level3 {
+            font-size: 14px;
+            .im-menu__list__inner, .im-menu__list__toggler {
+                padding: 7px 19px 7px 59px;
+            }
+        }
+    }
+}

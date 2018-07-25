@@ -126,7 +126,7 @@
         margin-left: - $container-padding-sm;
         margin-right: - $container-padding-sm;
         margin-bottom: 50px;
-        overflow-y: scroll;
+        overflow-x: auto;
         @include media-breakpoint-up(md) {
             margin-left: 0;
             margin-right: 0;
@@ -457,7 +457,6 @@
         }
     }
     &__a {
-        display: none;
         padding: 36px 0 0 40px;
         &:before {
             content: '';

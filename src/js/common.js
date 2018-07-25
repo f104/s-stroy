@@ -31,6 +31,7 @@ var app = {
         this.initRegionSelect();
         this.initTabs();
         this.initQA();
+        this.initIMmenu();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -364,6 +365,7 @@ var app = {
         $(window).on('resize', function () {
             checkMenu();
         });
+        if (!$menu.hasClass('_opened')) { $slide.slideUp(); }
     },
 
     initPopup: function () {
@@ -426,7 +428,7 @@ var app = {
                 width: $clicked.width(),
             });
         });
-        function initUnder() {
+        var initUnder = function () {
             $('.js-tabs').each(function () {
                 var $under = $(this).find('.js-tabs__under'),
                         $activeLink = $(this).find('.rte-tabs__list .active a'),
@@ -445,7 +447,7 @@ var app = {
     },
     
     initQA: function() {
-        $('.js-rte-qa._active .rte-qa__a').slideDown();
+        $('.js-rte-qa:not(._active) .rte-qa__a').slideUp();
         $('.js-rte-qa').each(function(){
             var $this = $(this),
                 $toggler = $this.find('.rte-qa__q .rte-qa__h'),
@@ -453,8 +455,15 @@ var app = {
             $toggler.on('click', function(){
                 $this.toggleClass('_active');
                 $answer.slideToggle();
-//                $this.hasClass('_active') ? $answer.slideDown() : $answer.slideUp();
             });
+        });
+    },
+    
+    initIMmenu: function() {
+        $('.js-im-menu__toggler:not(._opened)').siblings('.js-im-menu__slide').slideUp();
+        $('.js-im-menu__toggler').on('click', function(){
+            $(this).toggleClass('_opened');
+            $(this).siblings('.js-im-menu__slide').slideToggle();
         });
     }
 

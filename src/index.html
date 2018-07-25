@@ -10,7 +10,11 @@
                 <div class="container main-row">
 
                     <aside class="main-row__left">
-                        @@include('./template/aside.html')
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 1,
+                        "ext": 1
+                        })
                     </aside>
 
                     <article class="main-row__right">
