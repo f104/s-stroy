@@ -66,7 +66,7 @@ form {
 }
 
 .form {
-    &__h {
+    .form__h {
         font-family: $font-family-alt;
         font-size: 17px;
         font-weight: 600;
@@ -127,6 +127,10 @@ form {
         line-height: 46px;
         padding: 0 17px;
     }
+    textarea {
+        padding: 15px 17px;
+        height: 110px;
+    }
     button {
         width: 100%;
     }
@@ -151,7 +155,8 @@ form {
             pointer-events: none;
             margin: 0;
         }
-        input:focus + label, input:valid + label {
+        input:focus + label, input:valid + label,
+        textarea:focus + label, textarea:valid + label {
             font-size: 10px;
             transform: translate(-10px,-13px);
 
@@ -160,7 +165,7 @@ form {
             font-size: 14px !important;
             transform: none !important;
         }
-        input:required {
+        input:required, textarea:required {
             + label:after {
                 content: '*';
                 display: inline;
@@ -172,6 +177,52 @@ form {
         font-size: 10px;
         transform: translateY(-15px);
         visibility: visible !important;
+    }
+
+    &._rte {
+        background-color: $white;
+        padding: 0 $container-padding-sm 20px;
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        margin-bottom: 20px;
+        @include media-breakpoint-up(md) {
+            padding: 0 $container-padding-md 36px;
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+            margin-bottom: 50px;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 60px;
+        }
+        .form__h {
+            padding: 17px $container-padding-sm 16px;
+            text-align: left;
+            border-bottom: 1px solid $gray-border;
+            margin-left: - $container-padding-sm;
+            margin-right: - $container-padding-sm;
+            margin-top: 0;
+            margin-bottom: 20px;
+            @include media-breakpoint-up(md) {
+                margin-left: - $container-padding-md;
+                margin-right: - $container-padding-md;
+                padding-left: $container-padding-md;
+                padding-right: $container-padding-md;
+                font-size: 17px;
+            }
+            @include media-breakpoint-up(lg) {
+                font-size: 18px;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            input, textarea {
+                max-width: 373px;
+            }
+            .btn {
+                max-width: 300px;            
+            }
+        }
     }
 
 }

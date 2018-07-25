@@ -1,0 +1,52 @@
+.page-header {
+    margin-bottom: 30px;
+    @include media-breakpoint-up(md) {
+        margin-bottom: 40px;
+    }
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.29;
+        margin-bottom: 9px;
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            line-height: 1.3;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 24px;
+            line-height: 1.42;
+            margin-bottom: 11px;
+        }
+    }
+}
+.breadcrumbs {
+    display: none;
+    @include media-breakpoint-up(md) {
+        display: block;
+        @include list-unstyled;
+        margin-bottom: 0;
+        &__item {
+            display: inline-block;
+            margin-right: 5px;
+            font-size: 13px;
+            font-weight: 500;
+            &:after {
+                content: '\e810';
+                font-family: 'fontello';
+                display: inline-block;
+                margin-left: 6px;
+                color: #b9c2d1;
+            }
+            &:last-child {
+                margin-right: 0;
+                &:after {
+                    content: none;
+                }
+            }
+            &._active {
+                color: #868686;
+            }
+        }
+    }
+}
