@@ -29,6 +29,7 @@ var app = {
         this.initPopup();
         this.initFormLabel();
         this.initRegionSelect();
+        this.initTabs();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -175,15 +176,6 @@ var app = {
             arrows: false,
             infinite: true,
             asNavFor: '.js-rte-slider__nav',
-//            mobileFirst: true,
-//            responsive: [
-//                {
-//                    breakpoint: appConfig.breakpoint.md - 1,
-//                    settings: {
-//                        arrows: true,
-//                    }
-//                },
-//            ]
         });
         $('.js-rte-slider__nav').slick({
             dots: false,
@@ -423,6 +415,31 @@ var app = {
                 $headerRegionSelect.slideUp();
             }
         });
+    },
+
+    initTabs: function () {
+        $('.js-tabs').easytabs().bind('easytabs:midTransition', function (event, $clicked, $targetPanel, settings) {
+            var $under = $(this).find('.js-tabs__under');
+            $under.css({
+                left: $clicked.parent().position().left,
+                width: $clicked.width(),
+            });
+        });
+        function initUnder() {
+            $('.js-tabs').each(function () {
+                var $under = $(this).find('.js-tabs__under'),
+                        $activeLink = $(this).find('.rte-tabs__list .active a'),
+                        top = $activeLink.outerHeight() - $under.outerHeight();
+                $under.css({
+                    bottom: 'auto',
+                    top: top,
+                    left: $activeLink.parent().position().left,
+                    width: $activeLink.width(),
+                });
+            });
+        }
+        ;
+        $(window).on('load resize', initUnder);
     }
 
 }
