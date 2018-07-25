@@ -30,6 +30,7 @@ var app = {
         this.initFormLabel();
         this.initRegionSelect();
         this.initTabs();
+        this.initQA();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -431,6 +432,7 @@ var app = {
                         $activeLink = $(this).find('.rte-tabs__list .active a'),
                         top = $activeLink.outerHeight() - $under.outerHeight();
                 $under.css({
+                    display: 'block',
                     bottom: 'auto',
                     top: top,
                     left: $activeLink.parent().position().left,
@@ -440,6 +442,20 @@ var app = {
         }
         ;
         $(window).on('load resize', initUnder);
+    },
+    
+    initQA: function() {
+        $('.js-rte-qa._active .rte-qa__a').slideDown();
+        $('.js-rte-qa').each(function(){
+            var $this = $(this),
+                $toggler = $this.find('.rte-qa__q .rte-qa__h'),
+                $answer = $this.find('.rte-qa__a');
+            $toggler.on('click', function(){
+                $this.toggleClass('_active');
+                $answer.slideToggle();
+//                $this.hasClass('_active') ? $answer.slideDown() : $answer.slideUp();
+            });
+        });
     }
 
 }

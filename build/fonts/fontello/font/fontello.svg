@@ -49,6 +49,8 @@
 <glyph glyph-name="arrow-down" unicode="&#xe814;" d="M357-150l-51 47-306 278 102 115 179-162v722h153v-722l178 162 102-115-306-278z" horiz-adv-x="714" />
 
 <glyph glyph-name="arrow-up" unicode="&#xe815;" d="M357 850l-51-47-306-278 102-115 179 163v-723h153v723l178-163 102 115-306 278z" horiz-adv-x="714" />
+
+<glyph glyph-name="logo" unicode="&#xe816;" d="M659 850l361-999h329l-362 999z m-316-200l285-799h329l-285 799z m-68-7l-275-793h558z m0-169c22-59 67-195 108-319l0-1c36-107 68-204 80-236h-367c10 28 34 104 61 193l1 0c41 135 91 297 117 363z" horiz-adv-x="1349" />
 </font>
 </defs>
 </svg>
