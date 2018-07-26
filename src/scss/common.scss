@@ -114,7 +114,7 @@ a, .link {
 }
 .main-row {
     &__left {
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         @include media-breakpoint-up(md) {
             margin-bottom: 20px;
         }
@@ -156,8 +156,10 @@ a, .link {
 @import "components/rte";
 @import "components/list";
 @import "components/page-header";
+@import "components/tabs";
 @import "components/dev";
 @import "page-assets/catalog";
+@import "page-assets/product";
 
 .preloader {
     display: none !important;

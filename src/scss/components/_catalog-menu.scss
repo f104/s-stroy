@@ -57,6 +57,18 @@ $catalog-menu-padding: 17px;
     @include media-breakpoint-down(lg) {
         margin-bottom: 35px;
     }
+    @include media-breakpoint-up(lg) {
+        &._absolute {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            .catalog-menu._opened {
+                box-shadow: 0 12px 26px 0 rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
 }
 
 .catalog-menu {

@@ -1,0 +1,60 @@
+@mixin product-card-margins () {
+    margin-bottom: 20px;
+    @include media-breakpoint-up(md) {
+        margin-bottom: 30px;        
+    }
+}
+
+.product-card {
+    .tabs {
+        @include product-card-margins;
+    }
+}
+
+.product-detail {
+    @include list-unstyled;
+    margin-bottom: 0;
+    font-size: $font-size-base;
+    @include media-breakpoint-up(md) {
+        font-size: 18px;
+    }
+    li {
+        margin-bottom: 10px;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            &:after {
+                content: '• • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • ';
+                position: absolute;
+                left: 0;
+                right: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                color: #e4e4e4;
+                font-size: 11px;
+                line-height: 22px;
+            }
+        }
+        span {
+            display: block;
+            background-color: $white;
+            z-index: 1;
+            &:first-of-type {
+                padding-right: 1ex;
+            }
+            &:last-of-type {
+                font-weight: 600;
+                @include media-breakpoint-up(md) {
+                    padding-left: 1ex;
+                    font-weight: normal;
+                    text-align: right;
+                }
+                @include media-breakpoint-up(lg) {
+                    text-align: left;
+                    flex-basis: 670px;
+                }
+            }
+        }
+    }
+}

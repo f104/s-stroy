@@ -1,0 +1,58 @@
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Товар"
+    })
+    <body>
+        @@include('./template/header.html')
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+                        
+                        <div class="page-header">
+                            <h1 class="page-header__h">ЕК TG40 гипсовая штукатурка 30 кг</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="catalog.html">Каталог</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="#">Внутренняя отделка</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="#">Штукатурные смеси</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    ЕК TG40 гипсовая штукатурка 30 кг
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+                <article class="container product-card">
+                    @@include('./template/product/tabs.html')
+                </article>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>
