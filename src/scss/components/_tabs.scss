@@ -28,8 +28,8 @@
             padding-left: 0;
             min-width: unset;
             margin-bottom: 0;
-            margin-right: 42px;
-            @include media-breakpoint-up(md) {
+            margin-right: 32px;
+            @include media-breakpoint-up(lg) {
                 margin-right: 62px;
             }
             &:last-child {
@@ -47,12 +47,18 @@
                 padding: 15px 0 14px;
             }
             &.active {
-                a {
+                a, .tabs__counter {
                     color: $primary;
                     font-weight: 600;
                 }
             }
         }
+    }
+    &__counter {
+        color: #818181;
+        display: inline-block;
+        font-weight: 600;
+        margin-left: 1ex;
     }
     &__under {
         display: none;
@@ -84,6 +90,9 @@
             @include media-breakpoint-up(md) {
                 padding: 30px $container-padding-md;
             }
+            &._nopadding {
+                padding: 0;
+            }
         }
         &__toggler {
             background-color: #e1e5ea;
@@ -110,10 +119,5 @@
                 display: none;
             }
         }
-    }
-    &__muted {
-        color: #818181;
-        display: inline-block;
-        margin-left: 5px;
     }
 }

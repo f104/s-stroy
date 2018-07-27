@@ -86,9 +86,9 @@
             &__col {
                 /*flex-basis: 50%;*/
                 margin-bottom: 13px;
-/*                &:first-child {
-                    padding-right: 10px;
-                }*/
+                /*                &:first-child {
+                                    padding-right: 10px;
+                                }*/
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -172,6 +172,14 @@
                 line-height: 18px;
                 display: inline-block;
                 padding: 0 8px;
+            }
+        }
+    }
+    &._fullwidth {
+        .catalog-list__item {
+            width: 177px;
+            @include media-breakpoint-up(lg) {
+                width: 200px;
             }
         }
     }

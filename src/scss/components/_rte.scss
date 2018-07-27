@@ -202,8 +202,21 @@
         }
     }
 
-    .tabs {
+    .tabs, .qa {
         @include rte-margins;
+    }
+
+    .qa {
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+        }
     }
 
 }
@@ -329,81 +342,6 @@
                     }
                 }
             }
-        }
-    }
-}
-
-.rte-qa {
-    @include rte-margins;
-    margin-left: - $container-padding-sm;
-    margin-right: - $container-padding-sm;
-    @include media-breakpoint-up(md) {
-        margin-left: - $container-padding-md;
-        margin-right: - $container-padding-md;
-    }
-    @include media-breakpoint-up(lg) {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    &__item {
-        background-color: $white;
-        padding: 15px $container-padding-sm 30px;
-        margin-bottom: 15px;
-        @include media-breakpoint-up(md) {
-            padding: 30px $container-padding-md 30px;
-            margin-bottom: 20px;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-        &._active {
-            .rte-qa__q .rte-qa__h:after {
-                content: '\e80e';
-            }
-        }
-    }
-    &__h {
-        display: block;
-        font-size: 18px;
-        margin-bottom: 10px;
-        [class^="icon-"] {
-            font-size: 14px;
-            color: $primary;
-            bottom: 2px;
-            margin-left: 5px;
-        }
-    }
-    &__text {
-        display: block;
-        line-height: 1.43;
-        font-size: $font-size-base;
-    }
-    &__q {
-        .rte-qa__h {
-            cursor: pointer;
-            &:after {
-                content: '\e801';
-                font-family: 'fontello';
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                color: $primary;
-                font-size: 20px;
-            }
-        }
-    }
-    &__a {
-        padding: 36px 0 0 40px;
-        &:before {
-            content: '';
-            position: absolute;
-            top: 12px;
-            left: 0;
-            width: 28px;
-            height: 34px;
-            border-left: solid 1px #c7c7c7;
-            border-bottom: solid 1px #c7c7c7;
         }
     }
 }

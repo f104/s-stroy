@@ -426,23 +426,11 @@ var app = {
 
     initTabs: function () {
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.md,
-                $list = $('.js-tabs__list'),
                 $tabs = $('.js-tabs__tab'),
                 $togglers = $('.js-tabs__tab .tabs__tab__toggler'),
                 $content = $('.js-tabs__tab .tabs__tab__content');
-//        $('.js-tabs').easytabs({
-//            updateHash: false
-//        }).bind('easytabs:midTransition', function (event, $clicked, $targetPanel, settings) {
-//            var $under = $(this).find('.js-tabs__under');
-//            $under.css({
-//                left: $clicked.parent().position().left,
-//                width: $clicked.width(),
-//            });
-//        });
-//        if (isMobile) {
-//            $tabs.show();
-//            $content.hide();
-//        }
+        if (!$tabs.length) return;
+        
         $togglers.on('click', function(){
             $(this).toggleClass('_opened');
             $(this).siblings('.tabs__tab__content').slideToggle();
@@ -462,7 +450,7 @@ var app = {
                 $tabs.hide();
                 $content.show();
                 $('.js-tabs').easytabs({
-                    updateHash: false
+//                    updateHash: false
                 }).bind('easytabs:midTransition', function (event, $clicked, $targetPanel, settings) {
                     var $under = $(this).find('.js-tabs__under');
                     $under.css({
@@ -496,11 +484,11 @@ var app = {
     },
 
     initQA: function () {
-        $('.js-rte-qa:not(._active) .rte-qa__a').slideUp();
-        $('.js-rte-qa').each(function () {
+        $('.js-qa:not(._active) .qa__a').slideUp();
+        $('.js-qa').each(function () {
             var $this = $(this),
-                    $toggler = $this.find('.rte-qa__q .rte-qa__h'),
-                    $answer = $this.find('.rte-qa__a');
+                    $toggler = $this.find('.qa__q .qa__h'),
+                    $answer = $this.find('.qa__a');
             $toggler.on('click', function () {
                 $this.toggleClass('_active');
                 $answer.slideToggle();
