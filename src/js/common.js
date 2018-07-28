@@ -173,22 +173,24 @@ var app = {
                 ]
             })
         });
-        $('.js-rte-slider__main').slick({
+        $('.js-nav-slider__main').slick({
             dots: false,
             arrows: false,
             infinite: true,
-            asNavFor: '.js-rte-slider__nav',
+            asNavFor: '.js-nav-slider__nav',
         });
-        $('.js-rte-slider__nav').slick({
-            dots: false,
-            arrows: true,
-            infinite: true,
-            asNavFor: '.js-rte-slider__main',
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            mobileFirst: true,
-            responsive: [
+        var responsive = {
+            product: [
+                {
+                    breakpoint: appConfig.breakpoint.lg - 1,
+                    settings: {
+                        vertical: true,
+                        verticalSwiping: true,
+                        slidesToShow: 5,
+                    }
+                },
+            ],
+            content: [
                 {
                     breakpoint: appConfig.breakpoint.md - 1,
                     settings: {
@@ -205,7 +207,20 @@ var app = {
                         slidesToShow: 5,
                     }
                 },
-            ]
+            ],
+        }
+        $('.js-nav-slider__nav').each(function () {
+            $(this).slick({
+                dots: false,
+                arrows: true,
+                infinite: true,
+                asNavFor: '.js-nav-slider__main',
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                focusOnSelect: true,
+                mobileFirst: true,
+                responsive: responsive[$(this).data('responsive')],
+            });
         });
     },
 
@@ -429,12 +444,13 @@ var app = {
                 $tabs = $('.js-tabs__tab'),
                 $togglers = $('.js-tabs__tab .tabs__tab__toggler'),
                 $content = $('.js-tabs__tab .tabs__tab__content');
-        if (!$tabs.length) return;
-        
-        $togglers.on('click', function(){
+        if (!$tabs.length)
+            return;
+
+        $togglers.on('click', function () {
             $(this).toggleClass('_opened');
             $(this).siblings('.tabs__tab__content').slideToggle();
-            
+
         });
 
         var initEtabs = function () {
@@ -450,7 +466,7 @@ var app = {
                 $tabs.hide();
                 $content.show();
                 $('.js-tabs').easytabs({
-//                    updateHash: false
+                    updateHash: false
                 }).bind('easytabs:midTransition', function (event, $clicked, $targetPanel, settings) {
                     var $under = $(this).find('.js-tabs__under');
                     $under.css({

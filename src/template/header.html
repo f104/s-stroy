@@ -50,7 +50,12 @@
                         <span class="header__callme-btn__text">Перезвоните мне</span>
                     </a>
                 </div>
+                @@if (minicart == 2) {
+                @@include('./chunks/minicart-product.html')
+                }
+                @@if (minicart == 1) {
                 @@include('./chunks/minicart.html')
+                }
                 <a href="#" class="header__main__minicart-sm">
                     <i class="icon-cart"></i>
                     <span class="header__main__minicart-sm__counter">2</span>

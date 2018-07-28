@@ -40,18 +40,18 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             @@if (action == 1) {
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _action">
-                    <span class="catalog-list__item__badges__text">Акция</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _action">
+                    <span class="product-badges__text">Акция</span>
                 </span>
             </li>
             }
             @@if (hit == 1) {
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _hit">
-                    <span class="catalog-list__item__badges__text">Хит</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _hit">
+                    <span class="product-badges__text">Хит</span>
                 </span>
             </li>
             }

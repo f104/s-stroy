@@ -3,7 +3,7 @@
     "name": "Товар"
     })
     <body>
-        @@include('./template/header.html')
+        @@include('./template/header.html', {"minicart": 2})
         <div class="content">
             <div class="wrapper">
 
@@ -19,7 +19,7 @@
                     </aside>
 
                     <div class="main-row__right">
-                        
+
                         <div class="page-header">
                             <h1 class="page-header__h">ЕК TG40 гипсовая штукатурка 30 кг</h1>
                             <ul class="breadcrumbs">
@@ -44,11 +44,34 @@
                     </div>
 
                 </div>
-                
+
                 <article class="container product-card">
+                    <div class="product-card__row">
+                        <div class="product-card__row__col _1">
+                            @@include('./template/product/slider.html')                            
+                            <ul class="product-badges _md-big">
+                                <li class="product-badges__item">
+                                    <span class="product-badges__wrapper _action">
+                                        <span class="product-badges__text">Акция</span>
+                                    </span>
+                                </li>
+                                <li class="product-badges__item">
+                                    <span class="product-badges__wrapper _hit">
+                                        <span class="product-badges__text">Хит</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-card__row__col _2">
+                            @@include('./template/product/buy.html')
+                        </div>
+                    </div>
                     @@include('./template/product/tabs.html')
                     @@include('./template/catalog/recommended.html')
                 </article>
+                <div class="hidden">
+                    @@include('./template/popups/question.html')
+                </div>
 
             </div>
             @@include('./template/footer.html')

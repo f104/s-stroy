@@ -141,39 +141,6 @@
             font-size: 13px;
             line-height: 1.31;
         }
-        &__badges {
-            @include list-unstyled;
-            position: absolute;
-            top: 0;
-            left: -3px;
-            font-size: 0;
-            &__item {
-                margin-bottom: 2px;
-            }
-            &__wrapper {
-                transform: skewX(-15deg);
-                display: inline-block;
-                border-radius: 0 0 5px;
-                &._action {
-                    background-color: $red;
-                }
-                &._hit {
-                    background-color: $primary;
-                    .catalog-list__item__badges__text {
-                        padding-right: 15px;
-                    }
-                }
-            }
-            &__text {
-                transform: skewX(15deg);
-                color: $white;
-                font-size: 11px;
-                font-weight: bold;
-                line-height: 18px;
-                display: inline-block;
-                padding: 0 8px;
-            }
-        }
     }
     &._fullwidth {
         .catalog-list__item {
@@ -183,4 +150,9 @@
             }
         }
     }
+}
+.catalog-list__item__content .product-badges {
+    position: absolute;
+    top: 0;
+    left: 0;
 }

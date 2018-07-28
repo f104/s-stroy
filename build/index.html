@@ -171,6 +171,8 @@
                         <span class="header__callme-btn__text">Перезвоните мне</span>
                     </a>
                 </div>
+                
+                
                 <div class="minicart">
     Корзина <span class="minicart__counter">2</span>
     <span class="minicart__cost">15 450 <span class="rub">₽</span></span>
@@ -271,6 +273,7 @@
         
     </div>
 </div>
+                
                 <a href="#" class="header__main__minicart-sm">
                     <i class="icon-cart"></i>
                     <span class="header__main__minicart-sm__counter">2</span>
@@ -810,18 +813,18 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _action">
-                    <span class="catalog-list__item__badges__text">Акция</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _action">
+                    <span class="product-badges__text">Акция</span>
                 </span>
             </li>
             
             
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _hit">
-                    <span class="catalog-list__item__badges__text">Хит</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _hit">
+                    <span class="product-badges__text">Хит</span>
                 </span>
             </li>
             
@@ -869,7 +872,7 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             
             
         </ul>
@@ -916,12 +919,12 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             
             
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _hit">
-                    <span class="catalog-list__item__badges__text">Хит</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _hit">
+                    <span class="product-badges__text">Хит</span>
                 </span>
             </li>
             
@@ -969,11 +972,11 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _action">
-                    <span class="catalog-list__item__badges__text">Акция</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _action">
+                    <span class="product-badges__text">Акция</span>
                 </span>
             </li>
             
@@ -1022,7 +1025,7 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             
             
         </ul>
@@ -1069,18 +1072,18 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _action">
-                    <span class="catalog-list__item__badges__text">Акция</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _action">
+                    <span class="product-badges__text">Акция</span>
                 </span>
             </li>
             
             
-            <li class="catalog-list__item__badges__item">
-                <span class="catalog-list__item__badges__wrapper _hit">
-                    <span class="catalog-list__item__badges__text">Хит</span>
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _hit">
+                    <span class="product-badges__text">Хит</span>
                 </span>
             </li>
             
@@ -1128,7 +1131,7 @@
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
             </div>
         </div>
-        <ul class="catalog-list__item__badges">
+        <ul class="product-badges">
             
             
         </ul>
@@ -1496,6 +1499,53 @@
         </div>
         <!-- dev helper -->
 <!-- DELETE ON PRODUCTION! -->
+<style>
+    .dev {
+        position: fixed;
+        z-index: 100500;
+        right: 0;
+        bottom: 0;
+        background: white;
+        border-style: solid;
+        border-color: #131313;
+        border-width: 1px 0 0 1px;
+        padding: .5rem;
+        transition: transform .2s;
+        width: 100px;
+        transform: translateX(100%);
+    }
+    .dev ul {
+        padding-left: 1rem;
+        line-height: 1.7;
+        margin-bottom: 0;
+        font-size: 75%;
+    }
+    .dev__toggler {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background: #131313;
+        color: white;
+        padding: .2rem;
+        cursor: pointer;
+        opacity: .3;
+        transition: opacity .2s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .dev._active {
+        transform: none;
+        .dev__toggler {
+            opacity: 1;
+        }
+    }
+    .dev._active .dev__toggler {
+            opacity: 1;
+    }
+</style>
 <div class="dev">
     <span id="dev_toggler" class="dev__toggler">&lt;/&gt;</span>
     <ul>
@@ -1508,11 +1558,11 @@
     (function () {
         var t = document.getElementById('dev_toggler');
         var p = t.parentElement;
-        t.addEventListener('click', function(e) {
+        t.addEventListener('click', function (e) {
             e.stopPropagation();
             this.parentElement.classList.toggle('_active');
         });
-        p.addEventListener('click', function(e) {
+        p.addEventListener('click', function (e) {
             e.stopPropagation();
         });
         window.addEventListener('click', function () {
