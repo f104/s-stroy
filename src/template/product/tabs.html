@@ -102,8 +102,15 @@
     </div>
     <div id="tab5" class="tabs__tab js-tabs__tab">
         <span class="tabs__tab__toggler">Дополнительные услуги</span>
-        <div class="tabs__tab__content">
-            <h3>Вкладка 5 — H3</h3>
+        <div class="tabs__tab__content _nopadding">
+            <div class="profits-list _product">
+                @@loop('../profits/item.html', [
+                { "img": "roulette.svg", "text": "Бесплатный\nзамер", "tooltip": 1 },
+                { "img": "calc.svg", "text": "Бесплатный\nрасчет", "tooltip": 1 },
+                { "img": "stairs.svg", "text": "Услуги\nмонтажа", "tooltip": 1 },
+                { "img": "tools.svg", "text": "Поставка\nкомплектующих", "tooltip": 1 }
+                ])
+            </div>
         </div>
     </div>
     <div id="tab6" class="tabs__tab js-tabs__tab">

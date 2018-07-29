@@ -48,5 +48,93 @@
                 }
             }
         }
+        &__tooltip {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            &__toggler {
+                cursor: pointer;
+                &:hover {
+                    + .profits-list__item__tooltip__text {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+            &__text {
+                visibility: hidden;
+                opacity: 0;
+                @include transition(all);
+                font-size: 13px;
+                padding: 30px;
+                background-color: $white;
+                box-shadow: 0 6px 26px 0 rgba(0, 0, 0, 0.2);
+                position: absolute;
+                z-index: 100;
+                width: 320px;
+                top: 57px;
+                right: -15px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -30px;
+                    right: 13px;
+                    border-width: 15px;
+                    border-style: solid;
+                    border-color: transparent transparent $white;
+                }
+                @include media-breakpoint-up(md) {
+                    right: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    &:before {
+                        right: auto;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+
+                }
+            }
+        }
+        &:last-child {
+            @include media-breakpoint-up(md) {
+                .profits-list__item__tooltip {
+                    &__text {
+                        right: -10px;
+                        left: auto;
+                        transform: unset;
+                        &:before {
+                            right: 9px;
+                            left: auto;
+                            transform: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &._product {
+        @include media-breakpoint-only(sm) {
+            flex-direction: column;
+        }
+        .profits-list__item {
+            flex: 1;
+            @include media-breakpoint-only(sm) {
+                width: 100%;
+                min-height: 120px;
+                border-right: none;
+                border-bottom: 1px solid $gray-border;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+            &__content {
+                &__text {
+                    @include media-breakpoint-up(md) {
+                        white-space: pre-line;
+                    }
+                }
+            }
+        }
     }
 }

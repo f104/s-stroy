@@ -38,13 +38,13 @@
         color: #ffffff;
     }
     .minicart-popup {
-        display: none;
+        visibility: hidden;
         opacity: 0;
         @include transition(opacity);
     }
     &:hover {
         .minicart-popup {
-            display: block;
+            visibility: visible;
             opacity: 1;
         }        
     }

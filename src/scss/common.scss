@@ -16,6 +16,7 @@ body {
 }
 *, *::before, *::after {
     position: relative;
+    /*https://github.com/kenwheeler/slick/issues/982*/
     min-height: 0;
     min-width: 0;
 }
