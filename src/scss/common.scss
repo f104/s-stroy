@@ -103,7 +103,7 @@ a, .link {
 }
 .wrapper {
     padding-top: 15px;
-    margin-bottom: 15px 0 70px;
+    margin-bottom: 70px;
     @include media-breakpoint-up(md) {
         padding-top: 20px;
     }
@@ -154,7 +154,7 @@ a, .link {
 @import "components/catalog-menu";
 @import "components/im-menu";
 @import "components/rte";
-@import "components/list";
+@import "components/content-list";
 @import "components/page-header";
 @import "components/tabs";
 @import "components/docs-icon";
