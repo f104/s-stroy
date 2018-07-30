@@ -340,3 +340,35 @@ form {
         }
     }
 }
+
+.select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    border-radius: $border-radius;
+    border: solid 1px #dadada;
+    background-color: $white;
+    font-size: 14px;
+    font-weight: normal;
+    color: $body-color;
+    outline: none;
+    line-height: 46px;
+    padding: 0 17px;
+    &._sm {
+        line-height: 40px;
+    }
+}
+.select-wrapper {
+    &:after {
+        display: block;
+        content: '\e801';
+        font-family: 'fontello';
+        position: absolute;
+        right: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: .7;
+    }
+}

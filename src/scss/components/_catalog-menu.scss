@@ -187,9 +187,6 @@ $catalog-menu-padding: 17px;
                     top: 50%;
                     transform: translateY(-50%);
                     color: rgba($body-color, .2);
-                    @include media-breakpoint-up(lg) {
-                        color: rgba($white, .8);
-                    }
                 }
                 @include media-breakpoint-up(lg) {
                     &:hover, &._active {
@@ -197,6 +194,9 @@ $catalog-menu-padding: 17px;
                             background-color: $primary;
                             color: $white;
                             opacity: 1;
+                            &:after {
+                                color: rgba($white, .8);
+                            }
                         }
                         .catalog-menu__second {
                             display: block;

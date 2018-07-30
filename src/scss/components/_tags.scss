@@ -1,0 +1,40 @@
+.tags {
+    @include list-unstyled;
+    margin-bottom: 0;
+    font-size: 0;
+    &__item {
+        display: inline-block;
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+    &__link {
+        @include transition(all);
+        display: block;
+        font-size: 13px;
+        line-height: 26px;
+        text-align: center;
+        color: $primary;
+        padding: 0 11px;
+        border-radius: $border-radius;
+        background-color: #d7dee4;
+        &:hover {
+            color: $white;
+            background-color: $primary;            
+        }
+    }
+}
+
+.tags-wrapper {
+    &__list {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+    &__select {
+        display: block;
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+}
