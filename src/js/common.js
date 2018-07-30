@@ -32,6 +32,7 @@ var app = {
         this.initTabs();
         this.initQA();
         this.initIMmenu();
+        this.initSelects();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -155,7 +156,7 @@ var app = {
                 slidesToShow: slides.sm || 1,
                 slidesToScroll: 1,
                 centerMode: false,
-                variableWidth: true,
+//                variableWidth: true,
                 mobileFirst: true,
                 responsive: [
                     {
@@ -236,6 +237,9 @@ var app = {
                     }
                     var offset = $this.offset();
                     $parent = $this.parent();
+                    $parent.css({
+                        'height': $parent.outerHeight()
+                    });
                     h = $this.outerHeight();
                     w = $this.outerWidth();
                     $this.css({
@@ -271,6 +275,7 @@ var app = {
                                     .appendTo($parent)
                                     .removeClass('_hover')
                                     .removeAttr('style');
+                            $parent.removeAttr('style');
                             $wrap.remove();
                         });
                     });
@@ -387,6 +392,13 @@ var app = {
         }
         $(window).on('resize', function () {
             checkMenu();
+        });
+        
+        // toggle catalog list view
+        $('.js-catalog-view-toggler').on('click', function() {
+            $('.js-catalog-view-toggler').toggleClass('_active');
+            $('.js-catalog-list .js-catalog-list__item').toggleClass('_card');
+            return false;
         });
     },
 
@@ -518,6 +530,35 @@ var app = {
             $(this).toggleClass('_opened');
             $(this).siblings('.js-im-menu__slide').slideToggle();
         });
+    },
+    
+    initSelects: function () {
+        var isMobile = $(window).outerWidth() < appConfig.breakpoint.md,
+                $selects = $('.js-select');
+        if (!$selects.length)
+            return;
+        var init = function () {
+            $selects.styler();
+        };
+        var destroy = function () {
+            $selects.styler('destroy');
+        };
+        var refresh = function () {
+            var newSize = $(window).outerWidth() < appConfig.breakpoint.md;
+            if (newSize != isMobile) {
+                isMobile = newSize;
+                if (!isMobile) {
+                    init();
+                } else {
+                    destroy();
+                }
+            }
+        };
+        
+        if (!isMobile) {
+            init();
+        }
+        $(window).on('resize', refresh);
     }
 
 }

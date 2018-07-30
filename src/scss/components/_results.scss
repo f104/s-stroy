@@ -1,0 +1,97 @@
+.results {
+    background-color: $white;
+    margin-bottom: 30px;
+    margin-left: - $container-padding-sm;
+    margin-right: - $container-padding-sm;
+    @include media-breakpoint-up(md) {
+        margin-bottom: 25px;
+        margin-left: - $container-padding-md;
+        margin-right: - $container-padding-md;
+    }
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 50px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    &__header {
+        padding: $container-padding-sm;
+        border-bottom: 1px solid $gray-border;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px $container-padding-md;        
+        }
+        &__label {
+            margin-right: 16px;
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+        .jq-selectbox {
+            min-width: 195px;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+        }
+        &__tpl {
+            @include list-unstyled;
+            margin-bottom: 0;
+            font-size: 0;
+            &__item {
+                display: inline-block;
+                margin-right: 10px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            &__link {
+                font-size: 16px;
+                color: #d8d8d8;
+                @include transition(color);
+                &:hover {
+                    color: $primary;
+                    opacity: 1;
+                }
+                &._active {
+                    color: $primary;
+                    pointer-events: none;
+                }
+            }
+        }
+        &__col {
+            @include media-breakpoint-up(md) {
+                display: flex;
+                align-items: center;
+            }
+            &._2 {
+                .checkbox {
+                    margin-right: 24px;
+                }
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__pagination {
+        padding: $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px $container-padding-md;        
+        }
+        .onpage {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+    &__list {
+        border-top: 1px solid $gray-border;
+        border-bottom: 1px solid $gray-border;
+        .catalog-list {
+            margin-bottom: -1px;
+        }
+    }
+}

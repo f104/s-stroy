@@ -1,14 +1,19 @@
-<div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+<div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/@@img" 
-                         alt="alt text">            
-                </span>
-                @@title
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/@@img" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    @@title
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -24,6 +29,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -32,12 +40,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">

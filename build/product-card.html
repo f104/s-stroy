@@ -11,6 +11,7 @@
     <link href="css/libs/slick.css" rel="stylesheet" type="text/css">
     <link href="css/libs/jquery.scrollbar.css" rel="stylesheet" type="text/css">
     <link href="css/libs/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/jquery.formstyler.css" rel="stylesheet" type="text/css">
     <link href="css/common.css" rel="stylesheet" type="text/css">
 </head>
     <body>
@@ -631,13 +632,13 @@
                                     <a href="index.html">Главная</a>
                                 </li>
                                 <li class="breadcrumbs__item">
-                                    <a href="catalog.html">Каталог</a>
+                                    <a href="catalog-level-1.html">Каталог</a>
                                 </li>
                                 <li class="breadcrumbs__item">
-                                    <a href="#">Внутренняя отделка</a>
+                                    <a href="catalog-level-2.html">Внутренняя отделка</a>
                                 </li>
                                 <li class="breadcrumbs__item">
-                                    <a href="#">Штукатурные смеси</a>
+                                    <a href="catalog-level-3.html">Штукатурные смеси</a>
                                 </li>
                                 <li class="breadcrumbs__item _active">
                                     ЕК TG40 гипсовая штукатурка 30 кг
@@ -1013,17 +1014,22 @@
     <h3 class="block__h _border">Рекомендуем посмотреть</h3>
     <div class="block__content">
         <div class="catalog-list _fullwidth js-slider" data-slides='{"sm":1,"md":4,"lg":6}'>
-            <div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+            <div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/1.jpg" 
-                         alt="alt text">            
-                </span>
-                Ендова Катепал Pintari темная охра 0,7*10 м
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/1.jpg" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Ендова Катепал Pintari темная охра 0,7*10 м
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -1039,6 +1045,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -1047,12 +1056,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">
@@ -1072,17 +1090,22 @@
             
         </ul>
     </div>
-</div><div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/2.jpg" 
-                         alt="alt text">            
-                </span>
-                Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/2.jpg" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -1098,6 +1121,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -1106,12 +1132,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">
@@ -1119,17 +1154,22 @@
             
         </ul>
     </div>
-</div><div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/3.jpg" 
-                         alt="alt text">            
-                </span>
-                Праймер битумный готовый AquaMast 18 л (16 кг)
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/3.jpg" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Праймер битумный готовый AquaMast 18 л (16 кг)
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -1145,6 +1185,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -1153,12 +1196,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">
@@ -1172,17 +1224,22 @@
             
         </ul>
     </div>
-</div><div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/4.jpg" 
-                         alt="alt text">            
-                </span>
-                Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/4.jpg" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -1198,6 +1255,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -1206,12 +1266,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">
@@ -1225,17 +1294,22 @@
             
         </ul>
     </div>
-</div><div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/5.jpg" 
-                         alt="alt text">            
-                </span>
-                Воронка центральная Vinyl-On D=90 кофе
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/5.jpg" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Воронка центральная Vinyl-On D=90 кофе
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -1251,6 +1325,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -1259,12 +1336,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">
@@ -1272,17 +1358,22 @@
             
         </ul>
     </div>
-</div><div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/1.jpg" 
-                         alt="alt text">            
-                </span>
-                Ендова Катепал Pintari темная охра 0,7*10 м
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/1.jpg" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Ендова Катепал Pintari темная охра 0,7*10 м
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -1298,6 +1389,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -1306,12 +1400,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">
@@ -1331,17 +1434,22 @@
             
         </ul>
     </div>
-</div><div class="catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content _js-hover">
         <div class="catalog-list__item__head">
-            <a href="product-card.html" class="catalog-list__item__link">
-                <span class="catalog-list__item__img">
-                    <img src="img/products/2.jpg" 
-                         alt="alt text">            
-                </span>
-                Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/2.jpg" 
+                     alt="alt text">            
             </a>
-            <span class="catalog-list__item__avail">В наличии</span>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
@@ -1357,6 +1465,9 @@
                         <span class="catalog-list__item__price__help">
                             цена в рознице
                         </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
                     </div>
                     <div class="catalog-list__item__price__col">
                         <span class="catalog-list__item__price__cost">
@@ -1365,12 +1476,21 @@
                         <span class="catalog-list__item__price__help">
                             онлайн-цена
                         </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i></button>
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
             </div>
         </div>
         <ul class="product-badges">
@@ -1762,6 +1882,7 @@
 <script src="js/libs/jquery.scrollbar.min.js"></script>
 <script src="js/libs/jquery.fancybox.min.js"></script>
 <script src="js/libs/jquery.easytabs.min.js"></script>
+<script src="js/libs/jquery.formstyler.min.js"></script>
 <script src="js/common.js"></script>
     </body>
 </html>

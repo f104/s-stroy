@@ -291,6 +291,34 @@
       "search": [
         "in-stock"
       ]
+    },
+    {
+      "uid": "17fdbe119e08ebed3b92f3f591eea0b5",
+      "css": "view-grid",
+      "code": 59417,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M0 0H437.5V437.5H0V0ZM562.5 0H1000V437.5H562.5V0ZM562.5 562.5H1000V1000H562.5V562.5ZM0 562.5H437.5V1000H0V562.5Z",
+        "width": 1000
+      },
+      "search": [
+        "view-grid"
+      ]
+    },
+    {
+      "uid": "13f907226a1674e15e93e8a5f25a8a75",
+      "css": "view-card",
+      "code": 59418,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M0 0H1000V250H0V0ZM0 375H1000V625H0V375ZM0 750H1000V1000H0V750Z",
+        "width": 1000
+      },
+      "search": [
+        "view-card"
+      ]
     }
   ]
 }

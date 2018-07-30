@@ -55,6 +55,10 @@
 <glyph glyph-name="ok" unicode="&#xe817;" d="M933 534q0-22-16-38l-404-404-76-76q-16-15-38-15t-38 15l-76 76-202 202q-15 16-15 38t15 38l76 76q16 16 38 16t38-16l164-165 366 367q16 16 38 16t38-16l76-76q16-15 16-38z" horiz-adv-x="1000" />
 
 <glyph glyph-name="in-stock" unicode="&#xe818;" d="M1193 850l-657-657-365 364-171-171 536-536 829 829z" horiz-adv-x="1365" />
+
+<glyph glyph-name="view-grid" unicode="&#xe819;" d="M0 850h438v-437h-438v437z m563 0h437v-437h-437v437z m0-562h437v-438h-437v438z m-563 0h438v-438h-438v438z" horiz-adv-x="1000" />
+
+<glyph glyph-name="view-card" unicode="&#xe81a;" d="M0 850h1000v-250h-1000v250z m0-375h1000v-250h-1000v250z m0-375h1000v-250h-1000v250z" horiz-adv-x="1000" />
 </font>
 </defs>
 </svg>

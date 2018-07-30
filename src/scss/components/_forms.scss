@@ -359,8 +359,11 @@ form {
     &._sm {
         line-height: 40px;
     }
+    option[disabled] {
+        display: none;
+    }
 }
-.select-wrapper {
+.select-wrapper, .jq-selectbox {
     &:after {
         display: block;
         content: '\e801';
@@ -370,5 +373,25 @@ form {
         top: 50%;
         transform: translateY(-50%);
         opacity: .7;
+    }
+    .jq-selectbox__dropdown {
+        background: $white;
+        border-style: solid;
+        border-color: #dadada;
+        border-radius: 0 0 3px 3px;
+        border-width: 0 1px 1px;
+        left: -1px;
+        right: -1px;
+        box-shadow: 0 12px 26px 0 rgba(0, 0, 0, 0.1);
+        ul {
+            padding: 0;
+            margin-bottom: 0;
+            li {
+                padding: 0 17px;
+                &.sel, &:hover {
+                    color: $primary;
+                }
+            }
+        }
     }
 }

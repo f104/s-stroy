@@ -24,3 +24,5 @@
 .icon-logo:before { content: '\e816'; } /* '' */
 .icon-ok:before { content: '\e817'; } /* '' */
 .icon-in-stock:before { content: '\e818'; } /* '' */
+.icon-view-grid:before { content: '\e819'; } /* '' */
+.icon-view-card:before { content: '\e81a'; } /* '' */
