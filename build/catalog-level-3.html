@@ -458,7 +458,7 @@
                         <div class="catalog-mobile-toggler js-cm__mobile-toggler">Каталог товаров</div>
 <div class="catalog-menu-wrapper js-cm__menu-wrapper ">
     <div class="scrollbar-outer js-cm__scrollbar">
-        <div class="catalog-menu _opened js-cm__menu">
+        <div class="catalog-menu  js-cm__menu">
             <h3 class="catalog-menu__h js-cm__slide__trigger">
                 Каталог товаров
                 <a href="#" class="catalog-menu__h__close js-cm__mobile-toggler">
@@ -671,304 +671,972 @@
         
     </div>
 </div>
+                        <form class="form filter js-filter">
+    <div class="scrollbar-outer js-filter__scrollbar">
+
+        <h3 class="filter__h">
+            Фильтр
+            <a href="#" class="filter__h__close js-filter__mobile-toggler">
+                <i class="icon-close-circled"></i>
+            </a>
+        </h3>
+
+        <fieldset class="filter__fieldset">
+            <div class="form__group">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span class="checkbox__text">
+                        Показать товары по акции
+                    </span>
+                </label>
+            </div>
+            <div class="form__group">
+                <label class="checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkbox__text">
+                        Только в наличии
+                    </span>
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset js-filter-fieldset js-range">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Цена</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="range-inputs">
+                    <input class="_sm js-mask" value="400" autocomplete="off"
+                           data-inputmask="'alias': 'numeric', 'prefix': 'от ', 'suffix': ' ₽'">
+                    <input class="_sm js-mask" value="12000" autocomplete="off"
+                           data-inputmask="'alias': 'numeric', 'prefix': 'до ', 'suffix': ' ₽'">
+                </div>
+                <div class="range js-range__target"></div>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Бренд</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Ceresit</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">Sheetrock</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">WEBER.VETONIT</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">GYPROC</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Технониколь</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">WEBER.VETONIT</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">GYPROC</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Технониколь</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Тип товара</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Плиточный клей</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">Саморезы</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Универсальная</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Грунтовка</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Профиль</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Универсальная</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Грунтовка</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Профиль</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Толщина, мм</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">12,5</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">9,5</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">0,6</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">0,5</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">0,4</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">0,3</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">0,2</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">0,1</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Объем</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">15</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">10</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">5</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">4</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">3</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">2</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset _btns">
+            <button type="submit" class="btn _primary _solid">Применить фильтр</button>
+            <button type="submit" class="btn _primary">Сбросить выбор</button>
+        </fieldset>
+
+    </div>
+</form>
                     </aside>
 
                     <article class="main-row__right">
 
                         <div class="page-header">
-                            <h1 class="page-header__h">Каталог</h1>
+                            <h1 class="page-header__h">Штукатурные смеси</h1>
                             <ul class="breadcrumbs">
                                 <li class="breadcrumbs__item">
                                     <a href="index.html">Главная</a>
                                 </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="catalog-level-1.html">Каталог</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="catalog-level-2.html">Внутренняя отделка</a>
+                                </li>
                                 <li class="breadcrumbs__item _active">
-                                    Каталог
+                                    Штукатурные смеси
                                 </li>
                             </ul>
                         </div>
 
-                        <ul class="catalog">
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite roof"></i> 
-                                    Скатная кровля
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Гибкая черепица</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Элементы безопасности</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Металлочерепица</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Профнастил</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Ондулин</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Рулонная черепица ТЕХНОНИКОЛЬ</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Козырьки защитные STOPrain</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Ондувилла</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Цементно-песчаная черепица BRAAS</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Керамическая черепица BRAAS</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Композитная черепица</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Калькулятор материалов для кровли</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite waterproof"></i> 
-                                    Гидроизоляция
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Гидроизоляция цементная обмазочная</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Битумные ленты</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Рулонные самоклеющиеся материалы</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Мастики и праймеры ТЕХНОНИКОЛЬ</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite facade"></i> 
-                                    Фасадные материалы
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Фасадная плитка Hauberk</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Фасады штукатурные</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Доборные элементы для штукатурных фасадов</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Виниловый сайдинг</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Металлический сайдинг</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Цокольный сайдинг</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Калькулятор штукатурных фасадов</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite brick-and-stone"></i> 
-                                    Кирпич, строительный камень
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Облицовочный кирпич</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Кладочные растворы</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite flat-roof"></i> 
-                                    Плоская кровля
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Рулонные кровельные материалы ТЕХНОНИКОЛЬ</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Полимерные мембраны</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Мастики и праймеры ТЕХНОНИКОЛЬ</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Доборные элементы</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite wat"></i> 
-                                    Водосточные системы
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Водосточные системы пластиковые</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Водосточные системы металлические</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite fire-protect"></i> 
-                                    Огнебиозащитные составы
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Составы для бань и саун НОРТ</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Декор НОРТ</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Антисептики НОРТ</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Огнебиозащита НОРТ</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite mansard"></i> 
-                                    Мансардные окна и лестницы
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Аксессуары для монтажа</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Изоляционные оклады</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Мансардные окна</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Чердачные лестницы FAKRO</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite gidro-vetro"></i> 
-                                    Гидро-, ветро-, пароизоляция
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Пленки и мембраны</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Ленты и скотчи</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Битумные ленты</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite list"></i> 
-                                    Листовые материалы
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Плита OSB</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">ЦСП, плоский шифер</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite warmth"></i> 
-                                    Теплоизоляция, звукоизоляция
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">PIR</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Рулонный утеплитель</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Минераловатный утеплитель</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Звукоизоляция</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Экструдированный пенополистирол</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Пенополистирол</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite technical-iso"></i> 
-                                    Техническая изоляция
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Rockwool</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Технониколь</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite fence"></i> 
-                                    Заборы, ограждения
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Заборы из профнастила</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Заборы из штакетника Grand Line</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite groundwork"></i> 
-                                    Фундаменты
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Геотекстиль</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Профилированные мембраны PLANTER</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite inside"></i> 
-                                    Внутренняя отделка
-                                </a>
-                                <ul class="catalog__sub">
-                                    <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Штукатурные смеси</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Скотчи, серпянки, сетки</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Гипсокартон и ГВЛ</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Затирка для плитки Ceresit</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Профили</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Грунтовки, бетонконтакт</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Крепеж</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Пена монтажная</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Клеевые смеси</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Шпатлевки</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Гидроизоляция обмазочная</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Цементные и кладочные смеси</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Наливные полы и стяжки для пола</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="catalog__item">
-                                <a href="#" class="catalog__item__link">
-                                    <i class="sprite vent-house"></i> 
-                                    Вентиляция частного дома
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="catalog-results">
 
+    
+
+    <div class="results">
+        <div class="results__header">
+            <div class="results__header__col _1">
+                <span class="results__header__label">Сортировать:</span>
+                <div class="select-wrapper">
+                    <select class="select _sm js-select">
+                        <option selected>По популярности</option>
+                        <option>По цене</option>
+                    </select>
+                </div>
+                
+                <button class="btn _primary _solid _sm results__header__filter-btn js-filter__mobile-toggler"><i class="icon-filter"></i> Фильтр</button>
+                
+            </div>
+            <div class="results__header__col _2">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span class="checkbox__text">
+                        По акции
+                    </span>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkbox__text">
+                        Только в наличии
+                    </span>
+                </label>
+                <ul class="results__header__tpl">
+                    <li class="results__header__tpl__item">
+                        <a href="catalog-level-2.html" 
+                           class="results__header__tpl__link _active js-catalog-view-toggler"><i class="icon-view-grid"></i></a>
+                    </li>
+                    <li class="results__header__tpl__item">
+                        <a href="catalog-level-2-horizontal-view.html" 
+                           class="results__header__tpl__link js-catalog-view-toggler"><i class="icon-view-card"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="results__pagination">
+    <ul class="pagination">
+        <li class="pagination__item">
+            <a class="pagination__item__link _first _disabled" href="#">
+                <i class="icon-left-dir"></i>
+            </a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link _active" href="#">1</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link" href="#">2</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link" href="#">3</a>
+        </li>
+        <li class="pagination__item _skip">
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link" href="#">932</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link _last" href="#">
+                <i class="icon-right-dir"></i>
+            </a>
+        </li>
+    </ul>
+    <div class="onpage">
+        Показать по:
+        <ul class="onpage__list">
+            <li class="onpage__list__item">
+                <a href="#">20</a>
+            </li>
+            <li class="onpage__list__item">
+                <a href="#">40</a>
+            </li>
+            <li class="onpage__list__item">
+                <a href="#">60</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        <div class="results__list">
+            <div class="catalog-list _results js-catalog-list">
+                <div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content js-hover">
+        <div class="catalog-list__item__head">
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/1.jpg" 
+                     alt="alt text">            
+            </a>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Ендова Катепал Pintari темная охра 0,7*10 м
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            4 834 <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            3 226 <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+            </div>
+        </div>
+        <ul class="product-badges">
+            
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _action">
+                    <span class="product-badges__text">Акция</span>
+                </span>
+            </li>
+            
+            
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _hit">
+                    <span class="product-badges__text">Хит</span>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content js-hover">
+        <div class="catalog-list__item__head">
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/2.jpg" 
+                     alt="alt text">            
+            </a>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            4 834 <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+            </div>
+        </div>
+        <ul class="product-badges">
+            
+            
+        </ul>
+    </div>
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content js-hover">
+        <div class="catalog-list__item__head">
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/3.jpg" 
+                     alt="alt text">            
+            </a>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Праймер битумный готовый AquaMast 18 л (16 кг)
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            4 834 <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            1 232 <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+            </div>
+        </div>
+        <ul class="product-badges">
+            
+            
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _hit">
+                    <span class="product-badges__text">Хит</span>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content js-hover">
+        <div class="catalog-list__item__head">
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/4.jpg" 
+                     alt="alt text">            
+            </a>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            4 834 <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            1 476 <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+            </div>
+        </div>
+        <ul class="product-badges">
+            
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _action">
+                    <span class="product-badges__text">Акция</span>
+                </span>
+            </li>
+            
+            
+        </ul>
+    </div>
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content js-hover">
+        <div class="catalog-list__item__head">
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/5.jpg" 
+                     alt="alt text">            
+            </a>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Воронка центральная Vinyl-On D=90 кофе
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            4 834 <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            245 <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+            </div>
+        </div>
+        <ul class="product-badges">
+            
+            
+        </ul>
+    </div>
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content js-hover">
+        <div class="catalog-list__item__head">
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/1.jpg" 
+                     alt="alt text">            
+            </a>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Ендова Катепал Pintari темная охра 0,7*10 м
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            4 834 <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            3 226 <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+            </div>
+        </div>
+        <ul class="product-badges">
+            
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _action">
+                    <span class="product-badges__text">Акция</span>
+                </span>
+            </li>
+            
+            
+            <li class="product-badges__item">
+                <span class="product-badges__wrapper _hit">
+                    <span class="product-badges__text">Хит</span>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</div><div class="catalog-list__item  js-catalog-list__item">
+    <div class="catalog-list__item__content js-hover">
+        <div class="catalog-list__item__head">
+            <a href="product-card.html" class="catalog-list__item__img">
+                <img src="img/products/2.jpg" 
+                     alt="alt text">            
+            </a>
+            <span class="catalog-list__item__head__content">
+                <a href="product-card.html" class="catalog-list__item__link">
+                    Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                </a>
+                <span class="catalog-list__item__avail">В наличии</span>
+                <a href="#" class="catalog-list__item__link-one-click">
+                    Купить в 1 клик
+                </a>
+            </span>
+        </div>
+        <div class="catalog-list__item__foot">
+            <div class="catalog-list__item__price">
+                <ul class="catalog-list__item__price__variant">
+                    <li class="_active">за рулон</li>
+                    <li>за м²</li>
+                </ul>
+                <div class="catalog-list__item__price__row">
+                    <div class="catalog-list__item__price__col">
+                        <del class="catalog-list__item__price__del">
+                            4 834 <span class="rub">₽</span>
+                        </del>
+                        <span class="catalog-list__item__price__help">
+                            цена в рознице
+                        </span>
+                        <a href="#" class="catalog-list__item__found">
+                            Нашли дешевле?
+                        </a>
+                    </div>
+                    <div class="catalog-list__item__price__col">
+                        <span class="catalog-list__item__price__cost">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="catalog-list__item__price__help">
+                            онлайн-цена
+                        </span>
+                        <ul class="catalog-list__item__price__variant">
+                            <li class="_active">за рулон</li>
+                            <li>за м²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-list__item__buttons">
+                <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->
+                <div class="catalog-list__item__count">
+                    <button class="catalog-list__item__count__btn">&minus;</button>
+                    <input class="catalog-list__item__count__input" value="1">
+                    <button class="catalog-list__item__count__btn">&plus;</button>
+                </div>
+                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+            </div>
+        </div>
+        <ul class="product-badges">
+            
+            
+        </ul>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div class="results__pagination">
+    <ul class="pagination">
+        <li class="pagination__item">
+            <a class="pagination__item__link _first _disabled" href="#">
+                <i class="icon-left-dir"></i>
+            </a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link _active" href="#">1</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link" href="#">2</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link" href="#">3</a>
+        </li>
+        <li class="pagination__item _skip">
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link" href="#">932</a>
+        </li>
+        <li class="pagination__item">
+            <a class="pagination__item__link _last" href="#">
+                <i class="icon-right-dir"></i>
+            </a>
+        </li>
+    </ul>
+    <div class="onpage">
+        Показать по:
+        <ul class="onpage__list">
+            <li class="onpage__list__item">
+                <a href="#">20</a>
+            </li>
+            <li class="onpage__list__item">
+                <a href="#">40</a>
+            </li>
+            <li class="onpage__list__item">
+                <a href="#">60</a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+
+    <div class="catalog-results__related">
+        <h3 class="catalog-results__related__h">Часто ищут</h3>
+        <ul class="tags">
+            <li class="tags__item">
+                <a href="#" class="tags__link">Грунтовка Ceresit (Церезит)</a>
+            </li>
+            <li class="tags__item">
+                <a href="#" class="tags__link">Грунтовки ЕК</a>
+            </li>
+            <li class="tags__item">
+                <a href="#" class="tags__link">Грунтовка универсальная</a>
+            </li>
+            <li class="tags__item">
+                <a href="#" class="tags__link">Грунтовка бетоноконтакт</a>
+            </li>
+            <li class="tags__item">
+                <a href="#" class="tags__link">Профиль направляющий</a>
+            </li>
+            <li class="tags__item">
+                <a href="#" class="tags__link">Крепеж</a>
+            </li>
+            <li class="tags__item">
+                <a href="#" class="tags__link">Грунтовка</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="rte">
+        <h2>Материалы для внутренней отделки</h2>
+        <p>Любые ремонтные работы, связанные с внутренней отделкой предполагают создание универсальной базы, которой является ровная, прочная поверхность с правильной геометрией. В последствии на такую поверхность наносится финишное декоративное покрытие. Этим покрытием может быть: краска, обои, декоративная штукатурка, плитка и другие.</p>
+        <p>Большой выбор отделочных материалов, представленных на строительном рынке, позволяет подобрать материалы для внутренней отделки из различной ценовой категории от разных производителей. Сделать выбор в пользу цены или качества достаточно непросто, особенно если вам не приходилось работать с конкретным производителем.</p>
+        <p>Специалисты САКСЭС нашли идеальный баланс «цена-качество» и помогут сделать правильный выбор. В зависимости от вида отделочных работ вам понадобятся такие материалы для внутренней отделки:</p>
+        <ol>
+            <li><a href="#">Листовые материалы</a> на основе гипса для отделки стен и потолков.</li>
+            <li><a href="#">Металлические профили</a> для создания конструкций из гипсокартона.</li>
+            <li><a href="#">Грунтовки</a> для обработки поверхностей перед нанесением финишного покрытия.</li>
+            <li><a href="#">Доборные элементы</a>.</li>
+        </ol>
+    </div>
+</div>
+                        
                     </article>
 
                 </div>

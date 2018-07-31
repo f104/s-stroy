@@ -1,0 +1,277 @@
+<form class="form filter js-filter">
+    <div class="scrollbar-outer js-filter__scrollbar">
+
+        <h3 class="filter__h">
+            Фильтр
+            <a href="#" class="filter__h__close js-filter__mobile-toggler">
+                <i class="icon-close-circled"></i>
+            </a>
+        </h3>
+
+        <fieldset class="filter__fieldset">
+            <div class="form__group">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    <span class="checkbox__text">
+                        Показать товары по акции
+                    </span>
+                </label>
+            </div>
+            <div class="form__group">
+                <label class="checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkbox__text">
+                        Только в наличии
+                    </span>
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset js-filter-fieldset js-range">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Цена</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="range-inputs">
+                    <input class="_sm js-mask" value="400" autocomplete="off"
+                           data-inputmask="'alias': 'numeric', 'prefix': 'от ', 'suffix': ' ₽'">
+                    <input class="_sm js-mask" value="12000" autocomplete="off"
+                           data-inputmask="'alias': 'numeric', 'prefix': 'до ', 'suffix': ' ₽'">
+                </div>
+                <div class="range js-range__target"></div>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Бренд</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Ceresit</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">Sheetrock</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">WEBER.VETONIT</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">GYPROC</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Технониколь</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">WEBER.VETONIT</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">GYPROC</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Технониколь</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Тип товара</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Плиточный клей</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">Саморезы</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Универсальная</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Грунтовка</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Профиль</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Универсальная</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Грунтовка</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">Профиль</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Толщина, мм</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">12,5</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">9,5</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">0,6</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">0,5</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">0,4</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">0,3</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">0,2</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">0,1</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset cut js-cut js-filter-fieldset">
+            <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Объем</legend>
+            <div class="filter__fieldset__content js-filter-fieldset__slide">
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">15</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">10</span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">5</span>
+                    </label>
+                </div>
+                <div class="cut__content js-cut__content">
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">4</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">3</span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox__text">2</span>
+                        </label>
+                    </div>
+                </div>
+                <a href="#" class="cut__trigger js-cut__trigger"
+                   data-textshow="Показать все"
+                   data-texthide="Скрыть"
+                   >Показать все</a>
+            </div>
+        </fieldset>
+
+        <fieldset class="filter__fieldset _btns">
+            <button type="submit" class="btn _primary _solid">Применить фильтр</button>
+            <button type="submit" class="btn _primary">Сбросить выбор</button>
+        </fieldset>
+
+    </div>
+</form>

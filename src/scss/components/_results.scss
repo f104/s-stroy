@@ -59,10 +59,8 @@
             }
         }
         &__col {
-            @include media-breakpoint-up(md) {
                 display: flex;
                 align-items: center;
-            }
             &._2 {
                 .checkbox {
                     margin-right: 24px;
@@ -71,6 +69,16 @@
                     display: none;
                 }
             }
+        }
+        &__filter-btn {
+            font-size: 11px;
+            margin-left: 10px;
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
+        }
+        .select-wrapper {
+            flex: 1;
         }
     }
     &__pagination {

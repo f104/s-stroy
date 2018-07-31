@@ -12,16 +12,17 @@
                     <aside class="main-row__left">
                         @@include('./template/search.html')
                         @@include('./template/catalog/menu.html', {
-                        "opened": 1,
+                        "opened": 0,
                         "ext": 0,
                         "absolute": 0
                         })
+                        @@include('./template/catalog/filter.html')
                     </aside>
 
                     <article class="main-row__right">
 
                         <div class="page-header">
-                            <h1 class="page-header__h">Внутренняя отделка</h1>
+                            <h1 class="page-header__h">Штукатурные смеси</h1>
                             <ul class="breadcrumbs">
                                 <li class="breadcrumbs__item">
                                     <a href="index.html">Главная</a>
@@ -29,15 +30,18 @@
                                 <li class="breadcrumbs__item">
                                     <a href="catalog-level-1.html">Каталог</a>
                                 </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="catalog-level-2.html">Внутренняя отделка</a>
+                                </li>
                                 <li class="breadcrumbs__item _active">
-                                    Внутренняя отделка
+                                    Штукатурные смеси
                                 </li>
                             </ul>
                         </div>
 
                         @@include('./template/catalog/results.html', {
-                        "submenu": 1,
-                        "filter": 0
+                        "submenu": 0,
+                        "filter": 1
                         })
                         
                     </article>

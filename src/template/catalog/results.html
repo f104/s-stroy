@@ -1,45 +1,46 @@
 <div class="catalog-results">
 
+    @@if (submenu == 1) {
     <div class="tags-wrapper">
         <ul class="tags-wrapper__list tags">
             <li class="tags__item">
-                <a href="#" class="tags__link">Штукатурные смеси</a>
+                <a href="catalog-level-3.html" class="tags__link">Штукатурные смеси</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Скотчи, серпянки, сетки</a>
+                <a href="catalog-level-3.html" class="tags__link">Скотчи, серпянки, сетки</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Гипсокартон и ГВЛ</a>
+                <a href="catalog-level-3.html" class="tags__link">Гипсокартон и ГВЛ</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Затирка для плитки Ceresit</a>
+                <a href="catalog-level-3.html" class="tags__link">Затирка для плитки Ceresit</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Профили</a>
+                <a href="catalog-level-3.html" class="tags__link">Профили</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Грунтовки, бетонконтакт</a>
+                <a href="catalog-level-3.html" class="tags__link">Грунтовки, бетонконтакт</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Крепеж</a>
+                <a href="catalog-level-3.html" class="tags__link">Крепеж</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Пена монтажная</a>
+                <a href="catalog-level-3.html" class="tags__link">Пена монтажная</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Клеевые смеси</a>
+                <a href="catalog-level-3.html" class="tags__link">Клеевые смеси</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Шпатлевки</a>
+                <a href="catalog-level-3.html" class="tags__link">Шпатлевки</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Гидроизоляция обмазочная</a>
+                <a href="catalog-level-3.html" class="tags__link">Гидроизоляция обмазочная</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Цементные и кладочные смеси</a>
+                <a href="catalog-level-3.html" class="tags__link">Цементные и кладочные смеси</a>
             </li>
             <li class="tags__item">
-                <a href="#" class="tags__link">Наливные полы и стяжки для пола</a>
+                <a href="catalog-level-3.html" class="tags__link">Наливные полы и стяжки для пола</a>
             </li>
         </ul>
         <div class="tags-wrapper__select select-wrapper">
@@ -61,6 +62,7 @@
             </select>
         </div>
     </div>
+    }
 
     <div class="results">
         <div class="results__header">
@@ -72,6 +74,9 @@
                         <option>По цене</option>
                     </select>
                 </div>
+                @@if (filter == 1) {
+                <button class="btn _primary _solid _sm results__header__filter-btn js-filter__mobile-toggler"><i class="icon-filter"></i> Фильтр</button>
+                }
             </div>
             <div class="results__header__col _2">
                 <label class="checkbox">

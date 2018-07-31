@@ -27,6 +27,113 @@
             /*            @include media-breakpoint-up(lg) {
                             width: 179px;
                         }*/
+            &._card {
+                @include media-breakpoint-up(md) {
+                    padding-left: $container-padding-sm;
+                    padding-right: $container-padding-md;
+                    flex-direction: row;
+                    .catalog-list__item {
+                        &__head {
+                            margin-bottom: 0;
+                            margin-right: 30px;
+                            display: flex;
+                            &__content {
+                                display: flex;
+                                flex-direction: column;
+                            }
+                        }
+                        &__foot {
+                            flex-shrink: 0;
+                        }
+                        &__avail {
+                            flex: 1;
+                            margin-bottom: 15px;
+                        }
+                        &__img {
+                            margin-bottom: 0;
+                            margin-right: 20px;
+                            width: 120px;
+                            flex-shrink: 00;
+                        }
+                        &__link {
+                            font-size: 16px;
+                            font-weight: normal;
+                            line-height: 1.38;
+                        }
+                        &__link-one-click {
+                            font-size: 15px;
+                            font-weight: 500;
+                            display: inline-block;
+                        }
+                        &__found {
+                            font-size: 12px;
+                            line-height: 17px;
+                            font-weight: 500;
+                            color: $red;
+                            white-space: nowrap;
+                            margin-top: 5px;
+                            display: inline-block;
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                display: block;
+                                left: 0;
+                                right: 0;
+                                bottom: 0px;
+                                border-bottom: 1px dashed rgba($red, 0.7);
+                            }
+                        }
+                        &__price__row {
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: flex-end;
+                            margin-bottom: 11px;
+                        }
+                        &__price__col {
+                            margin-bottom: 0;
+                            margin-right: 10px;
+                            text-align: right;
+                            &:last-child {
+                                margin-right: 0;
+                                width: 145px;
+                            }
+                            .catalog-list__item__price__variant {
+                                display: block;
+                            }
+                        }
+                        &__price__del {
+                            font-size: 22px;
+                            line-height: 24px;
+                        }
+                        &__price__cost {
+                            font-size: 26px;
+                            line-height: 28px;
+                        }
+                        &__price__variant {
+                            margin-top: 5px;
+                            margin-bottom: 0;
+                            font-size: 12px;
+                            display: none;
+                        }
+                        &__buttons {
+                            display: flex;
+                        }
+                        &__count {
+                            display: flex;
+                        }
+                        &__btn-cart {
+                            width: 145px;
+                            font-size: 13px;
+                            span {
+                                display: inline;
+                            }
+                            [class^="icon-"] {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
         &__head {
             margin-bottom: 30px;
@@ -233,111 +340,6 @@
                 @include media-breakpoint-up(md) {
                     flex-basis: 100%;
                     border-right: none;
-                    .catalog-list__item {
-                        &__content {
-                            padding-left: $container-padding-sm;
-                            padding-right: $container-padding-md;
-                            flex-direction: row;
-                        }
-                        &__head {
-                            margin-bottom: 0;
-                            margin-right: 30px;
-                            display: flex;
-                            &__content {
-                                display: flex;
-                                flex-direction: column;
-                            }
-                        }
-                        &__foot {
-                            flex-shrink: 0;
-                        }
-                        &__avail {
-                            flex: 1;
-                            margin-bottom: 15px;
-                        }
-                        &__img {
-                            margin-bottom: 0;
-                            margin-right: 20px;
-                            width: 120px;
-                            flex-shrink: 00;
-                        }
-                        &__link {
-                            font-size: 16px;
-                            font-weight: normal;
-                            line-height: 1.38;
-                        }
-                        &__link-one-click {
-                            font-size: 15px;
-                            font-weight: 500;
-                            display: inline-block;
-                        }
-                        &__found {
-                            font-size: 12px;
-                            line-height: 17px;
-                            font-weight: 500;
-                            color: $red;
-                            white-space: nowrap;
-                            margin-top: 5px;
-                            display: inline-block;
-                            &:after {
-                                content: '';
-                                position: absolute;
-                                display: block;
-                                left: 0;
-                                right: 0;
-                                bottom: 0px;
-                                border-bottom: 1px dashed rgba($red, 0.7);
-                            }
-                        }
-                        &__price__row {
-                            display: flex;
-                            align-items: flex-end;
-                            justify-content: flex-end;
-                            margin-bottom: 11px;
-                        }
-                        &__price__col {
-                            margin-bottom: 0;
-                            margin-right: 10px;
-                            text-align: right;
-                            &:last-child {
-                                margin-right: 0;
-                                width: 145px;
-                            }
-                            .catalog-list__item__price__variant {
-                                display: block;
-                            }
-                        }
-                        &__price__del {
-                            font-size: 22px;
-                            line-height: 24px;
-                        }
-                        &__price__cost {
-                            font-size: 26px;
-                            line-height: 28px;
-                        }
-                        &__price__variant {
-                            margin-top: 5px;
-                            margin-bottom: 0;
-                            font-size: 12px;
-                            display: none;
-                        }
-                        &__buttons {
-                            display: flex;
-                        }
-                        &__count {
-                            display: flex;
-                        }
-                        &__btn-cart {
-                            width: 145px;
-                            font-size: 13px;
-                            span {
-                                display: inline;
-                            }
-                            [class^="icon-"] {
-                                display: none;
-                            }
-                        }
-                    }
                 }
             }
         }
