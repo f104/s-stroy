@@ -8,7 +8,7 @@
 /*@import "node_modules/bootstrap/scss/utilities/embed";*/
 
 @page {
-    margin: 1cm 0;
+    margin: $gap 0;
 }
 
 body {
@@ -24,18 +24,19 @@ a, a:visited {
     color: $primary;
 }
 
+tr {
+    page-break-inside: avoid;
+}
+
 .print-data {
     width: 100%;
-    tr {
-        page-break-inside: avoid;
-    }
     td {
         padding: 10px 20px 10px 0;
         &:first-child {
-            padding-left: 1cm;
+            padding-left: $gap;
         }
         &:last-child {
-            padding-right: 1cm;
+            padding-right: $gap;
         }
     }
     tbody tr:nth-child(odd) {
@@ -46,28 +47,40 @@ a, a:visited {
     }
 }
 
+.print-article {
+    page-break-before: always;
+}
 .print-footer {
-    padding: 50px 1cm;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    &__col {
-        flex-basis: 40%;
+    margin-top: 40px;
+    width: 100%;
+    font-size: 13px;
+    page-break-before: avoid;
+    td {
+        vertical-align: bottom;
+        &:first-child {
+            width: 40%;
+            padding-left: $gap;
+        }
         &:last-child {
+            width: 40%;
+            padding-right: $gap;
             text-align: right;
         }
     }
 }
 
 .print-header {
-    padding: 0 1cm 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    &__col {
-        flex-basis: 40%;
+    margin-bottom: 30px;
+    width: 100%;
+    td {
+        vertical-align: top;
+        &:first-child {
+            width: 40%;
+            padding-left: $gap;
+        }
         &:last-child {
+            width: 40%;
+            padding-right: $gap;
             text-align: right;
         }
     }
@@ -82,7 +95,7 @@ a, a:visited {
         font-family: $font-family-alt;
         font-size: 14px;
         font-weight: 600;
-        opacity: .5;
+        color: rgba($body-color, .5);
         margin-bottom: 0;
     }
 }
