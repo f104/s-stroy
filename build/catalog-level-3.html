@@ -705,10 +705,12 @@
             <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Цена</legend>
             <div class="filter__fieldset__content js-filter-fieldset__slide">
                 <div class="range-inputs">
-                    <input class="_sm js-mask" value="400" autocomplete="off"
-                           data-inputmask="'alias': 'numeric', 'prefix': 'от ', 'suffix': ' ₽'">
+                    <input class="_sm js-mask" value="1000" autocomplete="off"
+                           data-inputmask="'alias': 'numeric', 'prefix': 'от ', 'suffix': ' ₽'"
+                           data-min="400">
                     <input class="_sm js-mask" value="12000" autocomplete="off"
-                           data-inputmask="'alias': 'numeric', 'prefix': 'до ', 'suffix': ' ₽'">
+                           data-inputmask="'alias': 'numeric', 'prefix': 'до ', 'suffix': ' ₽'"
+                           data-max="18000">
                 </div>
                 <div class="range js-range__target"></div>
             </div>

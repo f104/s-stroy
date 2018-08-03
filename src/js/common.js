@@ -589,12 +589,14 @@ var app = {
                     from = $inputs.first()[0],
                     to = $inputs.last()[0];
             if (slider && from && to) {
-                var min = parseInt(from.value) || 0,
-                        max = parseInt(to.value) || 0;
+                var minV = parseInt(from.value) || 0,
+                        maxV = parseInt(to.value) || 0;
+                var min = parseInt(from.dataset.min) || 0,
+                        max = parseInt(to.dataset.max) || 0;
                 noUiSlider.create(slider, {
                     start: [
-                        min,
-                        max
+                        minV,
+                        maxV
                     ],
                     connect: true,
                     range: {
