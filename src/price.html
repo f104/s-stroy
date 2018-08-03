@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head>
+        <title>Price</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="format-detection" content="telephone=no">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,800,800i&amp;subset=cyrillic" rel="stylesheet">
+        <link href="fonts/Lato/lato.css" rel="stylesheet" type="text/css">
+        <link href="css/print.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <table class="print-data">
+            <thead>
+                <tr>
+                    <td>Арт.</td>
+                    <td>Внешний вид</td>
+                    <td>Название</td>
+                    <td>Цена</td>
+                    <td>Бренд</td>
+                    <td>Тип товара</td>
+                    <td>Профиль</td>
+                    <td>Покрытие</td>
+                    <td>Толщина, мм</td>
+                    <td>Цвет</td>
+                    <td>Единицы измерения</td>
+                </tr>
+            </thead>
+            <tbody>
+                @@for (var i = 0; i < 50; i++) {
+                @@include('./template/print/data-row.html')
+                }
+            </tbody>
+        </table>
+    </body>
+</html>

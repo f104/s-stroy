@@ -1,0 +1,30 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 320px,
+  md: 768px,
+  lg: 1280px
+);
+
+$primary: #2057ac; // основной синий
+$secondary: #ff6716; // основной оранжевый
+$cart: #3c76cf; // "цвет корзины"
+$white: white;
+$red: #eb3848;
+$green: #51ab2b;
+$gray-border: #dce2e7;
+$body-bg: $white;
+$body-color: #2a2a2a;
+$link-hover-opacity: .9;
+$link-color: $primary;
+$link-hover-color: $primary;
+$link-hover-decoration: none;
+$headings-color: $body-color;
+$border-radius: 3px;
+
+$font-size-base-px: 11px;
+$font-size-base: $font-size-base-px;
+$font-weight-base: normal;
+$line-height-base: normal;
+$font-family-base: 'Lato', sans-serif;
+$font-family-alt: 'Montserrat', 'Lato', sans-serif;
+/*$font-family-alt: 'Gilroy', 'Lato', sans-serif;*/

@@ -1,0 +1,47 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "variables-print";
+/*@import "mixins";*/
+/*@import "node_modules/bootstrap/scss/grid";*/
+@import "node_modules/bootstrap/scss/reboot";
+/*@import "node_modules/bootstrap/scss/utilities/embed";*/
+
+@page {
+  margin: 1cm 0;
+}
+
+body {
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+*, *::before, *::after {
+    position: relative;
+}
+
+.container {
+    padding: 0 65px;
+}
+.text-nowrap { white-space: nowrap !important; }
+
+.print-data {
+    width: 100%;
+    td {
+        padding: 10px 20px 10px 0;
+        &:first-child {
+            padding-left: 1cm;
+        }
+        &:last-child {
+            padding-right: 1cm;
+        }
+    }
+    tbody tr:nth-child(odd) {
+        background-color: #f4f4f4;
+    }
+    img {
+        width: 80px;
+    }
+}
