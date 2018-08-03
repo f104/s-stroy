@@ -110,7 +110,7 @@
             }
             @include media-breakpoint-up(md) {
                 width: 136px;
-                top: unset;
+                top: auto;
                 height: 120px;
                 background: radial-gradient(
                     circle at 70% 70%, 

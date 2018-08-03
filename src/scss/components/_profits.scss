@@ -102,10 +102,12 @@
                     &__text {
                         right: -10px;
                         left: auto;
+                        transform: translateX(0%);
                         transform: unset;
                         &:before {
                             right: 9px;
                             left: auto;
+                            transform: translateX(0%);
                             transform: unset;
                         }
                     }

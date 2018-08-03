@@ -20,7 +20,7 @@
             display: flex;
             flex: 1;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-between; 
             /*transition: all .2s ease-in-out;*/
             padding: 15px 12px 15px 15px;
             background-color: $white;
@@ -137,6 +137,7 @@
         }
         &__head {
             margin-bottom: 30px;
+            flex-grow: 1; //ie 11 bug
         }
         &__img {
             height: 120px;
@@ -415,23 +416,23 @@
     .tags-wrapper {
         margin-bottom: 15px;
         @include media-breakpoint-up(md) {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
     }
     .results {
         margin-bottom: 30px;
-        @include media-breakpoint-up(md) {
+/*        @include media-breakpoint-up(md) {
             margin-bottom: 25px;
-        }
+        }*/
         @include media-breakpoint-up(lg) {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
     }
     &__related {
-        margin-bottom: 40px;
-        @include media-breakpoint-up(md) {
+        margin-bottom: 20px;
+/*        @include media-breakpoint-up(md) {
             margin-bottom: 50px;
-        }
+        }*/
         &__h {
             font-family: $font-family-alt;
             font-size: 17px;

@@ -28,8 +28,11 @@
             }
         }
         .jq-selectbox {
-            min-width: 195px;
-            @include media-breakpoint-down(md) {
+            width: 220px;
+            .jq-selectbox__dropdown {
+                width: 220px !important;
+            }
+            @include media-breakpoint-down(sm) {
                 width: 100%;
             }
         }
@@ -59,8 +62,8 @@
             }
         }
         &__col {
-                display: flex;
-                align-items: center;
+            display: flex;
+            align-items: center;
             &._2 {
                 .checkbox {
                     margin-right: 24px;

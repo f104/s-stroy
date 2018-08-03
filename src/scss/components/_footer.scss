@@ -44,8 +44,8 @@
         @include media-breakpoint-up(lg) {
             float: right;
             position: relative;
-            left: unset;
-            bottom: unset;
+            left: auto;
+            bottom: auto;
             margin-bottom: 37px;
         }
     }
@@ -78,7 +78,7 @@
             float: right;
             position: relative;
             left: 0;
-            bottom: unset;
+            bottom: auto;
             width: 251px;
             /*            li:last-child {
                             padding-right: 0;

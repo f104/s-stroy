@@ -1,8 +1,8 @@
 .page-header {
-    margin-bottom: 30px;
-    @include media-breakpoint-up(md) {
+    margin-bottom: 20px;
+/*    @include media-breakpoint-up(md) {
         margin-bottom: 40px;
-    }
+    }*/
     &__h {
         font-family: $font-family-alt;
         font-size: 17px;

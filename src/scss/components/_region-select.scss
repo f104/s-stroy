@@ -2,7 +2,8 @@
     display: none;
     background: $primary;
     color: $white;
-    background-image: radial-gradient(circle at 0 0, #2478da, #274a9c);
+    /*background-image: radial-gradient(circle at 0 0, #2478da, #274a9c);*/
+    background-color: $cart;
     margin-bottom: 20px;
     margin-left: - $container-padding-sm;
     margin-right: - $container-padding-sm;

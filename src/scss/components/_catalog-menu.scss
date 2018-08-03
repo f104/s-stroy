@@ -3,7 +3,7 @@ $catalog-menu-padding: 17px;
 .catalog-mobile-toggler {
     border-radius: $border-radius;
     line-height: 42px;
-    background-color: $primary;
+    background-color: $cart;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 0.4px;
@@ -109,7 +109,7 @@ $catalog-menu-padding: 17px;
             padding: 0 $catalog-menu-padding;
             border-radius: $border-radius;
             line-height: 42px;
-            background-color: $primary;
+            background-color: $cart;
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 0.4px;
@@ -191,7 +191,7 @@ $catalog-menu-padding: 17px;
                 @include media-breakpoint-up(lg) {
                     &:hover, &._active {
                         .catalog-menu__list__link {
-                            background-color: $primary;
+                            background-color: $cart;
                             color: $white;
                             opacity: 1;
                             &:after {
@@ -270,6 +270,7 @@ $catalog-menu-padding: 17px;
             }
         }
         &__content {
+            flex-basis: 196px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;

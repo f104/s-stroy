@@ -84,3 +84,17 @@
         font-weight: 500;
     }
 }
+
+@include ie10up() {
+    .block {
+        &__h {
+            height: 50px;
+            @include media-breakpoint-up(md) {
+                height: 60px;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 70px;
+            }
+        }
+    }
+}

@@ -26,7 +26,7 @@
         li {
             display: flex;
             padding-left: 0;
-            min-width: unset;
+            min-width: auto;
             margin-bottom: 0;
             margin-right: 32px;
             @include media-breakpoint-up(lg) {
@@ -39,7 +39,7 @@
                 content: none;
             }
             a {
-                min-width: unset;
+                min-width: auto;
                 color: $body-color;
                 font-size: 15px;
                 display: flex;

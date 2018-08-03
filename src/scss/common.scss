@@ -104,13 +104,13 @@ a, .link {
 }
 .wrapper {
     padding-top: 15px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     @include media-breakpoint-up(md) {
         padding-top: 20px;
     }
     @include media-breakpoint-up(lg) {
         padding-top: 33px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 }
 .main-row {
