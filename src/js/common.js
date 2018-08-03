@@ -36,6 +36,7 @@ var app = {
         this.initMask();
         this.initRange();
         this.initFilter();
+        this.initCreatePrice();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -631,7 +632,7 @@ var app = {
                 $slide.slideToggle();
             });
         });
-        
+
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
                 $scrollbar = $('.js-filter__scrollbar'),
                 $mobileToggler = $('.js-filter__mobile-toggler'),
@@ -672,6 +673,104 @@ var app = {
         $(window).on('resize', function () {
             check();
         });
+    },
+
+    initCreatePrice: function () {
+        var $items = $('.js-create-price__item'),
+                $parents = $('.js-create-price__parent'),
+                $counter = $('.js-create-price__counter'),
+                $all = $('.js-create-price__all'),
+                $clear = $('.js-create-price__clear'),
+                decl1 = ['Выбрана: ', 'Выбрано: ', 'Выбрано: '],
+                decl2 = [' катeгория', ' категории', ' категорий'],
+                isMobile = $(window).outerWidth() < appConfig.breakpoint.md;
+        if ($items.length == 0)
+            return;
+        var count = function () {
+            var total = $items.filter(':checked').length;
+            $counter.text(app.getNumEnding(total, decl1) + total + app.getNumEnding(total, decl2));
+        };
+        count();
+        $items.on('change', count);
+        $parents.on('change', function () {
+            var $childs = $(this).parents('.js-create-price__wrapper').find('.js-create-price__item');
+            $childs.prop('checked', $(this).prop('checked'));
+            count();
+        });
+        $all.on('click', function () {
+            $items.prop('checked', true);
+            $parents.prop('checked', true);
+            count();
+        })
+        $clear.on('click', function () {
+            $items.prop('checked', false);
+            $parents.prop('checked', false);
+            count();
+        })
+        // fix header
+        var $head = $('.catalog-create-head._foot');
+        var breakpoint, wHeight;
+        fixInit = function () {
+            breakpoint = $head.offset().top;
+            wHeight = $(window).outerHeight();
+            fixHead();
+            $(window).on('scroll', fixHead);
+        }
+        fixHead = function () {
+            if ($(window).scrollTop() + wHeight < breakpoint) {
+                $head.addClass('_fixed');
+            } else {
+                $head.removeClass('_fixed');
+            }
+        }
+        if (isMobile) {
+            fixInit();
+        }
+        $(window).on('resize', function () {
+            var newSize = $(window).outerWidth() < appConfig.breakpoint.lg;
+            if (newSize != isMobile) {
+                isMobile = newSize;
+                if (isMobile) {
+                    fixInit();
+                } else {
+                    $(window).off('scroll', fixHead);
+                    $head.removeClass('_fixed');
+                }
+            }
+        });
+    },
+
+    /**
+     * Функция возвращает окончание для множественного числа слова на основании числа и массива окончаний
+     * param  iNumber Integer Число на основе которого нужно сформировать окончание
+     * param  aEndings Array Массив слов или окончаний для чисел (1, 4, 5),
+     *         например ['яблоко', 'яблока', 'яблок']
+     * return String
+     * 
+     * https://habrahabr.ru/post/105428/
+     */
+    getNumEnding: function (iNumber, aEndings) {
+        var sEnding, i;
+        iNumber = iNumber % 100;
+        if (iNumber >= 11 && iNumber <= 19) {
+            sEnding = aEndings[2];
+        } else {
+            i = iNumber % 10;
+            switch (i)
+            {
+                case (1):
+                    sEnding = aEndings[0];
+                    break;
+                case (2):
+                case (3):
+                case (4):
+                    sEnding = aEndings[1];
+                    break;
+                default:
+                    sEnding = aEndings[2];
+            }
+        }
+        return sEnding;
     }
 
 }

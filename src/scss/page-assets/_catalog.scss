@@ -357,7 +357,7 @@
     margin-bottom: 0;
     @include media-breakpoint-up(md) {
         column-count: 2;
-        column-gap: 50px;
+        column-gap: 40px;
     }
     @include media-breakpoint-up(lg) {
         column-count: 3;
@@ -372,15 +372,13 @@
         &:last-child {
             margin-bottom: 0;
         }
-        &__link {
+        &__link, .catalog__item__checkbox__text {
             display: flex;
             align-items: center;
             color: #1f56aa;
             font-size: 16px;
+            line-height: normal;
             margin-bottom: 20px;
-            &:last-child {
-                margin-bottom: 0;
-            }
             @include media-breakpoint-up(md) {
                 font-size: 18px;
             }
@@ -389,10 +387,22 @@
                 text-align: center;
                 font-size: 80%;
                 margin-right: 12px;
+                flex-shrink: 0;
                 @include media-breakpoint-up(md) {
                     font-size: 75%;
                     margin-right: 15px;
                 }
+            }
+        }
+        &__link {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .catalog__item__checkbox__text {
+            &:before, &:after {
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
     }
@@ -411,6 +421,95 @@
         }
     }
 }
+.catalog-create-h {
+    font-family: $font-family-alt;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.33;
+    margin-bottom: 30px;
+    @include media-breakpoint-up(md) {
+        font-size: 18px;
+        line-height: 1.28;
+        margin-bottom: 20px;
+    }
+    @include media-breakpoint-up(lg) {
+        font-size: 20px;
+        line-height: 1.15;
+    }
+}
+.catalog-create-head {
+    background-color: $white;
+    margin-left: - $container-padding-sm;
+    margin-right: - $container-padding-sm;
+    @include media-breakpoint-up(md) {
+        margin-left: - $container-padding-md;
+        margin-right: - $container-padding-md;
+        margin-bottom: 30px;
+        padding-left: $container-padding-md;
+        padding-right: $container-padding-md;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        display: flex;
+        justify-content: space-between;
+    }
+    @include media-breakpoint-up(lg) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+    &._foot {
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+    .btn {
+        font-size: 11px;
+        line-height: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        @include media-breakpoint-up(md) {
+            line-height: 33px;
+            margin-right: 1ex;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__counter {
+        opacity: 0.5;
+        font-size: 14px;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        &._head {
+            display: none;
+        }
+        &._fixed {
+            position: fixed;
+            left: 15px;
+            right: 15px;
+            bottom: 0;
+            z-index: 1;
+        }
+        .btn {
+            border-radius: 0;
+            border: none;
+            padding-left: $container-padding-sm;
+            padding-right: $container-padding-sm;
+        }
+        &__col {
+            display: flex;
+            justify-content: space-between;
+            &._2 {
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
 
 .catalog-results {
     .tags-wrapper {
@@ -421,18 +520,18 @@
     }
     .results {
         margin-bottom: 30px;
-/*        @include media-breakpoint-up(md) {
-            margin-bottom: 25px;
-        }*/
+        /*        @include media-breakpoint-up(md) {
+                    margin-bottom: 25px;
+                }*/
         @include media-breakpoint-up(lg) {
             margin-bottom: 30px;
         }
     }
     &__related {
         margin-bottom: 20px;
-/*        @include media-breakpoint-up(md) {
-            margin-bottom: 50px;
-        }*/
+        /*        @include media-breakpoint-up(md) {
+                    margin-bottom: 50px;
+                }*/
         &__h {
             font-family: $font-family-alt;
             font-size: 17px;

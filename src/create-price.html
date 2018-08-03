@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Формирование прайс-листа"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 1,
+                        "ext": 0,
+                        "absolute": 0
+                        })
+                    </aside>
+
+                    <article class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Формирование прайс-листа</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Формирование прайс-листа
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="catalog-create-h">Выберите необходимые категории товаров</h3>
+                        @@include('./template/catalog/create-head.html', {"class":"_head"})
+                        <!--
+                        Категории должны иметь класс js-create-price__item
+                        Родители - js-create-price__parent
+                        Если родитель не имеет потомков и сам является категорией, ставьте ему js-create-price__item
+                        -->
+                        <ul class="catalog">
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite roof"></i> 
+                                        Скатная кровля
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Гибкая черепица"},
+                                    {"text": "Элементы безопасности"},
+                                    {"text": "Металлочерепица"},
+                                    {"text": "Профнастил"},
+                                    {"text": "Ондулин"},
+                                    {"text": "Рулонная черепица ТЕХНОНИКОЛЬ"},
+                                    {"text": "Козырьки защитные STOPrain"},
+                                    {"text": "Ондувилла"},
+                                    {"text": "Цементно-песчаная черепица BRAAS"},
+                                    {"text": "Керамическая черепица BRAAS"},
+                                    {"text": "Композитная черепица"},
+                                    {"text": "Калькулятор материалов для кровли"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite waterproof"></i> 
+                                        Гидроизоляция
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Гидроизоляция цементная обмазочная"},
+                                    {"text": "Битумные ленты"},
+                                    {"text": "Рулонные самоклеющиеся материалы"},
+                                    {"text": "Мастики и праймеры ТЕХНОНИКОЛЬ"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite facade"></i> 
+                                        Фасадные материалы
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Фасадная плитка Hauberk"},
+                                    {"text": "Фасады штукатурные"},
+                                    {"text": "Доборные элементы для штукатурных фасадов"},
+                                    {"text": "Виниловый сайдинг"},
+                                    {"text": "Металлический сайдинг"},
+                                    {"text": "Цокольный сайдинг"},
+                                    {"text": "Калькулятор штукатурных фасадов"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite brick-and-stone"></i> 
+                                        Кирпич, строительный камень
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Облицовочный кирпич"},
+                                    {"text": "Кладочные растворы"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite flat-roof"></i> 
+                                        Плоская кровля
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Рулонные кровельные материалы ТЕХНОНИКОЛЬ"},
+                                    {"text": "Полимерные мембраны"},
+                                    {"text": "Мастики и праймеры ТЕХНОНИКОЛЬ"},
+                                    {"text": "Доборные элементы"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite wat"></i> 
+                                        Водосточные системы
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Водосточные системы пластиковые"},
+                                    {"text": "Водосточные системы металлические"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite fire-protect"></i> 
+                                        Огнебиозащитные составы
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Составы для бань и саун НОРТ"},
+                                    {"text": "Декор НОРТ"},
+                                    {"text": "Антисептики НОРТ"},
+                                    {"text": "Огнебиозащита НОРТ"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite mansard"></i> 
+                                        Мансардные окна и лестницы
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Аксессуары для монтажа"},
+                                    {"text": "Изоляционные оклады"},
+                                    {"text": "Мансардные окна"},
+                                    {"text": "Чердачные лестницы FAKRO"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite gidro-vetro"></i> 
+                                        Гидро-, ветро-, пароизоляция
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Пленки и мембраны"},
+                                    {"text": "Ленты и скотчи"},
+                                    {"text": "Битумные ленты"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite list"></i> 
+                                        Листовые материалы
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Плита OSB"},
+                                    {"text": "ЦСП, плоский шифер"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite warmth"></i> 
+                                        Теплоизоляция, звукоизоляция
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub js-create-price__wrapper">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "PIR"},
+                                    {"text": "Рулонный утеплитель"},
+                                    {"text": "Минераловатный утеплитель"},
+                                    {"text": "Звукоизоляция"},
+                                    {"text": "Экструдированный пенополистирол"},
+                                    {"text": "Пенополистирол"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite technical-iso"></i> 
+                                        Техническая изоляция
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Rockwool"},
+                                    {"text": "Технониколь"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite fence"></i> 
+                                        Заборы, ограждения
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Заборы из профнастила"},
+                                    {"text": "Заборы из штакетника Grand Line"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite groundwork"></i> 
+                                        Фундаменты
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Геотекстиль"},
+                                    {"text": "Профилированные мембраны PLANTER"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__parent">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite inside"></i> 
+                                        Внутренняя отделка
+                                    </span>
+                                </label>
+                                <ul class="catalog__sub">
+                                    @@loop('./template/catalog/create-price-sub-item.html', [
+                                    {"text": "Штукатурные смеси"},
+                                    {"text": "Скотчи, серпянки, сетки"},
+                                    {"text": "Гипсокартон и ГВЛ"},
+                                    {"text": "Затирка для плитки Ceresit"},
+                                    {"text": "Профили"},
+                                    {"text": "Грунтовки, бетонконтакт"},
+                                    {"text": "Крепеж"},
+                                    {"text": "Пена монтажная"},
+                                    {"text": "Клеевые смеси"},
+                                    {"text": "Шпатлевки"},
+                                    {"text": "Гидроизоляция обмазочная"},
+                                    {"text": "Цементные и кладочные смеси"},
+                                    {"text": "Наливные полы и стяжки для пола"}
+                                    ])
+                                </ul>
+                            </li>
+                            <li class="catalog__item js-create-price__wrapper">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked class="js-create-price__item">
+                                    <span class="checkbox__text catalog__item__checkbox__text">
+                                        <i class="sprite vent-house"></i> 
+                                        Вентиляция частного дома
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                        @@include('./template/catalog/create-head.html', {"class":"_foot"})
+
+                    </article>
+
+                </div>
+
+            </div>
+            <div class="hidden">
+                @@include('./template/popups/download.html')                
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

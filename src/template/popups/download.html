@@ -1,22 +1,25 @@
-<div id="call" class="popup">
+<div id="download" class="popup">
     <div class="popup__wrapper _call">
         <div class="popup__form popup__inner">
             <form class="form">
-                <h3 class="form__h">Мы вам перезвоним</h3>
+                <h3 class="form__h">Скачать прайс-лист</h3>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">
+                            Отправить копию на почту
+                        </span>
+                    </label>
+                </div>
                 <div class="form__group">
                     <div class="form__group">
                         <span class="form__label js-form__label">
                             <input required>
-                            <label>Ваше имя</label>                        
-                        </span>
-                        <span class="form__label js-form__label">
-                            <input required>
-                            <label>Телефон</label>                        
+                            <label>Email</label>                        
                         </span>
                     </div>
-                    <p class="form__help">* Поля, обязательные для заполнения</p>
                 </div>
-                <div class="form__group">
+                <div class="form__group _checkbox">
                     <label class="checkbox">
                         <input type="checkbox" checked>
                         <span class="checkbox__text">
@@ -25,10 +28,9 @@
                     </label>
                 </div>
                 <div class="form__group">
-                    <img src="img/newCaptchaAnchor.png" style="max-width: 100%">
-                </div>
-                <div class="form__group">
-                    <button type="submit" class="btn _secondary _solid">Жду звонка</button>
+                    <button type="submit" class="btn _primary _solid">
+                        <i class="icon-download"></i>&nbsp;&nbsp;Скачать прайс [PDF]
+                    </button>
                 </div>
             </form>
         </div>

@@ -41,7 +41,7 @@
      id="namedview869"
      showgrid="false"
      inkscape:zoom="1.717233"
-     inkscape:cx="75.43064"
+     inkscape:cx="78.342301"
      inkscape:cy="66.444421"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -52,22 +52,11 @@
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <defs
-     id="defs863">
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter1503">
-      <feBlend
-         inkscape:collect="always"
-         mode="overlay"
-         in2="BackgroundImage"
-         id="feBlend1505" />
-    </filter>
-  </defs>
+     id="defs863" />
   <path
      d="m 30.4667,22.0358 h -6.747 l -7.427,-20.03 h 6.749 z m -8.049,0 h -6.748 L 9.8157001,6.0118 H 16.5647 Z m -8.184,0.028 H 2.7697001 l 5.637,-15.913 z M 8.4067001,9.5438 c 0.451,1.181 1.38,3.91 2.2259999,6.4 l 0.01,0.029 c 0.726,2.134 1.39,4.087 1.64,4.728 H 4.7467001 c 0.205,-0.553 0.69,-2.085 1.252,-3.867 l 0.003,-0.008 c 0.851,-2.695 1.882,-5.96 2.404,-7.281 z"
      id="path865"
      inkscape:connector-curvature="0"
-     style="fill:#95989b;fill-opacity:1;fill-rule:evenodd;filter:url(#filter1503)"
+     style="fill:#95989b;fill-opacity:1;fill-rule:evenodd;"
      sodipodi:nodetypes="ccccccccccccccccccccccc" />
 </svg>

@@ -27,7 +27,7 @@
                 <ul class="header__top__menu">
                     <li class="hidden-md"><a href="#">Расчет доставки</a></li>
                     <li class="hidden-md"><a href="#">Оплата</a></li>
-                    <li><a href="#">Скачать прайс-лист <i class="icon-download"></i></a></li>
+                    <li><a href="create-price.html">Скачать прайс-лист <i class="icon-download"></i></a></li>
                 </ul>
             </div>
             <div class="header__row__col _3">
@@ -161,7 +161,7 @@
     </div>
 </div>
                 </form>
-                <a href="#" class="header__main__download">Скачать прайс-лист <i class="icon-download"></i></a>
+                <a href="create-price.html" class="header__main__download">Скачать прайс-лист <i class="icon-download"></i></a>
             </div>
             <div class="header__row__col _3">
                 <div class="header__main__callme">
@@ -336,10 +336,10 @@
             <ul class="menu">
     <li>
         <ul class="menu__lg">
-            <li><a href="#">Каталог</a></li>
+            <li><a href="catalog-level-1.html">Каталог</a></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Контакты</a></li>
-            <li><a href="#">Скачать прайс <i class="icon-download"></i></a></li>
+            <li><a href="create-price.html">Скачать прайс <i class="icon-download"></i></a></li>
         </ul>
     </li>
     <li>
@@ -1299,7 +1299,7 @@
                     </div>
                     <p class="form__help">* Поля, обязательные для заполнения</p>
                 </div>
-                <div class="form__group _checkbox">
+                <div class="form__group">
                     <label class="checkbox">
                         <input type="checkbox" checked>
                         <span class="checkbox__text">
@@ -1324,10 +1324,10 @@
             <ul class="menu">
     <li>
         <ul class="menu__lg">
-            <li><a href="#">Каталог</a></li>
+            <li><a href="catalog-level-1.html">Каталог</a></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Контакты</a></li>
-            <li><a href="#">Скачать прайс <i class="icon-download"></i></a></li>
+            <li><a href="create-price.html">Скачать прайс <i class="icon-download"></i></a></li>
         </ul>
     </li>
     <li>
@@ -1421,9 +1421,9 @@
         cursor: pointer;
         opacity: .3;
         transition: opacity .2s;
-        &:hover {
-            opacity: 1;
-        }
+    }
+    .dev__toggler:hover {
+        opacity: 1;
     }
     .dev._active {
         transform: none;
@@ -1432,7 +1432,10 @@
         }
     }
     .dev._active .dev__toggler {
-            opacity: 1;
+        opacity: 1;
+    }
+    .dev._active .dev__toggler {
+        opacity: 1;
     }
 </style>
 <div class="dev">
@@ -1444,6 +1447,7 @@
         <li><a href="catalog-level-1.html">catalog level 1</a></li>
         <li><a href="catalog-level-2.html">catalog level 2</a></li>
         <li><a href="catalog-level-3.html">catalog level 3</a></li>
+        <li><a href="create-price.html">create price</a></li>
     </ul>
 </div>
 <script>
