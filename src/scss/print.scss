@@ -8,7 +8,7 @@
 /*@import "node_modules/bootstrap/scss/utilities/embed";*/
 
 @page {
-  margin: 1cm 0;
+    margin: 1cm 0;
 }
 
 body {
@@ -18,17 +18,17 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
-*, *::before, *::after {
-    position: relative;
-}
 
-.container {
-    padding: 0 65px;
-}
 .text-nowrap { white-space: nowrap !important; }
+a, a:visited {
+    color: $primary;
+}
 
 .print-data {
     width: 100%;
+    tr {
+        page-break-inside: avoid;
+    }
     td {
         padding: 10px 20px 10px 0;
         &:first-child {
@@ -42,6 +42,47 @@ body {
         background-color: #f4f4f4;
     }
     img {
-        width: 80px;
+        width: 60px;
+    }
+}
+
+.print-footer {
+    padding: 50px 1cm;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &__col {
+        flex-basis: 40%;
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+.print-header {
+    padding: 0 1cm 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &__col {
+        flex-basis: 40%;
+        &:last-child {
+            text-align: right;
+        }
+    }
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+    &__lead {
+        font-family: $font-family-alt;
+        font-size: 14px;
+        font-weight: 600;
+        opacity: .5;
+        margin-bottom: 0;
     }
 }
