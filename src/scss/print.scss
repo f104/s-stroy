@@ -64,20 +64,23 @@ table {
 }
 
 .print-title-img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-    }
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
 .print-title {
-    text-align: center;
-    font-family: $font-family-alt;
-    background-color: $white;
-    width: 300px;
-    position: relative;
-    top: 50%;
-    margin: -254px auto 0;
+    height: 100%;
+    &__wrapper {
+        width: 300px;
+    }
+    &__inner {
+        text-align: center;
+        font-family: $font-family-alt;
+        background-color: $white;
+        position: relative;
+    }
     &__head {
         padding: 30px 30px 150px;
         vertical-align: top;
