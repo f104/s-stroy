@@ -76,9 +76,8 @@ table {
     background-color: $white;
     width: 300px;
     position: relative;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    margin: -254px auto 0;
     &__head {
         padding: 30px 30px 150px;
         vertical-align: top;
