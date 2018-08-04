@@ -27,9 +27,11 @@ a, a:visited {
 tr {
     page-break-inside: avoid;
 }
+table {
+    width: 100%;
+}
 
 .print-data {
-    width: 100%;
     td {
         padding: 10px 20px 10px 0;
         &:first-child {
@@ -50,9 +52,9 @@ tr {
 .print-article {
     page-break-before: always;
 }
+
 .print-footer {
     margin-top: 40px;
-    width: 100%;
     font-size: 13px;
     page-break-before: avoid;
     td {
@@ -71,7 +73,6 @@ tr {
 
 .print-header {
     margin-bottom: 30px;
-    width: 100%;
     td {
         vertical-align: top;
         &:first-child {
@@ -97,5 +98,51 @@ tr {
         font-weight: 600;
         color: rgba($body-color, .5);
         margin-bottom: 0;
+    }
+}
+
+.print-index {
+    list-style-type: none;
+    padding-left: $gap;
+    padding-right: $gap;
+    font-size: 13px;
+    &__item {
+        margin-bottom: 10px;
+        overflow: hidden;
+        position: relative;
+        :first-child {
+            float: left;
+            background-color: $body-bg;
+            padding-right: 1ex;
+        }
+        :last-child {
+            width: 4ex;
+            float: right;
+            background-color: $body-bg;
+            padding-left: 1ex;
+        }
+        &:after {
+            content: '• • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • ';
+            position: absolute;
+            left: 0;
+            right: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #e4e4e4;
+            font-size: 11px;
+            line-height: 14px;
+            z-index: -1;
+        }
+    }
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.25;
+        margin-bottom: 20px;
+        margin-top: 50px;
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }

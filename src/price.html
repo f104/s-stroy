@@ -19,6 +19,60 @@
                         <table class="print-header">
                             <tr>
                                 <td>
+                                    <h3 class="print-header__h">Содержание</h3>
+                                </td>
+                                <td>
+                                    <a href="//s-stroy.ru"><img class="print-header__logo" src="img/logo.svg"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+
+                        <ul class="print-index">
+                            <li class="print-index__h">Скатная кровля</li>
+                            @@loop('./template/print/index-row.html', [
+                            {"name": "Металлочерепица и профнастил Волгапрофиль", "index": 3},
+                            {"name": "Металлочерепица и профнастил Grand Line", "index": 4},
+                            {"name": "Гибкая черепица Shinglas", "index": 5},
+                            {"name": "Гибкая черепица Katepal", "index": 7},
+                            {"name": "Гибкая черепица Tegola", "index": 11},
+                            {"name": "Универсальные комплектующие для гибкой черепицы (подкладочные ковры, OSB, планки, гвозди)", "index": 13},
+                            {"name": "Ондулин. Ондувилла", "index": 14},
+                            {"name": "Композитная черепица Metrotile", "index": 17},
+                            {"name": "Композитная черепица Luxard", "index": 19},
+                            {"name": "Натуральная черепица Braas", "index": 21},
+                            {"name": "Системы безопасности кровли Borge", "index": 23},
+                            {"name": "Вентиляция кровли Vilpe", "index": 25},
+                            {"name": "Гидро-, ветро-, пароизоляция", "index": 29},
+                            {"name": "Огнебиозащита", "index": 33}
+                            ])
+                            <li class="print-index__h">Плоские кровли и фундаменты</li>
+                            @@loop('./template/print/index-row.html', [
+                            {"name": "Рулонные битумные материалы Технониколь", "index": 35},
+                            {"name": "Мастики, праймеры, герметики", "index": 36},
+                            {"name": "Геотекстиль. Профилированные мембраны Planter", "index": 38},
+                            {"name": "Вспомогательные материалы и крепеж для плоских кровель", "index": 39},
+                            {"name": "Полимерные мембраны и комплектующие Технониколь", "index": 41}
+                            ])
+                        </ul>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="print-article">
+            <thead>
+                <tr>
+                    <td>
+                        <table class="print-header">
+                            <tr>
+                                <td>
                                     <h3 class="print-header__h">Металлочерепица и профнастил Волгапрофиль</h3>
                                     <p class="print-header__lead">Скатная кровля</p>
                                 </td>
