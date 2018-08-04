@@ -11,6 +11,10 @@
     margin: $gap 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-style: normal;
     font-stretch: normal;
@@ -51,6 +55,46 @@ table {
 
 .print-article {
     page-break-before: always;
+    &._title {
+        height: 100%;
+        background-color: gray;
+/*        margin-top: - $gap;
+        margin-bottom: - $gap;*/
+    }
+}
+
+.print-title {
+    text-align: center;
+    font-family: $font-family-alt;
+    background-color: $white;
+    width: 300px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    &__head {
+        padding: 30px 30px 150px;
+        vertical-align: top;
+    }
+    &__content {
+        font-size: 16px;
+        color: #2a2a2a;
+        &__h {
+            font-size: 30px;
+            font-weight: 600;
+            color: $primary;
+        }
+    }
+    &__foot {
+        padding: 150px 30px 30px;
+        vertical-align: bottom;        
+        font-size: 18px;
+        font-weight: 600;
+        > * {
+            display: block;
+            line-height: 2;
+        }
+    }
 }
 
 .print-footer {
@@ -141,6 +185,7 @@ table {
         line-height: 1.25;
         margin-bottom: 20px;
         margin-top: 50px;
+        page-break-after: avoid;
         &:first-child {
             margin-top: 0;
         }

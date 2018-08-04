@@ -11,7 +11,7 @@
         <link href="css/print.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-
+        
         <table class="print-article">
             <thead>
                 <tr>
@@ -59,13 +59,32 @@
                             {"name": "Вспомогательные материалы и крепеж для плоских кровель", "index": 39},
                             {"name": "Полимерные мембраны и комплектующие Технониколь", "index": 41}
                             ])
+                            <li class="print-index__h">Теплоизоляция</li>
+                            @@loop('./template/print/index-row.html', [
+                            {"name": "Минеральная вата Rockwool", "index": 43},
+                            {"name": "Минеральная вата Техно", "index": 45},
+                            {"name": "Минеральная вата Isover", "index": 47}
+                            ])
                         </ul>
 
                     </td>
                 </tr>
             </tbody>
         </table>
+        
+        <table class="print-footer">
+            <tr>
+                <td>
+                    В прайс-листе указаны розничные цены на 23.07.2018 в рублях, включая НДС. При заказе через сайт действуют специальные онлайн-цены.
+                </td>
+                <td></td>
+                <td>
+                    ГК САКСЭС <a href="tel:+78312621161">+7(831) 262-11-61</a>
+                </td>
+            </tr>
+        </table>
 
+        
         <table class="print-article">
             <thead>
                 <tr>
