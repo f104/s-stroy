@@ -126,6 +126,10 @@ form {
     input {
         line-height: 46px;
         padding: 0 17px;
+        @include ie10up() {
+            height: 46px;
+            padding-top: 2px;
+        }
         &._sm {
             line-height: 36px;
             padding: 0 11px;            
@@ -138,7 +142,7 @@ form {
     button {
         width: 100%;
     }
-    ::placeholder {
+    ::placeholder, ::-moz-placeholder {
         font-size: 14px;
         font-weight: 500;
         opacity: .5;

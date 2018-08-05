@@ -227,6 +227,9 @@ var app = {
                 responsive: responsive[$(this).data('responsive')],
             });
         });
+        $(window).on('load', function(){
+            $('.js-nav-slider__main.slick-initialized').slick('setPosition');
+        });
     },
 
     initHover: function () {

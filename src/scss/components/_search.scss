@@ -21,12 +21,16 @@
         &._header {
             background-color: #f5f5f5;
         }
-        ::placeholder {
+        &::placeholder {
             color: #8e8e8e;
         }
         &:focus {
             background-color: $white;
             box-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.1);
+        }
+        @include ie10up() {
+            height: 42px;
+            padding-top: 2px;
         }
     }
     .search-form__submit {
