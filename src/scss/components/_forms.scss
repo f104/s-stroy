@@ -17,6 +17,10 @@ form {
     white-space: nowrap;
     transition: all .2s ease-in-out;
     border: solid 1px $body-color;
+    @include ie10up() {
+        padding-top: 2px;
+        line-height: 44px;
+    }
     &._solid {
         background-color: $body-color;
         color: $white;
@@ -62,6 +66,10 @@ form {
     }
     &._sm {
         line-height: 40px;
+        @include ie10up() {
+            padding-top: 2px;
+            line-height: 38px;
+        }
     }
 }
 

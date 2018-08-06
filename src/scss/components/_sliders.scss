@@ -238,4 +238,9 @@
             }
         }
     }
+    @include ie10up() {
+        .nav-slider__main {
+            width: 100%;
+        }
+    }
 }

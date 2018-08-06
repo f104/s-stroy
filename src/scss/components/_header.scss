@@ -190,6 +190,12 @@ body {
             @include media-breakpoint-up(lg) {
                 display: block;
                 width: 90px;
+                @include ie10up() {
+                    padding-top: 1px;
+                    span {
+                        top: -2px;
+                    }
+                }
             }
         }
         .header__row__col {
