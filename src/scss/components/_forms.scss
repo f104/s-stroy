@@ -332,6 +332,9 @@ form {
                             margin-left: 10px;
                             textarea {
                                 height: 106px;
+                                @include ie10up {
+                                    height: 102px;
+                                }
                             }
                         }
                     }

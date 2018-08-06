@@ -209,6 +209,9 @@
                 height: 25px;
                 margin-top: 8px;
             }
+            @include ie10up {
+                line-height: 24px;
+            }
             &:before {
                 content: '';
                 display: block;
@@ -314,6 +317,9 @@
             @include media-breakpoint-up(lg) {
                 width: 87px;
             }
+            @include ie10up {
+                padding-top: 5px;
+            }
         }
         &__text {
             flex: 1;
@@ -323,6 +329,10 @@
             font-size: $font-size-base;
             text-align: center;
             color: #545454;
+            @include ie10up {
+                padding-top: 4px;
+                line-height: 44px;
+            }
             &__accent {
                 font-size: 19px;
             }
@@ -355,23 +365,32 @@
                 line-height: 22px;
             }
         }
-        span {
+        > span {
             display: block;
-            background-color: $white;
             z-index: 1;
             &:first-of-type {
                 padding-right: 1ex;
+                flex-grow: 1;
+                @include media-breakpoint-up(lg) {
+                    flex-grow: 0;
+                    flex-basis: 470px;
+                }
+                span {
+                    background-color: $white;
+                }
             }
             &:last-of-type {
                 font-weight: 600;
+                background-color: $white;
                 @include media-breakpoint-up(md) {
                     padding-left: 1ex;
                     font-weight: normal;
                     text-align: right;
                 }
                 @include media-breakpoint-up(lg) {
+                    flex-grow: 1;
                     text-align: left;
-                    flex-basis: 670px;
+                    /*flex-basis: 670px;*/
                 }
             }
         }

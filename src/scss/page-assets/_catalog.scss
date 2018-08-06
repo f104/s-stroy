@@ -224,6 +224,9 @@
                     top: 50%;
                     height: 1px;
                     background-color: #545454;
+                    @include ie10up {
+                        top: 40%;
+                    }
                 }
             }
             &__cost {
