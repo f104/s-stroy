@@ -21,6 +21,10 @@
             color: $white;
             background-color: $primary;            
         }
+        @include ie10up {
+            padding-top: 4px;
+            line-height: 22px;
+        }
     }
 }
 

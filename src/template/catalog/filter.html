@@ -31,10 +31,10 @@
             <legend class="filter__fieldset__legend js-filter-fieldset__trigger">Цена</legend>
             <div class="filter__fieldset__content js-filter-fieldset__slide">
                 <div class="range-inputs">
-                    <input class="_sm js-mask" value="1000" autocomplete="off"
+                    <input class="_sm js-mask ie-mask _from" value="1000" autocomplete="off"
                            data-inputmask="'alias': 'numeric', 'prefix': 'от ', 'suffix': ' ₽'"
                            data-min="400">
-                    <input class="_sm js-mask" value="12000" autocomplete="off"
+                    <input class="_sm js-mask ie-mask _to" value="12000" autocomplete="off"
                            data-inputmask="'alias': 'numeric', 'prefix': 'до ', 'suffix': ' ₽'"
                            data-max="18000">
                 </div>
@@ -275,5 +275,12 @@
             <button type="submit" class="btn _primary">Сбросить выбор</button>
         </fieldset>
 
+    </div>
+    <div class="filter__counter js-filter__counter">
+        <div  class="filter__counter__inner">
+            <i class="sprite counter"></i>
+            <span class="filter__counter__accent">93</span>
+            <span class="filter__counter__text">товара</span>
+        </div>
     </div>
 </form>

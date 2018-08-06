@@ -37,10 +37,10 @@
                             margin-bottom: 0;
                             margin-right: 30px;
                             display: flex;
-                            &__content {
+/*                            &__content {
                                 display: flex;
                                 flex-direction: column;
-                            }
+                            }*/
                         }
                         &__foot {
                             flex-shrink: 0;
@@ -64,6 +64,8 @@
                             font-size: 15px;
                             font-weight: 500;
                             display: inline-block;
+                            position: absolute;
+                            bottom: 0;
                         }
                         &__found {
                             font-size: 12px;
@@ -331,13 +333,21 @@
             @include media-breakpoint-only(md) {
                 flex-basis: 25%;
                 &:nth-child(4n) {
-                    border-right: none;
+                    border-right-color: transparent;
+                }
+                @include ie10up {
+                    flex-basis: 24%;
+                    flex-grow: 1;
                 }
             }
             @include media-breakpoint-only(lg) {
                 flex-basis: 20%;
                 &:nth-child(5n) {
-                    border-right: none;
+                    border-right-color: transparent;
+                }
+                @include ie10up {
+                    flex-basis: 19%;
+                    flex-grow: 1;
                 }
             }
             &._card {

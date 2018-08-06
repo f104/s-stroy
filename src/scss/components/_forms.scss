@@ -141,6 +141,10 @@ form {
         &._sm {
             line-height: 36px;
             padding: 0 11px;            
+            @include ie10up() {
+                height: 36px;
+                /*padding-top: 2px;*/
+            }
         }
     }
     textarea {
@@ -412,6 +416,11 @@ form {
                 }
             }
         }
+    }
+}
+@include media-breakpoint-up(md) {
+    .select-wrapper:after {
+        content: none;
     }
 }
 

@@ -94,6 +94,14 @@
                 }
             }
         }
+        @include ie10up {
+            padding-bottom: 20px;
+            .filter__fieldset {
+                &._btns {
+                    position: relative;
+                }
+            }
+        }
     }
     @include media-breakpoint-down(sm) {
         padding-top: 72px;
@@ -105,4 +113,37 @@
     .scrollbar-outer > .scroll-element.scroll-y {
         display: none;
     }
+
+    &__counter {
+        position: absolute;
+        top: 25%;
+        z-index: 100;
+        margin-left: 240px;
+        &__inner {
+            width: 70px;
+            height: 45px;
+            color: $white;
+            padding-right: 22px;
+            padding-top: 9px;
+            text-align: center;
+            .sprite {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        &__accent {
+            display: block;
+            font-size: 19px;
+            line-height: 0.8;
+        }
+        &__text {
+            display: block;
+            font-size: 12px;
+        }
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+
 }

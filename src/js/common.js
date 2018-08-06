@@ -10,13 +10,16 @@ var app = {
     initialized: false,
 
     initialize: function () {
+        var elemHTML = document.getElementsByTagName('html')[0];
         if (navigator.userAgent.indexOf('Mac') > 0) {
-            var elemHTML = document.getElementsByTagName('html')[0];
             elemHTML.className += " mac-os";
             if (navigator.userAgent.indexOf('Safari') > 0)
                 elemHTML.className += " mac-safari";
             if (navigator.userAgent.indexOf('Chrome') > 0)
                 elemHTML.className += " mac-chrome";
+        }
+        if (navigator.userAgent.indexOf('Edge') > 0 || navigator.userAgent.indexOf('Trident') > 0) {
+            elemHTML.className += " ie";
         }
         this.initSliders(); // must be first!
         this.initMenu();
@@ -125,7 +128,9 @@ var app = {
                         textHide = $(this).data('texthide') || 'hide text';
                 $(this).text($content.is(':visible') ? textShow : textHide);
                 $(this).toggleClass('_opened');
-                $(this).siblings('.js-cut__content').slideToggle();
+                $(this).siblings('.js-cut__content').slideToggle(function () {
+                    $('.js-filter__counter').trigger("sticky_kit:recalc");
+                });
                 return false;
             })
         })
@@ -315,7 +320,9 @@ var app = {
                 $wrapper = $('.js-cm__menu-wrapper');
 
         var slideMenu = function () {
-            $slide.slideToggle();
+            $slide.slideToggle(function () {
+                $('.js-filter__counter').trigger("sticky_kit:recalc");
+            });
             $menu.toggleClass('_opened');
             return false;
         }
@@ -361,7 +368,9 @@ var app = {
         });
 
         if (!isMobile && !$menu.hasClass('_opened')) {
-            $slide.slideUp();
+            $slide.slideUp(function () {
+                $('.js-filter__counter').trigger("sticky_kit:recalc");
+            });
         }
 
         var checkMenu = function () {
@@ -579,7 +588,7 @@ var app = {
                 unmaskAsNumber: true
             }
         });
-        $('.js-mask').inputmask();
+        $('html:not(.ie) .js-mask').inputmask();
     },
 
     initRange: function () {
@@ -599,6 +608,7 @@ var app = {
                         maxV
                     ],
                     connect: true,
+                    step: 10,
                     range: {
                         'min': min,
                         'max': max
@@ -626,15 +636,6 @@ var app = {
     },
 
     initFilter: function () {
-        $('.js-filter-fieldset').each(function () {
-            var $trigger = $(this).find('.js-filter-fieldset__trigger'),
-                    $slide = $(this).find('.js-filter-fieldset__slide');
-            $trigger.on('click', function () {
-                $(this).toggleClass('_closed');
-                $slide.slideToggle();
-            });
-        });
-
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
                 $scrollbar = $('.js-filter__scrollbar'),
                 $mobileToggler = $('.js-filter__mobile-toggler'),
@@ -651,10 +652,24 @@ var app = {
 
         if (isMobile) {
             initScrollbar();
+        } else {
+            $('.js-filter__counter').stick_in_parent({offset_top: 100})
         }
+
         $mobileToggler.on('click', function () {
             $wrapper.toggleClass('_active');
             return false;
+        });
+
+        $('.js-filter-fieldset').each(function () {
+            var $trigger = $(this).find('.js-filter-fieldset__trigger'),
+                    $slide = $(this).find('.js-filter-fieldset__slide');
+            $trigger.on('click', function () {
+                $(this).toggleClass('_closed');
+                $slide.slideToggle(function () {
+                    $('.js-filter__counter').trigger("sticky_kit:recalc");
+                });
+            });
         });
 
         var check = function () {
@@ -663,9 +678,11 @@ var app = {
                 isMobile = newSize;
                 if (isMobile) {
                     initScrollbar();
+                    $('.js-filter__counter').trigger("sticky_kit:detach");
                 } else {
                     $wrapper.removeClass('_active');
                     destroyScrollbar();
+                    $('.js-filter__counter').stick_in_parent({offset_top: 100})
                 }
             }
             if (newSize) {
