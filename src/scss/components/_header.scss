@@ -80,7 +80,7 @@ body {
                     padding-right: 15px;
                 }
                 &._3 {
-                    flex-basis: 297px;
+                    flex-basis: 305px;
                 }
             }
         }
@@ -121,6 +121,7 @@ body {
         }
     }
     &__callme-btn {
+        display: none;
         font-size: 13px;
         font-weight: 500;
         line-height: 20px;
@@ -214,13 +215,17 @@ body {
             font-weight: 600;
             white-space: nowrap;
             font-size: 16px;
+            color: $body-color;
+            &:hover {
+                color: $body-color;                
+            }
             @include media-breakpoint-up(md) {
                 display: block;
-                font-size: 17px;
-                top: -2px;
+                font-size: 20px;
                 line-height: 1;
             }
             &__muted {
+                font-size: 14px;
                 font-weight: normal;
                 color: rgba(42, 42, 42, 0.6);
             }
