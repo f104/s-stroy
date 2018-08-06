@@ -23,6 +23,9 @@
             padding-left: $container-padding-md;
             padding-right: $container-padding-md;
         }
+        @include ie10up() {
+            height: 65px;            
+        }
         li {
             display: flex;
             padding-left: 0;
