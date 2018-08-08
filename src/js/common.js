@@ -710,7 +710,15 @@ var app = {
             $counter.text(app.getNumEnding(total, decl1) + total + app.getNumEnding(total, decl2));
         };
         count();
-        $items.on('change', count);
+        $items.on('change', function () {
+            var $wrapper = $(this).parents('.js-create-price__wrapper');
+            if ($wrapper) {
+                var $items = $wrapper.find('.js-create-price__item'),
+                        $parent = $wrapper.find('.js-create-price__parent');
+                $parent.prop('checked', $items.filter(':checked').length !== 0);
+            }
+            count();
+        });
         $parents.on('change', function () {
             var $childs = $(this).parents('.js-create-price__wrapper').find('.js-create-price__item');
             $childs.prop('checked', $(this).prop('checked'));
