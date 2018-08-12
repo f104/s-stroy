@@ -1,0 +1,108 @@
+<div id="shipping-calc" class="popup">
+    <div class="popup__wrapper _shipping">
+        <div class="popup__form popup__inner">
+            <form class="form shipping">
+                <h3 class="form__h _left">Рассчитать стоимость доставки</h3>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Адрес, точка на карте или километраж:</legend>
+                    <div class="shipping__inputs">
+                        <input value="г. Кстово, ул. Чванова, 36" class="js-shipping__route-address">
+                        <input type="number" min="0" value="45" class="no-spinners js-shipping__route-distance">
+                        км
+                        <span class="shipping__map-toggler">
+                            <a href="#" class="shipping__map-toggler__inner _opened js-shipping__map-toggler">
+                                <i class="icon-location"></i> Указать на карте
+                            </a>
+                        </span>
+                    </div>
+                </fieldset>
+                <div id="shipping_map" class="shipping__map js-shipping__map" data-from="56.311696,43.832899"></div>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Выберите необходимый тип транспорта:</legend>
+                    <div class="shipping__car-select">
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" checked class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                ГАЗель
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                ГАЗ/Валдай
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                5-тонник
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                10-тонник
+                            </span>
+                        </label>
+                    </div>
+                    <div class="shipping__car-slider js-shipping__car-slider">
+                        @@loop('../chunks/car-slider-item.html', [
+                        {"title": "ГАЗель"},
+                        {"title": "ГАЗ/Валдай"},
+                        {"title": "5-тонник"},
+                        {"title": "10-тонник"}
+                        ])
+                    </div>
+                    <p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>
+                </fieldset>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Срок доставки и стоимость:</legend>
+                    <div class="shipping__date-select">
+                        <label class="shipping__radio _disabled">
+                            <input type="radio" name="shipping_date" disabled>
+                            <span class="shipping__radio__text">
+                                Сегодня, 08.08
+                                <span class="shipping__radio__text__muted _warning">доставить сегодня уже нельзя</span>
+                            </span>
+                        </label>
+                        <label class="shipping__radio">
+                            <input type="radio" name="shipping_date" checked>
+                            <span class="shipping__radio__text">
+                                Завтра, 09.08
+                                <span class="shipping__radio__text__muted">550 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                        <label class="shipping__radio">
+                            <input type="radio" name="shipping_date">
+                            <span class="shipping__radio__text">
+                                Послезавтра, 10.08
+                                <span class="shipping__radio__text__muted">250 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                        <label class="shipping__radio js-shipping__datepicker-toggler">
+                            <input type="radio" name="shipping_date">
+                            <span class="shipping__radio__text _datepicker">
+                                Определенная дата
+                                <span class="shipping__radio__text__muted">550 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="shipping__date-input js-shipping__date-input _empty">
+                        <i class="icon-pen"></i>
+                        <input class="shipping__date-input__input js-shipping__date-input__input">
+                    </div>
+                </fieldset>
+                <ul class="shipping__summary">
+                    <li class="shipping__summary__item">
+                        Расстояние до пункта назначения:
+                        <span class="shipping__summary__accent">45 км</span>
+                    </li>
+                    <li class="shipping__summary__item">
+                        Стоимость доставки:
+                        <span class="shipping__summary__accent">550 <span class="rub">₽</span></span>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>

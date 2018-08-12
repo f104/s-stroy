@@ -14,6 +14,9 @@
     <link href="css/libs/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
     <link href="css/libs/jquery.formstyler.css" rel="stylesheet" type="text/css">
     <link href="css/libs/nouislider.min.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/datepicker/datepicker.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libs/datepicker/cell.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libs/datepicker/navigation.css" rel="stylesheet" type="text/css"/>
     <link href="css/common.css" rel="stylesheet" type="text/css">
 </head>
     <body>
@@ -25,7 +28,7 @@
             </div>
             <div class="header__row__col _2">
                 <ul class="header__top__menu">
-                    <li class="hidden-md"><a href="#">Расчет доставки</a></li>
+                    <li class="hidden-md"><a href="#shipping-calc" class="js-popup">Расчет доставки</a></li>
                     <li class="hidden-md"><a href="#">Оплата</a></li>
                     <li><a href="create-price.html">Скачать прайс-лист <i class="icon-download"></i></a></li>
                 </ul>
@@ -2553,6 +2556,181 @@
         </div>
     </div>
 </div>
+    <div id="shipping-calc" class="popup">
+    <div class="popup__wrapper _shipping">
+        <div class="popup__form popup__inner">
+            <form class="form shipping">
+                <h3 class="form__h _left">Рассчитать стоимость доставки</h3>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Адрес, точка на карте или километраж:</legend>
+                    <div class="shipping__inputs">
+                        <input value="г. Кстово, ул. Чванова, 36" class="js-shipping__route-address">
+                        <input type="number" min="0" value="45" class="no-spinners js-shipping__route-distance">
+                        км
+                        <span class="shipping__map-toggler">
+                            <a href="#" class="shipping__map-toggler__inner _opened js-shipping__map-toggler">
+                                <i class="icon-location"></i> Указать на карте
+                            </a>
+                        </span>
+                    </div>
+                </fieldset>
+                <div id="shipping_map" class="shipping__map js-shipping__map" data-from="56.311696,43.832899"></div>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Выберите необходимый тип транспорта:</legend>
+                    <div class="shipping__car-select">
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" checked class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                ГАЗель
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                ГАЗ/Валдай
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                5-тонник
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                10-тонник
+                            </span>
+                        </label>
+                    </div>
+                    <div class="shipping__car-slider js-shipping__car-slider">
+                        <div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">ГАЗель</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">5-тонник</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">10-тонник</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div>
+                    </div>
+                    <p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>
+                </fieldset>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Срок доставки и стоимость:</legend>
+                    <div class="shipping__date-select">
+                        <label class="shipping__radio _disabled">
+                            <input type="radio" name="shipping_date" disabled>
+                            <span class="shipping__radio__text">
+                                Сегодня, 08.08
+                                <span class="shipping__radio__text__muted _warning">доставить сегодня уже нельзя</span>
+                            </span>
+                        </label>
+                        <label class="shipping__radio">
+                            <input type="radio" name="shipping_date" checked>
+                            <span class="shipping__radio__text">
+                                Завтра, 09.08
+                                <span class="shipping__radio__text__muted">550 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                        <label class="shipping__radio">
+                            <input type="radio" name="shipping_date">
+                            <span class="shipping__radio__text">
+                                Послезавтра, 10.08
+                                <span class="shipping__radio__text__muted">250 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                        <label class="shipping__radio js-shipping__datepicker-toggler">
+                            <input type="radio" name="shipping_date">
+                            <span class="shipping__radio__text _datepicker">
+                                Определенная дата
+                                <span class="shipping__radio__text__muted">550 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="shipping__date-input js-shipping__date-input _empty">
+                        <i class="icon-pen"></i>
+                        <input class="shipping__date-input__input js-shipping__date-input__input">
+                    </div>
+                </fieldset>
+                <ul class="shipping__summary">
+                    <li class="shipping__summary__item">
+                        Расстояние до пункта назначения:
+                        <span class="shipping__summary__accent">45 км</span>
+                    </li>
+                    <li class="shipping__summary__item">
+                        Стоимость доставки:
+                        <span class="shipping__summary__accent">550 <span class="rub">₽</span></span>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
 </div>
 <footer class="footer">
     <div class="container">
@@ -2713,8 +2891,16 @@
         sliderFadeSpeed: 800, //ms
         sliderAutoplaySpeed: 8000, //ms
         hoverZoom: 10, //px
-    };
-</script>
+        shipping: {
+            from: {
+                geo: [56.311696, 43.832899], // array координаты или string адрес для геокодирования
+                text: 'Центральный склад', // текст подсказки
+            },
+            to: {
+                geo: 'Н. Новгород, улица Минеева'
+            }
+        }
+    };</script>
 
 <script src="js/libs/jquery.min.js"></script>
 <script src="js/libs/slick.min.js"></script>
@@ -2725,6 +2911,7 @@
 <script src="js/libs/jquery.inputmask.bundle.min.js"></script>
 <script src="js/libs/nouislider.min.js"></script>
 <script src="js/libs/sticky-kit.min.js"></script>
+<script src="js/libs/datepicker.min.js"></script>
 <script src="js/common.js"></script>
     </body>
 </html>

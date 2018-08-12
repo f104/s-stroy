@@ -417,6 +417,13 @@ var app = {
         var options = {
             baseClass: '_popup',
             autoFocus: false,
+            touch: false,
+            afterShow: function (instance, slide) {
+                slide.$slide.find('.slick-initialized').slick('setPosition');
+                if (slide.$slide.find('.js-shipping__map').length !== 0) {
+                    app.initShippingCalc();
+                }                
+            }
         };
         $('.js-popup').on('click', function () {
             $.fancybox.close();
@@ -765,6 +772,132 @@ var app = {
                 }
             }
         });
+    },
+
+    initShippingCalc: function () {
+        var $slider = $('.js-shipping__car-slider'),
+                $radio = $('.js-shipping__car-radio');
+        if ($slider.length) {
+            $slider.slick({
+                dots: false,
+                arrows: false,
+                draggable: false,
+                fade: true
+            });
+            $radio.on('click', function () {
+                var index = $(this).parents('.js-shipping__car-label').index();
+                $slider.slick('slickGoTo', index);
+            })
+        }
+        var $dateinputWrapper = $('.js-shipping__date-input'),
+                $dateinput = $('.js-shipping__date-input__input'),
+                disabledDays = [0, 6];
+        $dateinput.datepicker({
+            position: 'top right',
+            offset: 40,
+            navTitles: {
+                days: 'MM'
+            },
+            minDate: new Date(new Date().getTime() + 86400 * 1000 * 2),
+            onRenderCell: function (date, cellType) {
+                if (cellType == 'day') {
+                    var day = date.getDay(),
+                            isDisabled = disabledDays.indexOf(day) != -1;
+
+                    return {
+                        disabled: isDisabled
+                    }
+                }
+            },
+            onSelect: function (formattedDate, date, inst) {
+                inst.hide();
+                $dateinputWrapper.removeClass('_empty');
+            }
+        });
+        var datepicker = $dateinput.datepicker().data('datepicker');
+        $('.js-shipping__datepicker-toggler').on('click', function () {
+            datepicker.show();
+        });
+
+        // map
+        var map, $routeAddress = $('.js-shipping__route-address'),
+                $routeDistance = $('.js-shipping__route-distance');
+        var initMap = function () {
+            var balloonLayout = ymaps.templateLayoutFactory.createClass(
+                    "<div>", {
+                        build: function () {
+                            this.constructor.superclass.build.call(this);
+                        }
+                    }
+            );
+            var multiRoute = new ymaps.multiRouter.MultiRoute({
+                // Описание опорных точек мультимаршрута.
+                referencePoints: [
+                    appConfig.shipping.from.geo,
+                    appConfig.shipping.to.geo,
+                ],
+                params: {
+                    results: 3
+                }
+            }, {
+                boundsAutoApply: true,
+                wayPointStartIconContentLayout: ymaps.templateLayoutFactory.createClass(
+                        appConfig.shipping.from.text
+                        ),
+                wayPointFinishDraggable: true,
+                balloonLayout: balloonLayout
+            });
+            multiRoute.model.events.add('requestsuccess', function () {
+                setDistance(multiRoute.getActiveRoute());
+                var point = multiRoute.getWayPoints().get(1);
+                ymaps.geocode(point.geometry.getCoordinates()).then(function (res) {
+                    var o = res.geoObjects.get(0);
+                    var address = o.getAddressLine().replace('Нижегородская область, ', '');
+                    $routeAddress.val(address);
+                    multiRoute.options.set('wayPointFinishIconContentLayout',
+                            ymaps.templateLayoutFactory.createClass(address));
+                })
+            });
+            multiRoute.events.add('activeroutechange', function () {
+                setDistance(multiRoute.getActiveRoute());
+            });
+            map = new ymaps.Map("shipping_map", {
+                center: appConfig.shipping.from.geo,
+                zoom: 13,
+                autoFitToViewport: 'always',
+                controls: []
+            });
+            map.geoObjects.add(multiRoute);
+        }
+        var setDistance = function (route) {
+            if (route) {
+                var distance = Math.round(route.properties.get('distance').value / 1000);
+                $routeDistance.val(distance);
+            }
+        }
+        if (typeof (ymaps) === 'undefined') {
+            $.ajax({
+                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                dataType: "script",
+                cache: true,
+                success: function () {
+                    ymaps.ready(initMap);
+                }
+            });
+        } else {
+            ymaps.ready(initMap);
+        }
+        $('.js-shipping__map-toggler').on('click', function () {
+            $(this).toggleClass('_opened');
+            $('.js-shipping__map').slideToggle();
+            return false;
+        });
+        $(window).on('resize', function () {
+            if (window.innerWidth >= appConfig.breakpoint.md) {
+                $('.js-shipping__map-toggler').addClass('_opened');
+                $('.js-shipping__map').slideDown();
+            }
+        })
     },
 
     /**

@@ -9,8 +9,16 @@
         sliderFadeSpeed: 800, //ms
         sliderAutoplaySpeed: 8000, //ms
         hoverZoom: 10, //px
-    };
-</script>
+        shipping: {
+            from: {
+                geo: [56.311696, 43.832899], // array координаты или string адрес для геокодирования
+                text: 'Центральный склад', // текст подсказки
+            },
+            to: {
+                geo: 'Н. Новгород, улица Минеева'
+            }
+        }
+    };</script>
 
 <script src="js/libs/jquery.min.js"></script>
 <script src="js/libs/slick.min.js"></script>
@@ -21,4 +29,5 @@
 <script src="js/libs/jquery.inputmask.bundle.min.js"></script>
 <script src="js/libs/nouislider.min.js"></script>
 <script src="js/libs/sticky-kit.min.js"></script>
+<script src="js/libs/datepicker.min.js"></script>
 <script src="js/common.js"></script>

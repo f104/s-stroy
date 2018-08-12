@@ -112,6 +112,9 @@ form {
             font-size: 20px;
             margin-bottom: 33px;
         }
+        &._left {
+            text-align: left;
+        }
     }
     &__group {
         margin-bottom: 22px;
@@ -328,6 +331,13 @@ form {
         pointer-events: none;
         .checkbox__text {
             opacity: .5;
+        }
+    }
+    &._radio {
+        .checkbox__text {
+            &:before, &:after {
+                border-radius: 50%;
+            }
         }
     }
 }
@@ -574,4 +584,14 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
         -webkit-transform: rotate(359deg);
         transform: rotate(359deg);
     }
+}
+
+/* hide up/down arrows ("spinners") on input fields marked type="number" */
+.no-spinners {
+    -moz-appearance:textfield;
+}
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

@@ -27,4 +27,6 @@
 .icon-view-grid:before { content: '\e819'; } /* '' */
 .icon-view-card:before { content: '\e81a'; } /* '' */
 .icon-filter:before { content: '\e81b'; } /* '' */
+.icon-pen:before { content: '\e81c'; } /* '' */
+.icon-location:before { content: '\e81d'; } /* '' */
 .icon-spin:before { content: '\e839'; } /* '' */

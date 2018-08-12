@@ -67,6 +67,12 @@
         &._question {
             width: 905px;
         }
+        &._shipping {
+            width: 768px;
+            @include media-breakpoint-up(lg) {
+                width: 1026px;
+            }
+        }
     }
     &__help {
         background-color: #f6f6f6;
