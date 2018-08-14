@@ -209,11 +209,15 @@ form {
             textarea:focus + label, textarea:valid + label {
             font-size: 10px;
             transform: translate(-10px,-13px);
-
         }
         &__empty {
             font-size: 14px !important;
             transform: none !important;
+        }
+        input:focus + .form__label__empty,
+            textarea:focus + .form__label__empty {
+            font-size: 10px !important;
+            transform: translate(-10px,-13px) !important;
         }
         input:required, textarea:required {
             + label:after {

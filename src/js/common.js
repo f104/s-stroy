@@ -40,6 +40,8 @@ var app = {
         this.initRange();
         this.initFilter();
         this.initCreatePrice();
+        this.initQuantity();
+        this.initCart();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -420,8 +422,9 @@ var app = {
             touch: false,
             afterShow: function (instance, slide) {
                 slide.$slide.find('.slick-initialized').slick('setPosition');
-                if (slide.$slide.find('.js-shipping__map').length !== 0) {
-                    app.initShippingCalc();
+                var $shipping = slide.$slide.find('.js-shipping');
+                if ($shipping && !$shipping.data('init')) {
+                    app.initShippingCalc($shipping);
                 }                
             }
         };
@@ -553,6 +556,7 @@ var app = {
     },
 
     initSelects: function () {
+//        $('.js-select_always').styler();
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.md,
                 $selects = $('.js-select');
         if (!$selects.length)
@@ -582,6 +586,9 @@ var app = {
     },
 
     initMask: function () {
+        $('.js-mask__tel').inputmask({
+            mask: '+9 (999) 999-99-99'
+        });
         Inputmask.extendAliases({
             'numeric': {
                 autoUnmask: true,
@@ -774,9 +781,13 @@ var app = {
         });
     },
 
-    initShippingCalc: function () {
-        var $slider = $('.js-shipping__car-slider'),
-                $radio = $('.js-shipping__car-radio');
+    /**
+     * 
+     * @param $ $wrapper
+     */
+    initShippingCalc: function ($wrapper) {
+        var $slider = $wrapper.find('.js-shipping__car-slider'),
+                $radio = $wrapper.find('.js-shipping__car-radio');
         if ($slider.length) {
             $slider.slick({
                 dots: false,
@@ -789,8 +800,8 @@ var app = {
                 $slider.slick('slickGoTo', index);
             })
         }
-        var $dateinputWrapper = $('.js-shipping__date-input'),
-                $dateinput = $('.js-shipping__date-input__input'),
+        var $dateinputWrapper = $wrapper.find('.js-shipping__date-input'),
+                $dateinput = $wrapper.find('.js-shipping__date-input__input'),
                 disabledDays = [0, 6];
         $dateinput.datepicker({
             position: 'top right',
@@ -815,13 +826,13 @@ var app = {
             }
         });
         var datepicker = $dateinput.datepicker().data('datepicker');
-        $('.js-shipping__datepicker-toggler').on('click', function () {
+        $wrapper.find('.js-shipping__datepicker-toggler').on('click', function () {
             datepicker.show();
         });
 
         // map
-        var map, $routeAddress = $('.js-shipping__route-address'),
-                $routeDistance = $('.js-shipping__route-distance');
+        var map, $routeAddress = $wrapper.find('.js-shipping__route-address'),
+                $routeDistance = $wrapper.find('.js-shipping__route-distance');
         var initMap = function () {
             var balloonLayout = ymaps.templateLayoutFactory.createClass(
                     "<div>", {
@@ -887,17 +898,45 @@ var app = {
         } else {
             ymaps.ready(initMap);
         }
-        $('.js-shipping__map-toggler').on('click', function () {
+        $wrapper.find('.js-shipping__map-toggler').on('click', function () {
             $(this).toggleClass('_opened');
-            $('.js-shipping__map').slideToggle();
+            $wrapper.find('.js-shipping__map').slideToggle();
             return false;
         });
         $(window).on('resize', function () {
             if (window.innerWidth >= appConfig.breakpoint.md) {
-                $('.js-shipping__map-toggler').addClass('_opened');
-                $('.js-shipping__map').slideDown();
+                $wrapper.find('.js-shipping__map-toggler').addClass('_opened');
+                $wrapper.find('.js-shipping__map').slideDown();
             }
-        })
+        });
+        $wrapper.data('init', true);
+    },
+    
+    initQuantity: function() {
+        $('.js-quantity-shift.js-quantity-up, .js-quantity-shift.js-quantity-down').on('click', function (e) {
+            e.preventDefault();
+            var $quantityInput = $(this).siblings('.js-quantity')[0];
+            if ($quantityInput) {
+                var cur = parseInt($quantityInput.value),
+                        shiftUp = $(this).hasClass('js-quantity-up'),
+                        limit = $($quantityInput).attr(shiftUp ? 'max' : 'min'),
+                        val = shiftUp ? cur + 1 : cur - 1;
+                if (!limit || (shiftUp && val <= parseInt(limit)) || (!shiftUp && val >= parseInt(limit))) {
+                    $quantityInput.value = val;
+                    $($quantityInput).change();
+                }
+            }
+        });
+    },
+    
+    initCart: function() {
+        $('.js-cart-info__radio').on('click', function(){
+            $('.js-cart-info__hidden').hide();
+            var delivery = $(this).data('delivery');
+            var $target = $('.js-cart-info__hidden[data-delivery="' + delivery + '"]');
+            $target.show();
+            $target.find('.js-select_always').styler();
+        });
     },
 
     /**

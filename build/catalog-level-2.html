@@ -272,7 +272,7 @@
                 </span>
             </span>
             <span class="minicart-popup__f__row">
-                <a href="#" class="minicart-popup__f__link">Оформить заказ</a>
+                <a href="cart.html" class="minicart-popup__f__link">Оформить заказ</a>
                 <a href="#" class="minicart-popup__f__link _remove">Очистить корзину</a>
             </span>
         </div>
@@ -2559,7 +2559,7 @@
     <div id="shipping-calc" class="popup">
     <div class="popup__wrapper _shipping">
         <div class="popup__form popup__inner">
-            <form class="form shipping">
+            <form class="form shipping js-shipping">
                 <h3 class="form__h _left">Рассчитать стоимость доставки</h3>
                 <fieldset class="shipping__fieldset">
                     <legend class="shipping__legend">Адрес, точка на карте или километраж:</legend>
@@ -2683,32 +2683,32 @@
                 <fieldset class="shipping__fieldset">
                     <legend class="shipping__legend">Срок доставки и стоимость:</legend>
                     <div class="shipping__date-select">
-                        <label class="shipping__radio _disabled">
+                        <label class="text-radio _disabled">
                             <input type="radio" name="shipping_date" disabled>
-                            <span class="shipping__radio__text">
+                            <span class="text-radio__text">
                                 Сегодня, 08.08
-                                <span class="shipping__radio__text__muted _warning">доставить сегодня уже нельзя</span>
+                                <span class="text-radio__text__muted _warning">доставить сегодня уже нельзя</span>
                             </span>
                         </label>
-                        <label class="shipping__radio">
+                        <label class="text-radio">
                             <input type="radio" name="shipping_date" checked>
-                            <span class="shipping__radio__text">
+                            <span class="text-radio__text">
                                 Завтра, 09.08
-                                <span class="shipping__radio__text__muted">550 <span class="rub">₽</span></span>
+                                <span class="text-radio__text__muted">550 <span class="rub">₽</span></span>
                             </span>
                         </label>
-                        <label class="shipping__radio">
+                        <label class="text-radio">
                             <input type="radio" name="shipping_date">
-                            <span class="shipping__radio__text">
+                            <span class="text-radio__text">
                                 Послезавтра, 10.08
-                                <span class="shipping__radio__text__muted">250 <span class="rub">₽</span></span>
+                                <span class="text-radio__text__muted">250 <span class="rub">₽</span></span>
                             </span>
                         </label>
-                        <label class="shipping__radio js-shipping__datepicker-toggler">
+                        <label class="text-radio js-shipping__datepicker-toggler">
                             <input type="radio" name="shipping_date">
-                            <span class="shipping__radio__text _datepicker">
+                            <span class="text-radio__text _datepicker">
                                 Определенная дата
-                                <span class="shipping__radio__text__muted">550 <span class="rub">₽</span></span>
+                                <span class="text-radio__text__muted">550 <span class="rub">₽</span></span>
                             </span>
                         </label>
                     </div>
@@ -2717,16 +2717,19 @@
                         <input class="shipping__date-input__input js-shipping__date-input__input">
                     </div>
                 </fieldset>
-                <ul class="shipping__summary">
-                    <li class="shipping__summary__item">
-                        Расстояние до пункта назначения:
-                        <span class="shipping__summary__accent">45 км</span>
-                    </li>
-                    <li class="shipping__summary__item">
-                        Стоимость доставки:
-                        <span class="shipping__summary__accent">550 <span class="rub">₽</span></span>
-                    </li>
-                </ul>
+                <div class="shipping__summary">
+                    <ul class="shipping__summary__list">
+                        <li class="shipping__summary__list__item">
+                            Расстояние до пункта назначения:
+                            <span class="shipping__summary__accent">45 км</span>
+                        </li>
+                        <li class="shipping__summary__list__item">
+                            Стоимость доставки:
+                            <span class="shipping__summary__accent">550 <span class="rub">₽</span></span>
+                        </li>
+                    </ul>
+                    
+                </div>
             </form>
         </div>
     </div>
@@ -2861,6 +2864,7 @@
         <li><a href="catalog-level-1.html">catalog level 1</a></li>
         <li><a href="catalog-level-2.html">catalog level 2</a></li>
         <li><a href="catalog-level-3.html">catalog level 3</a></li>
+        <li><a href="cart.html">cart</a></li>
         <li><a href="create-price.html">create price</a></li>
     </ul>
 </div>

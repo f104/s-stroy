@@ -164,9 +164,11 @@ a, .link {
 @import "components/results";
 @import "components/pagination";
 @import "components/filter";
+@import "components/text-radio";
 @import "components/shipping";
 @import "page-assets/catalog";
 @import "page-assets/product";
+@import "page-assets/cart";
 
 .preloader {
     display: none !important;

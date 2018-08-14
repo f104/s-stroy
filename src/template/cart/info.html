@@ -1,0 +1,130 @@
+<div class="cart-info">
+    <h3 class="cart-info__h">Доставка</h3>
+    <div class="cart-info__content">
+        <div class="cart-info__delivery">
+            <div class="cart-info__radio">
+                <label class="text-radio js-cart-info__radio" data-delivery="1">
+                    <input type="radio" name="delivery">
+                    <span class="text-radio__text">
+                        Доставка на объект
+                        <span class="text-radio__text__muted">от 390 <span class="rub">₽</span></span>
+                    </span>
+                </label>
+                <label class="text-radio js-cart-info__radio" data-delivery="2">
+                    <input type="radio" name="delivery">
+                    <span class="text-radio__text">
+                        Самовывоз
+                        <span class="text-radio__text__muted">Бесплатно</span>
+                    </span>
+                </label>
+            </div>
+            <div class="cart-info__delivery__content">
+                <div class="cart-info__delivery__content__item">
+                    <div class="cart-info__delivery__content__hidden js-cart-info__hidden"
+                         data-delivery="1">
+                        <input class="cart-info__delivery__input" value="г. Ворсма, ул. Никифорова, д.23" disabled>
+                        <a href="#cart-shipping-calc" class="cart-info__delivery__change js-popup">
+                            Изменить адрес и пересчитать стоимость доставки
+                        </a>
+                    </div>
+                    <span class="cart-info__delivery__help _muted">*При заказе через сайт действует льготная доставка по городу – всего 390 руб!</span>
+                </div>
+                <div class="cart-info__delivery__content__item cart-info__delivery__content__hidden js-cart-info__hidden"
+                     data-delivery="2">
+                    <select class="select js-select_always">
+                        <option selected>Нижегородская область, посёлок Дружный</option>
+                        <option>Нижегородская обл., пос. Мирный</option>
+                    </select>
+                    <span class="cart-info__delivery__help">Режим работы: пн-пт: с 8:00 до 17:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="cart-info__h">Получатель</h3>
+    <div class="cart-info__content">
+        <div class="cart-info__buyer">
+            <div class="form__group">
+                <span class="form__label js-form__label">
+                    <input required>
+                    <label>ФИО</label>                        
+                </span>
+                <span class="form__label js-form__label">
+                    <input required class="js-mask__tel">
+                    <label>Телефон для связи</label>                        
+                </span>
+                <span class="form__label js-form__label">
+                    <textarea></textarea>
+                    <label class="form__label__empty">Комментарии к заказу</label>                        
+                </span>
+            </div>
+            <div class="form__group">
+                <label class="checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkbox__text">
+                        Подтверждаю свое согласие на&nbsp;<a href="#">обработку персональных данных</a>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="cart-info__h">Оплата</h3>
+    <div class="cart-info__content">
+        <div class="cart-info__payment">
+            <div class="cart-info__radio">
+                <label class="text-radio">
+                    <input type="radio" name="payment">
+                    <span class="text-radio__text">
+                        Наличными или картой при получении
+                    </span>
+                    <span class="text-radio__img">
+                        <i class="sprite cards"></i>
+                        <i class="sprite money"></i>
+                    </span>
+                </label>
+                <label class="text-radio">
+                    <input type="radio" name="payment">
+                    <span class="text-radio__text">
+                        Оплата картой онлайн
+                        <span class="text-radio__text__muted">Visa, MasterCard, Maestro, American Express и Мир.</span>
+                    </span>
+                    <span class="text-radio__img">
+                        <i class="sprite cards"></i>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-info__content">
+        <div class="cart-info__summary">
+            <div class="cart-info__summary__col">
+                <ul class="cart-summary">
+                    <li class="cart-summary__item">
+                        <span class="cart-summary__text"><span>Сумма</span></span>
+                        <span class="cart-summary__cost">9 235 <span class="rub">₽</span></span>
+                    </li>
+                    <li class="cart-summary__item">
+                        <span class="cart-summary__text _discount"><span>Скидка</span></span>
+                        <span class="cart-summary__cost _discount">- 2 356 <span class="rub">₽</span></span>
+                    </li>
+                    <li class="cart-summary__item">
+                        <span class="cart-summary__text"><span>Самовывоз</span></span>
+                        <span class="cart-summary__cost">Бесплатно</span>
+                    </li>
+                    <li class="cart-summary__item _total">
+                        <span class="cart-summary__text"><span>Итого</span></span>
+                        <span class="cart-summary__cost">6 856 <span class="rub">₽</span></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="cart-info__summary__col">
+                <button type="submit" class="btn _primary _solid">Оформить заказ</button>
+                <a href="catalog-level-1.html" class="cart-info__summary__back">
+                    <i class="icon-arrow-left"></i> Вернуться к покупкам
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

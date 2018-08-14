@@ -1,0 +1,66 @@
+<table class="cart-list">
+    <tr class="cart-list__head">
+        <td class="cart-list__item__cell"></td>
+        <td class="cart-list__item__cell">
+            <span class="cart-list__item__th">Товар</span>
+        </td>
+        <td class="cart-list__item__cell">
+            <span class="cart-list__item__th">Цена за ед.</span>
+        </td>
+        <td class="cart-list__item__cell _center">
+            <span class="cart-list__item__th">Кол-во</span>
+        </td>
+        <td class="cart-list__item__cell">
+            <span class="cart-list__item__th">Сумма</span>
+        </td>
+        <td class="cart-list__item__cell"></td>
+    </tr>
+    @@loop('list-item.html', [
+    {
+    "img": 1,
+    "title": "Ендова Катепал Pintari темная охра 0,7*10 м",
+    "price": "3 266",
+    "count": 1,
+    "cost_old": "4 834",
+    "cost": "3 266",
+    "item": "рулон"
+    },
+    {
+    "img": 2,
+    "title": "ЕК TG40 гипсовая штукатурка 30 кг",
+    "price": "566",
+    "count": 20,
+    "cost_old": "10 320",
+    "cost": "11 320",
+    "item": "мешок"
+    },
+    {
+    "img": 3,
+    "title": "Праймер битумный готовый AquaMast 18 л",
+    "price": "999",
+    "count": 1,
+    "cost_old": "1 320",
+    "cost": "999",
+    "item": "ведро"
+    }
+    ])
+    <tr class="cart-list__foot">
+        <td colspan="2" class="cart-list__item__cell"></td>
+        <td colspan="4" class="cart-list__item__cell">
+            <ul class="cart-summary">
+                <li class="cart-summary__item">
+                    <span class="cart-summary__text"><span>Сумма</span></span>
+                    <span class="cart-summary__cost">9 235 <span class="rub">₽</span></span>
+                </li>
+                <li class="cart-summary__item">
+                    <span class="cart-summary__text _discount"><span>Скидка</span></span>
+                    <span class="cart-summary__cost _discount">- 2 356 <span class="rub">₽</span></span>
+                </li>
+                <li class="cart-summary__item _total">
+                    <span class="cart-summary__text"><span>Итого</span></span>
+                    <span class="cart-summary__cost">6 856 <span class="rub">₽</span></span>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>

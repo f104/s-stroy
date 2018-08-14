@@ -1,0 +1,61 @@
+.text-radio {
+    display: block;
+    opacity: 1;
+    margin-bottom: 0;
+    &__text {
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.33;
+        display: block;
+        padding: 8px 12px 6px;
+        cursor: pointer;
+        border: solid 1px #dadada;
+        height: 54px;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            @include transition(border-color);
+        }
+        &__muted {
+            color: rgba($body-color, .5);
+            font-weight: 600;
+            display: block;
+            line-height: 18px;
+            &._warning {
+                font-size: 13px;
+                font-weight: 500;
+                color: $red;
+            }
+        }
+        &._datepicker {
+            background-color: #eef2f7;
+            border-color: #eef2f7;
+        }
+    }
+    &__img {
+        position: absolute;
+        right: 11px;
+        bottom: 11px;
+        pointer-events: none;
+        > * {
+            margin-right: 1ex;
+        }
+    }
+    input {
+        display: none;
+        &:checked ~ .text-radio__text:after {
+            border-color: $primary;
+        }
+    }
+    &._disabled {
+        pointer-events: none;
+        .text-radio__text {
+            color: rgba($body-color, .5);
+        }
+    }
+}

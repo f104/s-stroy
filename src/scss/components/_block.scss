@@ -24,21 +24,26 @@
         min-height: 50px;
         @include media-breakpoint-up(md) {
             min-height: 60px;
+            font-size: 22px;
             line-height: 1.18;
             padding-left: 24px;
             padding-right: 24px;
         }
         @include media-breakpoint-up(lg) {
+            font-size: 24px;
             min-height: 70px;
         }
         &._border {
             padding-bottom: 10px;
             border-bottom: 1px solid $gray-border;            
+        }
+        &._sm {
             @include media-breakpoint-up(md) {
-                font-size: 22px;
-            }
-            @include media-breakpoint-up(lg) {
-                font-size: 24px;
+                min-height: 55px;
+                font-size: 20px;
+                line-height: 1.15;
+                padding-left: 18px;
+                padding-right: 18px;
             }
         }
     }
@@ -94,6 +99,11 @@
             }
             @include media-breakpoint-up(lg) {
                 height: 70px;
+            }
+            &._sm {
+                @include media-breakpoint-up(md) {
+                    height: 55px;
+                }
             }
         }
     }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Корзина"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Корзина</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Корзина
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <form class="container form cart">
+                    <div class="cart__row">
+                        <div class="cart__col">
+
+                            <div class="block">
+                                <h3 class="block__h _border _sm">В корзине 3 товара</h3>
+                                <div class="block__content">
+                                    @@include('./template/cart/list.html')
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cart__col">
+
+                            <div class="block">
+                                @@include('./template/cart/info.html')
+                            </div>
+                            <p class="cart__last-text">
+                                После нажатия кнопки «оформить заказ» 
+                                с вами свяжется 
+                                наш менеджер для уточнения деталей заказа.
+                            </p>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="hidden">
+                @@include('./template/popups/shipping-calc.html', {
+                "id": "cart-shipping-calc",
+                "save": true
+                })
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

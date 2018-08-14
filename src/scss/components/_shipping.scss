@@ -27,30 +27,44 @@
         }
     }
     &__summary {
-        @include list-unstyled;
-        margin-bottom: 0;
-        font-size: 14px;
-        line-height: 1.64;
-        @include media-breakpoint-up(md) {
-            font-size: 16px;
-            line-height: 1.44;
-        }
-        &__item {
-            margin-bottom: 5px;
+        &__list {
+            @include list-unstyled;
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 1.64;
             @include media-breakpoint-up(md) {
-                display: inline-block;
-                margin-right: 32px;
-                margin-bottom: 0;
+                font-size: 16px;
+                line-height: 1.44;
+            }
+            &__item {
+                margin-bottom: 5px;
+                @include media-breakpoint-up(md) {
+                    display: inline-block;
+                    margin-right: 32px;
+                    margin-bottom: 0;
+                }
+            }
+            &__accent {
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 1.28;
+                @include media-breakpoint-up(md) {
+                    font-size: 22px;
+                    line-height: 1.05;
+                }
             }
         }
-        &__accent {
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 1.28;
-            @include media-breakpoint-up(md) {
-                font-size: 22px;
-                line-height: 1.05;
+        .btn {
+            margin-top: 20px;
+            @include media-breakpoint-up(lg) {
+                width: 217px;
+                margin-top: 0;
             }
+        }
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
     }
     &__car-select {
@@ -159,70 +173,18 @@
             }
         }
     }
-    &__radio {
-        display: block;
-        opacity: 1;
-        margin-bottom: 0;
-        &__text {
-            font-size: 15px;
-            font-weight: normal;
-            line-height: 1.33;
-            display: block;
-            padding: 8px 12px 6px;
-            cursor: pointer;
-            border: solid 1px #dadada;
-            height: 54px;
-            &:after {
-                content: '';
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                border: 2px solid transparent;
-                @include transition(border-color);
-            }
-            &__muted {
-                color: rgba($body-color, .5);
-                font-weight: 600;
-                display: block;
-                line-height: 18px;
-                &._warning {
-                    font-size: 13px;
-                    font-weight: 500;
-                    color: $red;
-                }
-            }
-            &._datepicker {
-                background-color: #eef2f7;
-                border-color: #eef2f7;
-            }
-        }
-        input {
-            display: none;
-            &:checked ~ .shipping__radio__text:after {
-                border-color: $primary;
-            }
-        }
-        &._disabled {
-            pointer-events: none;
-            .shipping__radio__text {
-                color: rgba($body-color, .5);
-            }
-        }
-    }
     &__date-select {
         @include media-breakpoint-up(md) {
             display: flex;
             flex-wrap: wrap;
         }
-        .shipping__radio {
+        .text-radio {
             @include media-breakpoint-only(sm) {
                 &__text {
                     border-top-width: 0;
                 }
                 &:first-of-type {
-                    .shipping__radio__text {
+                    .text-radio__text {
                         border-top-width: 1px;
                     }
                 }
@@ -230,23 +192,23 @@
             @include media-breakpoint-only(md) {
                 width: 50%;
                 &:nth-child(2n) {
-                    .shipping__radio__text {
+                    .text-radio__text {
                         border-left-width: 0;
                     }
                 }
                 &:nth-child(3), &:nth-child(4) {
-                    .shipping__radio__text {
+                    .text-radio__text {
                         border-top-width: 0;
                     }
                 }
             }
             @include media-breakpoint-up(lg) {
                 width: 25%;
-                .shipping__radio__text {
+                .text-radio__text {
                     border-right-width: 0;
                 }
                 &:nth-last-child {
-                    .shipping__radio__text {
+                    .text-radio__text {
                         border-right-width: 1px;
                     }
                 }
