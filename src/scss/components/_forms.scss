@@ -419,12 +419,18 @@ form {
     color: $body-color;
     outline: none;
     line-height: 46px;
-    padding: 0 17px;
     &._sm {
         line-height: 40px;
     }
     option[disabled] {
         display: none;
+    }
+    padding: 0 17px;
+    @include media-breakpoint-up(md) {
+        padding: 0;
+        .jq-selectbox__select-text {
+            padding: 0 17px;
+        }
     }
 }
 .select-wrapper, .jq-selectbox {
@@ -437,6 +443,7 @@ form {
         top: 50%;
         transform: translateY(-50%);
         opacity: .7;
+        pointer-events: none;
     }
     .jq-selectbox__dropdown {
         background: $white;
