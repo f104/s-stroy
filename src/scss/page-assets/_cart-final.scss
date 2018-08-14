@@ -1,0 +1,97 @@
+.cart-final {
+    margin-bottom: 23px;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 33px;
+    }        
+    &__row {
+        @include media-breakpoint-up(lg) {
+            display: flex;
+        }        
+    }
+    &__col {
+        margin-bottom: 20px;
+        @include media-breakpoint-up(lg) {
+            &:first-child {
+                padding-right: 30px;
+                flex: 1;
+            }
+            &:last-child {
+                flex-basis: 435px;
+            }
+        }
+    }
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.29;
+        margin-bottom: 16px;
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            line-height: 1.15;
+        }
+    }
+    &__lead {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.53;
+        margin-bottom: 17px;
+        @include media-breakpoint-up(md) {
+            font-size: 17px;
+            line-height: 1.35;
+            margin-bottom: 20px;
+        }
+    }
+    &__payment {
+        &__text {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            @include media-breakpoint-up(md) {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+        }
+        &__foot {
+            .btn {
+                font-size: 11px;
+                width: 146px;
+                line-height: 30px;
+                margin-right: 10px;
+            }
+        }
+    }
+    &__info {
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        padding: $container-padding-sm;
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.29;
+        @include media-breakpoint-up(md) {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 18px 20px;
+            font-size: 15px;
+            line-height: 1.33;
+            border-radius: 4px;
+        }
+        &__text {
+            padding-right: 20px;
+            @include media-breakpoint-only(md) {
+                flex-basis: 350px;
+            }
+        }
+        &__img {
+            flex-shrink: 0;
+        }
+    }
+    .link-back {
+        display: inline-block;
+        margin-top: 30px;
+    }
+}

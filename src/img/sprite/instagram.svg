@@ -5,7 +5,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="42px"
@@ -41,7 +40,7 @@
      id="namedview1019"
      showgrid="false"
      inkscape:zoom="13.956941"
-     inkscape:cx="10.582197"
+     inkscape:cx="10.940442"
      inkscape:cy="18.366321"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -52,31 +51,13 @@
      id="title999">Instagram_Color</title>
   <desc
      id="desc1001">Created with Sketch.</desc>
+  <path
+     style="opacity:1;fill:#a332a4;fill-opacity:1;stroke:#ff6716;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 42,21 A 20.999999,20.999998 0 0 1 20.999998,41.999999 20.999999,20.999998 0 0 1 5e-7,21 20.999999,20.999998 0 0 1 20.999998,1.5e-6 20.999999,20.999998 0 0 1 42,21 Z"
+     id="path837"
+     inkscape:connector-curvature="0" />
   <defs
-     id="defs1004">
-    <path
-       d="M0,21 C0,9.40201968 9.40201968,0 21,0 C32.5979803,0 42,9.40201968 42,21 C42,32.5979803 32.5979803,42 21,42 C9.40201968,42 0,32.5979803 0,21 Z"
-       id="path-1" />
-    <mask
-       fill="white"
-       id="mask-2">
-      <use
-         height="100%"
-         width="100%"
-         y="0"
-         x="0"
-         id="use1006"
-         xlink:href="#path-1" />
-    </mask>
-  </defs>
-  <use
-     height="100%"
-     width="100%"
-     y="0"
-     x="0"
-     style="fill:#a332a4;fill-rule:evenodd;stroke:none;stroke-width:1;fill-opacity:1"
-     xlink:href="#path-1"
-     id="back" />
+     id="defs1004" />
   <path
      id="Shape"
      style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1"
