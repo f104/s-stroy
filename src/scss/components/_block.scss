@@ -1,4 +1,5 @@
 .block {
+    $root: &;
     background-color: $white;
     margin-bottom: 20px;
     margin-left: - $container-padding-sm;
@@ -7,6 +8,16 @@
         margin-bottom: 30px;
         margin-left: 0;
         margin-right: 0;
+    }
+    &._md-full {
+        @include media-breakpoint-only(md) {
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+            #{$root}__h, #{$root}__content._padding, #{$root}__footer {
+                padding-left: $container-padding-md;
+                padding-right: $container-padding-md;
+            }
+        }        
     }
     &__h {
         margin-bottom: 0;
@@ -63,6 +74,11 @@
             @include media-breakpoint-up(md) {
                 padding: 24px;
             }
+            &._sm {
+                @include media-breakpoint-up(md) {
+                    padding: 18px;
+                }                
+            }
         }
         &._rte {
             line-height: 1.43;
@@ -87,6 +103,33 @@
     &__more {
         font-size: 15px;
         font-weight: 500;
+    }
+    &__footer {
+        padding: $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+        &._border {
+            border-top: 1px solid $gray-border;            
+        }
+        &._sm {
+            @include media-breakpoint-up(lg) {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+            
+        }
+        &__btn {
+            width: 100%;
+            @include media-breakpoint-up(md) {
+                width: auto;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
     }
 }
 

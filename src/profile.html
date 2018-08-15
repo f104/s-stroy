@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Личный кабинет"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Личный кабинет</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Личный кабинет
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container profile">
+                    
+                    <a href="catalog-level-1.html" class="link-back">
+                        <i class="icon-arrow-left"></i>
+                        Перейти к покупкам
+                    </a>
+
+                    <div class="block _md-full">
+                        <h3 class="block__h _border _sm">Личная информация</h3>
+                        <div class="block__content _padding _sm">
+                            @@include('./template/profile/info-list.html')
+                        </div>
+                        <div class="block__footer _border _sm">
+                            <a href="#" class="btn _primary block__footer__btn">Изменить данные</a>
+                        </div>
+                    </div>
+                    
+                    <div class="block _md-full">
+                        <h3 class="block__h _sm">Последние заказы</h3>
+                        <div class="block__content">
+                            @@include('./template/profile/orders-list.html')
+                        </div>
+                        <div class="block__footer _border _sm">
+                            <a href="#" class="btn _primary block__footer__btn">Смотреть все заказы</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="hidden">
+                @@include('./template/popups/shipping-calc.html', {
+                "id": "cart-shipping-calc",
+                "save": true
+                })
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

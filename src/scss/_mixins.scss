@@ -76,38 +76,6 @@
     }
 }
 
-@mixin sm-full() {
-    margin-left: - $container-padding-sm;
-    margin-right: - $container-padding-sm;
-    padding-left: $container-padding-sm;
-    padding-right: $container-padding-sm;
-    @include media-breakpoint-up(md) {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-@mixin md-full() {
-    margin-left: - $container-padding-sm;
-    margin-right: - $container-padding-sm;
-    padding-left: $container-padding-sm;
-    padding-right: $container-padding-sm;
-    @include media-breakpoint-up(md) {
-        margin-left: - $container-padding-md;
-        margin-right: - $container-padding-md;
-        padding-left: $container-padding-md;
-        padding-right: $container-padding-md;
-    }
-    @include media-breakpoint-up(lg) {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 /* after для скроллбаров */
 @mixin scrollbar-spacer($width) {
     content: '';
