@@ -90,6 +90,7 @@ form {
 }
 
 .form {
+    $root: &;
     .form__h {
         font-family: $font-family-alt;
         font-size: 17px;
@@ -156,6 +157,7 @@ form {
         @include ie10up() {
             height: 46px;
             padding-top: 2px;
+            line-height: normal;
         }
         &._sm {
             line-height: 36px;
@@ -178,6 +180,17 @@ form {
         font-weight: 500;
         opacity: .5;
         color: $body-color;
+    }
+    #{$root}__display-input {
+        border-color: transparent;
+        padding-left: 0;
+        padding-right: 0;
+        &:focus {
+            border-color: transparent;            
+        }
+        @include media-breakpoint-down(sm) {
+            line-height: normal;
+        }
     }
 
     &__label {
@@ -212,6 +225,30 @@ form {
             + label:after {
                 content: '*';
                 display: inline;
+            }
+        }
+    }
+
+    &__input-group {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: center;
+        }
+        label {
+            opacity: 0.5;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 7px;
+            @include media-breakpoint-up(md) {
+                font-size: 15px;
+                margin-bottom: 0;
+                margin-right: 20px;
+                flex-basis: 65px;
+            }
+        }
+        input {
+            @include media-breakpoint-up(md) {
+                flex: 1;
             }
         }
     }
@@ -299,6 +336,9 @@ form {
             width: 18px;
             height: 18px;
             background-color: #e3e7ec;
+            @include ie10up() {
+                top: -1px;
+            }
         }
         &:after {
             content: '';
@@ -310,6 +350,9 @@ form {
             border-radius: 2px;
             background-color: #e3e7ec;
             @include transition(background-color)
+            @include ie10up() {
+                top: 4px;
+            }
         }
     }
     input {
@@ -419,6 +462,10 @@ form {
         padding: 0;
         .jq-selectbox__select-text {
             padding: 0 17px;
+            @include ie10up() {
+                padding-top: 2px;
+                line-height: 38px;
+            }
         }
     }
 }

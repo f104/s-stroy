@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Изменить регистрационнные данные"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Изменить регистрационнные данные</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="profile.html">Личный кабинет</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Настройки пользователя
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container">
+
+                    <div class="block _md-full">
+                        <h3 class="block__h _border _sm">Личная информация</h3>
+                        <div class="block__content _padding _sm">
+                            <form class="form profile-edit">
+                                <div class="profile-edit__row">
+                                    <div class="profile-edit__col form__group">
+                                        <div class="form__input-group">
+                                            <label>Логин</label>
+                                            <input class="form__display-input" value="+7 (920) 123-45-67" readonly>
+                                        </div>
+                                        <div class="form__input-group">
+                                            <label>E-mail</label>
+                                            <input value="ivanchenko.a@gmail.com">
+                                        </div>
+                                    </div>
+                                    <div class="profile-edit__col form__group">
+                                        <div class="form__input-group">
+                                            <label>Имя</label>
+                                            <input value="Алексей">
+                                        </div>
+                                        <div class="form__input-group">
+                                            <label>Фамилия</label>
+                                            <input value="Иванченко">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-edit__row">
+                                    <div class="profile-edit__col">
+                                        <div class="form__group">
+                                            <span class="profile-edit__label">Изменить пароль</span>
+                                            <span class="form__label js-form__label">
+                                                <input>
+                                                <label>Введите старый пароль</label>                        
+                                            </span>
+                                            <span class="form__label js-form__label">
+                                                <input>
+                                                <label>Введите новый пароль</label>                        
+                                            </span>
+                                            <span class="form__label js-form__label">
+                                                <input>
+                                                <label>Подтверждение новыго пароля</label>                        
+                                            </span>
+                                            <p class="form__help">Пароль должен быть не менее 6 символов длиной.</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-edit__col">
+                                        <div class="form__group">
+                                            <label class="checkbox">
+                                                <input type="checkbox" checked>
+                                                <span class="checkbox__text">
+                                                    Подтверждаю свое согласие на <a href="#">обработку персональных данных</a>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="form__group">
+                                            <button type="submit" class="btn _primary _solid profile-edit__btn">Сохранить изменения</button>
+                                            <button type="submit" class="btn _primary profile-edit__btn">Отменить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

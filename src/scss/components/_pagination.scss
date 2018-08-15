@@ -16,8 +16,10 @@
                 margin: 3px;
             }
         }
-        &:first-child, &:last-child {
-            flex: 1;
+        @include media-breakpoint-only(sm) {
+            &:first-child, &:last-child {
+                flex: 1;
+            }
         }
         .pagination__item__link {
             border-radius: $border-radius;
@@ -32,7 +34,8 @@
                 pointer-events: none;
                 background-color: #e3e7ec;
                 color: $body-color;
-                padding: 0 10px;
+                padding-left: 10px;
+                padding-right: 10px;
                 margin: 0;
             }
             &._first, &._last {
@@ -54,6 +57,10 @@
             &._last {
                 margin-left: 15px;
                 text-align: right;
+            }
+            @include ie10up() {
+                padding-top: 2px;
+                line-height: 28px;
             }
         }
     }
