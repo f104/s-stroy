@@ -50,7 +50,7 @@
                             @@include('./template/profile/info-list.html')
                         </div>
                         <div class="block__footer _border _sm">
-                            <a href="#" class="btn _primary block__footer__btn">Изменить данные</a>
+                            <a href="profile-edit.html" class="btn _primary block__footer__btn">Изменить данные</a>
                         </div>
                     </div>
                     
@@ -60,18 +60,12 @@
                             @@include('./template/profile/orders-list.html')
                         </div>
                         <div class="block__footer _border _sm">
-                            <a href="#" class="btn _primary block__footer__btn">Смотреть все заказы</a>
+                            <a href="orders-history.html" class="btn _primary block__footer__btn">Смотреть все заказы</a>
                         </div>
                     </div>
 
                 </div>
 
-            </div>
-            <div class="hidden">
-                @@include('./template/popups/shipping-calc.html', {
-                "id": "cart-shipping-calc",
-                "save": true
-                })
             </div>
             @@include('./template/footer.html')
             <div class="content__overlay js-menu-overlay"></div>

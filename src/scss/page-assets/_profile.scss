@@ -53,6 +53,14 @@
         &:last-child {
             padding-right: 18px;
         }
+        @include media-breakpoint-only(md) {
+            &:first-child {
+                padding-left: $container-padding-md;                
+            }
+            &:last-child {
+                padding-right: $container-padding-md;                
+            }
+        }
         &._center {
             text-align: center;
         }
@@ -135,6 +143,9 @@
         }
         @include media-breakpoint-down(sm) {
             display: none;
+            + #{$root}__row {
+                border-top-width: 0;
+            }
         }
     }
     &__link {
@@ -161,6 +172,65 @@
         width: 85px;
         @include media-breakpoint-up(md) {
             width: 106px;
+        }
+    }
+}
+.orders-list-header {
+    @include media-breakpoint-up(md) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__col {
+        &:first-child {
+            display: flex;
+            align-items: center;
+            @include media-breakpoint-down(sm) {
+                margin-left: - $container-padding-sm;
+                margin-right: - $container-padding-sm;
+                margin-bottom: $container-padding-sm;
+                padding-left: $container-padding-sm;
+                padding-right: $container-padding-sm;
+                padding-bottom: $container-padding-sm;
+                border-bottom: 1px solid $gray-border;
+            }
+        }
+    }
+    .select-wrapper {
+        flex-grow: 1;
+    }
+    .jq-selectbox {
+        min-width: 190px;
+    }
+    &__label {
+        margin-right: 10px;
+    }
+}
+.orders-list-filter {
+    background-color: $body-bg;
+    padding: $container-padding-sm $container-padding-sm $container-padding-sm - 10;
+    @include media-breakpoint-up(md) {
+        padding: 18px $container-padding-md 8px;
+        background-color: transparent;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 18px 18px 8px;
+    }
+    &__h {
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    &__items {
+        .checkbox {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+            @include media-breakpoint-up(md) {
+                margin-right: 30px;
+            }
         }
     }
 }

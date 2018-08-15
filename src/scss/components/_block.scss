@@ -13,7 +13,7 @@
         @include media-breakpoint-only(md) {
             margin-left: - $container-padding-md;
             margin-right: - $container-padding-md;
-            #{$root}__h, #{$root}__content._padding, #{$root}__footer {
+            #{$root}__h, #{$root}__content._padding, #{$root}__header, #{$root}__footer {
                 padding-left: $container-padding-md;
                 padding-right: $container-padding-md;
             }
@@ -53,6 +53,24 @@
                 min-height: 55px;
                 font-size: 20px;
                 line-height: 1.15;
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+        }
+    }
+    &__header {
+        padding: $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+        &._border {
+            border-bottom: 1px solid $gray-border;            
+        }
+        &._sm {
+            @include media-breakpoint-up(md) {
                 padding-left: 18px;
                 padding-right: 18px;
             }

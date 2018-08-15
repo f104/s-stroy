@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "История заказов"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">История заказов</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="profile.html">Личный кабинет</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    История заказов
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container">
+
+
+                    <div class="block _md-full">
+                        <div class="block__header _border _sm">
+                            @@include('./template/profile/orders-list-header.html')
+                        </div>
+                        <div class="block__content">
+                            <div class="orders-list-filter">
+                                <div class="orders-list-filter__h">Фильтр</div>
+                                <div class="orders-list-filter__items">
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkbox__text">
+                                            Заказ подтвержден
+                                        </span>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkbox__text">
+                                            В обработке
+                                        </span>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkbox__text">
+                                            Выполнен
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <table class="orders-list">
+                                <tr class="orders-list__head">
+                                    <td class="orders-list__td">№</td>
+                                    <td class="orders-list__td">Дата заказа</td>
+                                    <td class="orders-list__td">Статус</td>
+                                    <td class="orders-list__td">Способ оплаты</td>
+                                    <td class="orders-list__td _center">Статус оплаты</td>
+                                    <td class="orders-list__td">Способ получения</td>
+                                    <td class="orders-list__td">Сумма</td>
+                                </tr>
+                                @@include('./template/profile/orders-list-items.html')
+                                @@include('./template/profile/orders-list-items.html')
+                                @@include('./template/profile/orders-list-items.html')
+                            </table>
+                        </div>
+                        <div class="block__footer _border _sm">
+                            @@include('./template/profile/orders-list-header.html')
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>
