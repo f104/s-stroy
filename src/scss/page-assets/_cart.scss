@@ -22,6 +22,7 @@
 }
 
 .cart-list {
+    $root: &;
     width: 100%;
     @include media-breakpoint-down(sm) {
         display: block;
@@ -60,6 +61,9 @@
             }
             &._spacer {
                 display: none;
+            }
+            &._1 {
+                width: 55px;
             }
             @include media-breakpoint-down(sm) {
                 display: block;
@@ -107,7 +111,7 @@
             }
         }
         &__title {
-            display: block;
+            display: inline-block;
             font-size: 13px;
             line-height: 1.23;
             color: $body-color;
@@ -232,6 +236,23 @@
         @include media-breakpoint-down(sm) {
             display: block;
             padding: 15px;
+        }
+    }
+    &._order {
+        #{$root}__item__price {
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        #{$root}__item__cell {
+            vertical-align: top;
+            @include media-breakpoint-down(sm) {
+                &._3, &._4 {
+                    align-self: flex-end;
+                }
+                &._spacer {
+                    height: 0;
+                }
+            }
         }
     }
 }

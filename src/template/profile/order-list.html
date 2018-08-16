@@ -1,0 +1,49 @@
+<table class="cart-list _order">
+    <tr class="cart-list__head">
+        <td class="cart-list__item__cell"></td>
+        <td class="cart-list__item__cell">
+            <span class="cart-list__item__th">Товар</span>
+        </td>
+        <td class="cart-list__item__cell">
+            <span class="cart-list__item__th">Цена за ед.</span>
+        </td>
+        <td class="cart-list__item__cell">
+            <span class="cart-list__item__th">Кол-во</span>
+        </td>
+        <td class="cart-list__item__cell">
+            <span class="cart-list__item__th">Сумма</span>
+        </td>
+    </tr>
+    @@loop('../cart/list-item.html', [
+    {
+    "img": 1,
+    "title": "Ендова Катепал Pintari темная охра 0,7*10 м",
+    "price": "3 266",
+    "count": 1,
+    "cost_old": "4 834",
+    "cost": "3 266",
+    "item": "рулон",
+    "remove": false
+    },
+    {
+    "img": 2,
+    "title": "ЕК TG40 гипсовая штукатурка 30 кг",
+    "price": "566",
+    "count": 20,
+    "cost_old": "10 320",
+    "cost": "11 320",
+    "item": "мешков",
+    "remove": false
+    },
+    {
+    "img": 3,
+    "title": "Праймер битумный готовый AquaMast 18 л",
+    "price": "999",
+    "count": 1,
+    "cost_old": "1 320",
+    "cost": "999",
+    "item": "ведро",
+    "remove": false
+    }
+    ])
+</table>

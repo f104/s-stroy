@@ -47,6 +47,10 @@
         &._border {
             padding-bottom: 10px;
             border-bottom: 1px solid $gray-border;            
+            border-top: 1px solid $gray-border;            
+            &:first-child {
+                border-top-width: 0;
+            }
         }
         &._sm {
             @include media-breakpoint-up(md) {

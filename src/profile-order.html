@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Заказ №1996, создан 12.07.2018"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Заказ №1996, создан 12.07.2018</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="profile.html">Личный кабинет</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    История заказов
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container profile">
+                    
+                    <a href="orders-history.html" class="link-back">
+                        <i class="icon-arrow-left"></i>
+                        Вернуться в список заказов
+                    </a>
+
+                    <div class="block _md-full">
+                        <div class="block__content _padding _sm">
+                            <p>Заказ №1996 от 12.07.2018, 
+                                5 товаров на сумму 274 928.00 <span class="rub">₽</span></p>
+                        </div>
+                        <h3 class="block__h _border _sm">Информация о заказе</h3>
+                        <div class="block__content _padding _sm">
+                            <ul class="order-info">
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Фамилия Имя</span>
+                                    Иванченко Алексей
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Логин</span>
+                                    +7 (920) 123-45-67
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Тип плательщика</span>
+                                    Физическое лицо
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Текущий статус, от 12.07.2018:</span>
+                                    В обработке
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Адрес доставки</span>
+                                    г. Нижний Новгород, ул. Ермака, д. 134, строение 5
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">E-mail адрес</span>
+                                    ivanchenko.a@gmail.com
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Сумма</span>
+                                    <span class="order-info__item__cost">274 928.00 <span class="rub">₽</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3 class="block__h _border _sm">Оплата и доставка</h3>
+                        <div class="block__content _padding _sm">
+                            <ul class="order-info">
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Способ доставки</span>
+                                    Доставка на объект
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Стоимость доставки</span>
+                                    390 <span class="rub">₽</span>
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Способ оплаты</span>
+                                    Наличными при получении
+                                </li>
+                            </ul>
+                        </div>
+                        <h3 class="block__h _border _sm">Содержимое заказа</h3>
+                        <div class="block__content _sm">
+                            @@include('./template/profile/order-list.html')
+                        </div>
+                        <div class="block__content _padding _sm">
+                            <ul class="order-summary">
+                                <li class="order-summary__item">
+                                    <span class="order-summary__item__h">Товар на</span>
+                                    274 538.00 <span class="rub">₽</span>
+                                </li>
+                                <li class="order-summary__item">
+                                    <span class="order-summary__item__h">Стоимость доставки</span>
+                                    390 <span class="rub">₽</span>
+                                </li>
+                                <li class="order-summary__item _summary">
+                                    <span class="order-summary__item__h">Итого</span>
+                                    274 928.00 <span class="rub">₽</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="orders-history.html" class="link-back">
+                        <i class="icon-arrow-left"></i>
+                        Вернуться в список заказов
+                    </a>
+
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>
