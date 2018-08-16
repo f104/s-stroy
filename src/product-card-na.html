@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Товар"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 2})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">ЕК TG40 гипсовая штукатурка 30 кг</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="catalog-level-1.html">Каталог</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="catalog-level-2.html">Внутренняя отделка</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="catalog-level-3.html">Штукатурные смеси</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    ЕК TG40 гипсовая штукатурка 30 кг
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <article class="container product-card _na">
+                    <div class="product-card__row">
+                        <div class="product-card__row__col _1">
+                            @@include('./template/product/slider.html')                            
+                            <ul class="product-badges _md-big">
+                                <li class="product-badges__item">
+                                    <span class="product-badges__wrapper _action">
+                                        <span class="product-badges__text">Акция</span>
+                                    </span>
+                                </li>
+                                <li class="product-badges__item">
+                                    <span class="product-badges__wrapper _hit">
+                                        <span class="product-badges__text">Хит</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-card__row__col _2">
+                            @@include('./template/product/na.html')
+                        </div>
+                    </div>
+                    @@include('./template/product/tabs.html')
+                    @@include('./template/catalog/recommended.html')
+                </article>
+                <div class="hidden">
+                    @@include('./template/popups/question.html')
+                    @@include('./template/popups/request.html')
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

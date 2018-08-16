@@ -6,6 +6,7 @@
 }
 
 .product-card {
+    $root: &;
     &__row {
         @include product-card-margins;
         margin-left: - $container-padding-sm;
@@ -46,6 +47,17 @@
                 }
                 @include media-breakpoint-up(lg) {
                     width: 380px;
+                }
+            }
+        }
+    }
+    &._na {
+        #{$root}__row {
+            &__col {
+                &._2 {
+                    @include media-breakpoint-up(md) {
+                        display: block;
+                    }
                 }
             }
         }
@@ -336,6 +348,19 @@
             &__accent {
                 font-size: 19px;
             }
+        }
+    }
+    &__na {
+        margin-bottom: 46px;
+        &__h {
+            font-family: $font-family-alt;
+            font-size: 25px;
+            font-weight: 600;
+            color: $red;
+            margin-bottom: 13px;
+        }
+        &__lead {
+            font-size: 15px;
         }
     }
 }

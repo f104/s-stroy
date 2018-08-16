@@ -60,6 +60,26 @@ form {
             line-height: 38px;
         }
     }
+    &._lg {
+        line-height: 48px;
+        @include media-breakpoint-up(md) {
+            line-height: 53px;
+            font-size: 14px;
+        }
+        @include media-breakpoint-up(md) {
+            line-height: 60px;
+        }
+        @include ie10up() {
+            padding-top: 2px;
+            line-height: 46px;
+            @include media-breakpoint-up(md) {
+                line-height: 51px;
+            }
+            @include media-breakpoint-up(md) {
+                line-height: 58px;
+            }
+        }
+    }
     &._loading {
         pointer-events: none;
         &:before {
