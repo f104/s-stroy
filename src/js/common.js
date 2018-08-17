@@ -424,7 +424,7 @@ var app = {
                 slide.$slide.find('.slick-initialized').slick('setPosition');
                 var $shipping = slide.$slide.find('.js-shipping');
                 if ($shipping && !$shipping.data('init')) {
-                    app.initShippingCalc($shipping);
+                    app.shipping.init($shipping);
                 }                
             }
         };

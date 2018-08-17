@@ -1,6 +1,9 @@
 form {
     margin: 0;
 }
+::-ms-clear {
+    display: none;
+}
 .btn {
     display: inline-block;
     font-size: 13px;

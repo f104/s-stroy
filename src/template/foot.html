@@ -10,6 +10,7 @@
         sliderAutoplaySpeed: 8000, //ms
         hoverZoom: 10, //px
         shipping: {
+            disabledDays: [0, 6], // дни, в которые невозможна доставка (0 - воскресенье)
             from: {
                 geo: [56.311696, 43.832899], // array координаты или string адрес для геокодирования
                 text: 'Центральный склад', // текст подсказки
@@ -31,3 +32,4 @@
 <script src="js/libs/sticky-kit.min.js"></script>
 <script src="js/libs/datepicker.min.js"></script>
 <script src="js/common.js"></script>
+<script src="js/shipping.js"></script>

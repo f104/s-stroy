@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,800,800i&amp;subset=cyrillic" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,800,800i&amp;subset=cyrillic" rel="stylesheet">-->
     <link href="fonts/Lato/lato.css" rel="stylesheet" type="text/css">
     <link href="fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css">
     <link href="css/libs/slick.css" rel="stylesheet" type="text/css">
@@ -1135,9 +1135,16 @@
             <form class="form shipping js-shipping">
                 <h3 class="form__h _left">Рассчитать стоимость доставки</h3>
                 <fieldset class="shipping__fieldset">
-                    <legend class="shipping__legend">Адрес, точка на карте или километраж:</legend>
+                    <legend class="shipping__legend">Адрес или точка на карте:</legend>
                     <div class="shipping__inputs">
-                        <input value="г. Кстово, ул. Чванова, 36" class="js-shipping__route-address">
+                        <input name="shipping_distance" type="hidden" class="js-shipping__route-distance">
+                        <input id="shipping-calc_input" name="shipping_address" 
+                               class="js-shipping__route-address" disabled>
+                        <button type="button" class="shipping__inputs__reset js-shipping__reset" 
+                                title="Очистить маршрут">
+                            <i class="icon-close"></i>
+                        </button>
+                        <!--
                         <input type="number" min="0" value="45" class="no-spinners js-shipping__route-distance">
                         км
                         <span class="shipping__map-toggler">
@@ -1145,9 +1152,10 @@
                                 <i class="icon-location"></i> Указать на карте
                             </a>
                         </span>
+                        -->
                     </div>
                 </fieldset>
-                <div id="shipping_map" class="shipping__map js-shipping__map" data-from="56.311696,43.832899"></div>
+                <div id="shipping-calc_map" class="shipping__map js-shipping__map"></div>
                 <fieldset class="shipping__fieldset">
                     <legend class="shipping__legend">Выберите необходимый тип транспорта:</legend>
                     <div class="shipping__car-select">
@@ -1287,18 +1295,20 @@
                     </div>
                     <div class="shipping__date-input js-shipping__date-input _empty">
                         <i class="icon-pen"></i>
-                        <input class="shipping__date-input__input js-shipping__date-input__input">
+                        <input name="shipping_date_selected" class="shipping__date-input__input js-shipping__date-input__input">
                     </div>
                 </fieldset>
-                <div class="shipping__summary">
+                <div class="shipping__summary _hidden js-shipping__summary">
                     <ul class="shipping__summary__list">
                         <li class="shipping__summary__list__item">
                             Расстояние до пункта назначения:
-                            <span class="shipping__summary__accent">45 км</span>
+                            <span class="shipping__summary__list__accent">
+                                <span class="js-shipping__route-distance-text"></span> км
+                            </span>
                         </li>
                         <li class="shipping__summary__list__item">
                             Стоимость доставки:
-                            <span class="shipping__summary__accent">550 <span class="rub">₽</span></span>
+                            <span class="shipping__summary__list__accent">550 <span class="rub">₽</span></span>
                         </li>
                     </ul>
                     
@@ -1481,6 +1491,7 @@
         sliderAutoplaySpeed: 8000, //ms
         hoverZoom: 10, //px
         shipping: {
+            disabledDays: [0, 6], // дни, в которые невозможна доставка (0 - воскресенье)
             from: {
                 geo: [56.311696, 43.832899], // array координаты или string адрес для геокодирования
                 text: 'Центральный склад', // текст подсказки
@@ -1502,5 +1513,6 @@
 <script src="js/libs/sticky-kit.min.js"></script>
 <script src="js/libs/datepicker.min.js"></script>
 <script src="js/common.js"></script>
+<script src="js/shipping.js"></script>
     </body>
 </html>

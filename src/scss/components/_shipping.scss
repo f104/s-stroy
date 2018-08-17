@@ -1,3 +1,7 @@
+ymaps * {
+    position: initial;
+}
+
 .shipping {
     &__fieldset {
         margin-bottom: 20px;
@@ -27,6 +31,10 @@
         }
     }
     &__summary {
+        @include transition(opacity);
+        &._hidden {
+            opacity: 0;
+        }
         &__list {
             @include list-unstyled;
             margin-bottom: 0;
@@ -46,7 +54,7 @@
             }
             &__accent {
                 font-size: 18px;
-                font-weight: bold;
+                font-weight: 600;
                 line-height: 1.28;
                 @include media-breakpoint-up(md) {
                     font-size: 22px;
@@ -151,26 +159,46 @@
         margin-bottom: 0;
     }
     &__inputs {
-        display: flex;
+/*        display: flex;
         align-items: center;
         flex-wrap: wrap;
         @include media-breakpoint-up(md) {
             flex-wrap: nowrap;
-        }
+        }*/
         input {
-            &:first-of-type {
+            /*&:first-of-type {*/
                 width: 100%;
-                margin-bottom: 10px;
-                @include media-breakpoint-up(md) {
-                    width: 336px;
-                    margin-bottom: 0;
-                    margin-right: 10px;
-                }
+                padding-right: 35px;
+                /*                margin-bottom: 10px;
+                                @include media-breakpoint-up(md) {
+                                    width: 336px;
+                                    margin-bottom: 0;
+                                    margin-right: 10px;
+                                }*/
+            /*}*/
+            /*            &:last-of-type {
+                            width: 65px;
+                            margin-right: 10px;
+                        }*/
+        }
+        &__reset {
+            background-color: transparent;
+            border-width: 0;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            width: 28px !important;
+            color: $body-color;
+            @include transition(color);
+            &:hover {
+                color: $primary;
             }
-            &:last-of-type {
-                width: 65px;
-                margin-right: 10px;
+            &:focus {
+                outline: none;
             }
+            display: none;
         }
     }
     &__date-select {
