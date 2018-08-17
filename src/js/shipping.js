@@ -129,6 +129,7 @@ app.shipping = {
             autoFitToViewport: 'always',
             controls: []
         }, {
+            suppressMapOpenBlock: true,
             balloonMaxWidth: 200,
             balloonContentLayout: BalloonContentLayout,
             balloonPanelMaxMapArea: 0
