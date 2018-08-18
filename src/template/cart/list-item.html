@@ -10,10 +10,13 @@
     </td>
     <td class="cart-list__item__cell _3">
         <span class="cart-list__item__th">Цена за ед.</span>
-        <span class="cart-list__item__price">@@price <span class="rub">₽</span></span>
         @@if (remove) {
         <span class="cart-list__item__variant">@@item</span>
         }
+        @@if (!remove) {
+        <del class="cart-list__item__cost-old">@@cost_old <span class="rub">₽</span></del>
+        }
+        <span class="cart-list__item__price">@@price <span class="rub">₽</span></span>
     </td>
     <td class="cart-list__item__cell _spacer"></td>
     <td class="cart-list__item__cell _4">

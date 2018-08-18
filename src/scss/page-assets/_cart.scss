@@ -146,6 +146,7 @@
             display: block;
             white-space: nowrap;
             margin-bottom: 5px;
+            margin-top: 5px;
         }
         &__variant {
             font-size: 13px;
@@ -206,7 +207,7 @@
                 }
             }
             .cart-list__item__count__input {
-                width: 35px;
+                width: 40px;
                 line-height: 38px;
                 padding: 0;
                 flex-shrink: 0;
@@ -214,7 +215,7 @@
                 border: 1px solid #dadada;
                 border-left-width: 0;
                 border-right-width: 0;
-                font-size: 17px;
+                font-size: 16px;
                 color: rgba(#2a2a2a, .5);
                 @include media-breakpoint-up(md) {
                     border-width: 1px;
@@ -240,6 +241,7 @@
     }
     &._order {
         #{$root}__item__price {
+            margin-top: 0;
             margin-bottom: 0;
             line-height: 1;
         }

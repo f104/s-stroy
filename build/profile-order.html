@@ -722,16 +722,12 @@
                                     +7 (920) 123-45-67
                                 </li>
                                 <li class="order-info__item">
-                                    <span class="order-info__item__h">Тип плательщика</span>
-                                    Физическое лицо
-                                </li>
-                                <li class="order-info__item">
                                     <span class="order-info__item__h">Текущий статус, от 12.07.2018:</span>
                                     В обработке
                                 </li>
                                 <li class="order-info__item">
-                                    <span class="order-info__item__h">Адрес доставки</span>
-                                    г. Нижний Новгород, ул. Ермака, д. 134, строение 5
+                                    <span class="order-info__item__h">Тип плательщика</span>
+                                    Физическое лицо
                                 </li>
                                 <li class="order-info__item">
                                     <span class="order-info__item__h">E-mail адрес</span>
@@ -749,6 +745,10 @@
                                 <li class="order-info__item">
                                     <span class="order-info__item__h">Способ доставки</span>
                                     Доставка на объект
+                                </li>
+                                <li class="order-info__item">
+                                    <span class="order-info__item__h">Адрес доставки</span>
+                                    г. Нижний Новгород, ул. Ермака, д. 134, строение 5
                                 </li>
                                 <li class="order-info__item">
                                     <span class="order-info__item__h">Стоимость доставки</span>
@@ -790,8 +790,11 @@
     </td>
     <td class="cart-list__item__cell _3">
         <span class="cart-list__item__th">Цена за ед.</span>
-        <span class="cart-list__item__price">3 266 <span class="rub">₽</span></span>
         
+        
+        <del class="cart-list__item__cost-old">4 834 <span class="rub">₽</span></del>
+        
+        <span class="cart-list__item__price">3 266 <span class="rub">₽</span></span>
     </td>
     <td class="cart-list__item__cell _spacer"></td>
     <td class="cart-list__item__cell _4">
@@ -819,8 +822,11 @@
     </td>
     <td class="cart-list__item__cell _3">
         <span class="cart-list__item__th">Цена за ед.</span>
-        <span class="cart-list__item__price">566 <span class="rub">₽</span></span>
         
+        
+        <del class="cart-list__item__cost-old">10 320 <span class="rub">₽</span></del>
+        
+        <span class="cart-list__item__price">566 <span class="rub">₽</span></span>
     </td>
     <td class="cart-list__item__cell _spacer"></td>
     <td class="cart-list__item__cell _4">
@@ -848,8 +854,11 @@
     </td>
     <td class="cart-list__item__cell _3">
         <span class="cart-list__item__th">Цена за ед.</span>
-        <span class="cart-list__item__price">999 <span class="rub">₽</span></span>
         
+        
+        <del class="cart-list__item__cost-old">1 320 <span class="rub">₽</span></del>
+        
+        <span class="cart-list__item__price">999 <span class="rub">₽</span></span>
     </td>
     <td class="cart-list__item__cell _spacer"></td>
     <td class="cart-list__item__cell _4">
@@ -866,9 +875,28 @@
     </td>
     
 </tr>
+    <tr class="cart-list__foot">
+        <td colspan="2" class="cart-list__item__cell"></td>
+        <td colspan="4" class="cart-list__item__cell">
+            <ul class="cart-summary">
+                <li class="cart-summary__item">
+                    <span class="cart-summary__text"><span>Сумма</span></span>
+                    <span class="cart-summary__cost">9 235 <span class="rub">₽</span></span>
+                </li>
+                <li class="cart-summary__item">
+                    <span class="cart-summary__text _discount"><span>Скидка</span></span>
+                    <span class="cart-summary__cost _discount">- 2 356 <span class="rub">₽</span></span>
+                </li>
+                <li class="cart-summary__item _total">
+                    <span class="cart-summary__text"><span>Итого</span></span>
+                    <span class="cart-summary__cost">6 856 <span class="rub">₽</span></span>
+                </li>
+            </ul>
+        </td>
+    </tr>
 </table>
                         </div>
-                        <div class="block__content _padding _sm">
+<!--                        <div class="block__content _padding _sm">
                             <ul class="order-summary">
                                 <li class="order-summary__item">
                                     <span class="order-summary__item__h">Товар на</span>
@@ -883,7 +911,7 @@
                                     274 928.00 <span class="rub">₽</span>
                                 </li>
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
                     
                     <a href="orders-history.html" class="link-back">
