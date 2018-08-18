@@ -425,7 +425,7 @@ var app = {
                 var $shipping = slide.$slide.find('.js-shipping');
                 if ($shipping && !$shipping.data('init')) {
                     app.shipping.init($shipping);
-                }                
+                }
             }
         };
         $('.js-popup').on('click', function () {
@@ -440,7 +440,7 @@ var app = {
     },
 
     initFormLabel: function () {
-        var $inputs = $('.js-form__label').find('input:not([required])');
+        var $inputs = $('.js-form__label').find(':not([required])');
         $inputs
                 .on('focus', function () {
                     $(this).siblings('label').removeClass('form__label__empty');
@@ -911,8 +911,8 @@ var app = {
         });
         $wrapper.data('init', true);
     },
-    
-    initQuantity: function() {
+
+    initQuantity: function () {
         $('.js-quantity-shift.js-quantity-up, .js-quantity-shift.js-quantity-down').on('click', function (e) {
             e.preventDefault();
             var $quantityInput = $(this).siblings('.js-quantity')[0];
@@ -928,9 +928,9 @@ var app = {
             }
         });
     },
-    
-    initCart: function() {
-        $('.js-cart-info__radio').on('click', function(){
+
+    initCart: function () {
+        $('.js-cart-info__radio').on('click', function () {
             $('.js-cart-info__hidden').hide();
             var delivery = $(this).data('delivery');
             var $target = $('.js-cart-info__hidden[data-delivery="' + delivery + '"]');
