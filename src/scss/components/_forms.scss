@@ -358,7 +358,7 @@ form {
             top: 0;
             width: 18px;
             height: 18px;
-            background-color: #e3e7ec;
+            background-color: #bad3f1; //e3e7ec;
             @include ie10up() {
                 top: -1px;
             }
@@ -371,7 +371,7 @@ form {
             width: 8px;
             height: 8px;
             border-radius: 2px;
-            background-color: #e3e7ec;
+            background-color: #bad3f1; //e3e7ec;
             @include transition(background-color)
             @include ie10up() {
                 top: 4px;
