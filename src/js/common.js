@@ -299,15 +299,15 @@ var app = {
 
     initSearch: function () {
         var $input = $('.js-search-form__input');
+        $input.on('click', function (e) {
+            e.stopPropagation();
+        });
         $input.on('focus', function () {
             $(this).siblings('.js-search-res').addClass('_active');
         });
-        $input.on('blur', function () {
-            $(this).siblings('.js-search-res').removeClass('_active');
+        $(window).on('click', function () {
+            $('.js-search-res').removeClass('_active');
         });
-//        $(window).on('scroll', function () {
-//            $input.blur();
-//        });
     },
 
     initCatalog: function () {
