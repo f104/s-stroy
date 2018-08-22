@@ -17,6 +17,12 @@
         </div>
         <div class="catalog-list__item__foot">
             <div class="catalog-list__item__price">
+                @@if (price_na == 1) {
+                <span class="catalog-list__item__price__na">
+                    Цена по запросу
+                </span>
+                }
+                @@if (price_na != 1) {
                 <ul class="catalog-list__item__price__variant">
                     <li class="_active">за рулон</li>
                     <li>за м²</li>
@@ -46,6 +52,7 @@
                         </ul>
                     </div>
                 </div>
+                }
             </div>
             <div class="catalog-list__item__buttons">
                 <!--<a href="#" class="catalog-list__item__btn-one-click">Купить в один клик</a>-->

@@ -37,10 +37,10 @@
                             margin-bottom: 0;
                             margin-right: 30px;
                             display: flex;
-/*                            &__content {
-                                display: flex;
-                                flex-direction: column;
-                            }*/
+                            /*                            &__content {
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                        }*/
                         }
                         &__foot {
                             flex-shrink: 0;
@@ -230,6 +230,15 @@
                         top: 40%;
                     }
                 }
+            }
+            &__na {
+                font-size: 19px;
+                line-height: 1;
+                font-weight: 500;
+                color: #545454;
+                text-decoration: none;
+                width: 100px;
+                display: inline-block;
             }
             &__cost {
                 font-size: 21px;
