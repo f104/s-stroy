@@ -64,7 +64,7 @@ var app = {
 
         var $header = $('header');
         var headerHeight = $header.outerHeight();
-        var q = 3;
+        var q = 1;
         var action = 0;
         var pinHeader = function () {
             if (document.readyState !== "complete") {

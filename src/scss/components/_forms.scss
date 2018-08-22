@@ -140,6 +140,13 @@ form {
                 margin-bottom: 0;
             }
         }
+        &__text {
+            font-size: 14px;
+            line-height: 1.43;
+            &._center {
+                text-align: center;
+            }
+        }
     }
     &__row {
         @include media-breakpoint-up(md) {

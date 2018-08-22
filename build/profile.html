@@ -889,7 +889,7 @@
                 </div>
                 <div class="form__group">
                     <button type="submit" class="btn _secondary _solid">Войти</button>
-                    <p><a href="#">Забыли свой пароль?</a></p>
+                    <p><a href="#restore" class="js-popup">Забыли свой пароль?</a></p>
                     <p><a href="#register" class="js-popup">Регистрация</a></p>
                 </div>
             </form>
@@ -958,6 +958,32 @@
                         <button type="submit" class="btn _secondary _solid">Регистрация</button>
                         <p><a href="#login" class="js-popup">Уже зарегистрированы?</a></p>
                     </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div id="restore" class="popup">
+    <div class="popup__wrapper _call">
+        <div class="popup__form popup__inner">
+            <form class="form">
+                <h3 class="form__h">Восстановление пароля</h3>
+                <div class="form__group">
+                    <div class="form__group">
+                        <p class="form__group__text _center">Укажите e-mail, указанный 
+                            при регистрации. На него будет выслана ссылка 
+                            для изменения пароля:</p>
+                        <span class="form__label js-form__label">
+                            <input type="email" required>
+                            <label>E-mail</label>                        
+                        </span>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <img src="img/newCaptchaAnchor.png" style="max-width: 100%">
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn _secondary _solid">Выслать</button>
                 </div>
             </form>
         </div>
