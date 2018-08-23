@@ -5,19 +5,22 @@
                 <h3 class="form__h _left">Выберите пункт самовывоза</h3>
                 <div class="pickup__row">
                     <div class="pickup__row__col">
-                        <div class="pickup__map"></div>
+                        <div id="pickup_map" class="pickup__map"></div>
                     </div>
                     <div class="pickup__row__col">
                         <div class="pickup__list">
-                            <div class="pickup__list__item">
+                            <div class="pickup__list__item js-pickup__map__item"
+                                 data-id="1"
+                                 data-geo="56.311696, 43.832899"
+                                 data-text="г. Н. Новгород, Московское шоссе, д. 298А">
                                 <div class="pickup__list__item__content">
                                     <h3 class="pickup__list__item__content__h">
-                                        <a href="#">г. Н. Новгород, Московское шоссе, д. 298А</a>
+                                        <a href="#" class="js-pickup__map__item__submit">г. Н. Новгород, Московское шоссе, д. 298А</a>
                                     </h3>
                                     <p class="pickup__list__item__content__text">
                                         Бесплатно, <strong>сегодня</strong>
                                     </p>
-                                    <p class="pickup__list__item__content__time">
+                                    <p class="pickup__list__item__content__time js-pickup__map__item__time">
                                         Режим работы: пн-пт: с 8:00 до 17:00
                                     </p>
                                     <ul class="pickup__list__item__content__links">
@@ -33,15 +36,18 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="pickup__list__item">
+                            <div class="pickup__list__item js-pickup__map__item"
+                                 data-id="2"
+                                 data-geo="56.163815, 43.921608"
+                                 data-text="пос. Дружный, Нижегородская область">
                                 <div class="pickup__list__item__content">
                                     <h3 class="pickup__list__item__content__h">
-                                        <a href="#">пос. Дружный, Нижегородская область</a>
+                                        <a href="#" class="js-pickup__map__item__submit">пос. Дружный, Нижегородская область</a>
                                     </h3>
                                     <p class="pickup__list__item__content__text">
                                         Бесплатно, <strong>сегодня</strong>
                                     </p>
-                                    <p class="pickup__list__item__content__time">
+                                    <p class="pickup__list__item__content__time js-pickup__map__item__time">
                                         Режим работы: пн-пт: с 9:00 до 18:00
                                     </p>
                                     <ul class="pickup__list__item__content__links">

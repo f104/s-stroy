@@ -937,12 +937,22 @@ var app = {
             $target.show();
             $target.find('.js-select_always').styler();
         });
+        
+        // pickup
         var $wrapper = $('.js-pickup');
-        if ($wrapper.length == 0)
+        if ($wrapper.length == 0) {
             return;
+        }
+
         // popups in pickup popup
+        var closePhotoPopup = function () {
+            $('.js-pickup__popup').fadeOut().removeClass('_active');
+            $('.js-pickup__popup-open').removeClass('_active');
+            return false;
+        }
         $('.js-pickup__popup-open').on('click', function () {
-            if ($(this).hasClass('_active')) return;
+            if ($(this).hasClass('_active'))
+                return;
             $('.js-pickup__popup-open').removeClass('_active');
             var $popup = $(this).siblings('.js-pickup__popup');
             if ($('.js-pickup__popup._active').length) {
@@ -955,11 +965,136 @@ var app = {
             $(this).addClass('_active');
             return false;
         });
-        $('.js-pickup__popup-close').on('click', function () {
-            $('.js-pickup__popup').fadeOut().removeClass('_active');
-            $('.js-pickup__popup-open').removeClass('_active');
+        $('.js-pickup__popup-close').on('click', closePhotoPopup);
+
+        // submit
+        $('.js-pickup__map__item__submit').on('click', function () {
+            $('.js-pickup__target__text').text($(this).text());
+            $('.js-pickup__target__time').text($(this).parents('.js-pickup__map__item').find('.js-pickup__map__item__time').text() || '');
+            $('.js-pickup__target__input').val($(this).parents('.js-pickup__map__item').data('id') || 0);
+            closePhotoPopup();
+            $.fancybox.close()
             return false;
         });
+
+        // map
+        var initMap = function () {
+            var map = new ymaps.Map('pickup_map', {
+                center: [56.326887, 44.005986],
+                zoom: 11,
+                controls: []
+            }, {
+                suppressMapOpenBlock: true,
+            }), placemarks = [];
+            var tplBalloon = ymaps.templateLayoutFactory.createClass(
+                    '<div class="pickup-balloon">{{ properties.text }}<span class="arrow"></span></div>', {
+                        /**
+                         * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
+                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
+                         * @function
+                         * @name build
+                         */
+                        build: function () {
+                            this.constructor.superclass.build.call(this);
+                            this._$element = $('.pickup-balloon', this.getParentElement());
+//                            this.applyElementOffset();
+                        },
+
+                        /**
+                         * Используется для автопозиционирования (balloonAutoPan).
+                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
+                         * @function
+                         * @name getClientBounds
+                         * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
+                         */
+                        getShape: function () {
+                            if (!this._isElement(this._$element)) {
+                                return tplBalloon.superclass.getShape.call(this);
+                            }
+
+                            var position = this._$element.position();
+
+                            return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+                                [position.left, position.top], [
+                                    position.left + this._$element[0].offsetWidth,
+                                    position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
+                                ]
+                            ]));
+                        },
+
+                        /**
+                         * Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
+                         * @function
+                         * @private
+                         * @name _isElement
+                         * @param {jQuery} [element] Элемент.
+                         * @returns {Boolean} Флаг наличия.
+                         */
+                        _isElement: function (element) {
+                            return element && element[0];
+                        }
+                    });
+            $('.js-pickup__map__item').each(function (index) {
+                var geo = $(this).data('geo'),
+                        text = $(this).find('.js-pickup__map__item__submit').text();
+                if (geo) {
+                    geo = geo.split(',');
+                    geo[0] = parseFloat(geo[0]);
+                    geo[1] = parseFloat(geo[1]);
+                    var placemark = new ymaps.Placemark(geo,
+                            {
+                                text: text || 'склад'
+                            },
+                            {
+                                iconLayout: 'default#image',
+                                // Своё изображение иконки метки.
+                                iconImageHref: 'img/placemark.svg',
+                                // Размеры метки.
+                                iconImageSize: [39, 50],
+                                // Смещение левого верхнего угла иконки относительно
+                                // её "ножки" (точки привязки).
+                                iconImageOffset: [-39, -25],
+                                hideIconOnBalloonOpen: false,
+                                balloonLayout: tplBalloon,
+                                balloonCloseButton: false,
+                                pane: 'balloon',
+                                balloonPanelMaxMapArea: 0
+                            });
+                    map.geoObjects.add(placemark);
+                    placemarks.push(placemark);
+                    map.setBounds(map.geoObjects.getBounds(), {
+                        checkZoomRange: true
+                    });
+                }
+                // click
+                $(this).on('click', function () {
+                    placemarks[$(this).index()].balloon.open();
+                });
+            });
+            
+            $wrapper.data('init', true);
+
+        };
+        
+        // init map on fb.open
+        $(document).on('afterShow.fb', function (e, instance, slide) {
+            var $pickup = slide.$slide.find('.js-pickup');
+            if ($pickup.length && !$pickup.data('init')) {
+                if (typeof (ymaps) === 'undefined') {
+                    $.ajax({
+                        url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                        dataType: "script",
+                        cache: true,
+                        success: function () {
+                            ymaps.ready(initMap);
+                        }
+                    });
+                } else {
+                    ymaps.ready(initMap);
+                }
+            }
+        });
+        
     },
 
     /**
