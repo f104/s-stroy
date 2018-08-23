@@ -60,12 +60,15 @@ app.shipping = {
     },
 
     initDatepicker: function () {
-        var $dateinputWrapper = this.$wrapper.find('.js-shipping__date-input'),
-                $dateinput = this.$wrapper.find('.js-shipping__date-input__input'),
+        
+        var $dateinput = this.$wrapper.find('.js-shipping__date-input'),
+//                $dateinput = this.$wrapper.find('.js-shipping__date-input__input'),
+//                $dateinputWrapper = this.$wrapper.find('.js-shipping__date-input'),
                 disabledDays = appConfig.shipping.disabledDays || [0, 6];
         $dateinput.datepicker({
-            position: 'top right',
-            offset: 40,
+//            position: 'top right',
+            position: 'bottom left',
+//            offset: 40,
             navTitles: {
                 days: 'MM'
             },
@@ -74,7 +77,6 @@ app.shipping = {
                 if (cellType == 'day') {
                     var day = date.getDay(),
                             isDisabled = disabledDays.indexOf(day) != -1;
-
                     return {
                         disabled: isDisabled
                     }
@@ -82,13 +84,13 @@ app.shipping = {
             },
             onSelect: function (formattedDate, date, inst) {
                 inst.hide();
-                $dateinputWrapper.removeClass('_empty');
+//                $dateinputWrapper.removeClass('_empty');
             }
         });
-        var datepicker = $dateinput.datepicker().data('datepicker');
-        this.$wrapper.find('.js-shipping__datepicker-toggler').on('click', function () {
-            datepicker.show();
-        });
+//        var datepicker = $dateinput.datepicker().data('datepicker');
+//        this.$wrapper.find('.js-shipping__datepicker-toggler').on('click', function () {
+//            datepicker.show();
+//        });
     },
 
     initMap: function () {

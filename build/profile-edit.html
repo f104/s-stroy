@@ -972,6 +972,12 @@
                 </fieldset>
                 <div id="shipping-calc_map" class="shipping__map js-shipping__map"></div>
                 <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Дата доставки:</legend>
+                    <div class="shipping__date-input">
+                        <input class="shipping__date-input js-shipping__date-input" readonly>
+                    </div>
+                </fieldset>
+                <fieldset class="shipping__fieldset">
                     <legend class="shipping__legend">Выберите необходимый тип транспорта:</legend>
                     <div class="shipping__car-select">
                         <label class="checkbox _radio js-shipping__car-label">
@@ -1074,8 +1080,24 @@
     </div>
 </div>
                     </div>
-                    <p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>
+                    <!--<p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>-->
+                    <div class="shipping__promo">
+                        <div class="shipping__promo__content">
+                            <span class="shipping__promo__h">Льготная доставка!</span>
+                            <span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>
+                        </div>
+                        <div class="shipping__promo__foot">
+                            <span class="shipping__promo__accent">390 рублей</span>
+                            <a href="#" class="shipping__promo__link">Узнать подробнее</a>
+                        </div>
+                        <span class="shipping__promo__badge">
+                            <span class="shipping__promo__badge__text">
+                                Выгодно
+                            </span>
+                        </span>
+                    </div>
                 </fieldset>
+                <!--
                 <fieldset class="shipping__fieldset">
                     <legend class="shipping__legend">Срок доставки и стоимость:</legend>
                     <div class="shipping__date-select">
@@ -1113,17 +1135,18 @@
                         <input name="shipping_date_selected" class="shipping__date-input__input js-shipping__date-input__input">
                     </div>
                 </fieldset>
+                -->
                 <div class="shipping__summary _hidden js-shipping__summary">
                     <ul class="shipping__summary__list">
                         <li class="shipping__summary__list__item">
                             Расстояние до пункта назначения:
                             <span class="shipping__summary__list__accent">
-                                <span class="js-shipping__route-distance-text"></span> км
+                                <span class="js-shipping__route-distance-text"></span>&nbsp;км
                             </span>
                         </li>
                         <li class="shipping__summary__list__item">
                             Стоимость доставки:
-                            <span class="shipping__summary__list__accent">550 <span class="rub">₽</span></span>
+                            <span class="shipping__summary__list__accent">550&nbsp;<span class="rub">₽</span></span>
                         </li>
                     </ul>
                     
