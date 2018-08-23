@@ -40,10 +40,15 @@
                             </ul>
                         </div>
 
-                        @@include('./template/catalog/results.html', {
-                        "submenu": 0,
-                        "filter": 1
-                        })
+                        <div class="catalog-results">
+
+                            @@include('./template/catalog/results-list.html', {
+                            "filter": 1
+                            })
+                            @@include('./template/catalog/results-related.html')
+                            @@include('./template/catalog/results-rte.html')
+
+                        </div>
                         
                     </article>
 

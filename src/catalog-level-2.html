@@ -36,11 +36,17 @@
                             </ul>
                         </div>
 
-                        @@include('./template/catalog/results.html', {
-                        "submenu": 1,
-                        "filter": 0
-                        })
-                        
+                        <div class="catalog-results">
+
+                            @@include('./template/catalog/results-submenu.html')
+                            @@include('./template/catalog/results-list.html', {
+                            "filter": 0
+                            })
+                            @@include('./template/catalog/results-related.html')
+                            @@include('./template/catalog/results-rte.html')
+
+                        </div>
+
                     </article>
 
                 </div>

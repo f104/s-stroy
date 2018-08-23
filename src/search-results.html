@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Результаты поиска"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 1,
+                        "ext": 0,
+                        "absolute": 0
+                        })
+                    </aside>
+
+                    <article class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Результаты поиска по запросу 
+                                <span class="primary">плит</span></h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Результаты поиска
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="catalog-results">
+                            
+                            <h3 class="catalog-results__h">Найдено в категориях</h3>
+
+                            <ul class="catalog">
+                                <li class="catalog__item">
+                                    <a href="#" class="catalog__item__link">
+                                        <i class="sprite facade"></i> 
+                                        Фасадные материалы
+                                    </a>
+                                    <ul class="catalog__sub">
+                                        @@loop('./template/catalog/catalog-sub-item.html', [
+                                        {"text": "Фасадная плитка Hauberk"}
+                                        ])
+                                    </ul>
+                                </li>
+                                <li class="catalog__item">
+                                    <a href="#" class="catalog__item__link">
+                                        <i class="sprite warmth"></i> 
+                                        Теплоизоляция, звукоизоляция
+                                    </a>
+                                    <ul class="catalog__sub">
+                                        @@loop('./template/catalog/catalog-sub-item.html', [
+                                        {"text": "Рулонный утеплитель"},
+                                        {"text": "Минераловатный утеплитель"}
+                                        ])
+                                    </ul>
+                                </li>
+                                <li class="catalog__item">
+                                    <a href="#" class="catalog__item__link">
+                                        <i class="sprite inside"></i> 
+                                        Внутренняя отделка
+                                    </a>
+                                    <ul class="catalog__sub">
+                                        @@loop('./template/catalog/catalog-sub-item.html', [
+                                        {"text": "Затирка для плитки Ceresit"}
+                                        ])
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3 class="catalog-results__h">Товары</h3>
+                            
+                            @@include('./template/catalog/results-list.html', {
+                            "filter": 0
+                            })
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

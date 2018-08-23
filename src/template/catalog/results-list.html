@@ -1,0 +1,50 @@
+<div class="results">
+    <div class="results__header">
+        <div class="results__header__col _1">
+            <span class="results__header__label">Сортировать:</span>
+            <div class="select-wrapper">
+                <select class="select _sm js-select">
+                    <option selected>По популярности</option>
+                    <option>По цене (сначала дешевле)</option>
+                    <option>По цене (сначала дороже)</option>
+                </select>
+            </div>
+            @@if (filter == 1) {
+            <button class="btn _primary _solid _sm results__header__filter-btn js-filter__mobile-toggler"><i class="icon-filter"></i> Фильтр</button>
+            }
+        </div>
+        <div class="results__header__col _2">
+            <label class="checkbox">
+                <input type="checkbox">
+                <span class="checkbox__text">
+                    По акции
+                </span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" checked>
+                <span class="checkbox__text">
+                    Только в наличии
+                </span>
+            </label>
+            <ul class="results__header__tpl">
+                <li class="results__header__tpl__item">
+                    <a href="catalog-level-2.html" 
+                       class="results__header__tpl__link _active js-catalog-view-toggler"><i class="icon-view-grid"></i></a>
+                </li>
+                <li class="results__header__tpl__item">
+                    <a href="catalog-level-2-horizontal-view.html" 
+                       class="results__header__tpl__link js-catalog-view-toggler"><i class="icon-view-card"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @@include('results-pagination.html')
+
+    <div class="results__list">
+        <div class="catalog-list _results js-catalog-list">
+            @@include('results-items.html')
+        </div>
+    </div>
+
+    @@include('results-pagination.html')
+</div>

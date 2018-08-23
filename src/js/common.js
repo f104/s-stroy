@@ -423,7 +423,7 @@ var app = {
             afterShow: function (instance, slide) {
                 slide.$slide.find('.slick-initialized').slick('setPosition');
                 var $shipping = slide.$slide.find('.js-shipping');
-                if ($shipping && !$shipping.data('init')) {
+                if ($shipping.length && !$shipping.data('init')) {
                     app.shipping.init($shipping);
                 }
             }
@@ -936,6 +936,29 @@ var app = {
             var $target = $('.js-cart-info__hidden[data-delivery="' + delivery + '"]');
             $target.show();
             $target.find('.js-select_always').styler();
+        });
+        var $wrapper = $('.js-pickup');
+        if ($wrapper.length == 0)
+            return;
+        // popups in pickup popup
+        $('.js-pickup__popup-open').on('click', function () {
+            if ($(this).hasClass('_active')) return;
+            $('.js-pickup__popup-open').removeClass('_active');
+            var $popup = $(this).siblings('.js-pickup__popup');
+            if ($('.js-pickup__popup._active').length) {
+                $('.js-pickup__popup._active').removeClass('_active').fadeOut(function () {
+                    $popup.fadeIn().addClass('_active');
+                });
+            } else {
+                $popup.fadeIn().addClass('_active');
+            }
+            $(this).addClass('_active');
+            return false;
+        });
+        $('.js-pickup__popup-close').on('click', function () {
+            $('.js-pickup__popup').fadeOut().removeClass('_active');
+            $('.js-pickup__popup-open').removeClass('_active');
+            return false;
         });
     },
 

@@ -534,6 +534,22 @@
 }
 
 .catalog-results {
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.15;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+        }
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            margin-top: 46px;
+            margin-bottom: 30px;
+        }
+    }
     .tags-wrapper {
         margin-bottom: 15px;
         @include media-breakpoint-up(md) {
