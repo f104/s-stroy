@@ -7,10 +7,12 @@
         font-weight: normal;
         line-height: 1.33;
         display: block;
-        padding: 8px 12px 6px;
+        padding: 8px 12px;
         cursor: pointer;
         border: solid 1px #dadada;
-        height: 54px;
+/*        @include ie10up {
+            height: 54px;            
+        }*/
         &:after {
             content: '';
             position: absolute;

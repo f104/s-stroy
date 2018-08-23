@@ -31,6 +31,9 @@ body {
 :focus {
     outline: none;
 }
+:not(output):-moz-ui-invalid {
+  box-shadow: none;
+}
 .container {
     padding: 0 $container-padding-sm;
     @include media-breakpoint-up(md) {
@@ -44,6 +47,11 @@ body {
     display: none !important;
     &-md {
         @include media-breakpoint-only(md) {
+            display: none !important;            
+        }
+    }
+    &-sm {
+        @include media-breakpoint-down(sm) {
             display: none !important;            
         }
     }
@@ -176,6 +184,7 @@ a, .link {
 @import "components/shipping";
 @import "components/link-back";
 @import "components/pickup";
+@import "components/404";
 @import "page-assets/catalog";
 @import "page-assets/product";
 @import "page-assets/cart";
