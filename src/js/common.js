@@ -937,9 +937,9 @@ var app = {
             $target.show();
             $target.find('.js-select_always').styler();
         });
-        
+
         // pickup
-        var $wrapper = $('.js-pickup');
+        var $wrapper = $('.js-pickup'), map = null;
         if ($wrapper.length == 0) {
             return;
         }
@@ -966,20 +966,31 @@ var app = {
             return false;
         });
         $('.js-pickup__popup-close').on('click', closePhotoPopup);
-
-        // submit
-        $('.js-pickup__map__item__submit').on('click', function () {
-            $('.js-pickup__target__text').text($(this).text());
-            $('.js-pickup__target__time').text($(this).parents('.js-pickup__map__item').find('.js-pickup__map__item__time').text() || '');
-            $('.js-pickup__target__input').val($(this).parents('.js-pickup__map__item').data('id') || 0);
+        
+        var closePickup = function () {
+            map.balloon.close()
+            $('.js-pickup__map__item').removeClass('_active');
+            $('.js-pickup__submit').prop('disabled', true);
             closePhotoPopup();
             $.fancybox.close()
             return false;
+        }
+
+        // submit
+        $('.js-pickup__submit').on('click', function () {
+            var $selected = $('.js-pickup__map__item._active');
+            $('.js-pickup__target__text').text($selected.find('.js-pickup__map__item__text').text());
+            $('.js-pickup__target__time').text($selected.find('.js-pickup__map__item__time').text() || '');
+            $('.js-pickup__target__input').val($selected.data('id') || 0);
+            closePickup();
         });
+
+        // cancel
+        $('.js-pickup__cancel').on('click', closePickup);
 
         // map
         var initMap = function () {
-            var map = new ymaps.Map('pickup_map', {
+            map = new ymaps.Map('pickup_map', {
                 center: [56.326887, 44.005986],
                 zoom: 11,
                 controls: []
@@ -1036,7 +1047,7 @@ var app = {
                     });
             $('.js-pickup__map__item').each(function (index) {
                 var geo = $(this).data('geo'),
-                        text = $(this).find('.js-pickup__map__item__submit').text();
+                        text = $(this).find('.js-pickup__map__item__text').text();
                 if (geo) {
                     geo = geo.split(',');
                     geo[0] = parseFloat(geo[0]);
@@ -1069,13 +1080,16 @@ var app = {
                 // click
                 $(this).on('click', function () {
                     placemarks[$(this).index()].balloon.open();
+                    $('.js-pickup__map__item').removeClass('_active');
+                    $(this).addClass('_active');
+                    $('.js-pickup__submit').prop('disabled', false);
                 });
             });
-            
+
             $wrapper.data('init', true);
 
         };
-        
+
         // init map on fb.open
         $(document).on('afterShow.fb', function (e, instance, slide) {
             var $pickup = slide.$slide.find('.js-pickup');
@@ -1094,7 +1108,7 @@ var app = {
                 }
             }
         });
-        
+
     },
 
     /**

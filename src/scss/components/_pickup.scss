@@ -5,8 +5,10 @@
     }
     &__row {
         position: relative;
+        margin-bottom: 22px;
         @include media-breakpoint-up(md) {
             display: flex;
+            margin-bottom: 27px;
         }
         &__col {
             &:first-child {
@@ -19,6 +21,21 @@
             }
             &:last-child {
                 display: flex;
+            }
+        }
+    }
+    &__foot {
+        .btn {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+                width: auto;
+                margin-right: 10px;
+                padding-left: 36px;
+                padding-right: 36px;
             }
         }
     }
@@ -39,6 +56,11 @@
             display: block;
             border-bottom: 1px solid #dbdbdb;
             margin: 0;
+            &._active {
+                #{$root}__list__item__content {
+                    background-color: #eae8e8;
+                }
+            }
             &__content {
                 padding: 15px 20px;
                 background-color: #f7f6f6;
@@ -50,6 +72,7 @@
                     font-size: 17px;
                     font-weight: normal;
                     margin-bottom: 23px;
+                    color: $primary;
                 }
                 &__text {
                     font-size: 14px;

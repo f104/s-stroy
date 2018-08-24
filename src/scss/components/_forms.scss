@@ -56,6 +56,10 @@ form {
     &:focus {
         outline: none;
     }
+    &:disabled {
+        pointer-events: none;
+        opacity: .5;
+    }
     &._sm {
         line-height: 40px;
         @include ie10up() {
