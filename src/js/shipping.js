@@ -40,9 +40,12 @@ app.shipping = {
         app.shipping.$resetBtn.on('click', this.clearRoute);
 
         $wrapper.data('init', true);
+
+        this.calcPrice();
     },
 
     initSlider: function () {
+        let _that = this;
         var $slider = this.$wrapper.find('.js-shipping__car-slider'),
                 $radio = this.$wrapper.find('.js-shipping__car-radio');
         if ($slider.length) {
@@ -54,13 +57,14 @@ app.shipping = {
             });
             $radio.on('click', function () {
                 var index = $(this).parents('.js-shipping__car-label').index();
+                _that.calcPrice();
                 $slider.slick('slickGoTo', index);
             })
         }
     },
 
     initDatepicker: function () {
-        
+        let _that = this;
         var $dateinput = this.$wrapper.find('.js-shipping__date-input'),
 //                $dateinput = this.$wrapper.find('.js-shipping__date-input__input'),
 //                $dateinputWrapper = this.$wrapper.find('.js-shipping__date-input'),
@@ -72,18 +76,21 @@ app.shipping = {
             navTitles: {
                 days: 'MM'
             },
-            minDate: new Date(new Date().getTime() + 86400 * 1000 * 2),
+            //86400 * 1000 * 2 - день
+            //43200000 - полдня после 12
+            minDate: new Date(new Date().getTime() + 43200000 ),
             onRenderCell: function (date, cellType) {
-                if (cellType == 'day') {
+                /*if (cellType == 'day') {
                     var day = date.getDay(),
                             isDisabled = disabledDays.indexOf(day) != -1;
                     return {
                         disabled: isDisabled
                     }
-                }
+                }*/
             },
             onSelect: function (formattedDate, date, inst) {
                 inst.hide();
+                _that.calcPrice();
 //                $dateinputWrapper.removeClass('_empty');
             }
         });
@@ -224,6 +231,7 @@ app.shipping = {
         this.$distanceText.text(distance);
         this.$summaryDiv.removeClass('_hidden');
         this.$resetBtn.show();
+        this.calcPrice();
     },
 
     clearRoute: function () {
@@ -264,6 +272,23 @@ app.shipping = {
                     });
         });
         
+    },
+
+    /**
+     *
+     */
+    calcPrice: function () {
+        let _that = this;
+        let ru = ' <span class="rub">₽</span>';
+        $.ajax({
+            url: '/baseinfo/getroadcalc.php',
+            type: 'post',
+            dataType: 'json',
+            data: _that.$wrapper.serialize(),
+            success: function success(data) {
+                _that.$wrapper.find('.j-current-price').html(data.price + ru);
+            }
+        });
     },
 
 }
