@@ -154,39 +154,6 @@
             }
         }
     }
-    &__price-variant {
-        @include list-unstyled;
-        font-size: 13px;
-        line-height: 20px;
-        color: $primary;
-        @include media-breakpoint-up(md) {
-            font-size: 15px;
-            line-height: 23px;
-        }
-        li {
-            display: inline-block;
-            padding: 0 8px;
-            border-radius: 3px;
-            cursor: pointer;
-            &:after {
-                content: '';
-                position: absolute;
-                display: block;
-                left: 8px;
-                right: 8px;
-                bottom: 2px;
-                border-bottom: 1px dashed rgba($primary, .7);
-            }
-            &._active {
-                background-color: #ededed;
-                color: $body-color;
-                cursor: default;
-                &:after {
-                    content: none;
-                }
-            }
-        }
-    }
     &__profit {
         font-size: 11px;
         text-align: right;
@@ -503,6 +470,41 @@
                 line-height: 23px;
             }
 
+        }
+    }
+}
+
+.product-variant {
+    @include list-unstyled;
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: $primary;
+    @include media-breakpoint-up(md) {
+        font-size: 15px;
+        line-height: 23px;
+    }
+    li {
+        display: inline-block;
+        padding: 0 8px;
+        border-radius: 3px;
+        cursor: pointer;
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 8px;
+            right: 8px;
+            bottom: 2px;
+            border-bottom: 1px dashed rgba($primary, .7);
+        }
+        &._active {
+            background-color: #ededed;
+            color: $body-color;
+            cursor: default;
+            &:after {
+                content: none;
+            }
         }
     }
 }

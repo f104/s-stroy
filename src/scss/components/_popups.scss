@@ -38,6 +38,7 @@
 }
 
 .popup {
+    $root: &;
     &__inner {
         padding: 28px 20px;
         @include media-breakpoint-up(md) {
@@ -72,6 +73,107 @@
             @include media-breakpoint-up(lg) {
                 width: 1026px;
             }
+        }
+        &._one-click {
+            width: 736px; 
+            #{$root}__help {
+                display: none;
+                width: 368px;
+                position: static;
+                @include media-breakpoint-up(md) {
+                    display: flex;
+                }
+            }
+            #{$root}__form {
+                display: flex;
+            }
+            .form {
+                display: flex;
+                flex-direction: column;
+                @include ie10up {
+                    width: 100%;
+                }
+            }
+            #{$root}__form__head {
+                flex-grow: 1;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    &__product {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        @include ie10up {
+            width: 100%;
+        }
+        &__head {
+            flex-grow: 1;
+            margin-bottom: 30px;
+        }
+        &__img {
+            display: block;
+            margin-bottom: 25px;
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &__title {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.38;
+            margin-bottom: 0;
+        }
+        &__avail {
+            display: block;
+            opacity: 0.5;
+            font-size: 12px;
+        }
+        &__price {
+            font-family: $font-family-alt;
+            font-size: 33px;
+            font-weight: 600;
+            color: $red;
+            &-help {
+                display: block;
+                font-size: 14px;
+                font-family: $font-family-base;
+                font-weight: 400;
+                color: $body-color;
+                margin-bottom: 20px;
+            }
+        }
+        &__del {
+            font-family: $font-family-alt;
+            font-size: 24px;
+            font-weight: 500;
+            color: #545454;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                height: 1px;
+                background-color: #545454;
+            }
+            &-help {
+                display: block;
+                font-family: $font-family-base;
+                font-size: 13px;
+                font-weight: normal;
+                line-height: 1.23;
+                color: #545454;
+                margin-bottom: 20px;
+            }
+        }
+        .product-badges {
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
     &__help {
