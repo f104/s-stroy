@@ -76,14 +76,6 @@
         }
         &._one-click {
             width: 736px; 
-            #{$root}__help {
-                display: none;
-                width: 368px;
-                position: static;
-                @include media-breakpoint-up(md) {
-                    display: flex;
-                }
-            }
             #{$root}__form {
                 display: flex;
             }
@@ -101,11 +93,12 @@
         }
     }
     &__product {
+        display: none;
+        width: 368px;
         position: static;
-        display: flex;
-        flex-direction: column;
-        @include ie10up {
-            width: 100%;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            flex-direction: column;
         }
         &__head {
             flex-grow: 1;
