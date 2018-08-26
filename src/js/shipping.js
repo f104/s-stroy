@@ -60,7 +60,7 @@ app.shipping = {
     },
 
     initDatepicker: function () {
-        
+
         var $dateinput = this.$wrapper.find('.js-shipping__date-input'),
 //                $dateinput = this.$wrapper.find('.js-shipping__date-input__input'),
 //                $dateinputWrapper = this.$wrapper.find('.js-shipping__date-input'),
@@ -87,7 +87,10 @@ app.shipping = {
 //                $dateinputWrapper.removeClass('_empty');
             }
         });
-//        var datepicker = $dateinput.datepicker().data('datepicker');
+        var datepicker = $dateinput.datepicker().data('datepicker');
+        $('.fancybox-slide').on('scroll', function () {
+            datepicker.hide();
+        });
 //        this.$wrapper.find('.js-shipping__datepicker-toggler').on('click', function () {
 //            datepicker.show();
 //        });
@@ -216,10 +219,10 @@ app.shipping = {
 
     writeRouteInfo: function (distance, address) {
         this.$addressInput.val(address);
-        
+
         // SuggestView has not method for close panel, remove class in initSuggest
         this.$addressInput.siblings('ymaps').addClass('hidden');
-        
+
         this.$distanceInput.val(distance);
         this.$distanceText.text(distance);
         this.$summaryDiv.removeClass('_hidden');
@@ -243,7 +246,7 @@ app.shipping = {
 
     initSuggest: function () {
         this.$addressInput.on('focus', function () {
-           $(this).siblings('ymaps').removeClass('hidden'); 
+            $(this).siblings('ymaps').removeClass('hidden');
         });
         this.$addressInput.on('keydown', function (event) {
             if (event.keyCode == 13) {
@@ -254,7 +257,7 @@ app.shipping = {
         var suggestView = new ymaps.SuggestView(this.$addressInput.attr('id'), {
             offset: [-1, 3]
         });
-        
+
         suggestView.events.add('select', function (e) {
             var item = e.get('item');
             ymaps.geocode(item.value).then(
@@ -263,7 +266,7 @@ app.shipping = {
                         app.shipping.makeRoute(o.geometry._coordinates, item.value);
                     });
         });
-        
+
     },
 
 }

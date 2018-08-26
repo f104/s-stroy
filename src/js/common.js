@@ -966,7 +966,7 @@ var app = {
             return false;
         });
         $('.js-pickup__popup-close').on('click', closePhotoPopup);
-        
+
         var closePickup = function () {
             map.balloon.close()
             $('.js-pickup__map__item').removeClass('_active');
@@ -997,54 +997,57 @@ var app = {
             }, {
                 suppressMapOpenBlock: true,
             }), placemarks = [];
-            var tplBalloon = ymaps.templateLayoutFactory.createClass(
-                    '<div class="pickup-balloon">{{ properties.text }}<span class="arrow"></span></div>', {
-                        /**
-                         * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
-                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
-                         * @function
-                         * @name build
-                         */
-                        build: function () {
-                            this.constructor.superclass.build.call(this);
-                            this._$element = $('.pickup-balloon', this.getParentElement());
+            var tplPlacemark = ymaps.templateLayoutFactory.createClass(
+                    '<div class="placemark"><svg xmlns="http://www.w3.org/2000/svg" width="39" height="50"><defs><filter id="a" width="145.2%" height="133.3%" x="-22.6%" y="-11.9%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/><feMerge><feMergeNode in="shadowMatrixOuter1"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(4 2)"><path fill="#2057AC" d="M15.175 42C25.292 29.805 30.35 20.897 30.35 15.273 30.35 6.838 23.556 0 15.175 0 6.795 0 0 6.838 0 15.273 0 20.897 5.058 29.805 15.175 42z"/><path fill="#FFF" d="M23.846 19.183H19.78L15.304 7.2h4.067l4.475 11.983zm-4.85 0h-4.068L11.4 9.597h4.067l3.528 9.586zm-4.933.017h-6.91l3.398-9.52 3.512 9.52zm-3.512-7.49c.272.706.831 2.339 1.341 3.828l.006.018c.438 1.277.838 2.445.989 2.828h-4.54c.123-.33.414-1.247.753-2.313l.002-.005c.513-1.612 1.135-3.565 1.45-4.356z"/></g></svg></div>'
+                    ),
+                    tplBalloon = ymaps.templateLayoutFactory.createClass(
+                            '<div class="pickup-balloon">{{ properties.text }}<span class="arrow"></span></div>', {
+                                /**
+                                 * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
+                                 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
+                                 * @function
+                                 * @name build
+                                 */
+                                build: function () {
+                                    this.constructor.superclass.build.call(this);
+                                    this._$element = $('.pickup-balloon', this.getParentElement());
 //                            this.applyElementOffset();
-                        },
+                                },
 
-                        /**
-                         * Используется для автопозиционирования (balloonAutoPan).
-                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
-                         * @function
-                         * @name getClientBounds
-                         * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
-                         */
-                        getShape: function () {
-                            if (!this._isElement(this._$element)) {
-                                return tplBalloon.superclass.getShape.call(this);
-                            }
+                                /**
+                                 * Используется для автопозиционирования (balloonAutoPan).
+                                 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
+                                 * @function
+                                 * @name getClientBounds
+                                 * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
+                                 */
+                                getShape: function () {
+                                    if (!this._isElement(this._$element)) {
+                                        return tplBalloon.superclass.getShape.call(this);
+                                    }
 
-                            var position = this._$element.position();
+                                    var position = this._$element.position();
 
-                            return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-                                [position.left, position.top], [
-                                    position.left + this._$element[0].offsetWidth,
-                                    position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
-                                ]
-                            ]));
-                        },
+                                    return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+                                        [position.left, position.top], [
+                                            position.left + this._$element[0].offsetWidth,
+                                            position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
+                                        ]
+                                    ]));
+                                },
 
-                        /**
-                         * Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
-                         * @function
-                         * @private
-                         * @name _isElement
-                         * @param {jQuery} [element] Элемент.
-                         * @returns {Boolean} Флаг наличия.
-                         */
-                        _isElement: function (element) {
-                            return element && element[0];
-                        }
-                    });
+                                /**
+                                 * Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
+                                 * @function
+                                 * @private
+                                 * @name _isElement
+                                 * @param {jQuery} [element] Элемент.
+                                 * @returns {Boolean} Флаг наличия.
+                                 */
+                                _isElement: function (element) {
+                                    return element && element[0];
+                                }
+                            });
             $('.js-pickup__map__item').each(function (index) {
                 var geo = $(this).data('geo'),
                         text = $(this).find('.js-pickup__map__item__text').text();
@@ -1057,14 +1060,8 @@ var app = {
                                 text: text || 'склад'
                             },
                             {
-                                iconLayout: 'default#image',
-                                // Своё изображение иконки метки.
-                                iconImageHref: 'img/placemark.svg',
-                                // Размеры метки.
-                                iconImageSize: [39, 50],
-                                // Смещение левого верхнего угла иконки относительно
-                                // её "ножки" (точки привязки).
-                                iconImageOffset: [-39, -25],
+                                iconLayout: tplPlacemark,
+                                iconImageSize: [40, 50],
                                 hideIconOnBalloonOpen: false,
                                 balloonLayout: tplBalloon,
                                 balloonCloseButton: false,
@@ -1074,7 +1071,8 @@ var app = {
                     map.geoObjects.add(placemark);
                     placemarks.push(placemark);
                     map.setBounds(map.geoObjects.getBounds(), {
-                        checkZoomRange: true
+                        checkZoomRange: true,
+                        zoomMargin: 50
                     });
                 }
                 // click
