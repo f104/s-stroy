@@ -1,0 +1,28 @@
+<div class="im-menu">
+    <h3 class="im-menu__h _opened js-im-menu__toggler">О нас</h3>
+    <ul class="im-menu__list _level1 js-im-menu__slide">
+        <li>
+            <span class="im-menu__list__inner @@if(active == 'stock') {_active}">
+                @@if(active == 'stock') {Акции}
+                @@if(active != 'stock') {
+                <a href="stock.html">Акции</a>
+                }
+            </span>
+        </li>
+        <li>
+            <span class="im-menu__list__inner @@if(active == 'works') {_active}">
+                @@if(active == 'works') {Примеры работ}
+                @@if(active != 'works') {
+                <a href="#">Примеры работ</a>
+                }
+            </span>
+        </li>
+        <li>
+            <span class="im-menu__list__inner @@if(active == 'reviews') {_active}">
+                @@if(active == 'reviews') {Отзывы}
+                @@if(active != 'reviews') {
+                <a href="#">Отзывы</a></span>
+                }
+        </li>
+    </ul>
+</div>

@@ -41,6 +41,9 @@
 
 .rte {
     @include clearfix;
+    img {
+        max-width: 100%; // fix old html
+    }
     h2 {
         font-family: $font-family-alt;
         font-size: 17px;
