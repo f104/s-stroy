@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="catalog-results">
-                            
+
                             <h3 class="catalog-results__h">Найдено в категориях</h3>
 
                             <ul class="catalog">
@@ -47,9 +47,10 @@
                                         Фасадные материалы
                                     </a>
                                     <ul class="catalog__sub">
-                                        @@loop('./template/catalog/catalog-sub-item.html', [
-                                        {"text": "Фасадная плитка Hauberk"}
-                                        ])
+                                        <li class="catalog__sub__item">
+                                            <a class="catalog__sub__item__link" href="#">Фасадная плитка Hauberk</a>
+                                            <span class="catalog__sub__item__muted">42</span>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="catalog__item">
@@ -58,10 +59,14 @@
                                         Теплоизоляция, звукоизоляция
                                     </a>
                                     <ul class="catalog__sub">
-                                        @@loop('./template/catalog/catalog-sub-item.html', [
-                                        {"text": "Рулонный утеплитель"},
-                                        {"text": "Минераловатный утеплитель"}
-                                        ])
+                                        <li class="catalog__sub__item">
+                                            <a class="catalog__sub__item__link" href="#">Рулонный утеплитель</a>
+                                            <span class="catalog__sub__item__muted">12</span>
+                                        </li>
+                                        <li class="catalog__sub__item">
+                                            <a class="catalog__sub__item__link" href="#">Минераловатный утеплитель</a>
+                                            <span class="catalog__sub__item__muted">4</span>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="catalog__item">
@@ -70,15 +75,16 @@
                                         Внутренняя отделка
                                     </a>
                                     <ul class="catalog__sub">
-                                        @@loop('./template/catalog/catalog-sub-item.html', [
-                                        {"text": "Затирка для плитки Ceresit"}
-                                        ])
+                                        <li class="catalog__sub__item">
+                                            <a class="catalog__sub__item__link" href="#">Затирка для плитки Ceresit</a>
+                                            <span class="catalog__sub__item__muted">3</span>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
 
                             <h3 class="catalog-results__h">Товары</h3>
-                            
+
                             @@include('./template/catalog/results-list.html', {
                             "filter": 0
                             })

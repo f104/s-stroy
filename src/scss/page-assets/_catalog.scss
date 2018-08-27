@@ -440,6 +440,10 @@
                 color: $body-color;
                 font-size: $font-size-base;
             }
+            &__muted {
+                opacity: .5;
+                margin-left: .5ex;
+            }
         }
     }
 }
