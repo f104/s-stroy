@@ -2,6 +2,10 @@
     height: auto;
 }
 
+.slick-slider .slick-track, .slick-slider .slick-list {
+    width: 100%; // for ie
+}
+
 .slick-dots {
     @include list-unstyled;
     margin-bottom: 0;

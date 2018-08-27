@@ -1,4 +1,5 @@
 .partners-list {
+    $root: &;
     display: flex;
     &__item {
         display: block;
@@ -9,11 +10,10 @@
             width: 149px;
         }
         &:last-child {
-            border-right: none;
+            border-right-width: 0;
         }
         &__content {
-            width: 142px;
-            height: 114px;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -22,12 +22,38 @@
             background-color: $white;
             transition: none;
             @include transition(all);
+            padding: 10px;
             &._hover {
                 filter: grayscale(0);
                 opacity: 1;
             }
+            img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    &._full {
+        flex-wrap: wrap;
+        margin-bottom: -1px;
+        #{$root}__item {
+            border-bottom: 1px solid $gray-border;
+            width: 50%;
+            height: 122px;
+            @include media-breakpoint-down(sm) {
+                &:nth-child(2n) {
+                    border-right-width: 0;
+                }
+            }
+            @include media-breakpoint-up(md) {
+                width: 16.66%;
+                height: 98px;
+                &:nth-child(6n) {
+                    border-right-width: 0;
+                }
+            }
             @include media-breakpoint-up(lg) {
-                width: 149px;
+                height: 114px;
             }
         }
     }

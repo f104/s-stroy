@@ -1,0 +1,47 @@
+.category-menu {
+    background-color: $white;
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 16px 19px 14px;
+        cursor: pointer;
+        &:after {
+            content: '\e801';
+            font-family: 'fontello';
+            font-size: 15px;
+            color: $primary;
+            position: absolute;
+            right: 17px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &._opened {
+            border-bottom: 1px solid $gray-border;
+            &:after {
+                content: '\e80e';
+            }
+        }
+    }
+    &__list {
+        @include list-unstyled;
+        margin-bottom: 0;
+        padding: 5px 0;
+        &__item {
+            &__link {
+                display: block;
+                font-size: 16px;
+                padding: 9px 19px;
+                line-height: 1.44;
+                &._active {
+                    background-color: #f8f8f8;
+                    color: $body-color;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

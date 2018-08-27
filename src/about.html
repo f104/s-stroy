@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "О нас"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 0
+                        })
+                        @@include('./template/chunks/about-menu.html', {
+                        "active": ""
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Группа компаний САКСЭС</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    О нас
+                                </li>
+                            </ul>
+                        </div>
+
+                        <article class="about">
+                            <p class="about__lead">Партнеры, объединенные торговой маркой САКСЭС (партнеры САКСЭС), уже более 17 лет предоставляют на рынок 11 регионов России, качественные строительные материалы от ведущих мировых производителей.</p>
+
+                            <div class="about__row">
+                                <p class="about__big">Партнеры САКСЭС работают напрямую с ведущими мировыми производителями:</p>
+                                @@include('./template/partners/about.html')
+                            </div>
+
+                            <div class="about__row">
+                                <h3 class="about__h3">Гибкая ценовая политика</h3>
+                                @@include('./template/profits/about.html')
+                            </div>
+
+                            <div class="about__row">
+                                <h3 class="about__h3">Высокотехнологичное производство</h3>
+                                <div class="block _md-full">
+                                    <div class="block__content">
+                                        <div class="production-list">
+                                            <a href="#" class="production-list__item">
+                                                <span class="production-list__img-wrapper">
+                                                    <img class="production-list__img-wrapper__img"
+                                                         src="img/production1.jpg"
+                                                         srcset="img/production1@2x.jpg 2x,
+                                                         img/production1@3x.jpg 3x"
+                                                         alt="alt text">
+                                                </span>
+                                                <span class="production-list__text">
+                                                    Металлочерепица
+                                                </span>
+                                            </a>
+                                            <a href="#" class="production-list__item">
+                                                <span class="production-list__img-wrapper">
+                                                    <img class="production-list__img-wrapper__img"
+                                                         src="img/production2.jpg"
+                                                         srcset="img/production2@2x.jpg 2x,
+                                                         img/production2@3x.jpg 3x"
+                                                         alt="alt text">
+                                                </span>
+                                                <span class="production-list__text">
+                                                    Профнастил
+                                                </span>
+                                            </a>
+                                            <a href="#" class="production-list__item">
+                                                <span class="production-list__img-wrapper">
+                                                    <img class="production-list__img-wrapper__img"
+                                                         src="img/production3.jpg"
+                                                         srcset="img/production3@2x.jpg 2x,
+                                                         img/production3@3x.jpg 3x"
+                                                         alt="alt text">
+                                                </span>
+                                                <span class="production-list__text">
+                                                    Светопрозрачные конструкции
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="about__row">
+                                <blockquote class="blockquote">
+                                    «Забота о клиентах и постоянное развитие — принцип работы партнеров САКСЭС»
+                                </blockquote>
+                            </div>
+
+                            <div class="about__row">
+                                <div class="about-services">
+                                    <div class="about-services__item">
+                                        <h3 class="about-services__item__h">
+                                            Комплексный подход
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>В спектр предоставляемых услуг компаний, работающих под торговой маркой САКСЭС входят монтаж всех видов кровель и фасадов, работы по техническому обслуживанию и ремонту окон, ворот, дверей, рольставен и автоматики, а также проектирование и геодезия. Высококлассные специалисты проконсультируют Вас по любым вопросам.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Услуги <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="about-services__item">
+                                        <h3 class="about-services__item__h">
+                                            Профессиональные консультации и выполнение работ
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>Тесное взаимодействие и профессионализм специалистов различных отделов и направлений компаний позволяет осуществить комплексный подход в решении строительных задач с высоким качеством и отличной организацией строительных процессов.</p>
+                                            <p>В штат партнеров САКСЭС входят инженеры проектно-технических отделов, конструкторы, опытные организаторы строительно-монтажных работ, геодезисты и, конечно, профессиональные и сертифицированные монтажники.</p>
+                                            <p>Наши специалисты готовы оказать профессиональную поддержку на любых этапах строительства, начиная от проекта, подбора и поставки материалов, заканчивая осуществлением строительно-монтажных работ.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Проектирование <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="about-services__item">
+                                        <h3 class="about-services__item__h">
+                                            Офисы партнеров САКСЭС во всех районах города, доставка и удобный самовывоз
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>Офисы партнеров САКСЭС расположены в разных частях города и области, складские площади позволяют держать в наличии большой ассортимент продукции различных поставщиков.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Услуги <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="about__row">
+                                <h3 class="about__h3">Направление деятельности партнеров САКСЭС</h3>
+                                @@include('./template/profits/about_1.html')
+                            </div>
+
+                            <div class="about__row">
+                                <div class="about-services">
+                                    <div class="about-services__item _notebook">
+                                        <h3 class="about-services__item__h">
+                                            Подробнее о компании на саксэс.рф
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>Больше о компаниях, работающих под ТМ САКСЭС, истории, направлениях деятельности, реализованных проектах и открытых вакансиях.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Перейти на сайт <i class="icon-arrow-right"></i>
+                                        </a>
+                                        <img class="about-services__item__img"
+                                             src="img/notebook.png"
+                                             srcset="img/notebook@2x.png 2x,
+                                             img/notebook@3x.png 3x"
+                                             alt="alt text">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

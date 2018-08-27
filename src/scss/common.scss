@@ -154,6 +154,9 @@ a, .link {
 .primary {
     color: $primary;
 }
+.overflow-hidden {
+    overflow: hidden;
+}
 
 /*@import "popups";*/
 @import "sprite";
@@ -190,11 +193,14 @@ a, .link {
 @import "components/link-back";
 @import "components/pickup";
 @import "components/404";
+@import "components/production-list";
+@import "components/category-menu";
 @import "page-assets/catalog";
 @import "page-assets/product";
 @import "page-assets/cart";
 @import "page-assets/cart-final";
 @import "page-assets/profile";
+@import "page-assets/about";
 
 .preloader {
     display: none !important;

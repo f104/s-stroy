@@ -3,12 +3,21 @@
     &__item {
         display: flex !important;
         border-right: 1px solid $gray-border;
-        width: 177px;
+        width: 50%;
         min-height: 152px;
+        @include ie10up {
+            height: 152px;
+        }
+        @include media-breakpoint-up(md) {
+            width: 25%;
+        }
         @include media-breakpoint-up(lg) {
-            width: 224px;
+            /*width: 224px;*/
             min-height: 194px;
             font-size: 18px;
+            @include ie10up {
+                height: 194px;
+            }
         }
         &:last-child {
             border-right: none;
@@ -39,6 +48,7 @@
                 margin-bottom: 10px;
                 height: 52px;
                 display: flex;
+                align-items: center;
                 @include media-breakpoint-up(lg) {
                     height: 65px;
                 }
@@ -135,6 +145,25 @@
                     @include media-breakpoint-up(md) {
                         white-space: pre-line;
                     }
+                }
+            }
+        }
+    }
+    &._full {
+        margin-bottom: -1px;
+        flex-wrap: wrap;
+        .profits-list__item {
+            width: 50%;
+            border-bottom: 1px solid $gray-border;
+            @include media-breakpoint-only(sm) {
+                &:nth-child(2n) {
+                    border-right-width: 0;
+                }
+            }
+            @include media-breakpoint-up(md) {
+                width: 25%;
+                &:nth-child(4n) {
+                    border-right-width: 0;
                 }
             }
         }

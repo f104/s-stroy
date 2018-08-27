@@ -108,6 +108,17 @@ var app = {
                 $header.removeClass('_fixed');
             }
         });
+
+        // category menu
+        $('.js-category-menu').each(function () {
+            var $toggler = $(this).find('.js-category-menu__toggler'),
+                    $slide = $(this).find('.js-category-menu__slide');
+            $toggler.on('click', function() {
+                $toggler.toggleClass('_opened');
+                $slide.slideToggle();
+                return false;
+            })
+        });
     },
 
     initFooter: function () {

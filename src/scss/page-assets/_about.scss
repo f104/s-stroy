@@ -1,0 +1,150 @@
+.about {
+    $root: &;
+    &__lead {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.43;
+        margin-bottom: 40px;
+        @include media-breakpoint-up(md) {
+            font-size: 15px;
+            line-height: 1.47;
+            margin-bottom: 50px;            
+        }
+    }
+    &__big {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.22;
+        margin-bottom: 20px;
+        @include media-breakpoint-up(md) {
+            line-height: 1.11;
+            margin-bottom: 30px;            
+        }
+    }
+    &__h3 {
+        font-family: $font-family-alt;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.29;
+        margin-bottom: 24px;
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            line-height: 1.15;
+        }
+    }
+    .about__row {
+        margin-bottom: 40px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 50px;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 64px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.about-services {
+    $root: &;
+    &__item {
+        background-color: $white;
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        padding-left: $container-padding-sm;
+        padding-right: $container-padding-sm;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @include media-breakpoint-up(md) {
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+            padding-left: $container-padding-md;
+            padding-right: $container-padding-md;
+            padding-top: 23px;
+            padding-bottom: 23px;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 24px;
+            padding-right: 174px;
+            padding-top: 18px;
+            padding-bottom: 28px;
+        }
+        &__h {
+            font-family: $font-family-alt;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.35;
+            color: $primary;
+            margin-bottom: 19px;
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+                line-height: 1.35;
+                margin-bottom: 22px;
+            }
+        }
+        &__text {
+            font-size: 14px;
+            line-height: 1.43;
+            margin-bottom: 26px;
+            @include media-breakpoint-up(md) {
+                font-size: 15px;
+                line-height: 1.47;
+                margin-bottom: 24px;
+            }
+            > * {
+                margin-bottom: .5rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__link {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.33;
+            margin-bottom: 0;
+            @include media-breakpoint-up(md) {
+                font-size: 15px;
+                line-height: 1.25;
+            }
+            [class^="icon-"] {
+                font-size: 8px;
+                margin-left: 1ex;
+                top: -1px;
+            }
+        }
+        &._notebook {
+            padding-bottom: 180px;
+            #{$root}__item__img {
+                position: absolute;
+                left: -50px;
+                bottom: -40px;
+            }
+            @include media-breakpoint-up(md) {
+                padding-bottom: 20px;
+                padding-right: 320px;
+                #{$root}__item__img {
+                    left: auto;
+                    right: 20px;
+                    bottom: -48px;
+                }
+                #{$root}__item__h {
+                    margin-bottom: 6px;
+                }
+            }
+            @include media-breakpoint-up(lg) {
+                #{$root}__item__text {
+                    margin-bottom: 14px;
+                }
+            }
+        }
+    }
+}
