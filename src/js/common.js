@@ -968,11 +968,11 @@ var app = {
         $('.js-pickup__popup-close').on('click', closePhotoPopup);
 
         var closePickup = function () {
-            map.balloon.close()
+            map.balloon.close();
             $('.js-pickup__map__item').removeClass('_active');
             $('.js-pickup__submit').prop('disabled', true);
             closePhotoPopup();
-            $.fancybox.close()
+            $.fancybox.close();
             return false;
         }
 

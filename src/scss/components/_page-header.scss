@@ -18,6 +18,12 @@
             line-height: 1.42;
             margin-bottom: 11px;
         }
+        &__muted {
+            font-weight: 400;
+            color: #2a2a2a;
+            opacity: .5;
+            margin-left: 0.5ex;
+        }
     }
 }
 .breadcrumbs {
