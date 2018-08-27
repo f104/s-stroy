@@ -1,0 +1,122 @@
+.stock-list {
+    $root: &;
+    @include media-breakpoint-up(md) {
+        @include row(32px);
+        margin-bottom: -32px;
+    }
+    &__item {
+        margin-bottom: 15px;
+        @include media-breakpoint-up(md) {
+            @include col(33.33%, 32px);
+            margin-bottom: 32px;            
+        }
+        &__inner {
+            background-color: $white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        &__slide {
+            padding: 8px 14px;
+            height: 108px;
+            @include media-breakpoint-up(md) {
+                height: 93px;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 103px;
+            }
+            &__img-wrapper {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                overflow: hidden;
+            }
+            &__img {
+                display: block;
+                min-width: 100%;
+                min-height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &__h {
+                display: block;
+                font-family: $font-family-alt;
+                font-size: 15px;
+                font-weight: 800;
+                line-height: 1.33;
+                color: $white;
+                margin-bottom: 5px;
+                @include media-breakpoint-only(md) {
+                    font-size: 14px;
+                }
+            }
+            &__accent {
+                display: inline-block;
+                background-color: $secondary;
+                padding: 0 5px;
+                font-family: $font-family-alt;
+                font-size: 20px;
+                font-weight: 800;
+                font-style: italic;
+                color: $white;
+                @include media-breakpoint-only(md) {
+                    font-size: 18px;
+                }
+                &__small {
+                    font-size: 11px;
+                    font-weight: 900;
+                    @include media-breakpoint-only(md) {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+        &__content {
+            flex-grow: 1;
+            padding: 15px 22px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+            @include media-breakpoint-only(md) {
+                min-height: 170px;
+            }
+            &__head {
+                margin-bottom: 15px;
+            }
+            &__h {
+                display: block;
+                font-size: 17px;
+                font-weight: 500;
+                line-height: 1.29;
+                margin-bottom: 12px;
+                @include media-breakpoint-only(md) {
+                    font-size: 15px;
+                    margin-bottom: 10px;
+                }
+            }
+            &__date {
+                display: block;
+                opacity: 0.5;
+                font-size: 13px;
+                font-weight: 500;
+                @include media-breakpoint-only(md) {
+                    font-size: 12px;
+                }
+            }
+            &__btn {
+                width: 100%;
+                font-size: 11px;
+                @include media-breakpoint-only(md) {
+                    line-height: 36px !important;
+                }
+            }
+        }
+    }
+}
