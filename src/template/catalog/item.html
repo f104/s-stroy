@@ -61,7 +61,12 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                @@if (!in_cart) {
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                }
+                @@if (in_cart) {
+                <button class="btn _green-dark _solid _sm catalog-list__item__btn-cart" disabled><i class="icon-in-cart"></i><span>В корзине</span></button>
+                }
             </div>
         </div>
         <ul class="product-badges">

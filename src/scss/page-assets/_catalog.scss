@@ -262,6 +262,9 @@
             span {
                 display: none;
             }
+            &:disabled {
+                opacity: 1;
+            }
         }
         &__btn-one-click {
             font-size: 13px;

@@ -272,14 +272,14 @@ var app = {
                         left: '-10px',
                         right: '-10px',
                         bottom: '-10px',
-                    }, 200);
+                    }, 100);
                     $wrap.on('mouseleave', function () {
                         $hover.animate({
                             top: '0',
                             left: '0',
                             right: '0',
                             bottom: '0',
-                        }, 200, function () {
+                        }, 10, function () {
                             $this
                                     .appendTo($parent)
                                     .removeClass('_hover')
@@ -294,7 +294,9 @@ var app = {
     },
 
     initScrollbar: function () {
-        $('.js-scrollbar').scrollbar();
+        $('.js-scrollbar').scrollbar({
+            disableBodyScroll: true
+        });
     },
 
     initSearch: function () {
