@@ -24,8 +24,12 @@
                         <div class="promo">
                             <div class="promo__slider slider js-main-slider">
                                 @@include('./template/promo/slider-item_1.html')
-                                @@include('./template/promo/slider-item.html')
-                                @@include('./template/promo/slider-item.html')
+                                @@include('./template/promo/slider-item.html', {
+                                "more": true
+                                })
+                                @@include('./template/promo/slider-item.html', {
+                                "more": true
+                                })
                             </div>
                             <a href="#" class="promo__item">
                                 <span class="promo__item__img">
