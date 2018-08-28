@@ -1,0 +1,10 @@
+.map-download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__text {
+        font-size: 15px;
+        line-height: 1.53;
+        width: 270px;
+    }
+}

@@ -46,25 +46,31 @@
         <div class="tabs__tab__content _nopadding">
             <ul class="product-docs">
                 <li class="product-docs__item">
-                    <i class="docs-icon">jpg</i>
-                    <span class="product-docs__item__text">
-                        <a href="#" class="product-docs__title">Отказное письмо ГОСТ Р продукция ЕК</a>
-                        <span class="product-docs__desc">JPG, 150 KB</span>
-                    </span>
+                    @@include('../chunks/doc-download.html', {
+                    "text": "Отказное письмо ГОСТ Р продукция ЕК",
+                    "type": "JPG",
+                    "size": "150 KB",
+                    "sm": false,
+                    "left": false
+                    })
                 </li>
                 <li class="product-docs__item">
-                    <i class="docs-icon">pdf</i>
-                    <span class="product-docs__item__text">
-                        <a href="#" class="product-docs__title">Отказное письмо сухие смеси ЕК</a>
-                        <span class="product-docs__desc">PDF, 290 KB</span>
-                    </span>
+                    @@include('../chunks/doc-download.html', {
+                    "text": "Отказное письмо сухие смеси ЕК",
+                    "type": "PDF",
+                    "size": "290 KB",
+                    "sm": false,
+                    "left": false
+                    })
                 </li>
                 <li class="product-docs__item">
-                    <i class="docs-icon">jpg</i>
-                    <span class="product-docs__item__text">
-                        <a href="#" class="product-docs__title">Отказное письмо о пожарной безопасности сухие смеси ЕК</a>
-                        <span class="product-docs__desc">JPG, 239 KB</span>
-                    </span>
+                    @@include('../chunks/doc-download.html', {
+                    "text": "Отказное письмо о пожарной безопасности сухие смеси ЕК",
+                    "type": "JPG",
+                    "size": "239 KB",
+                    "sm": false,
+                    "left": false
+                    })
                 </li>
             </ul>
         </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
     <head>
-    <title>Акция</title>
+    <title>Доставка и оплата</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -909,29 +909,50 @@
     </div>
 </div>
                         <div class="im-menu">
-    <h3 class="im-menu__h _opened js-im-menu__toggler">О нас</h3>
+    <h3 class="im-menu__h _opened js-im-menu__toggler">Интернет-магазин</h3>
     <ul class="im-menu__list _level1 js-im-menu__slide">
         <li>
+            <span class="im-menu__list__inner"><a href="#">Как купить</a></span>
+        </li>
+        <li>
             <span class="im-menu__list__inner _active">
-                Акции
+                Доставка и оплата
                 
             </span>
         </li>
+        <li><span class="im-menu__list__inner"><a href="#">Обратная связь</a></span></li>
         <li>
             <span class="im-menu__list__inner ">
                 
                 
-                <a href="#">Примеры работ</a>
+                <a href="#">Частые вопросы</a>
                 
             </span>
         </li>
+        <li><span class="im-menu__list__inner"><a href="#">Реквизиты</a></span></li>
+        <!--
         <li>
-            <span class="im-menu__list__inner ">
-                
-                
-                <a href="#">Отзывы</a></span>
-                
+            <span class="im-menu__list__toggler _opened js-im-menu__toggler">Примеры работы</span>
+            <ul class="im-menu__list _level2 js-im-menu__slide">
+                <li>
+                    <span class="im-menu__list__toggler js-im-menu__toggler">По типу объектов</span>
+                    <ul class="im-menu__list _level3 js-im-menu__slide">
+                        <li><span class="im-menu__list__inner"><a href="#">Кровельные работы</a></span></li>
+                        <li><span class="im-menu__list__inner"><a href="#">Фасадные работы</a></span></li>
+                        <li><span class="im-menu__list__inner"><a href="#">Заборы</a></span></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="im-menu__list__toggler _opened js-im-menu__toggler">По типу работ</span>
+                    <ul class="im-menu__list _level3 js-im-menu__slide">
+                        <li><span class="im-menu__list__inner"><a href="#">Кровельные работы</a></span></li>
+                        <li><span class="im-menu__list__inner _active">Фасадные работы</span></li>
+                        <li><span class="im-menu__list__inner"><a href="#">Заборы</a></span></li>
+                    </ul>
+                </li>
+            </ul>
         </li>
+        -->
     </ul>
 </div>
                     </aside>
@@ -939,50 +960,189 @@
                     <div class="main-row__right">
 
                         <div class="page-header">
-                            <h1 class="page-header__h">Цокольный сайдинг Vilo Stone. За 369 ₽ за шт</h1>
+                            <h1 class="page-header__h">Доставка и оплата</h1>
                             <ul class="breadcrumbs">
                                 <li class="breadcrumbs__item">
                                     <a href="index.html">Главная</a>
                                 </li>
                                 <li class="breadcrumbs__item">
-                                    <a href="about.html">О нас</a>
+                                    <a href="#">Интернет-магазин</a>
                                 </li>
                                 <li class="breadcrumbs__item _active">
-                                    Акции
+                                    Доставка и оплата
                                 </li>
                             </ul>
                         </div>
 
-                        <article>
-                            <div class="stock-one slider">
-                                <div class="slider__item">
-    <span class="slider__item__content">
-        <span class="slider__item__content__head">
-            <span class="slider__item__text">
-                Цокольный сайдинг<br>
-                Vilo Stone
+                        <article class="sp js-sp">
+
+                            <div class="tabs js-tabs">
+                                <ul class="tabs__list">
+                                    <li><a href="#ship">Доставка</a></li>
+                                    <li><a href="#pay">Оплата</a></li>
+                                </ul>
+                                <span class="tabs__under js-tabs__under"></span>
+                                <div id="ship" class="tabs__tab js-tabs__tab">
+                                    <span class="tabs__tab__toggler">Доставка</span>
+                                    <div class="tabs__tab__content">
+                                        <p class="sp__intro">Возможны следующие варианты получения товара:</p>
+
+<h3 class="sp__h">Самовывоз</h3>
+<div class="sp-pickup">
+    <p class="sp-pickup__intro">Получить товар можно на складах:</p>
+    <ul class="sp-pickup__list">
+        <li class="sp-pickup__list__item js-sp__map-item"
+            data-geo="56.163815, 43.921608"
+            data-text="пос. Дружный, Нижегородская область">
+            пос. Дружный, Нижегородская область
+            <span class="sp-pickup__list__item__muted">
+                ПН-ПТ — 8:00-17:00
             </span>
-            <span class="slider__item__accent">
-                за 369 ₽ <span class="slider__item__accent__sm">за шт</span>
+        </li>
+        <li class="sp-pickup__list__item js-sp__map-item"
+            data-geo="56.311696, 43.832899"
+            data-text="г. Н. Новгород, Московское шоссе, д. 298А">
+            г. Н. Новгород, Московское шоссе, д. 298А
+            <span class="sp-pickup__list__item__muted">
+                ПН-ПТ — 8:00-17:00, СБ — 9:00-14:00, ВС — выходной
             </span>
-        </span>
-        
+        </li>
+    </ul>
+    <div id="sp_map" class="sp-pickup__map"></div>
+    <div class="map-download">
+    <span class="map-download__text">
+        Для удобства вы можете скачать карту с месторасположением складов
     </span>
-    <span class="slider__item__img-wrapper">
-        <img class="slider__item__img" 
-             src="img/promo/banner.jpg" 
-             alt="alt text">
+    <div class="doc-download _sm _left">
+    <i class="doc-icon">PDF</i>
+    <span class="doc-download__text">
+        <a href="#" class="doc-download__title">Скачать карту в PDF</a>
+        <span class="doc-download__desc">PDF, 150 KB</span>
     </span>
 </div>
-                                <div class="stock-one__foot">
-                                    <p class="stock-one__date">
-                                        Акция действует до 31.08.2018 г.
-                                    </p>
-                                    <p class="stock-one__more">
-                                        Подробности уточняйте у менеджеров.
-                                    </p>
+</div>
+</div>
+
+<h3 class="sp__h">Доставка транспортом</h3>
+<div class="sp-shipping">
+    <p>САКСЭС доставит ваш заказ по выгодным тарифам.</p>
+    <h3 class="sp-shipping__h">География доставки:</h3>
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <p>Заказы по предоплате доставляются по всей Нижегородской области.<br>
+                Заказы с оплатой наличными при получении — до 50 км от Н. Новгорода.</p>
+        </div>
+    </div>
+    <h3 class="sp-shipping__h">Стоимость доставки:</h3>
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <p>С примерными тарифами на доставку вы можете ознакомиться <a href="#">в файле.</a>
+                Окончательная стоимость рассчитывается индивидуально и озвучивается менеджером при согласовании условий заказа.</p>
+            <p>В стоимость входит только доставка до объекта. Разгрузочные работы проводятся непосредственно заказчиком.</p>
+        </div>
+        <div class="sp-shipping__col">
+            <div class="doc-download _sm _left">
+    <i class="doc-icon">PDF</i>
+    <span class="doc-download__text">
+        <a href="#" class="doc-download__title">Тарифы на доставку</a>
+        <span class="doc-download__desc">PDF, 150 KB</span>
+    </span>
+</div>
+            <div class="doc-download _sm _left">
+                <i class="sprite delivery"></i>
+                <span class="doc-download__text">
+                    <a href="#" class="doc-download__title">Расчет доставки</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <h3 class="sp-shipping__h">Сроки доставки:</h3>
+            <p>Для товаров в наличии — в течение 24 часов с момента оплаты или момента оформления заказа (для заказов с оплатой наличными).<br>
+                Для товаров по заказ — до 10 дней.</p>
+            <h3 class="sp-shipping__h">Время доставки:</h3>
+            <p>Доставка возможна с пн по пт с 9:00 до 18:00<br>
+                Время доставки обговаривается индивидуально.</p>
+        </div>
+    </div>
+    <div class="warning-block">
+        <i class="sprite warning"></i>
+        <span class="warning-block__text">
+            При больших объемах возможны индивидуальные условия. Подробности уточняйте у менеджеров.
+        </span>
+    </div>
+</div>
+                                    </div>
+                                </div>
+                                <div id="pay" class="tabs__tab js-tabs__tab">
+                                    <span class="tabs__tab__toggler">Оплата</span>
+                                    <div class="tabs__tab__content">
+                                        <p class="sp__intro">Мы предлагаем следующие варианты оплаты заказа:</p>
+
+<h3 class="sp__h">Оплата наличными </h3>
+<div class="sp-shipping">
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <p>Вы оплачиваете свой заказ наличными:<br>
+                - в пункте самовывоза,<br>
+                - ближайшем офисе продаж (найти ближайший офис продаж Вы можете <a href="#">здесь</a>)<br>
+                - водителю при доставке на объект.</p>
+        </div>
+        <div class="sp-shipping__col">
+            <div class="doc-download _sm _left">
+                <i class="sprite map"></i>
+                <span class="doc-download__text">
+                    <a href="#" class="doc-download__title">Офисы продаж на карте</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="warning-block">
+        <i class="sprite warning"></i>
+        <span class="warning-block__text">
+            Исключение составляют заказные позиции (металлочерепица, профлист и ряд других). Заказы на такие товары принимаются только по предоплате. Уточнить перечень таких товаров можно у наших менеджеров.
+        </span>
+    </div>
+</div>
+
+<h3 class="sp__h">Оплата банковской картой</h3>
+<div class="sp-shipping">
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <p>- в ближайшем офисе САКСЭС;<br>
+                - в пункте самовывоза;<br>
+                - на сайте в интернет-магазине.</p>
+        </div>
+        <div class="sp-shipping__col">
+            <img src="img/payments.svg" 
+                 class="sp-shipping__payment-img"
+                 alt="alt text">
+        </div>
+    </div>
+</div>
+
+<h3 class="sp__h">Безналичный расчет через отделение банка</h3>
+<div class="sp-shipping">
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <p>Безналичный расчет через отделение банка. Для юридических и физических лиц.<br>
+                Для того, чтобы узнать подробнее об этом методе оплаты, 
+                свяжитесь с нашими <a href="#">менеджерами</a>.</p>
+        </div>
+    </div>
+</div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="sp__return">
+                                <h3 class="sp__return__h">Обмен и возврат товара</h3>
+                                <p class="sp__return__text">
+                                    Обмену и возврату подлежит товар, имеющий скрытые производственные дефекты и товар, не соответствующий характеристикам, заявленным производителем. Также производится обмен и возврат товара в других случаях в рамках закона о защите прав потребителей и в рамках договорных отношений между компанией и Покупателем.
+                                </p>
+                            </div>
+
                         </article>
 
                     </div>
@@ -990,7 +1150,6 @@
                 </div>
 
             </div>
-
             <div class="hidden">
     <div id="login" class="popup">
     <div class="popup__wrapper _login">

@@ -1,0 +1,20 @@
+.warning-block {
+    display: flex;
+    align-intes: center;
+    .sprite {
+        margin-right: 15px;
+        margin-top: 5px;
+        flex-shrink: 0;
+    }
+    &__text {
+        font-family: $font-family-alt;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $primary;
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+            width: 608px;
+        }
+    }
+}

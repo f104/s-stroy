@@ -182,7 +182,8 @@ a, .link {
 @import "components/content-list";
 @import "components/page-header";
 @import "components/tabs";
-@import "components/docs-icon";
+@import "components/doc-download";
+@import "components/map-download";
 @import "components/qa";
 @import "components/tags";
 @import "components/results";
@@ -194,6 +195,7 @@ a, .link {
 @import "components/pickup";
 @import "components/404";
 @import "components/production-list";
+@import "components/warning";
 @import "page-assets/catalog";
 @import "page-assets/product";
 @import "page-assets/cart";
@@ -201,6 +203,7 @@ a, .link {
 @import "page-assets/profile";
 @import "page-assets/about";
 @import "page-assets/stock";
+@import "page-assets/ship-and-pay";
 
 .preloader {
     display: none !important;

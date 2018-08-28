@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 9.8em 118.9em;
+    background-size: 9.8em 129.2em;
 }
 
 .no-svg .sprite:before {
@@ -62,8 +62,17 @@
 
 
 
-  .sprite.facade:before {
+  .sprite.delivery:before {
       background-position: 0em -13.4em;
+      width: 4.3em;
+      height: 2.4em;
+  }
+
+
+
+
+  .sprite.facade:before {
+      background-position: 0em -15.8em;
       width: 2.9em;
       height: 2.3em;
   }
@@ -72,7 +81,7 @@
 
 
   .sprite.facade-o:before {
-      background-position: 0em -15.7em;
+      background-position: 0em -18.1em;
       width: 2.9em;
       height: 2.3em;
   }
@@ -81,7 +90,7 @@
 
 
   .sprite.facebook:before {
-      background-position: 0em -18em;
+      background-position: 0em -20.4em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -90,7 +99,7 @@
 
 
   .sprite.fence:before {
-      background-position: 0em -22.2em;
+      background-position: 0em -24.6em;
       width: 2.7em;
       height: 2.7em;
   }
@@ -99,7 +108,7 @@
 
 
   .sprite.fence-o:before {
-      background-position: 0em -24.9em;
+      background-position: 0em -27.3em;
       width: 2.7em;
       height: 2.7em;
   }
@@ -108,7 +117,7 @@
 
 
   .sprite.fire-protect:before {
-      background-position: 0em -27.6em;
+      background-position: 0em -30em;
       width: 2.2em;
       height: 2.7em;
   }
@@ -117,7 +126,7 @@
 
 
   .sprite.fire-protect-o:before {
-      background-position: 0em -30.3em;
+      background-position: 0em -32.7em;
       width: 2.2em;
       height: 2.7em;
   }
@@ -126,7 +135,7 @@
 
 
   .sprite.flat-roof:before {
-      background-position: 0em -33em;
+      background-position: 0em -35.4em;
       width: 3.4em;
       height: 2.1em;
   }
@@ -135,7 +144,7 @@
 
 
   .sprite.flat-roof-o:before {
-      background-position: 0em -35.1em;
+      background-position: 0em -37.5em;
       width: 3.4em;
       height: 2.1em;
   }
@@ -144,7 +153,7 @@
 
 
   .sprite.gidro-vetro:before {
-      background-position: 0em -37.2em;
+      background-position: 0em -39.6em;
       width: 1.4em;
       height: 3em;
   }
@@ -153,7 +162,7 @@
 
 
   .sprite.gidro-vetro-o:before {
-      background-position: 0em -40.2em;
+      background-position: 0em -42.6em;
       width: 1.4em;
       height: 3em;
   }
@@ -162,15 +171,6 @@
 
 
   .sprite.groundwork:before {
-      background-position: 0em -43.2em;
-      width: 3.4em;
-      height: 2.4em;
-  }
-
-
-
-
-  .sprite.groundwork-o:before {
       background-position: 0em -45.6em;
       width: 3.4em;
       height: 2.4em;
@@ -179,8 +179,17 @@
 
 
 
-  .sprite.info:before {
+  .sprite.groundwork-o:before {
       background-position: 0em -48em;
+      width: 3.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .sprite.info:before {
+      background-position: 0em -50.4em;
       width: 2.7em;
       height: 2.7em;
   }
@@ -189,7 +198,7 @@
 
 
   .sprite.inside:before {
-      background-position: 0em -50.7em;
+      background-position: 0em -53.1em;
       width: 2.4em;
       height: 3em;
   }
@@ -198,7 +207,7 @@
 
 
   .sprite.inside-o:before {
-      background-position: 0em -53.7em;
+      background-position: 0em -56.1em;
       width: 2.4em;
       height: 3em;
   }
@@ -207,7 +216,7 @@
 
 
   .sprite.instagram:before {
-      background-position: 0em -56.7em;
+      background-position: 0em -59.1em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -216,7 +225,7 @@
 
 
   .sprite.list:before {
-      background-position: 0em -60.9em;
+      background-position: 0em -63.3em;
       width: 2.9em;
       height: 2.6em;
   }
@@ -225,7 +234,7 @@
 
 
   .sprite.list-o:before {
-      background-position: 0em -63.5em;
+      background-position: 0em -65.9em;
       width: 2.9em;
       height: 2.6em;
   }
@@ -234,7 +243,7 @@
 
 
   .sprite.mansard:before {
-      background-position: 0em -66.1em;
+      background-position: 0em -68.5em;
       width: 2.8em;
       height: 2.1em;
   }
@@ -243,7 +252,7 @@
 
 
   .sprite.mansard-o:before {
-      background-position: 0em -68.2em;
+      background-position: 0em -70.6em;
       width: 2.8em;
       height: 2.1em;
   }
@@ -251,8 +260,17 @@
 
 
 
+  .sprite.map:before {
+      background-position: 0em -72.7em;
+      width: 4.3em;
+      height: 4.3em;
+  }
+
+
+
+
   .sprite.money:before {
-      background-position: 0em -70.3em;
+      background-position: 0em -77em;
       width: 3.2em;
       height: 1.4em;
   }
@@ -261,7 +279,7 @@
 
 
   .sprite.roof:before {
-      background-position: 0em -71.7em;
+      background-position: 0em -78.4em;
       width: 2.9em;
       height: 2em;
   }
@@ -270,7 +288,7 @@
 
 
   .sprite.roof-o:before {
-      background-position: 0em -73.7em;
+      background-position: 0em -80.4em;
       width: 2.9em;
       height: 2em;
   }
@@ -279,7 +297,7 @@
 
 
   .sprite.technical-iso:before {
-      background-position: 0em -75.7em;
+      background-position: 0em -82.4em;
       width: 2.8em;
       height: 1.9em;
   }
@@ -288,7 +306,7 @@
 
 
   .sprite.technical-iso-o:before {
-      background-position: 0em -77.6em;
+      background-position: 0em -84.3em;
       width: 2.8em;
       height: 1.9em;
   }
@@ -297,7 +315,7 @@
 
 
   .sprite.twitter:before {
-      background-position: 0em -79.5em;
+      background-position: 0em -86.2em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -306,7 +324,7 @@
 
 
   .sprite.vent-house:before {
-      background-position: 0em -83.7em;
+      background-position: 0em -90.4em;
       width: 2.3em;
       height: 2.9em;
   }
@@ -315,7 +333,7 @@
 
 
   .sprite.vent-house-o:before {
-      background-position: 0em -86.6em;
+      background-position: 0em -93.3em;
       width: 2.3em;
       height: 2.9em;
   }
@@ -324,7 +342,7 @@
 
 
   .sprite.view-card:before {
-      background-position: 0em -89.5em;
+      background-position: 0em -96.2em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -333,7 +351,7 @@
 
 
   .sprite.view-grid:before {
-      background-position: 0em -91.1em;
+      background-position: 0em -97.8em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -342,7 +360,7 @@
 
 
   .sprite.vk:before {
-      background-position: 0em -92.7em;
+      background-position: 0em -99.4em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -351,7 +369,7 @@
 
 
   .sprite.warmth:before {
-      background-position: 0em -96.9em;
+      background-position: 0em -103.6em;
       width: 2.4em;
       height: 3.3em;
   }
@@ -360,7 +378,7 @@
 
 
   .sprite.warmth-o:before {
-      background-position: 0em -100.2em;
+      background-position: 0em -106.9em;
       width: 2.4em;
       height: 3.3em;
   }
@@ -368,8 +386,17 @@
 
 
 
+  .sprite.warning:before {
+      background-position: 0em -110.2em;
+      width: 3.9em;
+      height: 3.6em;
+  }
+
+
+
+
   .sprite.wat:before {
-      background-position: 0em -103.5em;
+      background-position: 0em -113.8em;
       width: 2.7em;
       height: 2.8em;
   }
@@ -378,7 +405,7 @@
 
 
   .sprite.wat-o:before {
-      background-position: 0em -106.3em;
+      background-position: 0em -116.6em;
       width: 2.7em;
       height: 3em;
   }
@@ -387,7 +414,7 @@
 
 
   .sprite.waterproof:before {
-      background-position: 0em -109.3em;
+      background-position: 0em -119.6em;
       width: 2.8em;
       height: 2.8em;
   }
@@ -396,7 +423,7 @@
 
 
   .sprite.waterproof-o:before {
-      background-position: 0em -112.1em;
+      background-position: 0em -122.4em;
       width: 2.8em;
       height: 2.6em;
   }
@@ -405,7 +432,7 @@
 
 
   .sprite.youtube:before {
-      background-position: 0em -114.7em;
+      background-position: 0em -125em;
       width: 4.3em;
       height: 4.2em;
   }
