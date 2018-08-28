@@ -485,8 +485,12 @@ var app = {
 
         $togglers.on('click', function () {
             $(this).toggleClass('_opened');
-            $(this).siblings('.tabs__tab__content').slideToggle();
-
+            $(this).siblings('.tabs__tab__content').slideToggle(function() {
+                $(this).is(':visible') 
+                ? $(this).trigger('tabs_slide_open', $(this)) 
+                : $(this).trigger('tabs_slide_close', $(this)) ;
+            });
+            
         });
 
         var initEtabs = function () {
@@ -935,9 +939,9 @@ var app = {
     /**
      * init map in container
      * @param string cnt id
-     * @return map 
+     * @return Map 
      */
-    initMapInCnt: function (cnt) {
+    mapInit: function (cnt) {
         return new ymaps.Map(cnt, {
             center: [56.326887, 44.005986],
             zoom: 11,
@@ -949,11 +953,11 @@ var app = {
 
     /**
      * add placemarks on map
-     * @param map map
+     * @param Map map
      * @param $ items with data-attr
-     * @return array geoObjects
+     * @return array of GeoObject
      */
-    addPlacemarksOnMap: function (map, $items) {
+    mapAddPlacemarks: function (map, $items) {
         var placemarks = [];
         var tplPlacemark = ymaps.templateLayoutFactory.createClass(
                 '<div class="placemark"><svg xmlns="http://www.w3.org/2000/svg" width="39" height="50"><defs><filter id="a" width="145.2%" height="133.3%" x="-22.6%" y="-11.9%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/><feMerge><feMergeNode in="shadowMatrixOuter1"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(4 2)"><path fill="#2057AC" d="M15.175 42C25.292 29.805 30.35 20.897 30.35 15.273 30.35 6.838 23.556 0 15.175 0 6.795 0 0 6.838 0 15.273 0 20.897 5.058 29.805 15.175 42z"/><path fill="#FFF" d="M23.846 19.183H19.78L15.304 7.2h4.067l4.475 11.983zm-4.85 0h-4.068L11.4 9.597h4.067l3.528 9.586zm-4.933.017h-6.91l3.398-9.52 3.512 9.52zm-3.512-7.49c.272.706.831 2.339 1.341 3.828l.006.018c.438 1.277.838 2.445.989 2.828h-4.54c.123-.33.414-1.247.753-2.313l.002-.005c.513-1.612 1.135-3.565 1.45-4.356z"/></g></svg></div>'
@@ -1029,11 +1033,19 @@ var app = {
                 placemarks.push(placemark);
             }
         });
+        return placemarks;
+    },
+
+    /**
+     * Set bounds on all geo objects on map
+     * @param Map map
+     * @returns void
+     */
+    mapSetBounds: function (map) {
         map.setBounds(map.geoObjects.getBounds(), {
             checkZoomRange: true,
             zoomMargin: 50
         });
-        return placemarks;
     },
 
     initCart: function () {
@@ -1097,8 +1109,9 @@ var app = {
 
         // map
         var initMap = function () {
-            map = app.initMapInCnt('pickup_map');
-            var placemarks = app.addPlacemarksOnMap(map, $('.js-pickup__map__item'));
+            map = app.mapInit('pickup_map');
+            var placemarks = app.mapAddPlacemarks(map, $('.js-pickup__map__item'));
+            app.mapSetBounds(map);
             // click
             $('.js-pickup__map__item').on('click', function () {
                 placemarks[$(this).index()].balloon.open();
@@ -1149,8 +1162,19 @@ var app = {
             ymaps.ready(initMap);
         }
         var initMap = function () {
-            var map = app.initMapInCnt('sp_map');
-            var placemarks = app.addPlacemarksOnMap(map, $('.js-sp__map-item'));
+            var map = app.mapInit('sp_map');
+            app.mapAddPlacemarks(map, $('.js-sp__map-item'));
+            // масштабируем при открытии страницы, таба и слайда
+            if ($('#sp_map').is(':visible')) {
+                app.mapSetBounds(map);
+            } else {
+                $('.js-sp .js-tabs').one('easytabs:after', function () {
+                    app.mapSetBounds(map);
+                });
+                $('.js-sp .js-sp__map-tab').on('tabs_slide_open', function () {
+                    app.mapSetBounds(map);
+                });
+            }
         }
     },
 
