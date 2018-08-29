@@ -979,13 +979,17 @@ var app = {
      * @return Map 
      */
     mapInit: function (cnt) {
-        return new ymaps.Map(cnt, {
+        var map = new ymaps.Map(cnt, {
             center: [56.326887, 44.005986],
             zoom: 11,
             controls: []
         }, {
             suppressMapOpenBlock: true,
         });
+        map.controls.add('zoomControl', {
+            size: 'small'
+        });
+        return map;
     },
 
     /**
@@ -1238,7 +1242,7 @@ var app = {
         }
         var initMap = function () {
             var $items = $('.js-contacts__map-item');
-            var map = app.mapInit('contacts_map');
+            map = app.mapInit('contacts_map');
             var placemarks = app.mapAddPlacemarks(map, $items);
             app.mapSetBounds(map);
             $items.each(function (idx) {
@@ -1246,7 +1250,12 @@ var app = {
                     var type = $(this).data('type');
                     $('.placemark.' + type).show();
                     $('.js-contacts__map .js-tag').filter('[data-type="'+ type + '"]').addClass('_active');
-                    placemarks[idx].balloon.open();
+//                    console.log(placemarks[idx]);
+                    map.setCenter(placemarks[idx].geometry.getCoordinates(), 13, {
+                        duration: 300
+                    }).then(function(){
+                        placemarks[idx].balloon.open();
+                    });
                 });
             });
             // click on tag
