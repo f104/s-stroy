@@ -43,6 +43,8 @@ var app = {
         this.initQuantity();
         this.initCart();
         this.initSP();
+        this.initTags();
+        this.initContacts();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -155,7 +157,7 @@ var app = {
             ]
         });
         $('.js-slider').each(function () {
-            var slides = $(this).data('slides');
+            var slides = $(this).data('slides') || {};
             $(this).slick({
                 dots: false,
                 arrows: true,
@@ -233,8 +235,43 @@ var app = {
         $(window).on('load', function () {
             $('.js-nav-slider__main.slick-initialized').slick('setPosition');
         });
+
+        // only sm sliders
+        var isMobile = false;
+        var initSmSlider = function () {
+            $('.js-sm-slider').slick({
+                dots: true,
+                arrows: true,
+                infinite: false
+            });
+        };
+        var destroySmSlider = function () {
+            $('.js-sm-slider.slick-initialized').slick('unslick');
+        };
+        var isMobile = $(window).outerWidth() < appConfig.breakpoint.md;
+        var checkSmSlider = function () {
+            var newSize = $(window).outerWidth() < appConfig.breakpoint.md;
+            if (newSize != isMobile) {
+                isMobile = newSize;
+            }
+            if (isMobile) {
+                initSmSlider();
+            } else {
+                destroySmSlider();
+            }
+        }
+        $(window).on('load resize', function () {
+            checkSmSlider();
+        });
     },
 
+    initTags: function () {
+        $('.js-tag').on('click', function () {
+            $(this).toggleClass('_active');
+            return true;
+        });
+    },
+    
     initHover: function () {
         $('.js-hover').unbind('mouseenter mouseleave');
         if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
@@ -485,12 +522,12 @@ var app = {
 
         $togglers.on('click', function () {
             $(this).toggleClass('_opened');
-            $(this).siblings('.tabs__tab__content').slideToggle(function() {
-                $(this).is(':visible') 
-                ? $(this).trigger('tabs_slide_open', $(this)) 
-                : $(this).trigger('tabs_slide_close', $(this)) ;
+            $(this).siblings('.tabs__tab__content').slideToggle(function () {
+                $(this).is(':visible')
+                        ? $(this).trigger('tabs_slide_open', $(this))
+                        : $(this).trigger('tabs_slide_close', $(this));
             });
-            
+
         });
 
         var initEtabs = function () {
@@ -960,7 +997,7 @@ var app = {
     mapAddPlacemarks: function (map, $items) {
         var placemarks = [];
         var tplPlacemark = ymaps.templateLayoutFactory.createClass(
-                '<div class="placemark"><svg xmlns="http://www.w3.org/2000/svg" width="39" height="50"><defs><filter id="a" width="145.2%" height="133.3%" x="-22.6%" y="-11.9%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/><feMerge><feMergeNode in="shadowMatrixOuter1"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(4 2)"><path fill="#2057AC" d="M15.175 42C25.292 29.805 30.35 20.897 30.35 15.273 30.35 6.838 23.556 0 15.175 0 6.795 0 0 6.838 0 15.273 0 20.897 5.058 29.805 15.175 42z"/><path fill="#FFF" d="M23.846 19.183H19.78L15.304 7.2h4.067l4.475 11.983zm-4.85 0h-4.068L11.4 9.597h4.067l3.528 9.586zm-4.933.017h-6.91l3.398-9.52 3.512 9.52zm-3.512-7.49c.272.706.831 2.339 1.341 3.828l.006.018c.438 1.277.838 2.445.989 2.828h-4.54c.123-.33.414-1.247.753-2.313l.002-.005c.513-1.612 1.135-3.565 1.45-4.356z"/></g></svg></div>'
+                '<div class="placemark {{ properties.type }}"><i class="sprite {{ properties.type }}"></i></div>'
                 ),
                 tplBalloon = ymaps.templateLayoutFactory.createClass(
                         '<div class="pickup-balloon">{{ properties.text }}<span class="arrow"></span></div>', {
@@ -1011,14 +1048,16 @@ var app = {
                         });
         $items.each(function (index) {
             var geo = $(this).data('geo'),
-                    text = $(this).data('text');
+                    text = $(this).data('text') || 'САКСЭС',
+                    type = $(this).data('type') || 'geo-office';
             if (geo) {
                 geo = geo.split(',');
                 geo[0] = parseFloat(geo[0]);
                 geo[1] = parseFloat(geo[1]);
                 var placemark = new ymaps.Placemark(geo,
                         {
-                            text: text || 'САКСЭС'
+                            text: text,
+                            type: type
                         },
                         {
                             iconLayout: tplPlacemark,
@@ -1175,6 +1214,48 @@ var app = {
                     app.mapSetBounds(map);
                 });
             }
+        }
+    },
+
+    initContacts: function () {
+        if ($('.js-contacts').length == 0) {
+            return;
+        }
+        $('.js-contacts__map').stick_in_parent({
+            offset_top: 90
+        });
+        if (typeof (ymaps) === 'undefined') {
+            $.ajax({
+                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                dataType: "script",
+                cache: true,
+                success: function () {
+                    ymaps.ready(initMap);
+                }
+            });
+        } else {
+            ymaps.ready(initMap);
+        }
+        var initMap = function () {
+            var $items = $('.js-contacts__map-item');
+            var map = app.mapInit('contacts_map');
+            var placemarks = app.mapAddPlacemarks(map, $items);
+            app.mapSetBounds(map);
+            $items.each(function (idx) {
+                $(this).on('click', function () {
+                    var type = $(this).data('type');
+                    $('.placemark.' + type).show();
+                    $('.js-contacts__map .js-tag').filter('[data-type="'+ type + '"]').addClass('_active');
+                    placemarks[idx].balloon.open();
+                });
+            });
+            // click on tag
+            $('.js-contacts__map .js-tag').on('click', function() {
+                map.balloon.close();
+                var $pm = $('.placemark.' + $(this).data('type'));
+                $(this).hasClass('_active') ? $pm.show() : $pm.hide();
+                return false;
+            });
         }
     },
 

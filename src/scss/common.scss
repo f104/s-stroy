@@ -196,6 +196,8 @@ a, .link {
 @import "components/404";
 @import "components/production-list";
 @import "components/warning";
+@import "components/offers";
+@import "components/contacts-list";
 @import "page-assets/catalog";
 @import "page-assets/product";
 @import "page-assets/cart";
@@ -204,6 +206,7 @@ a, .link {
 @import "page-assets/about";
 @import "page-assets/stock";
 @import "page-assets/ship-and-pay";
+@import "page-assets/contacts";
 
 .preloader {
     display: none !important;

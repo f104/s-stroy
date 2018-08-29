@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Контакты"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Контакты</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Контакты
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container">
+                    <div class="contacts js-contacts">
+
+                        <div class="contacts__col _1">
+
+                            <p class="contacts__region-select">
+                                Саксэс в 
+                                <a href="#" class="contacts__region-select__link js-region-toggler" 
+                                   data-toggle=".header .region-select">
+                                    <i class="icon-geo"></i> Нижнем Новгороде
+                                </a>
+                            </p>
+
+                            <div class="contacts-list">
+                                <h3 class="contacts-list__h">Нижний Новгород</h3>
+                                <div class="contacts-list__slider js-sm-slider">
+                                    @@loop('./template/contacts/item.html', [
+                                    {
+                                    "text": "Нижегородский р-н: ул. Костина, д. 3",
+                                    "type": "Головной офис",
+                                    "icon": "geo-office",
+                                    "geo": "56.311956, 43.990589"
+                                    },
+                                    {
+                                    "text": "Московский р-н: Московское шоссе, д. 298а",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "56.311696, 43.832899"
+                                    },
+                                    {
+                                    "text": "Ленинский р-н: ул. Суздальская, Карповский рынок",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "56.256625, 43.938475"
+                                    },
+                                    {
+                                    "text": "Нижегородский р-н: Казанское шоссе, д. 4",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "56.295690, 44.077699"
+                                    },
+                                    {
+                                    "text": "Ленинский р-н: пр. Ленина, д. 48",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "56.279877, 43.924599"
+                                    }
+                                    ])
+                                </div>
+                            </div>
+
+                            <div class="contacts-list">
+                                <h3 class="contacts-list__h">Нижегородская область</h3>
+                                <div class="contacts-list__slider js-sm-slider">
+                                    @@loop('./template/contacts/item.html', [
+                                    {
+                                    "text": "г. Богородск, ул. Ленина, д. 170, ТЦ «Континент», 2 этаж",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "56.102418, 43.506748"
+                                    },
+                                    {
+                                    "text": "г. Выкса, пос. Строитель, строение 13",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "55.333251, 42.133394"
+                                    },
+                                    {
+                                    "text": "г. Бор, ул. Стеклозаводское шоссе, д. 3",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "56.348801, 44.081454"
+                                    },
+                                    {
+                                    "text": "г. Дзержинск, просп. Чкалова, д. 50",
+                                    "type": "Офис продаж",
+                                    "icon": "geo-office",
+                                    "geo": "56.252852, 43.466665"
+                                    }
+                                    ])
+                                </div>
+                            </div>
+
+                            <div class="contacts-list">
+                                <h3 class="contacts-list__h">Склады</h3>
+                                <div class="contacts-list__slider js-sm-slider">
+                                    @@loop('./template/contacts/item.html', [
+                                    {
+                                    "text": "Н. Новгород, Московское шоссе, д. 298а",
+                                    "type": "Склад",
+                                    "icon": "geo-warehouse",
+                                    "geo": "56.311696, 43.832899"
+                                    },
+                                    {
+                                    "text": "Нижегородская обл., пос. Дружный",
+                                    "type": "Склад",
+                                    "icon": "geo-warehouse",
+                                    "geo": "56.163815, 43.921608"
+                                    }
+                                    ])
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contacts__col _2">
+                            @@include('./template/contacts/offers.html')
+                        </div>
+
+                        <div class="contacts__col _3">
+                            <div class="contacts__map js-contacts__map">
+                                <div class="contacts__map__col _1">
+                                    <h3 class="contacts__map__h">На карте</h3>
+                                </div>
+                                <div class="contacts__map__col _2">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <a href="#" 
+                                               class="tags__link _active js-tag"
+                                               data-type="geo-office">
+                                                Офисы продаж <i class="icon-close tags__close"></i>
+                                            </a>
+                                        </li>
+                                        <li class="tags__item">
+                                            <a href="#" 
+                                               class="tags__link _active js-tag"
+                                               data-type="geo-warehouse">
+                                                Склады <i class="icon-close tags__close"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="contacts__map__col _3">
+                                    <div id="contacts_map" class="contacts__map__cnt"></div>
+                                </div>
+                                <div class="contacts__map__col _4">
+                                    <ul class="contacts__map__desc">
+                                        <li class="contacts__map__desc__item">
+                                            <i class="sprite geo-office"></i> — Офисы
+                                        </li>
+                                        <li class="contacts__map__desc__item">
+                                            <i class="sprite geo-warehouse"></i> — Склады
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>
