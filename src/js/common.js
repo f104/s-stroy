@@ -337,6 +337,9 @@ var app = {
         });
     },
 
+    /**
+     *
+     */
     initSearch: function () {
         var $input = $('.js-search-form__input');
         $input.on('click', function (e) {
@@ -348,7 +351,48 @@ var app = {
         $(window).on('click', function () {
             $('.js-search-res').removeClass('_active');
         });
+
+        /**
+         * обработчик нажатия
+         */
+        $input.on('input', this.debounce(function(e) {
+            if ($(this).val().length > 2) {
+                $.ajax({
+                    url: '/baseinfo/search.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: $(this).parent().serialize(),
+                    success: function success(data) {
+                        $('.j-top-search-wraper').html(data.html);
+                    }
+                });
+            }
+        }, 300));
     },
+
+    /**
+     *
+     * @param func
+     * @param wait
+     * @param immediate
+     * @returns {Function}
+     *
+     */
+    debounce: function(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    },
+
 
     initCatalog: function () {
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
@@ -1299,6 +1343,6 @@ var app = {
             }
         }
         return sEnding;
-    }
+    },
 
 }
