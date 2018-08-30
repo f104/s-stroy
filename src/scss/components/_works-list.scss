@@ -1,0 +1,35 @@
+.works-list {
+    $root: &;
+    margin-left: - $container-padding-sm;
+    margin-right: - $container-padding-sm;
+    @include media-breakpoint-up(md) {
+        margin-left: 0;
+        margin-right: 0;
+        @include row(30px);
+    }
+    &__item {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @include media-breakpoint-up(md) {
+            @include col(50%, 30px);
+            margin-bottom: 30px;
+        }
+        &__inner {
+            background-color: $white;
+        }
+        &__img {
+            height: 166px;
+            @include media-breakpoint-up(md) {
+                height: 213px;                
+            }
+            &__wrapper {
+                @include bg-img-wrapper;
+                &__img {
+                    @include bg-img;
+                }
+            }
+        }
+    }
+}
