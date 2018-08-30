@@ -471,7 +471,7 @@ var app = {
         $('.js-popup').on('click', function () {
             $.fancybox.close();
         }).fancybox(options);
-        if (window.location.hash) {
+        if (window.location.hash && window.location.hash !== '#') {
             var $cnt = $(window.location.hash);
             if ($cnt.length && $cnt.hasClass('popup')) {
                 $.fancybox.open($cnt, options);
