@@ -353,10 +353,23 @@ var app = {
         });
 
         /**
+         *
+         * Строка поиска
+         *
+         */
+        let searchAll = $('.j-search-show_all');
+        let searchString = searchAll.attr('data-page');
+
+        $('.search-form__submit').on('click', function () {
+           searchAll.trigger('click');
+        });
+        /**
          * обработчик нажатия
          */
         $input.on('input', this.debounce(function(e) {
+            searchAll.hide();
             if ($(this).val().length > 2) {
+                searchAll.attr('href', searchString + '?q=' + $(this).val());
                 $.ajax({
                     url: '/baseinfo/search.php',
                     type: 'post',
@@ -364,6 +377,9 @@ var app = {
                     data: $(this).parent().serialize(),
                     success: function success(data) {
                         $('.j-top-search-wraper').html(data.html);
+                        if(data.html) {
+                            searchAll.show();
+                        }
                     }
                 });
             }
