@@ -242,13 +242,22 @@ form {
             margin: 0;
         }
         input:focus + label, input:valid + label,
-            textarea:focus + label, textarea:valid + label {
+            textarea:focus + label, textarea:valid + label,
+            select:focus ~ label, select:valid + label {
             font-size: 10px;
             transform: translate(-10px,-13px);
         }
         &__empty {
             font-size: 14px !important;
             transform: none !important;
+        }
+        // jq-select
+        .select ~ label {
+            z-index: 50;
+        }
+        .select.focused ~ label, .select.changed ~ label {
+            font-size: 10px !important;
+            transform: translate(-10px,-13px) !important;
         }
         input:focus + .form__label__empty,
             textarea:focus + .form__label__empty {
@@ -260,6 +269,33 @@ form {
                 content: '*';
                 display: inline;
             }
+        }
+    }
+
+    &__file {
+        display: block;
+        [type="file"] {
+            display: none;
+        }
+        label {
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1.43;
+            color: $primary;
+            margin-bottom: 0;
+            [class^="icon"] {
+                font-size: 11px;
+                margin-right: 1ex;
+                top: -1px;
+            }
+        }
+        &__name {
+            font-size: 10px;
+            display: block;
+        }
+        #{$root}__input-help {
+            margin-top: 15px;
+            line-height: 1.42;
         }
     }
 
@@ -485,8 +521,10 @@ form {
     color: $body-color;
     outline: none;
     line-height: 46px;
+    height: 48px;
     &._sm {
         line-height: 40px;
+        height: 42px;
     }
     option[disabled] {
         display: none;
@@ -531,6 +569,9 @@ form {
                 padding: 0 17px;
                 &.sel, &:hover {
                     color: $primary;
+                }
+                &.disabled {
+                    display: none;
                 }
             }
         }

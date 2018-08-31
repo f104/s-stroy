@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Отзывы"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 0
+                        })
+                        @@include('./template/about/about-menu.html', {
+                        "active": "reviews"
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Группа компаний САКСЭС</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="about.html">О нас</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Отзывы
+                                </li>
+                            </ul>
+                        </div>
+
+                        <article class="reviews">
+                            
+                            <div class="tabs js-tabs">
+                                <ul class="tabs__list">
+                                    <li><a href="#tab1">Электронные отзывы</a></li>
+                                    <li><a href="#tab2">Видеоотзывы</a></li>
+                                    <li><a href="#tab3">Рукописные отзывы</a></li>
+                                </ul>
+                                <span class="tabs__under js-tabs__under"></span>
+                                <div id="tab1" class="tabs__tab js-tabs__tab">
+                                    <span class="tabs__tab__toggler">Электронные отзывы</span>
+                                    <div class="tabs__tab__content _nopadding js-sp__map-tab">
+                                        @@include('./template/reviews/tab1.html')
+                                    </div>
+                                </div>
+                                <div id="tab2" class="tabs__tab js-tabs__tab">
+                                    <span class="tabs__tab__toggler">Видеоотзывы</span>
+                                    <div class="tabs__tab__content _nopadding _transparent js-sp__map-tab">
+                                        @@include('./template/reviews/tab2.html')
+                                    </div>
+                                </div>
+                                <div id="tab3" class="tabs__tab js-tabs__tab">
+                                    <span class="tabs__tab__toggler">Рукописные отзывы</span>
+                                    <div class="tabs__tab__content _nopadding _transparent js-sp__map-tab">
+                                        @@include('./template/reviews/tab3.html')
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            @@include('./template/reviews/form.html')
+                            
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

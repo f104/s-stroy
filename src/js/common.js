@@ -30,7 +30,7 @@ var app = {
         this.initCatalog();
         this.initSearch();
         this.initPopup();
-        this.initFormLabel();
+        this.initForm();
         this.initRegionSelect();
         this.initTabs();
         this.initQA();
@@ -271,7 +271,7 @@ var app = {
             return true;
         });
     },
-    
+
     initHover: function () {
         $('.js-hover').unbind('mouseenter mouseleave');
         if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
@@ -479,7 +479,7 @@ var app = {
         }
     },
 
-    initFormLabel: function () {
+    initForm: function () {
         var $inputs = $('.js-form__label').find(':not([required])');
         $inputs
                 .on('focus', function () {
@@ -490,7 +490,19 @@ var app = {
                         $(this).siblings('label').addClass('form__label__empty');
                     }
                 })
-                .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
+                .each(function () {
+                    if (!$(this).val()) {
+                        $(this).siblings('label').addClass('form__label__empty');
+                    }
+                });
+//                не работает для селектов
+//        .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
+
+        $('.js-form__file__input').on('change', function(){
+            var name = $(this).val();
+            name = name.replace(/\\/g, '/').split('/').pop();
+            $(this).parents('.js-form__file').find('.js-form__file__name').text(name);
+        });
     },
 
     initRegionSelect: function () {
@@ -606,7 +618,14 @@ var app = {
         if (!$selects.length)
             return;
         var init = function () {
-            $selects.styler();
+            $selects.styler({
+                selectPlaceholder: '',
+                selectSmartPositioning: false
+            }).each(function(){
+                if ($(this).val()) {
+                    $(this).parent().addClass('changed');
+                }
+            });
         };
         var destroy = function () {
             $selects.styler('destroy');
@@ -1249,17 +1268,17 @@ var app = {
                 $(this).on('click', function () {
                     var type = $(this).data('type');
                     $('.placemark.' + type).show();
-                    $('.js-contacts__map .js-tag').filter('[data-type="'+ type + '"]').addClass('_active');
+                    $('.js-contacts__map .js-tag').filter('[data-type="' + type + '"]').addClass('_active');
 //                    console.log(placemarks[idx]);
                     map.setCenter(placemarks[idx].geometry.getCoordinates(), 13, {
                         duration: 300
-                    }).then(function(){
+                    }).then(function () {
                         placemarks[idx].balloon.open();
                     });
                 });
             });
             // click on tag
-            $('.js-contacts__map .js-tag').on('click', function() {
+            $('.js-contacts__map .js-tag').on('click', function () {
                 map.balloon.close();
                 var $pm = $('.placemark.' + $(this).data('type'));
                 $(this).hasClass('_active') ? $pm.show() : $pm.hide();

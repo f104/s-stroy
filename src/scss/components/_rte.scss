@@ -242,60 +242,7 @@
         }
     }
 
-}
-
-.rte-reviews {
-    @include rte-margins;
-    &__item {
-        background-color: $white;
-        padding: 15px $container-padding-sm 20px;
-        margin-left: - $container-padding-sm;
-        margin-right: - $container-padding-sm;
-        margin-bottom: 15px;
-        @include media-breakpoint-up(md) {
-            padding: 23px $container-padding-md 26px;
-            margin-left: - $container-padding-md;
-            margin-right: - $container-padding-md;
-            margin-bottom: 20px;
-        }
-        @include media-breakpoint-up(lg) {
-            margin-left: 0;
-            margin-right: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-        &__head {
-            margin-bottom: 16px;
-            display: flex;
-            &__img-wrapper {
-                margin-right: 18px;
-                flex-shrink: 0;
-                &__img {
-                    max-width: 52px;
-                    border-radius: 50%;
-                }
-            }
-            &__content {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                &__h {
-                    font-size: 18px;
-                    margin-bottom: 8px;
-                }
-                &__date {
-                    opacity: 0.5;
-                    font-size: 12px;
-                }
-            }
-        }
-        &__text {
-            font-size: $font-size-base;
-            line-height: 1.43;
-        }
-    }
-    &__btn {
+    &__btn-more {
         display: block;
         width: 100%;
         margin-top: 20px;
@@ -304,6 +251,37 @@
             width: 276px;
             margin-left: auto;
             margin-right: auto;
+        }
+    }
+
+}
+
+.rte-reviews {
+    @include rte-margins;
+    .reviews-text {
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &__item {
+            border-bottom-width: 0;
+            margin-bottom: 15px;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 20px;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
