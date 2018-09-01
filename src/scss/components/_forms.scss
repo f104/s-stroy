@@ -532,6 +532,9 @@ form {
     padding: 0 17px;
     @include media-breakpoint-up(md) {
         padding: 0;
+        .jq-selectbox__select {
+            height: 100%;
+        }
         .jq-selectbox__select-text {
             padding: 0 17px;
             @include ie10up() {
