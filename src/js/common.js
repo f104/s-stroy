@@ -355,18 +355,83 @@ var app = {
         });
     },
 
+    /**
+     *
+     */
     initSearch: function () {
         var $input = $('.js-search-form__input');
         $input.on('click', function (e) {
             e.stopPropagation();
         });
+        /*
         $input.on('focus', function () {
             $(this).siblings('.js-search-res').addClass('_active');
-        });
+        });*/
         $(window).on('click', function () {
             $('.js-search-res').removeClass('_active');
         });
+
+        /**
+         *
+         * Строка поиска
+         *
+         */
+        let searchAll = $('.j-search-show_all');
+        let searchString = searchAll.attr('data-page');
+
+        $('.search-form__submit').on('click', function () {
+           searchAll.trigger('click');
+        });
+        /**
+         * обработчик нажатия
+         */
+        let _count = 0;
+        $input.on('input', this.debounce(function(e) {
+            searchAll.hide();
+            if ($(this).val().length > 2) {
+                searchAll.attr('href', searchString + '?q=' + $(this).val());
+                $.ajax({
+                    url: '/baseinfo/search.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: $(this).parent().serialize(),
+                    success: function success(data) {
+                        $('.j-top-search-wraper').html(data.html);
+                        if(data.html) {
+                            searchAll.show();
+                            $('.js-search-res').addClass('_active');
+                            _count = $('.b-search-count').html();
+                            $('.j-search-count').text('(' + _count +')');
+                        }
+                    }
+                });
+            }
+        }, 300));
     },
+
+    /**
+     *
+     * @param func
+     * @param wait
+     * @param immediate
+     * @returns {Function}
+     *
+     */
+    debounce: function(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    },
+
 
     initCatalog: function () {
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
@@ -1329,6 +1394,6 @@ var app = {
             }
         }
         return sEnding;
-    }
+    },
 
 }
