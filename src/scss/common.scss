@@ -198,6 +198,8 @@ a, .link {
 @import "components/warning";
 @import "components/offers";
 @import "components/contacts-list";
+@import "components/neighbors";
+@import "components/footer-down";
 @import "page-assets/catalog";
 @import "page-assets/product";
 @import "page-assets/cart";
@@ -208,6 +210,7 @@ a, .link {
 @import "page-assets/ship-and-pay";
 @import "page-assets/contacts";
 @import "page-assets/works";
+@import "page-assets/reviews";
 
 .preloader {
     display: none !important;

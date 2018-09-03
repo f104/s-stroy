@@ -66,6 +66,39 @@
     }
 }
 
+.pagination-wrapper {
+    background-color: $white;
+    padding-left: $container-padding-sm;
+    padding-right: $container-padding-sm;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    .pagination {
+        flex-grow: 1;
+    }
+    @include media-breakpoint-up(md) {
+        padding-left: $container-padding-md;
+        padding-right: $container-padding-md;
+        height: 78px;
+        justify-content: flex-end;
+        .pagination {
+            flex-grow: 0;
+        }
+    }
+    &._full-md {
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
 .onpage {
     display: flex;
     font-size: 15px;

@@ -68,6 +68,13 @@ $catalog-menu-padding: 17px;
                 box-shadow: 0 12px 26px 0 rgba(0, 0, 0, 0.1);
             }
         }
+        .catalog-menu {
+            &:not(._opened) {
+                .catalog-menu__slide {
+                    display: none;
+                }
+            }
+        }
     }
 }
 

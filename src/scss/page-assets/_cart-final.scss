@@ -30,6 +30,24 @@
             font-size: 20px;
             line-height: 1.15;
         }
+        &__icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 29px;
+            height: 29px;
+            color: $white;
+            border-radius: 50%;
+            margin-left: 0.5ex;
+            font-size: 10px;
+            line-height: 29px;
+            text-align: center;
+            &._done {
+                background-color: $green-dark;
+            }
+            &._fail {
+                background-color: $red;
+            }
+        }
     }
     &__lead {
         font-size: 15px;
@@ -92,6 +110,6 @@
     }
     .link-back {
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 130px;
     }
 }

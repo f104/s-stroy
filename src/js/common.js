@@ -30,7 +30,7 @@ var app = {
         this.initCatalog();
         this.initSearch();
         this.initPopup();
-        this.initFormLabel();
+        this.initForm();
         this.initRegionSelect();
         this.initTabs();
         this.initQA();
@@ -67,9 +67,12 @@ var app = {
 
         var $header = $('header');
         var headerHeight = $header.outerHeight();
+        var $headerTop = $('.header__top');
+        var headerTopHeight = $headerTop.outerHeight();
+        console.log(headerTopHeight)
         var q = 1;
         var action = 0;
-        var pinHeader = function () {
+        var _pinHeader = function () {
             if (document.readyState !== "complete") {
                 return;
             }
@@ -93,6 +96,21 @@ var app = {
                     $('body').css({'padding-top': 0});
                     $header.removeClass('_fixed');
                 });
+            }
+        }
+        var pinHeader = function () {
+            if (document.readyState !== "complete") {
+                return;
+            }
+            if ($(this).scrollTop() > headerTopHeight) {
+                $('body').css({'padding-top': headerHeight});
+                $header.addClass('_fixed');
+            } else {
+                if (!$header.hasClass('_fixed')) {
+                    return;
+                }
+                $('body').css({'padding-top': 0});
+                $header.removeClass('_fixed');
             }
         }
         if (window.innerWidth >= appConfig.breakpoint.lg) {
@@ -271,7 +289,7 @@ var app = {
             return true;
         });
     },
-    
+
     initHover: function () {
         $('.js-hover').unbind('mouseenter mouseleave');
         if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
@@ -333,7 +351,7 @@ var app = {
 
     initScrollbar: function () {
         $('.js-scrollbar').scrollbar({
-            disableBodyScroll: true
+//            disableBodyScroll: true
         });
     },
 
@@ -429,8 +447,8 @@ var app = {
         var slideMenu = function () {
             $slide.slideToggle(function () {
                 $('.js-filter__counter').trigger("sticky_kit:recalc");
+                $menu.toggleClass('_opened');
             });
-            $menu.toggleClass('_opened');
             return false;
         }
 
@@ -474,19 +492,13 @@ var app = {
             return false;
         });
 
-        if (!isMobile && !$menu.hasClass('_opened')) {
-            $slide.slideUp(function () {
-                $('.js-filter__counter').trigger("sticky_kit:recalc");
-            });
-        }
-
         var checkMenu = function () {
             var newSize = $(window).outerWidth() < appConfig.breakpoint.lg;
             if (newSize != isMobile) {
                 isMobile = newSize;
                 if (isMobile) {
                     $slide.show();
-                    $menu.addClass('_opened');
+//                    $menu.addClass('_opened');
                     $slideTrigger.off('click', slideMenu);
                     $secondLink.on('click', showSecond);
                     $secondLink.off('mouseenter mouseleave');
@@ -498,9 +510,8 @@ var app = {
                     $secondLink.off('click', showSecond);
                     $secondLink.parent().hover(hoverIcon, unhoverIcon);
                     destroyScrollbar();
-                    if ($wrapper.hasClass('_absolute')) {
-                        $menu.removeClass('_opened');
-                        $slide.slideUp();
+                    if (!$menu.hasClass('_opened')) {
+                        $slide.hide();
                     }
                 }
             }
@@ -544,7 +555,7 @@ var app = {
         }
     },
 
-    initFormLabel: function () {
+    initForm: function () {
         var $inputs = $('.js-form__label').find(':not([required])');
         $inputs
                 .on('focus', function () {
@@ -555,7 +566,19 @@ var app = {
                         $(this).siblings('label').addClass('form__label__empty');
                     }
                 })
-                .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
+                .each(function () {
+                    if (!$(this).val()) {
+                        $(this).siblings('label').addClass('form__label__empty');
+                    }
+                });
+//                не работает для селектов
+//        .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
+
+        $('.js-form__file__input').on('change', function(){
+            var name = $(this).val();
+            name = name.replace(/\\/g, '/').split('/').pop();
+            $(this).parents('.js-form__file').find('.js-form__file__name').text(name);
+        });
     },
 
     initRegionSelect: function () {
@@ -671,7 +694,14 @@ var app = {
         if (!$selects.length)
             return;
         var init = function () {
-            $selects.styler();
+            $selects.styler({
+                selectPlaceholder: '',
+                selectSmartPositioning: false
+            }).each(function(){
+                if ($(this).val()) {
+                    $(this).parent().addClass('changed');
+                }
+            });
         };
         var destroy = function () {
             $selects.styler('destroy');
@@ -1314,17 +1344,17 @@ var app = {
                 $(this).on('click', function () {
                     var type = $(this).data('type');
                     $('.placemark.' + type).show();
-                    $('.js-contacts__map .js-tag').filter('[data-type="'+ type + '"]').addClass('_active');
+                    $('.js-contacts__map .js-tag').filter('[data-type="' + type + '"]').addClass('_active');
 //                    console.log(placemarks[idx]);
                     map.setCenter(placemarks[idx].geometry.getCoordinates(), 13, {
                         duration: 300
-                    }).then(function(){
+                    }).then(function () {
                         placemarks[idx].balloon.open();
                     });
                 });
             });
             // click on tag
-            $('.js-contacts__map .js-tag').on('click', function() {
+            $('.js-contacts__map .js-tag').on('click', function () {
                 map.balloon.close();
                 var $pm = $('.placemark.' + $(this).data('type'));
                 $(this).hasClass('_active') ? $pm.show() : $pm.hide();

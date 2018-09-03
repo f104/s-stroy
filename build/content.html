@@ -240,16 +240,16 @@
                     <td></td>
                     <td>
                         <span class="minicart-popup__t__price">
-                            1 235 <span class="rub">₽</span>
+                            99 999 <span class="rub">₽</span>
                         </span>
-                        <span class="minicart-popup__t__variant">за штуку</span>
+                        <span class="minicart-popup__t__variant">за кг</span>
                     </td>
                     <td class="minicart-popup__t__count">
                         <a href="#" class="minicart-popup__t__change">
                             <i class="icon-minus"></i>
                         </a>
                         <span class="minicart-popup__t__total">
-                            3
+                            999
                         </span>
                         <a href="#" class="minicart-popup__t__change">
                             <i class="icon-plus"></i>
@@ -614,7 +614,7 @@
         <ul class="menu__sm">
             <li><a href="stock.html">Акции</a></li>
             <li><a href="works.html">Примеры работ</a></li>
-            <li><a href="#">Отзывы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
         </ul>
     </li>
     <li>
@@ -764,7 +764,7 @@
                     <i class="icon-close-circled"></i>
                 </a>
             </h3>
-            <div class="js-cm__slide">
+            <div class="catalog-menu__slide js-cm__slide">
                 <ul class="catalog-menu__list">
                     <li class="catalog-menu__list__item _expandable">
                         <a href="#" class="catalog-menu__list__link js-cm__second-link">
@@ -1343,43 +1343,45 @@
                             
                             <h2>Заголовок — H2</h2>
                             <div class="rte-reviews">
-    <div class="rte-reviews__item">
-    <div class="rte-reviews__item__head">
-        <div class="rte-reviews__item__head__img-wrapper">
-            <img class="rte-reviews__item__head__img"
+    <div class="reviews-text">
+        <div class="reviews-text__item">
+    <div class="reviews-text__item__head">
+        <div class="reviews-text__item__head__img-wrapper">
+            <img class="reviews-text__item__head__img"
                  src="img/content/reviews1.jpg"
                  srcset="img/content/reviews1@2x.jpg 2x,
                  img/content/reviews1@3x.jpg 3x"
                  alt="alt-text">
         </div>
-        <div class="rte-reviews__item__head__content">
-            <span class="rte-reviews__item__head__content__h">Дмитрий</span>
-            <span class="rte-reviews__item__head__content__date">отзыв 15.05.2018</span>
+        <div class="reviews-text__item__head__content">
+            <span class="reviews-text__item__head__content__h">Дмитрий</span>
+            <span class="reviews-text__item__head__content__date">отзыв 15.05.2018</span>
         </div>
     </div>
-    <div class="rte-reviews__item__text">
+    <div class="reviews-text__item__text">
         Покупал в САКСЭСе материалы для кровли. Всем очень доволен. Большой ассортимент кровельных материалов, быстрый расчёт, предложили несколько вариантов. Все доставили в срок. Буду советовать знакомым!
     </div>
 </div>
-    <div class="rte-reviews__item">
-    <div class="rte-reviews__item__head">
-        <div class="rte-reviews__item__head__img-wrapper">
-            <img class="rte-reviews__item__head__img"
+        <div class="reviews-text__item">
+    <div class="reviews-text__item__head">
+        <div class="reviews-text__item__head__img-wrapper">
+            <img class="reviews-text__item__head__img"
                  src="img/content/reviews2.jpg"
                  srcset="img/content/reviews2@2x.jpg 2x,
                  img/content/reviews2@3x.jpg 3x"
                  alt="alt-text">
         </div>
-        <div class="rte-reviews__item__head__content">
-            <span class="rte-reviews__item__head__content__h">Светлана Александровна</span>
-            <span class="rte-reviews__item__head__content__date">отзыв 11.06.2018</span>
+        <div class="reviews-text__item__head__content">
+            <span class="reviews-text__item__head__content__h">Светлана Александровна</span>
+            <span class="reviews-text__item__head__content__date">отзыв 11.06.2018</span>
         </div>
     </div>
-    <div class="rte-reviews__item__text">
+    <div class="reviews-text__item__text">
         Добрый день! Хочется поблагодарить компанию «Саксэс» за хорошую работу и доброе отношение к клиентам. Покупали ондулин на свою дачу. Всё рассчитали, привезли. Молодцы.
     </div>
 </div>
-    <a href="#" class="btn _primary rte-reviews__btn">Показать еще</a>
+    </div>
+    <a href="#" class="btn _primary rte__btn-more">Показать еще</a>
 </div>
                                                         
                             <h2>Заголовок — H2</h2>
@@ -1686,6 +1688,12 @@
                                 10-тонник
                             </span>
                         </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                Льготная доставка
+                            </span>
+                        </label>
                     </div>
                     <div class="shipping__car-slider js-shipping__car-slider">
                         <div class="shipping__car-slider__item">
@@ -1697,24 +1705,6 @@
     </div>
     <div class="shipping__car-slider__item__text">
         <span class="shipping__car-slider__item__h">ГАЗель</span>
-        <dl class="shipping__car-slider__item__dl">
-            <dt>Грузоподъемность</dt>
-            <dd>до 4 т</dd>
-            <dt>Макс. длина груза</dt>
-            <dd>до 5,5 м</dd>
-            <dt>Объем</dt>
-            <dd>до 24 м³</dd>
-        </dl>
-    </div>
-</div><div class="shipping__car-slider__item">
-    <div class="shipping__car-slider__item__img">
-        <img src="img/car.png"
-             srcset="img/car@2x.png 2x,
-             img/car@3x.png 3x"
-             alt="alt text">
-    </div>
-    <div class="shipping__car-slider__item__text">
-        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
         <dl class="shipping__car-slider__item__dl">
             <dt>Грузоподъемность</dt>
             <dd>до 4 т</dd>
@@ -1750,6 +1740,24 @@
              alt="alt text">
     </div>
     <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
         <span class="shipping__car-slider__item__h">10-тонник</span>
         <dl class="shipping__car-slider__item__dl">
             <dt>Грузоподъемность</dt>
@@ -1761,16 +1769,49 @@
         </dl>
     </div>
 </div>
+                        <div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img _action">
+        <img src="img/shipping.png"
+             srcset="img/shipping@2x.png 2x,
+             img/shipping@3x.png 3x"
+             alt="alt text">
+        <span class="shipping__car-slider__item__img__badge">Акция</span>
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">Льготная доставка</span>
+        <span class="shipping__car-slider__item__p">
+            Мы подберем тип транспорта, исходя из габаритов вашего заказа. 
+            <strong>Это не влияет на стоимость доставки.</strong>
+        </span>
+        <span class="shipping__car-slider__item__p _sm">
+            Льготная доставка возможна только при выборе адреса в черте города.
+        </span>
+    </div>
+</div>
                     </div>
                     <!--<p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>-->
                     <div class="shipping__promo">
                         <div class="shipping__promo__content">
                             <span class="shipping__promo__h">Льготная доставка!</span>
-                            <span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>
+                            <!--<span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>-->
                         </div>
                         <div class="shipping__promo__foot">
-                            <span class="shipping__promo__accent">390 рублей</span>
-                            <a href="#" class="shipping__promo__link">Узнать подробнее</a>
+                            <ul class="shipping__promo__list">
+                                <li class="shipping__promo__list__item">
+                                    с понедельника по пятницу
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    в пределах Н. Новгорода
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    при заказе через козину на сайте
+                                </li>
+                            </ul>
+                            <div class="shipping__promo__foot__last-col">
+                                <span class="shipping__promo__text">стоимость доставки</span>
+                                <span class="shipping__promo__accent">390 рублей</span>
+                            </div>
+                            <!--<a href="#" class="shipping__promo__link">Узнать подробнее</a>-->
                         </div>
                         <span class="shipping__promo__badge">
                             <span class="shipping__promo__badge__text">
@@ -1855,7 +1896,7 @@
         <ul class="menu__sm">
             <li><a href="stock.html">Акции</a></li>
             <li><a href="works.html">Примеры работ</a></li>
-            <li><a href="#">Отзывы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
         </ul>
     </li>
     <li>
@@ -1983,6 +2024,8 @@
         <li><a href="cart.html#cart-shipping-calc">#shipping-calc</a></li>
         <li><a href="cart.html#pickup">#pickup</a></li>
         <li><a href="cart-final.html">cart final</a></li>
+        <li><a href="done-pay.html">done pay</a></li>
+        <li><a href="fail-pay.html">fail pay</a></li>
         <li><a href="create-price.html">create price</a></li>
         <li><a href="price.html">price</a></li>
         <li><a href="price-title.html">price title</a></li>
@@ -1996,6 +2039,8 @@
         <li><a href="stock.html">stock</a></li>
         <li><a href="stock-one.html">stock one</a></li>
         <li><a href="works.html">works</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="reviews.html">reviews</a></li>
         <li><a href="ship-and-pay.html">ship and pay</a></li>
         <li><a href="404.html">404</a></li>
     </ul>

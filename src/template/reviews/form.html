@@ -1,0 +1,70 @@
+<div class="block _md-full">
+    <h3 class="block__h _sm _border">Оставить отзыв</h3>
+    <div class="block__content _padding">
+        <form class="form reviews-form" enctype="multipart/form-data">
+            <div class="form__group reviews-form__row _1">
+                <div class="reviews-form__col">
+                    <span class="form__label js-form__label">
+                        <input required>
+                        <label>Имя</label>                        
+                    </span>
+                    <span class="form__label js-form__label">
+                        <input required>
+                        <label>E-mail или телефон</label>                        
+                    </span>
+                    <div class="select-wrapper">
+                        <span class="form__label js-form__label">
+                            <select class="select js-select">
+                                <option disabled selected></option>
+                                <option>Нижний Новгород</option>
+                                <option>Анадырь</option>
+                                <option>Тимбукту</option>
+                            </select>
+                            <label>Город</label>                        
+                        </span>
+                    </div>
+                </div>
+                <div class="reviews-form__col">
+                    <span class="form__label js-form__label">
+                        <textarea required></textarea>
+                        <label>Ваш комментарий</label>                        
+                    </span>
+                </div>
+            </div>
+            <div class="form__group reviews-form__row _2">
+                <span class="form__file js-form__file">
+                    <span class="reviews-form__col">
+                        <label>
+                            <i class="icon-photo"></i> Выберите файл
+                            <input type="file" name="file" 
+                                   accept=".jpg, .jpeg, .png, .gif, .bmp"
+                                   class="js-form__file__input">
+                        </label>
+                        <span class="form__file__name js-form__file__name"></span>
+                    </span>
+                    <span class="reviews-form__col">
+                        <span class="form__input-help">Допустимые форматы .jpg, .jpeg, .png, .gif, .bmp<br>
+                            Максимальный размер файла 5Мб</span>
+                    </span>
+                </span>
+                <span class="form__input-help">* Поля, обязательные для заполнения</span>
+            </div>
+            <div class="form__group">
+                <label class="checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkbox__text">
+                        Подтверждаю свое согласие на&nbsp;<a href="#">обработку персональных данных</a>
+                    </span>
+                </label>
+            </div>
+            <div class="reviews-form__row _3">
+                <div class="form__group">
+                    <img src="img/newCaptchaAnchor.png" style="max-width: 100%">
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn _primary _solid">Оставить комментарий</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -90,6 +90,13 @@
             &._nopadding {
                 padding: 0;
             }
+            &._transparent {
+                background-color: transparent;
+                padding-top: 15px;
+                @include media-breakpoint-up(md) {
+                    padding-top: 30px;
+                }
+            }
             > :first-child {
                 margin-top: 0;
             }
