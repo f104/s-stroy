@@ -89,10 +89,14 @@
             </div>
             <div class="header__row__col _2">
                 <form class="search-form">
-                    <input class="search-form__input _header js-search-form__input" placeholder="Поиск строительных и отделочных материалов">
+                    <input class="search-form__input _header js-search-form__input" 
+                           name="q" 
+                           placeholder="Поиск строительных и отделочных материалов">
                     <button class="search-form__submit"><i class="icon-search"></i></button>
                     <div class="search-res js-search-res">
     <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
         <div class="search-res__block">
             <h3 class="search-res__h">Категории</h3>
             <ul class="search-res__cats">
@@ -191,8 +195,12 @@
                 </li>
             </ul>
         </div>
+        -->
     </div>
-    <a href="search-results.html" class="btn _primary _solid _sm search-res__btn">Показать все</a>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
 </div>
                 </form>
                 <a href="create-price.html" class="header__main__download">Скачать прайс-лист <i class="icon-download"></i></a>
@@ -366,10 +374,14 @@
 
                     <aside class="main-row__left">
                         <form class="search-form _aside">
-    <input class="search-form__input js-search-form__input" placeholder="Поиск в каталоге">
+    <input class="search-form__input js-search-form__input" 
+           name="q" 
+           placeholder="Поиск в каталоге">
     <button class="search-form__submit"><i class="icon-search"></i></button>
     <div class="search-res js-search-res">
     <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
         <div class="search-res__block">
             <h3 class="search-res__h">Категории</h3>
             <ul class="search-res__cats">
@@ -468,8 +480,12 @@
                 </li>
             </ul>
         </div>
+        -->
     </div>
-    <a href="search-results.html" class="btn _primary _solid _sm search-res__btn">Показать все</a>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
 </div>
 </form>
                         <div class="catalog-mobile-toggler js-cm__mobile-toggler">Каталог товаров</div>

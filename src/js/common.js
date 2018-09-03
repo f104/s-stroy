@@ -69,7 +69,6 @@ var app = {
         var headerHeight = $header.outerHeight();
         var $headerTop = $('.header__top');
         var headerTopHeight = $headerTop.outerHeight();
-        console.log(headerTopHeight)
         var q = 1;
         var action = 0;
         var _pinHeader = function () {
