@@ -345,9 +345,10 @@ var app = {
         $input.on('click', function (e) {
             e.stopPropagation();
         });
+        /*
         $input.on('focus', function () {
             $(this).siblings('.js-search-res').addClass('_active');
-        });
+        });*/
         $(window).on('click', function () {
             $('.js-search-res').removeClass('_active');
         });
@@ -366,6 +367,7 @@ var app = {
         /**
          * обработчик нажатия
          */
+        let _count = 0;
         $input.on('input', this.debounce(function(e) {
             searchAll.hide();
             if ($(this).val().length > 2) {
@@ -379,6 +381,9 @@ var app = {
                         $('.j-top-search-wraper').html(data.html);
                         if(data.html) {
                             searchAll.show();
+                            $('.js-search-res').addClass('_active');
+                            _count = $('.b-search-count').html();
+                            $('.j-search-count').text('(' + _count +')');
                         }
                     }
                 });
