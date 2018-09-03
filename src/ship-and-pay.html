@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Доставка и оплата"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 0
+                        })
+                        @@include('./template/catalog/im-menu.html', {
+                        "active": "ship-and-pay"
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Доставка и оплата</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="#">Интернет-магазин</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Доставка и оплата
+                                </li>
+                            </ul>
+                        </div>
+
+                        <article class="sp js-sp">
+
+                            <div class="tabs js-tabs">
+                                <ul class="tabs__list">
+                                    <li><a href="#ship">Доставка</a></li>
+                                    <li><a href="#pay">Оплата</a></li>
+                                </ul>
+                                <span class="tabs__under js-tabs__under"></span>
+                                <div id="ship" class="tabs__tab js-tabs__tab">
+                                    <span class="tabs__tab__toggler">Доставка</span>
+                                    <div class="tabs__tab__content js-sp__map-tab">
+                                        @@include('./template/ship-and-pay/ship.html')
+                                    </div>
+                                </div>
+                                <div id="pay" class="tabs__tab js-tabs__tab">
+                                    <span class="tabs__tab__toggler">Оплата</span>
+                                    <div class="tabs__tab__content">
+                                        @@include('./template/ship-and-pay/pay.html')
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sp__return">
+                                <h3 class="sp__return__h">Обмен и возврат товара</h3>
+                                <p class="sp__return__text">
+                                    Обмену и возврату подлежит товар, имеющий скрытые производственные дефекты и товар, не соответствующий характеристикам, заявленным производителем. Также производится обмен и возврат товара в других случаях в рамках закона о защите прав потребителей и в рамках договорных отношений между компанией и Покупателем.
+                                </p>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

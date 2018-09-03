@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head>
+    <title>О нас</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,800,800i&amp;subset=cyrillic" rel="stylesheet">
+    <link href="fonts/Lato/lato.css" rel="stylesheet" type="text/css">
+    <link href="fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/slick.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/jquery.scrollbar.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/jquery.formstyler.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/nouislider.min.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/datepicker/datepicker.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libs/datepicker/cell.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libs/datepicker/navigation.css" rel="stylesheet" type="text/css"/>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+    <body>
+        <header class="header">
+    <div class="header__top">
+        <div class="container header__row">
+            <div class="header__row__col _1">
+                <a href="#" class="header__top__region js-region-toggler" data-toggle=".header .region-select"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
+            </div>
+            <div class="header__row__col _2">
+                <ul class="header__top__menu">
+                    <li class="hidden-md"><a href="#shipping-calc" class="js-popup">Расчет доставки</a></li>
+                    <li class="hidden-md"><a href="#">Оплата</a></li>
+                    <li><a href="create-price.html">Скачать прайс-лист <i class="icon-download"></i></a></li>
+                </ul>
+            </div>
+            <div class="header__row__col _3">
+                <a href="contacts.html" class="hidden-md">Контакты</a>
+                <ul class="header__log-in">
+                    <li><a href="#login" class="js-popup">Вход<i class="icon-log-in"></i></a></li>
+                    <li><a href="#register" class="js-popup">Регистрация</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="region-select">
+    <div class="region-select__inner">
+        <h3 class="region-select__h">Выберите свой регион</h3>
+        <div class="region-select__row">
+<!--            <ul class="region-select__list">
+                <li>
+                    <a href="#" class="region-select__link _active">Нижний Новгород</a>
+                    <ul class="region-select__list _sub">
+                        <li><a href="#" class="region-select__link _sub">Богородск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Бор</a></li>
+                        <li><a href="#" class="region-select__link _sub _active">Выкса</a></li>
+                        <li><a href="#" class="region-select__link _sub">Дзержинск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Кстово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Павлово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Саров</a></li>
+                    </ul>
+                </li>
+            </ul>-->
+            <ul class="region-select__list">
+                <li><a href="#" class="region-select__link _active">Нижний Новгород</a></li>
+                <li><a href="#" class="region-select__link">Воронеж</a></li>
+                <li><a href="#" class="region-select__link">Йошкар-Ола</a></li>
+                <li><a href="#" class="region-select__link">Казань</a></li>
+                <li><a href="#" class="region-select__link">Тверь</a></li>
+                <li><a href="#" class="region-select__link">Набережные Челны</a></li>
+                <li><a href="#" class="region-select__link">Самара</a></li>
+                <li><a href="#" class="region-select__link">Санкт-Петербург</a></li>
+                <li><a href="#" class="region-select__link">Саранск</a></li>
+                <li><a href="#" class="region-select__link">Чебоксары</a></li>
+            </ul>
+        </div>
+        <a href="#" class="region-select__nf">Моего города нет в списке, остаться на основном сайте</a>
+        <button class="region-select__close js-region-closer"><i class="icon-close-circled"></i></button>
+    </div>
+</div>
+    <div class="header__main">
+        <div class="container header__row">
+            <div class="header__row__col _1">
+                <a href="#menu" class="header__main__menu-toggler js-menu-toggler"><i class="icon-menu"></i></a>
+                <a href="index.html">
+                    <img class="header__main__logo-sm" src="img/logo-sm.svg" alt="alt text">
+                    <img class="header__main__logo" src="img/logo.svg" alt="alt text">
+                </a>
+                <a href="#" class="btn _secondary _sm header__action-btn"><i class="icon-sale"></i> <span>Акции</span></a>
+            </div>
+            <div class="header__row__col _2">
+                <form class="search-form">
+                    <input class="search-form__input _header js-search-form__input" 
+                           name="q" 
+                           placeholder="Поиск строительных и отделочных материалов">
+                    <button class="search-form__submit"><i class="icon-search"></i></button>
+                    <div class="search-res js-search-res">
+    <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
+        <div class="search-res__block">
+            <h3 class="search-res__h">Категории</h3>
+            <ul class="search-res__cats">
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Фасадные материалы</li>
+                            <li class="search-res__crumbs__item">Фасадная плитка Hauberk</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Листовые материалы</li>
+                            <li class="search-res__crumbs__item">Плита OSB</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Теплоизоляция, звукоизоляция</li>
+                            <li class="search-res__crumbs__item">Рулонный утеплитель</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Затирки для плитки</li>
+                            <li class="search-res__crumbs__item">Затирка для плитки Ceresit</li>
+                        </ul>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="search-res__block">
+            <h3 class="search-res__h">Товары</h3>
+            <ul class="search-res__products">
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/1.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        EK 3000 UNIVERSAL универсальный клей для плитки и керамогранита (25 кг)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/2.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        HAUBERK фасадная плитка античный кирпич (2 м²/упак.)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img"></span>
+                    <a href="#" class="search-res__products__text">
+                        Плиты Лайт Баттс СКАНДИК (уп. 12 плит, 0,288 м³), ROCKWOOL, 800 х 600 х 50 мм
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/4.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Рулон Каркас-М40-Твин-50 ISOVER 9000*1220*50 (в упак. 1,098 м²)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/5.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Воронка центральная Vinyl-On D=90 кофе
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/4.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Рулон Каркас-М40-Твин-50 ISOVER 9000*1220*50 (в упак. 1,098 м²)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/5.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Воронка центральная Vinyl-On D=90 кофе
+                    </a>
+                </li>
+            </ul>
+        </div>
+        -->
+    </div>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
+</div>
+                </form>
+                <a href="create-price.html" class="header__main__download">Скачать прайс-лист <i class="icon-download"></i></a>
+            </div>
+            <div class="header__row__col _3">
+                <div class="header__main__callme">
+                    <a href="tel:+78314180485" class="header__main__phone">
+                        <span class="header__main__phone__muted">+7 (831) </span>
+                        418-04-85
+                    </a>
+                    <a href="#call" class="btn _primary header__callme-btn js-popup">
+                        <i class="icon-phone"></i> 
+                        <span class="header__callme-btn__text">Перезвоните мне</span>
+                    </a>
+                </div>
+                
+                
+                <div class="minicart">
+    Корзина <span class="minicart__counter">2</span>
+    <span class="minicart__cost">15 450 <span class="rub">₽</span></span>
+    <div class="minicart-popup">
+        <h3 class="minicart-popup__h">Товары в корзине</h3>
+
+        <div class="scrollbar-outer js-scrollbar">
+
+            <table class="minicart-popup__t">
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            99 999 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за кг</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            999
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            3
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            3
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            3
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="minicart-popup__f">
+            <span class="minicart-popup__f__row">
+                <span class="minicart-popup__f__total">Итого</span>
+                <span class="minicart-popup__f__cost">
+                    3 705 <span class="rub">₽</span>
+                </span>
+            </span>
+            <span class="minicart-popup__f__row">
+                <a href="cart.html" class="minicart-popup__f__link">Оформить заказ</a>
+                <a href="#" class="minicart-popup__f__link _remove">Очистить корзину</a>
+            </span>
+        </div>
+
+    </div>
+</div>
+                
+                <a href="#" class="header__main__minicart-sm">
+                    <i class="icon-cart"></i>
+                    <span class="header__main__minicart-sm__counter">2</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="menu" class="mobile-menu js-menu">
+    <div class="scrollbar-outer js-scrollbar">
+        <div class="mobile-menu__inner">
+            <div class="mobile-menu__top">
+                <div class="header__region-toggler">
+                    <a href="#" class="js-region-toggler" data-toggle=".mobile-menu .region-select"><i class="icon-geo"></i> Нижний Новгород <i class="icon-cut"></i></a>
+                </div>
+                <div class="region-select">
+    <div class="region-select__inner">
+        <h3 class="region-select__h">Выберите свой регион</h3>
+        <div class="region-select__row">
+<!--            <ul class="region-select__list">
+                <li>
+                    <a href="#" class="region-select__link _active">Нижний Новгород</a>
+                    <ul class="region-select__list _sub">
+                        <li><a href="#" class="region-select__link _sub">Богородск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Бор</a></li>
+                        <li><a href="#" class="region-select__link _sub _active">Выкса</a></li>
+                        <li><a href="#" class="region-select__link _sub">Дзержинск</a></li>
+                        <li><a href="#" class="region-select__link _sub">Кстово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Павлово</a></li>
+                        <li><a href="#" class="region-select__link _sub">Саров</a></li>
+                    </ul>
+                </li>
+            </ul>-->
+            <ul class="region-select__list">
+                <li><a href="#" class="region-select__link _active">Нижний Новгород</a></li>
+                <li><a href="#" class="region-select__link">Воронеж</a></li>
+                <li><a href="#" class="region-select__link">Йошкар-Ола</a></li>
+                <li><a href="#" class="region-select__link">Казань</a></li>
+                <li><a href="#" class="region-select__link">Тверь</a></li>
+                <li><a href="#" class="region-select__link">Набережные Челны</a></li>
+                <li><a href="#" class="region-select__link">Самара</a></li>
+                <li><a href="#" class="region-select__link">Санкт-Петербург</a></li>
+                <li><a href="#" class="region-select__link">Саранск</a></li>
+                <li><a href="#" class="region-select__link">Чебоксары</a></li>
+            </ul>
+        </div>
+        <a href="#" class="region-select__nf">Моего города нет в списке, остаться на основном сайте</a>
+        <button class="region-select__close js-region-closer"><i class="icon-close-circled"></i></button>
+    </div>
+</div>
+                <ul class="header__log-in">
+                    <li><a href="#login" class="js-popup">Вход<i class="icon-log-in"></i></a></li>
+                    <li><a href="#register" class="js-popup">Регистрация</a></li>
+                </ul>
+                <a href="#" class="btn _secondary _sm header__action-btn"><i class="icon-sale"></i> Акции</a>
+            </div>
+            <ul class="menu">
+    <li>
+        <ul class="menu__lg">
+            <li><a href="catalog-level-1.html">Каталог</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="create-price.html">Скачать прайс <i class="icon-download"></i></a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="about.html">О нас</a>
+        <ul class="menu__sm">
+            <li><a href="stock.html">Акции</a></li>
+            <li><a href="works.html">Примеры работ</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">О продукции</a>
+        <ul class="menu__sm">
+            <li><a href="#">Полезные статьи</a></li>
+            <li><a href="#">Сертификаты на продукцию</a></li>
+            <li><a href="#">Разрешительная документация</a></li>
+            <li><a href="#">Дилерские свидетельства</a></li>
+            <li><a href="#">Инструкции по монтажу</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">Интернет-магазин</a>
+        <ul class="menu__sm">
+            <li><a href="#">Как купить</a></li>
+            <li><a href="ship-and-pay.html">Доставка и оплата</a></li>
+            <li><a href="#">Обратная связь</a></li>
+            <li><a href="#">Частые вопросы</a></li>
+            <li><a href="#">Реквизиты</a></li>
+        </ul>
+    </li>
+</ul>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        <form class="search-form _aside">
+    <input class="search-form__input js-search-form__input" 
+           name="q" 
+           placeholder="Поиск в каталоге">
+    <button class="search-form__submit"><i class="icon-search"></i></button>
+    <div class="search-res js-search-res">
+    <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
+        <div class="search-res__block">
+            <h3 class="search-res__h">Категории</h3>
+            <ul class="search-res__cats">
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Фасадные материалы</li>
+                            <li class="search-res__crumbs__item">Фасадная плитка Hauberk</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Листовые материалы</li>
+                            <li class="search-res__crumbs__item">Плита OSB</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Теплоизоляция, звукоизоляция</li>
+                            <li class="search-res__crumbs__item">Рулонный утеплитель</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Затирки для плитки</li>
+                            <li class="search-res__crumbs__item">Затирка для плитки Ceresit</li>
+                        </ul>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="search-res__block">
+            <h3 class="search-res__h">Товары</h3>
+            <ul class="search-res__products">
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/1.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        EK 3000 UNIVERSAL универсальный клей для плитки и керамогранита (25 кг)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/2.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        HAUBERK фасадная плитка античный кирпич (2 м²/упак.)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img"></span>
+                    <a href="#" class="search-res__products__text">
+                        Плиты Лайт Баттс СКАНДИК (уп. 12 плит, 0,288 м³), ROCKWOOL, 800 х 600 х 50 мм
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/4.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Рулон Каркас-М40-Твин-50 ISOVER 9000*1220*50 (в упак. 1,098 м²)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/5.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Воронка центральная Vinyl-On D=90 кофе
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/4.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Рулон Каркас-М40-Твин-50 ISOVER 9000*1220*50 (в упак. 1,098 м²)
+                    </a>
+                </li>
+                <li>
+                    <span class="search-res__products__img">
+                        <img src="img/products/5.jpg" alt="alt text">
+                    </span>
+                    <a href="#" class="search-res__products__text">
+                        Воронка центральная Vinyl-On D=90 кофе
+                    </a>
+                </li>
+            </ul>
+        </div>
+        -->
+    </div>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
+</div>
+</form>
+                        <div class="catalog-mobile-toggler js-cm__mobile-toggler">Каталог товаров</div>
+<div class="catalog-menu-wrapper js-cm__menu-wrapper ">
+    <div class="scrollbar-outer js-cm__scrollbar">
+        <div class="catalog-menu  js-cm__menu">
+            <h3 class="catalog-menu__h js-cm__slide__trigger">
+                Каталог товаров
+                <a href="#" class="catalog-menu__h__close js-cm__mobile-toggler">
+                    <i class="icon-close-circled"></i>
+                </a>
+            </h3>
+            <div class="catalog-menu__slide js-cm__slide">
+                <ul class="catalog-menu__list">
+                    <li class="catalog-menu__list__item _expandable">
+                        <a href="#" class="catalog-menu__list__link js-cm__second-link">
+                            <i class="sprite roof" data-hover="roof-o"></i> 
+                            <span class="catalog-menu__list__link__text">Скатная кровля</span>
+                        </a>
+                        <div class="catalog-menu__second js-cm__menu-second">
+    <h3 class="catalog-menu__h _second">
+        Скатная кровля
+        <a href="#" class="catalog-menu__h__close js-cm__menu-second__close">
+            <i class="icon-arrow-left"></i>
+        </a>
+        <a href="#" class="catalog-menu__h__close js-cm__menu-second__close">
+            <i class="icon-close-circled"></i>
+        </a>
+    </h3>
+    <ul class="catalog-menu__second__list">
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Рулонные кровельные материалы ТЕХНОНИКОЛЬ
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Полимерные мембраны
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Мастики и праймеры ТЕХНОНИКОЛЬ
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Доборные элементы
+            </a>
+        </li>                
+    </ul>
+</div>
+                    </li>
+                    <li class="catalog-menu__list__item _expandable">
+                        <a href="#" class="catalog-menu__list__link js-cm__second-link">
+                            <i class="sprite waterproof" data-hover="waterproof-o"></i> 
+                            <span class="catalog-menu__list__link__text">Гидроизоляция</span>
+                        </a>
+                        <div class="catalog-menu__second js-cm__menu-second">
+    <h3 class="catalog-menu__h _second">
+        Гидроизоляция
+        <a href="#" class="catalog-menu__h__close js-cm__menu-second__close">
+            <i class="icon-arrow-left"></i>
+        </a>
+        <a href="#" class="catalog-menu__h__close js-cm__menu-second__close">
+            <i class="icon-close-circled"></i>
+        </a>
+    </h3>
+    <ul class="catalog-menu__second__list">
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Рулонные кровельные материалы ТЕХНОНИКОЛЬ
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Полимерные мембраны
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Мастики и праймеры ТЕХНОНИКОЛЬ
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Доборные элементы
+            </a>
+        </li>                
+    </ul>
+</div>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite facade" data-hover="facade-o"></i> 
+                            <span class="catalog-menu__list__link__text">Фасадные материалы</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite brick-and-stone" data-hover="brick-and-stone-o"></i> 
+                            <span class="catalog-menu__list__link__text">Кирпич, строительный камень</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite flat-roof" data-hover="flat-roof-o"></i> 
+                            <span class="catalog-menu__list__link__text">Плоская кровля</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite wat" data-hover="wat-o"></i> 
+                            <span class="catalog-menu__list__link__text">Водосточные системы</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite fire-protect" data-hover="protect-o"></i> 
+                            <span class="catalog-menu__list__link__text">Огнебиозащитные составы</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item _expandable">
+                        <a href="#" class="catalog-menu__list__link js-cm__second-link">
+                            <i class="sprite mansard" data-hover="mansard-o"></i> 
+                            <span class="catalog-menu__list__link__text">Мансардные окна и лестницы</span>
+                        </a>
+                        <div class="catalog-menu__second js-cm__menu-second">
+    <h3 class="catalog-menu__h _second">
+        Мансардные окна и лестницы
+        <a href="#" class="catalog-menu__h__close js-cm__menu-second__close">
+            <i class="icon-arrow-left"></i>
+        </a>
+        <a href="#" class="catalog-menu__h__close js-cm__menu-second__close">
+            <i class="icon-close-circled"></i>
+        </a>
+    </h3>
+    <ul class="catalog-menu__second__list">
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Рулонные кровельные материалы ТЕХНОНИКОЛЬ
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Полимерные мембраны
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Мастики и праймеры ТЕХНОНИКОЛЬ
+            </a>
+        </li>                
+        <li class="catalog-menu__second__list__item">
+            <a href="#" class="catalog-menu__second__list__link">
+                Доборные элементы
+            </a>
+        </li>                
+    </ul>
+</div>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite gidro-vetro" data-hover="vetro-o"></i> 
+                            <span class="catalog-menu__list__link__text">Гидро-, ветро-, пароизоляция</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite list" data-hover="list-o"></i> 
+                            <span class="catalog-menu__list__link__text">Листовые материалы</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite warmth" data-hover="warmth-o"></i> 
+                            <span class="catalog-menu__list__link__text">Теплоизоляция, звукоизоляция</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite technical-iso" data-hover="technical-iso-o"></i> 
+                            <span class="catalog-menu__list__link__text">Техническая изоляция</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite fence" data-hover="fence-o"></i> 
+                            <span class="catalog-menu__list__link__text">Заборы, ограждения</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite groundwork" data-hover="groundwork-o"></i> 
+                            <span class="catalog-menu__list__link__text">Фундаменты</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite inside" data-hover="inside-o"></i> 
+                            <span class="catalog-menu__list__link__text">Внутренняя отделка</span>
+                        </a>
+                    </li>
+                    <li class="catalog-menu__list__item">
+                        <a href="#" class="catalog-menu__list__link">
+                            <i class="sprite vent-house" data-hover="vent-house-o"></i> 
+                            <span class="catalog-menu__list__link__text">Вентиляция частного дома</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="catalog-menu__f">
+                    <span class="catalog-menu__f__link js-cm__slide__trigger">Свернуть <i class="icon-slideup"></i></span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+                        <div class="im-menu">
+    <h3 class="im-menu__h _opened js-im-menu__toggler">О нас</h3>
+    <ul class="im-menu__list _level1 js-im-menu__slide">
+        <li>
+            <span class="im-menu__list__inner ">
+                
+                
+                <a href="stock.html">Акции</a>
+                
+            </span>
+        </li>
+        <li>
+            <span class="im-menu__list__inner ">
+                
+                
+                <a href="works.html">Примеры работ</a>
+                
+            </span>
+        </li>
+        <li>
+            <span class="im-menu__list__inner ">
+                
+                
+                <a href="reviews.html">Отзывы</a></span>
+                
+        </li>
+    </ul>
+</div>
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Группа компаний САКСЭС</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    О нас
+                                </li>
+                            </ul>
+                        </div>
+
+                        <article class="about">
+                            <p class="about__lead">Партнеры, объединенные торговой маркой САКСЭС (партнеры САКСЭС), уже более 17 лет предоставляют на рынок 11 регионов России, качественные строительные материалы от ведущих мировых производителей.</p>
+
+                            <div class="about__row">
+                                <p class="about__big">Партнеры САКСЭС работают напрямую с ведущими мировыми производителями:</p>
+                                <div class="block _md-full">
+    <div class="block__content overflow-hidden">
+        <div class="partners-list _full">
+            <div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/1.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/2.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/3.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/4.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/5.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/6.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/7.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/8.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/9.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/1.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/2.png" alt="alt text">
+    </a>
+</div><div class="partners-list__item">
+    <a href="#" class="partners-list__item__content js-hover">
+        <img src="img/partners/3.png" alt="alt text">
+    </a>
+</div>
+        </div>
+    </div>
+</div>
+                            </div>
+
+                            <div class="about__row">
+                                <h3 class="about__h3">Гибкая ценовая политика</h3>
+                                <div class="block _md-full">
+    <div class="block__content">
+        <div class="profits-list _product">
+            <div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/opt.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Система скидок для оптовиков и партнеров
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/sales.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Акции для розничных покупателей
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/services.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Услуги по строительству и ремонту от профессионалов
+        </span>
+    </a>
+    
+</div>
+
+        </div>
+    </div>
+</div>
+                            </div>
+
+                            <div class="about__row">
+                                <h3 class="about__h3">Высокотехнологичное производство</h3>
+                                <div class="block _md-full">
+                                    <div class="block__content">
+                                        <div class="production-list">
+                                            <a href="#" class="production-list__item">
+                                                <span class="production-list__img-wrapper">
+                                                    <img class="production-list__img-wrapper__img"
+                                                         src="img/production1.jpg"
+                                                         srcset="img/production1@2x.jpg 2x,
+                                                         img/production1@3x.jpg 3x"
+                                                         alt="alt text">
+                                                </span>
+                                                <span class="production-list__text">
+                                                    Металлочерепица
+                                                </span>
+                                            </a>
+                                            <a href="#" class="production-list__item">
+                                                <span class="production-list__img-wrapper">
+                                                    <img class="production-list__img-wrapper__img"
+                                                         src="img/production2.jpg"
+                                                         srcset="img/production2@2x.jpg 2x,
+                                                         img/production2@3x.jpg 3x"
+                                                         alt="alt text">
+                                                </span>
+                                                <span class="production-list__text">
+                                                    Профнастил
+                                                </span>
+                                            </a>
+                                            <a href="#" class="production-list__item">
+                                                <span class="production-list__img-wrapper">
+                                                    <img class="production-list__img-wrapper__img"
+                                                         src="img/production3.jpg"
+                                                         srcset="img/production3@2x.jpg 2x,
+                                                         img/production3@3x.jpg 3x"
+                                                         alt="alt text">
+                                                </span>
+                                                <span class="production-list__text">
+                                                    Светопрозрачные конструкции
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="about__row">
+                                <blockquote class="blockquote">
+                                    «Забота о клиентах и постоянное развитие — принцип работы партнеров САКСЭС»
+                                </blockquote>
+                            </div>
+
+                            <div class="about__row">
+                                <div class="about-services">
+                                    <div class="about-services__item">
+                                        <h3 class="about-services__item__h">
+                                            Комплексный подход
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>В спектр предоставляемых услуг компаний, работающих под торговой маркой САКСЭС входят монтаж всех видов кровель и фасадов, работы по техническому обслуживанию и ремонту окон, ворот, дверей, рольставен и автоматики, а также проектирование и геодезия. Высококлассные специалисты проконсультируют Вас по любым вопросам.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Услуги <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="about-services__item">
+                                        <h3 class="about-services__item__h">
+                                            Профессиональные консультации и выполнение работ
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>Тесное взаимодействие и профессионализм специалистов различных отделов и направлений компаний позволяет осуществить комплексный подход в решении строительных задач с высоким качеством и отличной организацией строительных процессов.</p>
+                                            <p>В штат партнеров САКСЭС входят инженеры проектно-технических отделов, конструкторы, опытные организаторы строительно-монтажных работ, геодезисты и, конечно, профессиональные и сертифицированные монтажники.</p>
+                                            <p>Наши специалисты готовы оказать профессиональную поддержку на любых этапах строительства, начиная от проекта, подбора и поставки материалов, заканчивая осуществлением строительно-монтажных работ.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Проектирование <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="about-services__item">
+                                        <h3 class="about-services__item__h">
+                                            Офисы партнеров САКСЭС во всех районах города, доставка и удобный самовывоз
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>Офисы партнеров САКСЭС расположены в разных частях города и области, складские площади позволяют держать в наличии большой ассортимент продукции различных поставщиков.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Услуги <i class="icon-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="about__row">
+                                <h3 class="about__h3">Направление деятельности партнеров САКСЭС</h3>
+                                <div class="block _md-full">
+    <div class="block__content overflow-hidden">
+        <div class="profits-list _full">
+            <div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/car1.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Дистрибуция строительных материалов
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/roof.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Кровля
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/fasade.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Фасады
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/mansard.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Светопрозрачные конструкции
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/garage-door.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Ворота, рольставни, автоматика
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/project.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Проектирование
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/build.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Строительство
+        </span>
+    </a>
+    
+</div>
+<div class="profits-list__item">
+    <a href="#" class="profits-list__item__content">
+        <span class="profits-list__item__content__img">
+            <img src="img/icons/factory.svg" alt="alt text">
+        </span>
+        <span class="profits-list__item__content__text">
+            Производство
+        </span>
+    </a>
+    
+</div>
+
+        </div>
+    </div>
+</div>
+                            </div>
+
+                            <div class="about__row">
+                                <div class="about-services">
+                                    <div class="about-services__item _notebook">
+                                        <h3 class="about-services__item__h">
+                                            Подробнее о компании на саксэс.рф
+                                        </h3>
+                                        <div class="about-services__item__text">
+                                            <p>Больше о компаниях, работающих под ТМ САКСЭС, истории, направлениях деятельности, реализованных проектах и открытых вакансиях.</p>
+                                        </div>
+                                        <a href="#" class="about-services__item__link">
+                                            Перейти на сайт <i class="icon-arrow-right"></i>
+                                        </a>
+                                        <img class="about-services__item__img"
+                                             src="img/notebook.png"
+                                             srcset="img/notebook@2x.png 2x,
+                                             img/notebook@3x.png 3x"
+                                             alt="alt text">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hidden">
+    <div id="login" class="popup">
+    <div class="popup__wrapper _login">
+        <div class="popup__help popup__inner">
+            <h3 class="popup__help__h">Зачем мне регистрироваться на сайте?</h3>
+            <ul class="popup__help__list">
+                <li>Выгодные предложения только для зарегистрированных пользователей.</li>
+                <li>Персональная рассылка с выгодными предложениями на электронную почту.</li>
+                <li>Быстрое оформление заказов. Не нужно постоянно вводить личные данные.</li>
+                <li>Подробная информация об истории всех ваших заказов.</li>
+            </ul>
+        </div>
+        <div class="popup__form popup__inner">
+            <form class="form">
+                <h3 class="form__h">Войти на сайт</h3>
+                <div class="form__group">
+                    <span class="form__label js-form__label">
+                        <input required>
+                        <label>Логин</label>                        
+                    </span>
+                    <span class="form__label js-form__label">
+                        <input type="password" value="123456" required>
+                        <label>Пароль</label>                        
+                    </span>
+                </div>
+                <div class="form__group _checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">Запомнить меня</span>
+                    </label>
+                </div>
+                <div class="form__group _checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">
+                            Подтверждаю свое согласие на <a href="#">обработку персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn _secondary _solid">Войти</button>
+                    <p><a href="#restore" class="js-popup">Забыли свой пароль?</a></p>
+                    <p><a href="#register" class="js-popup">Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div id="register" class="popup">
+    <div class="popup__wrapper _register">
+        <div class="popup__help popup__inner">
+            <h3 class="popup__help__h">Зачем мне регистрироваться на сайте?</h3>
+            <ul class="popup__help__list">
+                <li>Выгодные предложения только для зарегистрированных пользователей.</li>
+                <li>Персональная рассылка с выгодными предложениями на электронную почту.</li>
+                <li>Быстрое оформление заказов. Не нужно постоянно вводить личные данные.</li>
+                <li>Подробная информация об истории всех ваших заказов.</li>
+            </ul>
+        </div>
+        <div class="popup__form popup__inner">
+            <form class="form">
+                <h3 class="form__h">Регистрация</h3>
+                <div class="form__group form__row">
+                    <div class="form__group">
+                        <span class="form__label js-form__label">
+                            <input>
+                            <label>Имя</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input>
+                            <label>Фамилия</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Адрес E-mail</label>                        
+                        </span>
+                    </div>
+                    <div class="form__group">
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Логин</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input type="password" value="qwerty" required>
+                            <label>Пароль</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input type="password" required>
+                            <label>Подтверждение пароля</label>                        
+                        </span>
+                        <span class="form__input-help">Пароль должен быть не менее 6 символов длиной</span>
+                    </div>
+                    <p class="form__help">* Поля, обязательные для заполнения</p>
+                </div>
+                <div class="form__group _checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">
+                            Подтверждаю свое согласие на <a href="#">обработку персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="form__row">
+                    <div class="form__group">
+                        <img src="img/newCaptchaAnchor.png" style="max-width: 100%">
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" class="btn _secondary _solid">Регистрация</button>
+                        <p><a href="#login" class="js-popup">Уже зарегистрированы?</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div id="restore" class="popup">
+    <div class="popup__wrapper _call">
+        <div class="popup__form popup__inner">
+            <form class="form">
+                <h3 class="form__h">Восстановление пароля</h3>
+                <div class="form__group">
+                    <div class="form__group">
+                        <p class="form__group__text _center">Укажите e-mail, указанный 
+                            при регистрации. На него будет выслана ссылка 
+                            для изменения пароля:</p>
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>E-mail</label>                        
+                        </span>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <img src="img/newCaptchaAnchor.png" style="max-width: 100%">
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn _secondary _solid">Выслать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div id="call" class="popup">
+    <div class="popup__wrapper _call">
+        <div class="popup__form popup__inner">
+            <form class="form">
+                <h3 class="form__h">Мы вам перезвоним</h3>
+                <div class="form__group">
+                    <div class="form__group">
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Ваше имя</label>                        
+                        </span>
+                        <span class="form__label js-form__label">
+                            <input required>
+                            <label>Телефон</label>                        
+                        </span>
+                    </div>
+                    <p class="form__help">* Поля, обязательные для заполнения</p>
+                </div>
+                <div class="form__group">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkbox__text">
+                            Подтверждаю свое согласие на <a href="#">обработку персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="form__group">
+                    <img src="img/newCaptchaAnchor.png" style="max-width: 100%">
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn _secondary _solid">Жду звонка</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div id="shipping-calc" class="popup">
+    <div class="popup__wrapper _shipping">
+        <div class="popup__form popup__inner">
+            <form class="form shipping js-shipping">
+                <h3 class="form__h _left">Рассчитать стоимость доставки</h3>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Адрес или точка на карте:</legend>
+                    <div class="shipping__inputs">
+                        <input name="shipping_distance" type="hidden" class="js-shipping__route-distance">
+                        <input id="shipping-calc_input" name="shipping_address" 
+                               class="js-shipping__route-address" disabled>
+                        <button type="button" class="shipping__inputs__reset js-shipping__reset" 
+                                title="Очистить маршрут">
+                            <i class="icon-close"></i>
+                        </button>
+                        <!--
+                        <input type="number" min="0" value="45" class="no-spinners js-shipping__route-distance">
+                        км
+                        <span class="shipping__map-toggler">
+                            <a href="#" class="shipping__map-toggler__inner _opened js-shipping__map-toggler">
+                                <i class="icon-location"></i> Указать на карте
+                            </a>
+                        </span>
+                        -->
+                    </div>
+                </fieldset>
+                <div id="shipping-calc_map" class="shipping__map js-shipping__map"></div>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Дата доставки:</legend>
+                    <div class="shipping__date-input">
+                        <input class="shipping__date-input js-shipping__date-input" readonly>
+                    </div>
+                </fieldset>
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Выберите необходимый тип транспорта:</legend>
+                    <div class="shipping__car-select">
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" checked class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                ГАЗель
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                ГАЗ/Валдай
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                5-тонник
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                10-тонник
+                            </span>
+                        </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                Льготная доставка
+                            </span>
+                        </label>
+                    </div>
+                    <div class="shipping__car-slider js-shipping__car-slider">
+                        <div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">ГАЗель</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">5-тонник</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">10-тонник</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div>
+                        <div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img _action">
+        <img src="img/shipping.png"
+             srcset="img/shipping@2x.png 2x,
+             img/shipping@3x.png 3x"
+             alt="alt text">
+        <span class="shipping__car-slider__item__img__badge">Акция</span>
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">Льготная доставка</span>
+        <span class="shipping__car-slider__item__p">
+            Мы подберем тип транспорта, исходя из габаритов вашего заказа. 
+            <strong>Это не влияет на стоимость доставки.</strong>
+        </span>
+        <span class="shipping__car-slider__item__p _sm">
+            Льготная доставка возможна только при выборе адреса в черте города.
+        </span>
+    </div>
+</div>
+                    </div>
+                    <!--<p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>-->
+                    <div class="shipping__promo">
+                        <div class="shipping__promo__content">
+                            <span class="shipping__promo__h">Льготная доставка!</span>
+                            <!--<span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>-->
+                        </div>
+                        <div class="shipping__promo__foot">
+                            <ul class="shipping__promo__list">
+                                <li class="shipping__promo__list__item">
+                                    с понедельника по пятницу
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    в пределах Н. Новгорода
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    при заказе через козину на сайте
+                                </li>
+                            </ul>
+                            <div class="shipping__promo__foot__last-col">
+                                <span class="shipping__promo__text">стоимость доставки</span>
+                                <span class="shipping__promo__accent">390 рублей</span>
+                            </div>
+                            <!--<a href="#" class="shipping__promo__link">Узнать подробнее</a>-->
+                        </div>
+                        <span class="shipping__promo__badge">
+                            <span class="shipping__promo__badge__text">
+                                Выгодно
+                            </span>
+                        </span>
+                    </div>
+                </fieldset>
+                <!--
+                <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Срок доставки и стоимость:</legend>
+                    <div class="shipping__date-select">
+                        <label class="text-radio _disabled">
+                            <input type="radio" name="shipping_date" disabled>
+                            <span class="text-radio__text">
+                                Сегодня, 08.08
+                                <span class="text-radio__text__muted _warning">доставить сегодня уже нельзя</span>
+                            </span>
+                        </label>
+                        <label class="text-radio">
+                            <input type="radio" name="shipping_date" checked>
+                            <span class="text-radio__text">
+                                Завтра, 09.08
+                                <span class="text-radio__text__muted">550 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                        <label class="text-radio">
+                            <input type="radio" name="shipping_date">
+                            <span class="text-radio__text">
+                                Послезавтра, 10.08
+                                <span class="text-radio__text__muted">250 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                        <label class="text-radio js-shipping__datepicker-toggler">
+                            <input type="radio" name="shipping_date">
+                            <span class="text-radio__text _datepicker">
+                                Определенная дата
+                                <span class="text-radio__text__muted">550 <span class="rub">₽</span></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="shipping__date-input js-shipping__date-input _empty">
+                        <i class="icon-pen"></i>
+                        <input name="shipping_date_selected" class="shipping__date-input__input js-shipping__date-input__input">
+                    </div>
+                </fieldset>
+                -->
+                <div class="shipping__summary _hidden js-shipping__summary">
+                    <ul class="shipping__summary__list">
+                        <li class="shipping__summary__list__item">
+                            Расстояние до пункта назначения:
+                            <span class="shipping__summary__list__accent">
+                                <span class="js-shipping__route-distance-text"></span>&nbsp;км
+                            </span>
+                        </li>
+                        <li class="shipping__summary__list__item">
+                            Стоимость доставки:
+                            <span class="shipping__summary__list__accent">550&nbsp;<span class="rub">₽</span></span>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__menu">
+            <ul class="menu">
+    <li>
+        <ul class="menu__lg">
+            <li><a href="catalog-level-1.html">Каталог</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="create-price.html">Скачать прайс <i class="icon-download"></i></a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="about.html">О нас</a>
+        <ul class="menu__sm">
+            <li><a href="stock.html">Акции</a></li>
+            <li><a href="works.html">Примеры работ</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">О продукции</a>
+        <ul class="menu__sm">
+            <li><a href="#">Полезные статьи</a></li>
+            <li><a href="#">Сертификаты на продукцию</a></li>
+            <li><a href="#">Разрешительная документация</a></li>
+            <li><a href="#">Дилерские свидетельства</a></li>
+            <li><a href="#">Инструкции по монтажу</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">Интернет-магазин</a>
+        <ul class="menu__sm">
+            <li><a href="#">Как купить</a></li>
+            <li><a href="ship-and-pay.html">Доставка и оплата</a></li>
+            <li><a href="#">Обратная связь</a></li>
+            <li><a href="#">Частые вопросы</a></li>
+            <li><a href="#">Реквизиты</a></li>
+        </ul>
+    </li>
+</ul>
+        </div>
+        <ul class="social-links">
+    <li><a href="#" class="sprite facebook" rel="noopener nofollow"></a></li>
+    <li><a href="#" class="sprite twitter" rel="noopener nofollow"></a></li>
+    <li><a href="#" class="sprite vk" rel="noopener nofollow"></a></li>
+    <li><a href="#" class="sprite youtube" rel="noopener nofollow"></a></li>
+    <li><a href="#" class="sprite instagram" rel="noopener nofollow"></a></li>
+</ul>
+        <ul class="footer__menu-second">
+            <li><a href="#">Политика в отношении обработки персональных данных</a></li>
+            <li><a href="#">Публичная оферта</a></li>
+            <li><a href="#">Пластиковые окна, кровельные материалы</a></li>
+        </ul>
+        <div class="footer__logo">
+            <img class="footer__logo__img" src="img/logo-footer.svg" alt="alt text">
+            © 2018 Группа компаний «САКСЭС»
+        </div>
+        <!--
+        <a href="//riverstart.ru" target="_blank" rel="noopener nofollow" class="footer__dev">
+            Сделано в
+            <img class="footer__dev__img" src="img/riverstart-logo.svg" alt="riverstart.ru">
+        </a>
+        -->
+    </div>
+</footer>
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        <!-- dev helper -->
+<!-- DELETE ON PRODUCTION! -->
+<style>
+    .dev {
+        position: fixed;
+        z-index: 100500;
+        right: 0;
+        bottom: 0;
+        background: white;
+        border-style: solid;
+        border-color: #131313;
+        border-width: 1px 0 0 1px;
+        padding: .5rem;
+        transition: transform .2s;
+        width: 100px;
+        transform: translateX(100%);
+    }
+    .dev ul {
+        padding-left: 1rem;
+        line-height: normal;
+        margin-bottom: 0;
+        font-size: 75%;
+    }
+    .dev ul li {
+        margin-bottom: 5px;
+    }
+    .dev ul li:last-child {
+        margin-bottom: 0;
+    }
+    .dev__toggler {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background: #131313;
+        color: white;
+        padding: .2rem;
+        cursor: pointer;
+        opacity: .3;
+        transition: opacity .2s;
+    }
+    .dev__toggler:hover {
+        opacity: 1;
+    }
+    .dev._active {
+        transform: none;
+        .dev__toggler {
+            opacity: 1;
+        }
+    }
+    .dev._active .dev__toggler {
+        opacity: 1;
+    }
+    .dev._active .dev__toggler {
+        opacity: 1;
+    }
+</style>
+<div class="dev">
+    <span id="dev_toggler" class="dev__toggler">&lt;/&gt;</span>
+    <ul>
+        <li><a href="index.html">main</a></li>
+        <li><a href="index.html#login">#login</a></li>
+        <li><a href="index.html#register">#register</a></li>
+        <li><a href="index.html#restore">#restore</a></li>
+        <li><a href="content.html">content</a></li>
+        <li><a href="product-card.html">product card</a></li>
+        <li><a href="product-card-na.html">product card not available</a></li>
+        <li><a href="product-card.html#one-click">#one click</a></li>
+        <li><a href="catalog-level-1.html">catalog level 1</a></li>
+        <li><a href="catalog-level-2.html">catalog level 2</a></li>
+        <li><a href="catalog-level-3.html">catalog level 3</a></li>
+        <li><a href="search-results.html">search results</a></li>
+        <li><a href="cart.html">cart</a></li>
+        <li><a href="cart.html#cart-shipping-calc">#shipping-calc</a></li>
+        <li><a href="cart.html#pickup">#pickup</a></li>
+        <li><a href="cart-final.html">cart final</a></li>
+        <li><a href="done-pay.html">done pay</a></li>
+        <li><a href="fail-pay.html">fail pay</a></li>
+        <li><a href="create-price.html">create price</a></li>
+        <li><a href="price.html">price</a></li>
+        <li><a href="price-title.html">price title</a></li>
+        <li><a href="login.html">login</a></li>
+        <li><a href="profile.html">profile</a></li>
+        <li><a href="profile-edit.html">profile edit</a></li>
+        <li><a href="orders-history.html">orders history</a></li>
+        <li><a href="profile-order.html">profile order</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contacts.html">contacts</a></li>
+        <li><a href="stock.html">stock</a></li>
+        <li><a href="stock-one.html">stock one</a></li>
+        <li><a href="works.html">works</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="reviews.html">reviews</a></li>
+        <li><a href="ship-and-pay.html">ship and pay</a></li>
+        <li><a href="404.html">404</a></li>
+    </ul>
+</div>
+<script>
+    (function () {
+        var t = document.getElementById('dev_toggler');
+        var p = t.parentElement;
+        t.addEventListener('click', function (e) {
+            e.stopPropagation();
+            this.parentElement.classList.toggle('_active');
+        });
+        p.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+        window.addEventListener('click', function () {
+            p.classList.remove('_active');
+        });
+    }());
+</script>
+<!-- /dev helper -->
+<script>
+    var appConfig = {
+        breakpoint: {
+            sm: 320,
+            md: 768,
+            lg: 1280
+        },
+        sliderFadeSpeed: 800, //ms
+        sliderAutoplaySpeed: 8000, //ms
+        hoverZoom: 10, //px
+        shipping: {
+            disabledDays: [0, 6], // дни, в которые невозможна доставка (0 - воскресенье)
+            from: {
+                geo: [56.311696, 43.832899], // array координаты или string адрес для геокодирования
+                text: 'Центральный склад', // текст подсказки
+            },
+            to: {
+                geo: 'Н. Новгород, улица Минеева'
+            }
+        }
+    };</script>
+
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/slick.min.js"></script>
+<script src="js/libs/jquery.scrollbar.min.js"></script>
+<script src="js/libs/jquery.fancybox.min.js"></script>
+<script src="js/libs/jquery.easytabs.min.js"></script>
+<script src="js/libs/jquery.formstyler.min.js"></script>
+<script src="js/libs/jquery.inputmask.bundle.min.js"></script>
+<script src="js/libs/nouislider.min.js"></script>
+<script src="js/libs/sticky-kit.min.js"></script>
+<script src="js/libs/datepicker.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/shipping.js"></script>
+    </body>
+</html>

@@ -31,6 +31,9 @@ body {
 :focus {
     outline: none;
 }
+:not(output):-moz-ui-invalid {
+  box-shadow: none;
+}
 .container {
     padding: 0 $container-padding-sm;
     @include media-breakpoint-up(md) {
@@ -44,6 +47,11 @@ body {
     display: none !important;
     &-md {
         @include media-breakpoint-only(md) {
+            display: none !important;            
+        }
+    }
+    &-sm {
+        @include media-breakpoint-down(sm) {
             display: none !important;            
         }
     }
@@ -137,9 +145,17 @@ a, .link {
         }
     }
 }
-
+.placemark {
+    position: relative !important;
+    width: 40px;
+    height: 50px;
+    top: -50px;
+}
 .primary {
     color: $primary;
+}
+.overflow-hidden {
+    overflow: hidden;
 }
 
 /*@import "popups";*/
@@ -166,7 +182,8 @@ a, .link {
 @import "components/content-list";
 @import "components/page-header";
 @import "components/tabs";
-@import "components/docs-icon";
+@import "components/doc-download";
+@import "components/map-download";
 @import "components/qa";
 @import "components/tags";
 @import "components/results";
@@ -176,11 +193,24 @@ a, .link {
 @import "components/shipping";
 @import "components/link-back";
 @import "components/pickup";
+@import "components/404";
+@import "components/production-list";
+@import "components/warning";
+@import "components/offers";
+@import "components/contacts-list";
+@import "components/neighbors";
+@import "components/footer-down";
 @import "page-assets/catalog";
 @import "page-assets/product";
 @import "page-assets/cart";
 @import "page-assets/cart-final";
 @import "page-assets/profile";
+@import "page-assets/about";
+@import "page-assets/stock";
+@import "page-assets/ship-and-pay";
+@import "page-assets/contacts";
+@import "page-assets/works";
+@import "page-assets/reviews";
 
 .preloader {
     display: none !important;

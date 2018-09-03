@@ -75,8 +75,11 @@
         font-size: 15px;
         font-weight: 500;
         li {
-            margin-bottom: 22px;
             break-inside: avoid;
+            margin-bottom: 10px;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 22px;
+            }
             &:last-child {
                 margin-bottom: 0;
             }
@@ -145,7 +148,9 @@
             }
             &:last-child {
                 flex-basis: 520px;
-                column-count: 2;
+                @include media-breakpoint-up(md) {
+                    column-count: 2;
+                }
             }
             &._sub {
                 li {

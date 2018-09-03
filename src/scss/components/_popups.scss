@@ -38,6 +38,7 @@
 }
 
 .popup {
+    $root: &;
     &__inner {
         padding: 28px 20px;
         @include media-breakpoint-up(md) {
@@ -73,6 +74,186 @@
                 width: 1026px;
             }
         }
+        &._one-click {
+            width: 736px; 
+            #{$root}__form {
+                display: flex;
+            }
+            .form {
+                display: flex;
+                flex-direction: column;
+                @include ie10up {
+                    width: 100%;
+                }
+            }
+            #{$root}__form__head {
+                flex-grow: 1;
+                margin-bottom: 40px;
+            }
+        }
+        &._login-page {
+            display: block;
+            margin-left: - $container-padding-sm;
+            margin-right: - $container-padding-sm;
+            max-width: unset;
+            @include media-breakpoint-up(md) {
+                margin-left: - $container-padding-md;
+                margin-right: - $container-padding-md;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-left: 0;
+                margin-right: 0;
+                display: flex;
+            }
+            #{$root}__inner {
+                padding: 20px $container-padding-sm;
+                @include media-breakpoint-up(md) {
+                    padding-left: $container-padding-md;
+                    padding-right: $container-padding-md;
+                }
+            }
+            #{$root}__help {
+                display: block;
+                width: 100%;
+                @include media-breakpoint-up(lg) {
+                    width: 530px;
+                }
+                &__h {
+                    @include media-breakpoint-up(md) {
+                        width: 310px;
+                    }
+                }
+                &__list {
+                    padding-right: 60px;                    
+                    @include media-breakpoint-up(md) {
+                        padding-right: 210px;
+                        column-count: 2;
+                        column-gap: 40px;
+                    }
+                    @include media-breakpoint-up(lg) {
+                        padding-right: 0;
+                    }
+                }
+            }
+            @include media-breakpoint-up(md) {
+                .form {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 600px;
+                    &__h {
+                        width: 100%;
+                        order: 1;
+                    }
+                    &__group {
+                        width: 288px;
+                        margin-right: 12px;
+                        &._1 {
+                            order: 2;
+                            width: 100%;
+                            display: flex;
+                            > * {
+                                width: 288px;
+                                margin-right: 12px;
+                                margin-bottom: 0;
+                            }
+                        }
+                        &._2 {
+                            order: 3;
+                        }
+                        &._3 {
+                            order: 5;
+                        }
+                        &._4 {
+                            order: 6;
+                            width: 100%;
+                            .btn {
+                                width: 288px;
+                            }
+                        }
+                        &._5 {
+                            order: 4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__product {
+        display: none;
+        width: 368px;
+        position: static;
+        @include media-breakpoint-up(md) {
+            display: flex;
+            flex-direction: column;
+        }
+        &__head {
+            flex-grow: 1;
+            margin-bottom: 30px;
+        }
+        &__img {
+            display: block;
+            margin-bottom: 25px;
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &__title {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.38;
+            margin-bottom: 0;
+        }
+        &__avail {
+            display: block;
+            opacity: 0.5;
+            font-size: 12px;
+        }
+        &__price {
+            font-family: $font-family-alt;
+            font-size: 33px;
+            font-weight: 600;
+            color: $red;
+            &-help {
+                display: block;
+                font-size: 14px;
+                font-family: $font-family-base;
+                font-weight: 400;
+                color: $body-color;
+                margin-bottom: 20px;
+            }
+        }
+        &__del {
+            font-family: $font-family-alt;
+            font-size: 24px;
+            font-weight: 500;
+            color: #545454;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                height: 1px;
+                background-color: #545454;
+            }
+            &-help {
+                display: block;
+                font-family: $font-family-base;
+                font-size: 13px;
+                font-weight: normal;
+                line-height: 1.23;
+                color: #545454;
+                margin-bottom: 20px;
+            }
+        }
+        .product-badges {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
     &__help {
         background-color: #f6f6f6;
@@ -84,10 +265,14 @@
         }
         &__h {
             font-family: $font-family-alt;
-            font-size: 20px;
+            font-size: 17px;
             font-weight: 600;
-            line-height: 1.15;
+            line-height: 1.29;
             margin-bottom: 27px;
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+                line-height: 1.15;
+            }
         }
         &__list {
             padding-left: 16px;

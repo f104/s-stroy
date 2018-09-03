@@ -5,14 +5,24 @@
             <span class="im-menu__list__inner"><a href="#">Как купить</a></span>
         </li>
         <li>
-            <span class="im-menu__list__toggler js-im-menu__toggler">Доставка и оплата</span>
-            <ul class="im-menu__list _level2 js-im-menu__slide">
-                <li><span class="im-menu__list__inner"><a href="#">Доставка</a></span></li>
-                <li><span class="im-menu__list__inner"><a href="#">Оплата</a></span></li>
-            </ul>
+            <span class="im-menu__list__inner @@if(active == 'ship-and-pay') {_active}">
+                @@if(active == 'ship-and-pay') {Доставка и оплата}
+                @@if(active != 'ship-and-pay') {
+                <a href="ship-and-pay.html">Доставка и оплата</a>
+                }
+            </span>
         </li>
         <li><span class="im-menu__list__inner"><a href="#">Обратная связь</a></span></li>
-        <li><span class="im-menu__list__inner _active">Частые вопросы</span></li>
+        <li>
+            <span class="im-menu__list__inner @@if(active == 'faq') {_active}">
+                @@if(active == 'faq') {Частые вопросы}
+                @@if(active != 'faq') {
+                <a href="#">Частые вопросы</a>
+                }
+            </span>
+        </li>
+        <li><span class="im-menu__list__inner"><a href="#">Реквизиты</a></span></li>
+        <!--
         <li>
             <span class="im-menu__list__toggler _opened js-im-menu__toggler">Примеры работы</span>
             <ul class="im-menu__list _level2 js-im-menu__slide">
@@ -34,5 +44,6 @@
                 </li>
             </ul>
         </li>
+        -->
     </ul>
 </div>

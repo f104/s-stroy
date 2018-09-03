@@ -154,39 +154,6 @@
             }
         }
     }
-    &__price-variant {
-        @include list-unstyled;
-        font-size: 13px;
-        line-height: 20px;
-        color: $primary;
-        @include media-breakpoint-up(md) {
-            font-size: 15px;
-            line-height: 23px;
-        }
-        li {
-            display: inline-block;
-            padding: 0 8px;
-            border-radius: 3px;
-            cursor: pointer;
-            &:after {
-                content: '';
-                position: absolute;
-                display: block;
-                left: 8px;
-                right: 8px;
-                bottom: 2px;
-                border-bottom: 1px dashed rgba($primary, .7);
-            }
-            &._active {
-                background-color: #ededed;
-                color: $body-color;
-                cursor: default;
-                &:after {
-                    content: none;
-                }
-            }
-        }
-    }
     &__profit {
         font-size: 11px;
         text-align: right;
@@ -427,8 +394,6 @@
     margin-bottom: 0;
     &__item {
         padding: 20px $container-padding-sm;
-        display: flex;
-        align-items: center;
         border-bottom: 1px solid $gray-border;
         &:last-child {
             border-bottom: none;
@@ -436,25 +401,6 @@
         @include media-breakpoint-up(md) {
             padding: 28px $container-padding-md;            
         }
-        &__text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    }
-    &__title {
-        font-size: 16px;
-        margin-bottom: 14px;
-        @include media-breakpoint-up(md) {
-            font-size: 18px;
-        }
-    }
-    &__desc {
-        font-size: 14px;
-        color: #7b7b7b;
-    }
-    .docs-icon {
-        margin-right: 25px;
     }
 }
 
@@ -503,6 +449,41 @@
                 line-height: 23px;
             }
 
+        }
+    }
+}
+
+.product-variant {
+    @include list-unstyled;
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: $primary;
+    @include media-breakpoint-up(md) {
+        font-size: 15px;
+        line-height: 23px;
+    }
+    li {
+        display: inline-block;
+        padding: 0 8px;
+        border-radius: 3px;
+        cursor: pointer;
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 8px;
+            right: 8px;
+            bottom: 2px;
+            border-bottom: 1px dashed rgba($primary, .7);
+        }
+        &._active {
+            background-color: #ededed;
+            color: $body-color;
+            cursor: default;
+            &:after {
+                content: none;
+            }
         }
     }
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "ТЦ Азимут, г. Дзержинск, Нижегородская обл."
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 0
+                        })
+                        @@include('./template/about/about-menu.html', {
+                        "active": "works"
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">ТЦ Азимут, г. Дзержинск, Нижегородская обл.</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="about.html">О нас</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Примеры работ
+                                </li>
+                            </ul>
+                        </div>
+
+                        <article class="work">
+                            <div class="work__img-wrapper">
+                                <img src="img/works/work.jpg"
+                                     srcset="img/works/work@2x.jpg 2x,
+                                     img/works/work@3x.jpg 3x"
+                                     class="work__img-wrapper__img"
+                                     alt="alt text">
+                            </div>
+                            <div class="work__content">
+                                <p class="work__content__h">Объект:</p>
+                                <p class="work__content__text">ТЦ Азимут, г. Дзержинск, Нижегородская обл.</p>
+                                <p class="work__content__h">Выполненные работы:</p>
+                                <p class="work__content__text">вентилируемая фасадная система, витражи, двери, окна из алюминиевых профилей, автоматические секционные ворота, рулонные шторы</p>
+                            </div>
+                        </article>
+                        
+                        <div class="neighbors">
+                            @@loop('./template/chunks/neighbors-item.html', [
+                            {"type": "prev", "text": "ТЦ Март, г. Н. Новгород"},
+                            {"type": "next", "text": "Автосалон Nissan Datsun, г. Н. Новгород, Комсомольское шоссе д. 12а"}
+                            ])
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

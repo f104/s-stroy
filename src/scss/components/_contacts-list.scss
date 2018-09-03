@@ -1,0 +1,123 @@
+.contacts-list {
+    $root: &;
+    margin-left: - $container-padding-sm;
+    margin-right: - $container-padding-sm;
+    margin-bottom: 86px;
+    @include media-breakpoint-up(md) {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 48px;
+    }
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 30px;
+    }
+    &__h {
+        opacity: 0.5;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.44;
+        margin-bottom: 15px;
+        padding-left: $container-padding-sm;
+        padding-right: $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 18px;
+            line-height: 1.28;
+            margin-bottom: 20px;
+        }
+    }
+    &__slider {
+        .slick-track {
+            display: flex !important;
+        }
+        .slick-arrow {
+            width: 34px;
+            height: 34px;
+            top: auto;
+            bottom: -65px;
+            /*transform: translateY(-50%);*/
+            left: $container-padding-sm;
+            right: auto;
+            background-color: $white;
+            border-radius: 50%;
+            /*border: 4px solid $body-bg;*/
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+            &:before {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &.slick-next {
+                left: auto;
+                right: $container-padding-sm;
+            }
+        }
+        .slick-dots {
+            bottom: -37px;
+        }
+    }
+    &__item {
+        cursor: pointer;
+        background-color: $white;
+        padding: $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            padding: 18px 20px 20px 62px;
+            border-bottom: 1px solid $gray-border;
+            &:last-child {
+                border-bottom-width: 0;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &:hover {
+            background-color: #fbfbfb;
+        }
+        &__h {
+            font-size: 17px;
+            margin-bottom: 5px;
+            @include media-breakpoint-up(md) {
+                font-size: 18px;                
+            }
+        }
+        &__lead {
+            opacity: 0.5;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        &__address {
+            @include clearfix;
+            font-size: 14px;
+            margin-bottom: 0;
+            dt {
+                opacity: .5;
+                clear: left;
+                float: left;
+            }
+            dd {
+                padding-left: 120px;
+                margin-bottom: 8px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &__link {
+                color: inherit;
+            }
+        }
+        &__icon {
+            position: absolute;
+            top: 18px;
+            left: 17px;
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+}

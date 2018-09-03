@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Заказ оплачен"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Заказ оплачен</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Заказ оплачен
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container cart-final">
+                    <div class="cart-final__row">
+                        <div class="cart-final__col">
+                            <h3 class="cart-final__h">
+                                Ваш заказ №1996 оплачен
+                                <span class="cart-final__h__icon _done"><i class="icon-in-stock"></i></span>
+                            </h3>
+                            <div class="cart-final__payment">
+                                <p class="cart-final__payment__text">
+                                    Оплачено <span class="primary text-nowrap">10 124 <span class="rub">₽</span></span>,
+                                    в том числе доставка <span class="primary text-nowrap">3 150 <span class="rub">₽</span></span>
+                                </p>
+                                <p class="cart-final__payment__text">
+                                    Детали оплаты были отправлены на ваш <span class="text-nowrap">e-mail</span>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cart-final__col">
+                            <div class="cart-final__info">
+                                <span class="cart-final__info__text">В ближайшее рабочее время менеджер свяжется 
+                                    с вами для уточнения подробностей</span>
+                                <i class="sprite call-center cart-final__info__img"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="catalog-level-1.html" class="link-back">
+                        <i class="icon-arrow-left"></i> Вернуться к покупкам
+                    </a>
+                </div>
+
+            </div>
+
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

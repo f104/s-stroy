@@ -115,12 +115,12 @@
         &__count {
             white-space: nowrap;
             width: 70px;
-            text-align: left;
+            text-align: right;
         }
         &__total {
             font-size: 18px;
             display: inline-block;
-            width: 20px;
+            width: 33px;
             text-align: center;
         }
         &__change {
@@ -156,6 +156,13 @@
             &._remove {
                 color: $red;
             }
+        }
+    }
+    .scroll-wrapper {
+        max-height: 50vh;
+        margin-bottom: 10px;
+        @include ie10up {
+            max-height: 300px;
         }
     }
 }

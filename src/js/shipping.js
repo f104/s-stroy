@@ -60,12 +60,15 @@ app.shipping = {
     },
 
     initDatepicker: function () {
-        var $dateinputWrapper = this.$wrapper.find('.js-shipping__date-input'),
-                $dateinput = this.$wrapper.find('.js-shipping__date-input__input'),
+
+        var $dateinput = this.$wrapper.find('.js-shipping__date-input'),
+//                $dateinput = this.$wrapper.find('.js-shipping__date-input__input'),
+//                $dateinputWrapper = this.$wrapper.find('.js-shipping__date-input'),
                 disabledDays = appConfig.shipping.disabledDays || [0, 6];
         $dateinput.datepicker({
-            position: 'top right',
-            offset: 40,
+//            position: 'top right',
+            position: 'bottom left',
+//            offset: 40,
             navTitles: {
                 days: 'MM'
             },
@@ -74,7 +77,6 @@ app.shipping = {
                 if (cellType == 'day') {
                     var day = date.getDay(),
                             isDisabled = disabledDays.indexOf(day) != -1;
-
                     return {
                         disabled: isDisabled
                     }
@@ -82,13 +84,16 @@ app.shipping = {
             },
             onSelect: function (formattedDate, date, inst) {
                 inst.hide();
-                $dateinputWrapper.removeClass('_empty');
+//                $dateinputWrapper.removeClass('_empty');
             }
         });
         var datepicker = $dateinput.datepicker().data('datepicker');
-        this.$wrapper.find('.js-shipping__datepicker-toggler').on('click', function () {
-            datepicker.show();
+        $('.fancybox-slide').on('scroll', function () {
+            datepicker.hide();
         });
+//        this.$wrapper.find('.js-shipping__datepicker-toggler').on('click', function () {
+//            datepicker.show();
+//        });
     },
 
     initMap: function () {
@@ -214,10 +219,10 @@ app.shipping = {
 
     writeRouteInfo: function (distance, address) {
         this.$addressInput.val(address);
-        
+
         // SuggestView has not method for close panel, remove class in initSuggest
         this.$addressInput.siblings('ymaps').addClass('hidden');
-        
+
         this.$distanceInput.val(distance);
         this.$distanceText.text(distance);
         this.$summaryDiv.removeClass('_hidden');
@@ -241,7 +246,7 @@ app.shipping = {
 
     initSuggest: function () {
         this.$addressInput.on('focus', function () {
-           $(this).siblings('ymaps').removeClass('hidden'); 
+            $(this).siblings('ymaps').removeClass('hidden');
         });
         this.$addressInput.on('keydown', function (event) {
             if (event.keyCode == 13) {
@@ -252,7 +257,7 @@ app.shipping = {
         var suggestView = new ymaps.SuggestView(this.$addressInput.attr('id'), {
             offset: [-1, 3]
         });
-        
+
         suggestView.events.add('select', function (e) {
             var item = e.get('item');
             ymaps.geocode(item.value).then(
@@ -261,7 +266,7 @@ app.shipping = {
                         app.shipping.makeRoute(o.geometry._coordinates, item.value);
                     });
         });
-        
+
     },
 
 }

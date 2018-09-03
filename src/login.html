@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Авторизация"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 1
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Личный кабинет</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Личный кабинет
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container popup">
+
+                    <div class="popup__wrapper _login-page">
+                        <div class="popup__form popup__inner">
+                            <form class="form">
+                                <h3 class="form__h _left">Авторизация на сайте</h3>
+                                <div class="form__group _1">
+                                    <span class="form__label js-form__label">
+                                        <input required>
+                                        <label>Логин</label>                        
+                                    </span>
+                                    <span class="form__label js-form__label">
+                                        <input type="password" value="123456" required>
+                                        <label>Пароль</label>                        
+                                    </span>
+                                </div>
+                                <div class="form__group _2">
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkbox__text">Запомнить меня</span>
+                                    </label>
+                                </div>
+                                <div class="form__group _3">
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkbox__text">
+                                            Подтверждаю свое согласие на <a href="#">обработку персональных данных</a>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form__group _4">
+                                    <button type="submit" class="btn _secondary _solid">Войти</button>
+                                </div>
+                                <div class="form__group _5">
+                                    <p><a href="#restore" class="js-popup">Забыли свой пароль?</a></p>
+                                    <p><a href="#register" class="js-popup">Регистрация</a></p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="popup__help popup__inner">
+                            <h3 class="popup__help__h">Зачем мне регистрироваться на сайте?</h3>
+                            <ul class="popup__help__list">
+                                <li>Выгодные предложения только для зарегистрированных пользователей.</li>
+                                <li>Персональная рассылка с выгодными предложениями на электронную почту.</li>
+                                <li>Быстрое оформление заказов. Не нужно постоянно вводить личные данные.</li>
+                                <li>Подробная информация об истории всех ваших заказов.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

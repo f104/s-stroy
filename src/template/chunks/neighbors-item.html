@@ -1,0 +1,18 @@
+<div class="neighbors__item _@@type">
+    <a href="#" class="neighbors__item__img-wrapper">
+        <!-- здесь нужны thumbs точно 177x157 -->
+        <img src="img/works/@@type.jpg"
+             srcset="img/works/@@type@2x.jpg 2x,
+             img/works/@@type@3x.jpg 3x"
+             class="neighbors__item__img-wrapper__img"
+             alt="alt text">
+    </a>
+    <div class="neighbors__item__content">
+        <a href="#" class="neighbors__item__content__h">
+            @@if(type=="prev") {Предыдущая}
+            @@if(type=="next") {Следующая}
+            работа
+        </a>
+        <span class="neighbors__item__content__text">@@text</span>
+    </div>
+</div>

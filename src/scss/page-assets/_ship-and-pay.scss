@@ -1,0 +1,187 @@
+// ship and pay
+
+.sp {
+    &__intro {
+        font-size: 15px;
+        line-height: 1.47;
+        margin-bottom: 18px;
+    }
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.35;
+        border-top: 1px solid $gray-border;
+        border-bottom: 1px solid $gray-border;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        padding-top: 11px;
+        padding-bottom: 12px;
+        padding-left: $container-padding-sm;
+        padding-right: $container-padding-sm;
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+            padding-left: $container-padding-md;
+            padding-right: $container-padding-md;
+        }
+    }
+    &__return {
+        background-color: #e6e6e6;
+        margin-top: 10px;
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        padding-left: $container-padding-sm;
+        padding-right: $container-padding-sm;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+            padding-left: $container-padding-md;
+            padding-right: $container-padding-md;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &__h {
+            font-family: $font-family-alt;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.28;
+            margin-bottom: 18px;
+        }
+        &__text {
+            font-size: 14px;
+            line-height: 1.43;
+            margin-bottom: 0;
+            @include media-breakpoint-up(md) {
+                width: 85%;
+                font-size: 15px;
+            }
+        }
+    }
+    .map-download {
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+}
+
+.sp-pickup {
+    &__intro {
+        font-size: 15px;
+        line-height: 1.47;
+        margin-bottom: 19px;
+    }
+    &__list {
+        @include list-unstyled;
+        margin-bottom: 0;
+        @include media-breakpoint-up(md) {
+            columns: 2;
+        }
+        &__item {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.25;
+            break-inside: avoid;
+            page-break-inside: avoid;
+            &__muted {
+                display: block;
+                opacity: 0.5;
+                font-size: 14px;
+                font-weight: 600;
+                color: #444444;
+                margin-top: 11px;
+            }
+        }
+    }
+    &__map {
+        background-color: $gray-border;
+        margin-left: - $container-padding-sm;
+        margin-right: - $container-padding-sm;
+        margin-bottom: 20px;
+        height: 250px;
+        @include media-breakpoint-up(md) {
+            margin-left: - $container-padding-md;
+            margin-right: - $container-padding-md;
+            height: 400px;
+        }
+    }
+}
+
+.sp-shipping {
+    line-height: 1.43;
+    font-size: 14px;
+    @include media-breakpoint-up(md) {
+        font-size: 15px;
+    }
+    &__h {
+        font-family: $font-family-alt;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.28;
+        margin-bottom: 8px;
+        margin-top: 2rem;
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+    }
+    .warning-block {
+        margin-top: 25px;
+        @include media-breakpoint-up(md) {
+            margin-top: 40px;
+        }
+
+    }
+/*    > :last-child {
+        margin-bottom: 0;
+    }*/
+    &__row {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__col {
+        &:first-child {
+            @include media-breakpoint-up(md) {
+                width: 420px;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 515px;
+            }
+        }
+        > :last-child {
+            margin-bottom: 0;
+        }
+        .doc-download {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            @include media-breakpoint-up(md) {
+                margin-top: 0;
+                margin-bottom: 3rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            .map {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__payment-img {
+        margin-top: 20px;
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+}

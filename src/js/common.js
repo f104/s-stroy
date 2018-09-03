@@ -30,7 +30,7 @@ var app = {
         this.initCatalog();
         this.initSearch();
         this.initPopup();
-        this.initFormLabel();
+        this.initForm();
         this.initRegionSelect();
         this.initTabs();
         this.initQA();
@@ -42,6 +42,9 @@ var app = {
         this.initCreatePrice();
         this.initQuantity();
         this.initCart();
+        this.initSP();
+        this.initTags();
+        this.initContacts();
         $(window).on('resize', function () {
             app.initHover();
         });
@@ -64,9 +67,11 @@ var app = {
 
         var $header = $('header');
         var headerHeight = $header.outerHeight();
+        var $headerTop = $('.header__top');
+        var headerTopHeight = $headerTop.outerHeight();
         var q = 1;
         var action = 0;
-        var pinHeader = function () {
+        var _pinHeader = function () {
             if (document.readyState !== "complete") {
                 return;
             }
@@ -90,6 +95,21 @@ var app = {
                     $('body').css({'padding-top': 0});
                     $header.removeClass('_fixed');
                 });
+            }
+        }
+        var pinHeader = function () {
+            if (document.readyState !== "complete") {
+                return;
+            }
+            if ($(this).scrollTop() > headerTopHeight) {
+                $('body').css({'padding-top': headerHeight});
+                $header.addClass('_fixed');
+            } else {
+                if (!$header.hasClass('_fixed')) {
+                    return;
+                }
+                $('body').css({'padding-top': 0});
+                $header.removeClass('_fixed');
             }
         }
         if (window.innerWidth >= appConfig.breakpoint.lg) {
@@ -154,7 +174,7 @@ var app = {
             ]
         });
         $('.js-slider').each(function () {
-            var slides = $(this).data('slides');
+            var slides = $(this).data('slides') || {};
             $(this).slick({
                 dots: false,
                 arrows: true,
@@ -232,6 +252,41 @@ var app = {
         $(window).on('load', function () {
             $('.js-nav-slider__main.slick-initialized').slick('setPosition');
         });
+
+        // only sm sliders
+        var isMobile = false;
+        var initSmSlider = function () {
+            $('.js-sm-slider').slick({
+                dots: true,
+                arrows: true,
+                infinite: false
+            });
+        };
+        var destroySmSlider = function () {
+            $('.js-sm-slider.slick-initialized').slick('unslick');
+        };
+        var isMobile = $(window).outerWidth() < appConfig.breakpoint.md;
+        var checkSmSlider = function () {
+            var newSize = $(window).outerWidth() < appConfig.breakpoint.md;
+            if (newSize != isMobile) {
+                isMobile = newSize;
+            }
+            if (isMobile) {
+                initSmSlider();
+            } else {
+                destroySmSlider();
+            }
+        }
+        $(window).on('load resize', function () {
+            checkSmSlider();
+        });
+    },
+
+    initTags: function () {
+        $('.js-tag').on('click', function () {
+            $(this).toggleClass('_active');
+            return true;
+        });
     },
 
     initHover: function () {
@@ -272,14 +327,14 @@ var app = {
                         left: '-10px',
                         right: '-10px',
                         bottom: '-10px',
-                    }, 200);
+                    }, 100);
                     $wrap.on('mouseleave', function () {
                         $hover.animate({
                             top: '0',
                             left: '0',
                             right: '0',
                             bottom: '0',
-                        }, 200, function () {
+                        }, 10, function () {
                             $this
                                     .appendTo($parent)
                                     .removeClass('_hover')
@@ -294,21 +349,88 @@ var app = {
     },
 
     initScrollbar: function () {
-        $('.js-scrollbar').scrollbar();
+        $('.js-scrollbar').scrollbar({
+//            disableBodyScroll: true
+        });
     },
 
+    /**
+     *
+     */
     initSearch: function () {
         var $input = $('.js-search-form__input');
         $input.on('click', function (e) {
             e.stopPropagation();
         });
+        /*
         $input.on('focus', function () {
             $(this).siblings('.js-search-res').addClass('_active');
-        });
+        });*/
         $(window).on('click', function () {
             $('.js-search-res').removeClass('_active');
         });
+
+        /**
+         *
+         * Строка поиска
+         *
+         */
+        let searchAll = $('.j-search-show_all');
+        let searchString = searchAll.attr('data-page');
+
+        $('.search-form__submit').on('click', function () {
+           searchAll.trigger('click');
+        });
+        /**
+         * обработчик нажатия
+         */
+        let _count = 0;
+        $input.on('input', this.debounce(function(e) {
+            searchAll.hide();
+            if ($(this).val().length > 2) {
+                searchAll.attr('href', searchString + '?q=' + $(this).val());
+                $.ajax({
+                    url: '/baseinfo/search.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: $(this).parent().serialize(),
+                    success: function success(data) {
+                        $('.j-top-search-wraper').html(data.html);
+                        if(data.html) {
+                            searchAll.show();
+                            $('.js-search-res').addClass('_active');
+                            _count = $('.b-search-count').html();
+                            $('.j-search-count').text('(' + _count +')');
+                        }
+                    }
+                });
+            }
+        }, 300));
     },
+
+    /**
+     *
+     * @param func
+     * @param wait
+     * @param immediate
+     * @returns {Function}
+     *
+     */
+    debounce: function(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    },
+
 
     initCatalog: function () {
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
@@ -324,8 +446,8 @@ var app = {
         var slideMenu = function () {
             $slide.slideToggle(function () {
                 $('.js-filter__counter').trigger("sticky_kit:recalc");
+                $menu.toggleClass('_opened');
             });
-            $menu.toggleClass('_opened');
             return false;
         }
 
@@ -369,19 +491,13 @@ var app = {
             return false;
         });
 
-        if (!isMobile && !$menu.hasClass('_opened')) {
-            $slide.slideUp(function () {
-                $('.js-filter__counter').trigger("sticky_kit:recalc");
-            });
-        }
-
         var checkMenu = function () {
             var newSize = $(window).outerWidth() < appConfig.breakpoint.lg;
             if (newSize != isMobile) {
                 isMobile = newSize;
                 if (isMobile) {
                     $slide.show();
-                    $menu.addClass('_opened');
+//                    $menu.addClass('_opened');
                     $slideTrigger.off('click', slideMenu);
                     $secondLink.on('click', showSecond);
                     $secondLink.off('mouseenter mouseleave');
@@ -393,9 +509,8 @@ var app = {
                     $secondLink.off('click', showSecond);
                     $secondLink.parent().hover(hoverIcon, unhoverIcon);
                     destroyScrollbar();
-                    if ($wrapper.hasClass('_absolute')) {
-                        $menu.removeClass('_opened');
-                        $slide.slideUp();
+                    if (!$menu.hasClass('_opened')) {
+                        $slide.hide();
                     }
                 }
             }
@@ -431,7 +546,7 @@ var app = {
         $('.js-popup').on('click', function () {
             $.fancybox.close();
         }).fancybox(options);
-        if (window.location.hash) {
+        if (window.location.hash && window.location.hash !== '#') {
             var $cnt = $(window.location.hash);
             if ($cnt.length && $cnt.hasClass('popup')) {
                 $.fancybox.open($cnt, options);
@@ -439,7 +554,7 @@ var app = {
         }
     },
 
-    initFormLabel: function () {
+    initForm: function () {
         var $inputs = $('.js-form__label').find(':not([required])');
         $inputs
                 .on('focus', function () {
@@ -450,7 +565,19 @@ var app = {
                         $(this).siblings('label').addClass('form__label__empty');
                     }
                 })
-                .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
+                .each(function () {
+                    if (!$(this).val()) {
+                        $(this).siblings('label').addClass('form__label__empty');
+                    }
+                });
+//                не работает для селектов
+//        .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
+
+        $('.js-form__file__input').on('change', function(){
+            var name = $(this).val();
+            name = name.replace(/\\/g, '/').split('/').pop();
+            $(this).parents('.js-form__file').find('.js-form__file__name').text(name);
+        });
     },
 
     initRegionSelect: function () {
@@ -482,7 +609,11 @@ var app = {
 
         $togglers.on('click', function () {
             $(this).toggleClass('_opened');
-            $(this).siblings('.tabs__tab__content').slideToggle();
+            $(this).siblings('.tabs__tab__content').slideToggle(function () {
+                $(this).is(':visible')
+                        ? $(this).trigger('tabs_slide_open', $(this))
+                        : $(this).trigger('tabs_slide_close', $(this));
+            });
 
         });
 
@@ -562,7 +693,14 @@ var app = {
         if (!$selects.length)
             return;
         var init = function () {
-            $selects.styler();
+            $selects.styler({
+                selectPlaceholder: '',
+                selectSmartPositioning: false
+            }).each(function(){
+                if ($(this).val()) {
+                    $(this).parent().addClass('changed');
+                }
+            });
         };
         var destroy = function () {
             $selects.styler('destroy');
@@ -929,6 +1067,124 @@ var app = {
         });
     },
 
+    /**
+     * init map in container
+     * @param string cnt id
+     * @return Map 
+     */
+    mapInit: function (cnt) {
+        var map = new ymaps.Map(cnt, {
+            center: [56.326887, 44.005986],
+            zoom: 11,
+            controls: []
+        }, {
+            suppressMapOpenBlock: true,
+        });
+        map.controls.add('zoomControl', {
+            size: 'small'
+        });
+        return map;
+    },
+
+    /**
+     * add placemarks on map
+     * @param Map map
+     * @param $ items with data-attr
+     * @return array of GeoObject
+     */
+    mapAddPlacemarks: function (map, $items) {
+        var placemarks = [];
+        var tplPlacemark = ymaps.templateLayoutFactory.createClass(
+                '<div class="placemark {{ properties.type }}"><i class="sprite {{ properties.type }}"></i></div>'
+                ),
+                tplBalloon = ymaps.templateLayoutFactory.createClass(
+                        '<div class="pickup-balloon">{{ properties.text }}<span class="arrow"></span></div>', {
+                            /**
+                             * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
+                             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
+                             * @function
+                             * @name build
+                             */
+                            build: function () {
+                                this.constructor.superclass.build.call(this);
+                                this._$element = $('.pickup-balloon', this.getParentElement());
+                            },
+
+                            /**
+                             * Используется для автопозиционирования (balloonAutoPan).
+                             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
+                             * @function
+                             * @name getClientBounds
+                             * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
+                             */
+                            getShape: function () {
+                                if (!this._isElement(this._$element)) {
+                                    return tplBalloon.superclass.getShape.call(this);
+                                }
+
+                                var position = this._$element.position();
+
+                                return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+                                    [position.left, position.top], [
+                                        position.left + this._$element[0].offsetWidth,
+                                        position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
+                                    ]
+                                ]));
+                            },
+
+                            /**
+                             * Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
+                             * @function
+                             * @private
+                             * @name _isElement
+                             * @param {jQuery} [element] Элемент.
+                             * @returns {Boolean} Флаг наличия.
+                             */
+                            _isElement: function (element) {
+                                return element && element[0];
+                            }
+                        });
+        $items.each(function (index) {
+            var geo = $(this).data('geo'),
+                    text = $(this).data('text') || 'САКСЭС',
+                    type = $(this).data('type') || 'geo-office';
+            if (geo) {
+                geo = geo.split(',');
+                geo[0] = parseFloat(geo[0]);
+                geo[1] = parseFloat(geo[1]);
+                var placemark = new ymaps.Placemark(geo,
+                        {
+                            text: text,
+                            type: type
+                        },
+                        {
+                            iconLayout: tplPlacemark,
+                            iconImageSize: [40, 50],
+                            hideIconOnBalloonOpen: false,
+                            balloonLayout: tplBalloon,
+                            balloonCloseButton: false,
+                            pane: 'balloon',
+                            balloonPanelMaxMapArea: 0
+                        });
+                map.geoObjects.add(placemark);
+                placemarks.push(placemark);
+            }
+        });
+        return placemarks;
+    },
+
+    /**
+     * Set bounds on all geo objects on map
+     * @param Map map
+     * @returns void
+     */
+    mapSetBounds: function (map) {
+        map.setBounds(map.geoObjects.getBounds(), {
+            checkZoomRange: true,
+            zoomMargin: 50
+        });
+    },
+
     initCart: function () {
         $('.js-cart-info__radio').on('click', function () {
             $('.js-cart-info__hidden').hide();
@@ -937,9 +1193,9 @@ var app = {
             $target.show();
             $target.find('.js-select_always').styler();
         });
-        
+
         // pickup
-        var $wrapper = $('.js-pickup');
+        var $wrapper = $('.js-pickup'), map = null;
         if ($wrapper.length == 0) {
             return;
         }
@@ -967,115 +1223,44 @@ var app = {
         });
         $('.js-pickup__popup-close').on('click', closePhotoPopup);
 
-        // submit
-        $('.js-pickup__map__item__submit').on('click', function () {
-            $('.js-pickup__target__text').text($(this).text());
-            $('.js-pickup__target__time').text($(this).parents('.js-pickup__map__item').find('.js-pickup__map__item__time').text() || '');
-            $('.js-pickup__target__input').val($(this).parents('.js-pickup__map__item').data('id') || 0);
+        var closePickup = function () {
+            map.balloon.close();
+            $('.js-pickup__map__item').removeClass('_active');
+            $('.js-pickup__submit').prop('disabled', true);
             closePhotoPopup();
-            $.fancybox.close()
+            $.fancybox.close();
             return false;
+        }
+
+        // submit
+        $('.js-pickup__submit').on('click', function () {
+            var $selected = $('.js-pickup__map__item._active');
+            $('.js-pickup__target__text').text($selected.find('.js-pickup__map__item__text').text());
+            $('.js-pickup__target__time').text($selected.find('.js-pickup__map__item__time').text() || '');
+            $('.js-pickup__target__input').val($selected.data('id') || 0);
+            closePickup();
         });
+
+        // cancel
+        $('.js-pickup__cancel').on('click', closePickup);
 
         // map
         var initMap = function () {
-            var map = new ymaps.Map('pickup_map', {
-                center: [56.326887, 44.005986],
-                zoom: 11,
-                controls: []
-            }, {
-                suppressMapOpenBlock: true,
-            }), placemarks = [];
-            var tplBalloon = ymaps.templateLayoutFactory.createClass(
-                    '<div class="pickup-balloon">{{ properties.text }}<span class="arrow"></span></div>', {
-                        /**
-                         * Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
-                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
-                         * @function
-                         * @name build
-                         */
-                        build: function () {
-                            this.constructor.superclass.build.call(this);
-                            this._$element = $('.pickup-balloon', this.getParentElement());
-//                            this.applyElementOffset();
-                        },
-
-                        /**
-                         * Используется для автопозиционирования (balloonAutoPan).
-                         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
-                         * @function
-                         * @name getClientBounds
-                         * @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
-                         */
-                        getShape: function () {
-                            if (!this._isElement(this._$element)) {
-                                return tplBalloon.superclass.getShape.call(this);
-                            }
-
-                            var position = this._$element.position();
-
-                            return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-                                [position.left, position.top], [
-                                    position.left + this._$element[0].offsetWidth,
-                                    position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight
-                                ]
-                            ]));
-                        },
-
-                        /**
-                         * Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
-                         * @function
-                         * @private
-                         * @name _isElement
-                         * @param {jQuery} [element] Элемент.
-                         * @returns {Boolean} Флаг наличия.
-                         */
-                        _isElement: function (element) {
-                            return element && element[0];
-                        }
-                    });
-            $('.js-pickup__map__item').each(function (index) {
-                var geo = $(this).data('geo'),
-                        text = $(this).find('.js-pickup__map__item__submit').text();
-                if (geo) {
-                    geo = geo.split(',');
-                    geo[0] = parseFloat(geo[0]);
-                    geo[1] = parseFloat(geo[1]);
-                    var placemark = new ymaps.Placemark(geo,
-                            {
-                                text: text || 'склад'
-                            },
-                            {
-                                iconLayout: 'default#image',
-                                // Своё изображение иконки метки.
-                                iconImageHref: 'img/placemark.svg',
-                                // Размеры метки.
-                                iconImageSize: [39, 50],
-                                // Смещение левого верхнего угла иконки относительно
-                                // её "ножки" (точки привязки).
-                                iconImageOffset: [-39, -25],
-                                hideIconOnBalloonOpen: false,
-                                balloonLayout: tplBalloon,
-                                balloonCloseButton: false,
-                                pane: 'balloon',
-                                balloonPanelMaxMapArea: 0
-                            });
-                    map.geoObjects.add(placemark);
-                    placemarks.push(placemark);
-                    map.setBounds(map.geoObjects.getBounds(), {
-                        checkZoomRange: true
-                    });
-                }
-                // click
-                $(this).on('click', function () {
-                    placemarks[$(this).index()].balloon.open();
-                });
+            map = app.mapInit('pickup_map');
+            var placemarks = app.mapAddPlacemarks(map, $('.js-pickup__map__item'));
+            app.mapSetBounds(map);
+            // click
+            $('.js-pickup__map__item').on('click', function () {
+                placemarks[$(this).index()].balloon.open();
+                $('.js-pickup__map__item').removeClass('_active');
+                $(this).addClass('_active');
+                $('.js-pickup__submit').prop('disabled', false);
             });
-            
+
             $wrapper.data('init', true);
 
         };
-        
+
         // init map on fb.open
         $(document).on('afterShow.fb', function (e, instance, slide) {
             var $pickup = slide.$slide.find('.js-pickup');
@@ -1094,7 +1279,87 @@ var app = {
                 }
             }
         });
-        
+
+    },
+
+    initSP: function () {
+        if ($('.js-sp').length == 0) {
+            return;
+        }
+        if (typeof (ymaps) === 'undefined') {
+            $.ajax({
+                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                dataType: "script",
+                cache: true,
+                success: function () {
+                    ymaps.ready(initMap);
+                }
+            });
+        } else {
+            ymaps.ready(initMap);
+        }
+        var initMap = function () {
+            var map = app.mapInit('sp_map');
+            app.mapAddPlacemarks(map, $('.js-sp__map-item'));
+            // масштабируем при открытии страницы, таба и слайда
+            if ($('#sp_map').is(':visible')) {
+                app.mapSetBounds(map);
+            } else {
+                $('.js-sp .js-tabs').one('easytabs:after', function () {
+                    app.mapSetBounds(map);
+                });
+                $('.js-sp .js-sp__map-tab').on('tabs_slide_open', function () {
+                    app.mapSetBounds(map);
+                });
+            }
+        }
+    },
+
+    initContacts: function () {
+        if ($('.js-contacts').length == 0) {
+            return;
+        }
+        $('.js-contacts__map').stick_in_parent({
+            offset_top: 90
+        });
+        if (typeof (ymaps) === 'undefined') {
+            $.ajax({
+                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                dataType: "script",
+                cache: true,
+                success: function () {
+                    ymaps.ready(initMap);
+                }
+            });
+        } else {
+            ymaps.ready(initMap);
+        }
+        var initMap = function () {
+            var $items = $('.js-contacts__map-item');
+            map = app.mapInit('contacts_map');
+            var placemarks = app.mapAddPlacemarks(map, $items);
+            app.mapSetBounds(map);
+            $items.each(function (idx) {
+                $(this).on('click', function () {
+                    var type = $(this).data('type');
+                    $('.placemark.' + type).show();
+                    $('.js-contacts__map .js-tag').filter('[data-type="' + type + '"]').addClass('_active');
+//                    console.log(placemarks[idx]);
+                    map.setCenter(placemarks[idx].geometry.getCoordinates(), 13, {
+                        duration: 300
+                    }).then(function () {
+                        placemarks[idx].balloon.open();
+                    });
+                });
+            });
+            // click on tag
+            $('.js-contacts__map .js-tag').on('click', function () {
+                map.balloon.close();
+                var $pm = $('.placemark.' + $(this).data('type'));
+                $(this).hasClass('_active') ? $pm.show() : $pm.hide();
+                return false;
+            });
+        }
     },
 
     /**
@@ -1128,6 +1393,6 @@ var app = {
             }
         }
         return sEnding;
-    }
+    },
 
 }

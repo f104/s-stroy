@@ -1,0 +1,35 @@
+.production-list {
+    &__item {
+        display: block;
+        height: 160px;
+    }
+    @include media-breakpoint-up(md) {
+        display: flex;
+        &__item {
+            width: 33.33%;
+        }
+    }
+    &__img-wrapper {
+        @include bg-img-wrapper;
+        &__img {
+            @include bg-img;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, .4);
+        }
+    }
+    &__text {
+        font-size: 18px;
+        font-weight: 500;
+        color: $white;
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+    }
+}

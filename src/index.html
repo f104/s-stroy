@@ -24,8 +24,12 @@
                         <div class="promo">
                             <div class="promo__slider slider js-main-slider">
                                 @@include('./template/promo/slider-item_1.html')
-                                @@include('./template/promo/slider-item.html')
-                                @@include('./template/promo/slider-item.html')
+                                @@include('./template/promo/slider-item.html', {
+                                "more": true
+                                })
+                                @@include('./template/promo/slider-item.html', {
+                                "more": true
+                                })
                             </div>
                             <a href="#" class="promo__item">
                                 <span class="promo__item__img">
@@ -42,8 +46,8 @@
                         </div>
 
                         @@include('./template/catalog/block.html')
-                        @@include('./template/profits/block.html')
-                        @@include('./template/partners/block.html')
+                        @@include('./template/profits/index.html')
+                        @@include('./template/partners/index.html')
 
                         <div class="block">
                             <h3 class="block__h _border">Интернет-магазин строительных и отделочных материалов</h3>

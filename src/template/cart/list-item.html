@@ -8,19 +8,19 @@
         <a href="product-card.html" class="cart-list__item__title">@@title</a>
         <span class="cart-list__item__available">В наличии</span>
     </td>
+    <td class="cart-list__item__cell _spacer"></td>
     <td class="cart-list__item__cell _3">
         <span class="cart-list__item__th">Цена за ед.</span>
-        @@if (remove) {
-        <span class="cart-list__item__variant">@@item</span>
-        }
-        @@if (!remove) {
         <del class="cart-list__item__cost-old">@@cost_old <span class="rub">₽</span></del>
-        }
         <span class="cart-list__item__price">@@price <span class="rub">₽</span></span>
     </td>
-    <td class="cart-list__item__cell _spacer"></td>
+    @@if (remove) {
     <td class="cart-list__item__cell _4">
-        <span class="cart-list__item__th">Кол-во</span>
+        <span class="cart-list__item__th">Ед. изм.</span>
+        <span class="cart-list__item__variant">@@item</span>
+    </td>
+    }
+    <td class="cart-list__item__cell _5">
         @@if (remove) {
         <div class="cart-list__item__count">
             <button class="btn cart-list__item__count__btn _minus js-quantity-shift js-quantity-down">&minus;</button>
@@ -29,16 +29,17 @@
         </div>
         }
         @@if (!remove) {
+        <span class="cart-list__item__th">Кол-во</span>
         @@count <span class="cart-list__item__variant">@@item</span>
         }
     </td>
-    <td class="cart-list__item__cell _5">
+    <td class="cart-list__item__cell _6">
         <span class="cart-list__item__th">Сумма</span>
         <del class="cart-list__item__cost-old">@@cost_old <span class="rub">₽</span></del>
         <span class="cart-list__item__cost">@@cost <span class="rub">₽</span></span>
     </td>
     @@if (remove) {
-    <td class="cart-list__item__cell _right _6">
+    <td class="cart-list__item__cell _right _7">
         <a href="#" class="cart-list__item__remove">
             <i class="icon-close"></i>
         </a>

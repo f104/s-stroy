@@ -262,6 +262,9 @@
             span {
                 display: none;
             }
+            &:disabled {
+                opacity: 1;
+            }
         }
         &__btn-one-click {
             font-size: 13px;
@@ -439,6 +442,10 @@
             &__link {
                 color: $body-color;
                 font-size: $font-size-base;
+            }
+            &__muted {
+                opacity: .5;
+                margin-left: .5ex;
             }
         }
     }

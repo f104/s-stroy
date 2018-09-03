@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    @@include('./template/head.html', {
+    "name": "Примеры работ"
+    })
+    <body>
+        @@include('./template/header.html', {"minicart": 1})
+        <div class="content">
+            <div class="wrapper">
+
+                <div class="container main-row">
+
+                    <aside class="main-row__left">
+                        @@include('./template/search.html')
+                        @@include('./template/catalog/menu.html', {
+                        "opened": 0,
+                        "ext": 0,
+                        "absolute": 0
+                        })
+                        @@include('./template/about/about-menu.html', {
+                        "active": "works"
+                        })
+                    </aside>
+
+                    <div class="main-row__right">
+
+                        <div class="page-header">
+                            <h1 class="page-header__h">Примеры работ</h1>
+                            <ul class="breadcrumbs">
+                                <li class="breadcrumbs__item">
+                                    <a href="index.html">Главная</a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="about.html">О нас</a>
+                                </li>
+                                <li class="breadcrumbs__item _active">
+                                    Примеры работ
+                                </li>
+                            </ul>
+                        </div>
+
+                        <article class="works">
+                            <div class="works__tags">
+                                <div class="tags-with-header">
+                                    <p class="tags-with-header__h">По типу объекта:</p>
+                                    <ul class="tags">
+                                        @@loop('./template/chunks/tag.html', [
+                                        {"active": true, "text": "Торговые центры"},
+                                        {"active": false, "text": "Многоэтажные жилые дома"},
+                                        {"active": true, "text": "Автосалоны"},
+                                        {"active": false, "text": "Коттеджи и коттеджные поселки"},
+                                        {"active": false, "text": "Административные, промышленные и прочие объекты"}
+                                        ])
+                                    </ul>
+                                </div>
+                                <div class="tags-with-header">
+                                    <p class="tags-with-header__h">По типу работ:</p>
+                                    <ul class="tags">
+                                        @@loop('./template/chunks/tag.html', [
+                                        {"active": true, "text": "Кровельные работы"},
+                                        {"active": false, "text": "Фасадные работы"},
+                                        {"active": false, "text": "Заборы"}
+                                        ])
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3 class="works__h">Результаты поиска</h3>
+                            @@include('./template/works/list.html')
+                            <div class="pagination-wrapper _full-md">
+                                @@include('./template/chunks/pagination.html')
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            @@include('./template/footer.html')
+            <div class="content__overlay js-menu-overlay"></div>
+        </div>
+        @@include('./template/foot.html')
+    </body>
+</html>

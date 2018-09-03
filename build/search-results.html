@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
-    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,800,800i&amp;subset=cyrillic" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600,800,800i&amp;subset=cyrillic" rel="stylesheet">
     <link href="fonts/Lato/lato.css" rel="stylesheet" type="text/css">
     <link href="fonts/fontello/css/fontello.css" rel="stylesheet" type="text/css">
     <link href="css/libs/slick.css" rel="stylesheet" type="text/css">
@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="header__row__col _3">
-                <a href="#" class="hidden-md">Контакты</a>
+                <a href="contacts.html" class="hidden-md">Контакты</a>
                 <ul class="header__log-in">
                     <li><a href="#login" class="js-popup">Вход<i class="icon-log-in"></i></a></li>
                     <li><a href="#register" class="js-popup">Регистрация</a></li>
@@ -89,17 +89,51 @@
             </div>
             <div class="header__row__col _2">
                 <form class="search-form">
-                    <input class="search-form__input _header js-search-form__input" placeholder="Поиск строительных и отделочных материалов">
+                    <input class="search-form__input _header js-search-form__input" 
+                           name="q" 
+                           placeholder="Поиск строительных и отделочных материалов">
                     <button class="search-form__submit"><i class="icon-search"></i></button>
                     <div class="search-res js-search-res">
     <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
         <div class="search-res__block">
             <h3 class="search-res__h">Категории</h3>
             <ul class="search-res__cats">
-                <li><a href="#">Фасадная плитка Hauberk</a></li>
-                <li><a href="#">Плита OSB</a></li>
-                <li><a href="#">Рулонный утеплитель</a></li>
-                <li><a href="#">Затирка для плитки Ceresit</a></li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Фасадные материалы</li>
+                            <li class="search-res__crumbs__item">Фасадная плитка Hauberk</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Листовые материалы</li>
+                            <li class="search-res__crumbs__item">Плита OSB</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Теплоизоляция, звукоизоляция</li>
+                            <li class="search-res__crumbs__item">Рулонный утеплитель</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Затирки для плитки</li>
+                            <li class="search-res__crumbs__item">Затирка для плитки Ceresit</li>
+                        </ul>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="search-res__block">
@@ -161,7 +195,12 @@
                 </li>
             </ul>
         </div>
+        -->
     </div>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
 </div>
                 </form>
                 <a href="create-price.html" class="header__main__download">Скачать прайс-лист <i class="icon-download"></i></a>
@@ -184,86 +223,319 @@
     <span class="minicart__cost">15 450 <span class="rub">₽</span></span>
     <div class="minicart-popup">
         <h3 class="minicart-popup__h">Товары в корзине</h3>
-        <table class="minicart-popup__t">
-            
-            <tr>
-                <td>
-                    <img class="minicart-popup__t__img"
-                         src="img/products/2.jpg" alt="alt text">
-                </td>
-                <td colspan="2">
-                    <a href="#" class="minicart-popup__t__title">
-                        Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
-                    </a>
-                </td>
-                <td>
-                    <a href="#" class="minicart-popup__t__remove">
-                        <i class="icon-close"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <span class="minicart-popup__t__price">
-                        1 235 <span class="rub">₽</span>
-                    </span>
-                    <span class="minicart-popup__t__variant">за штуку</span>
-                </td>
-                <td class="minicart-popup__t__count">
-                    <a href="#" class="minicart-popup__t__change">
-                        <i class="icon-minus"></i>
-                    </a>
-                    <span class="minicart-popup__t__total">
-                        3
-                    </span>
-                    <a href="#" class="minicart-popup__t__change">
-                        <i class="icon-plus"></i>
-                    </a>
-                </td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <img class="minicart-popup__t__img"
-                         src="img/products/5.jpg" alt="alt text">
-                </td>
-                <td colspan="2">
-                    <a href="#" class="minicart-popup__t__title">
-                        Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
-                    </a>
-                </td>
-                <td>
-                    <a href="#" class="minicart-popup__t__remove">
-                        <i class="icon-close"></i>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <span class="minicart-popup__t__price">
-                        235 <span class="rub">₽</span>
-                    </span>
-                    <span class="minicart-popup__t__variant">за штуку</span>
-                </td>
-                <td class="minicart-popup__t__count">
-                    <a href="#" class="minicart-popup__t__change">
-                        <i class="icon-minus"></i>
-                    </a>
-                    <span class="minicart-popup__t__total">
-                        99
-                    </span>
-                    <a href="#" class="minicart-popup__t__change">
-                        <i class="icon-plus"></i>
-                    </a>
-                </td>
-                <td></td>
-            </tr>
 
-        </table>
-        
+        <div class="scrollbar-outer js-scrollbar">
+
+            <table class="minicart-popup__t">
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            99 999 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за кг</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            999
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            3
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            3
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/2.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Кладочный раствор темно-серый 022 ОСНОВИТ БРИКФОРМ MC11 25 кг
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            1 235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            3
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img class="minicart-popup__t__img"
+                             src="img/products/5.jpg" alt="alt text">
+                    </td>
+                    <td colspan="2">
+                        <a href="#" class="minicart-popup__t__title">
+                            Мастика для гибкой черепицы ТЕХНОНИКОЛЬ №23 (Фиксер), ведро 3,6 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="minicart-popup__t__remove">
+                            <i class="icon-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="minicart-popup__t__price">
+                            235 <span class="rub">₽</span>
+                        </span>
+                        <span class="minicart-popup__t__variant">за штуку</span>
+                    </td>
+                    <td class="minicart-popup__t__count">
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-minus"></i>
+                        </a>
+                        <span class="minicart-popup__t__total">
+                            99
+                        </span>
+                        <a href="#" class="minicart-popup__t__change">
+                            <i class="icon-plus"></i>
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+        </div>
+
         <div class="minicart-popup__f">
             <span class="minicart-popup__f__row">
                 <span class="minicart-popup__f__total">Итого</span>
@@ -276,7 +548,7 @@
                 <a href="#" class="minicart-popup__f__link _remove">Очистить корзину</a>
             </span>
         </div>
-        
+
     </div>
 </div>
                 
@@ -341,16 +613,16 @@
         <ul class="menu__lg">
             <li><a href="catalog-level-1.html">Каталог</a></li>
             <li><a href="#">Услуги</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
             <li><a href="create-price.html">Скачать прайс <i class="icon-download"></i></a></li>
         </ul>
     </li>
     <li>
-        <a href="#">О нас</a>
+        <a href="about.html">О нас</a>
         <ul class="menu__sm">
-            <li><a href="#">Акции</a></li>
-            <li><a href="#">Примеры работ</a></li>
-            <li><a href="#">Отзывы</a></li>
+            <li><a href="stock.html">Акции</a></li>
+            <li><a href="works.html">Примеры работ</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
         </ul>
     </li>
     <li>
@@ -367,7 +639,7 @@
         <a href="#">Интернет-магазин</a>
         <ul class="menu__sm">
             <li><a href="#">Как купить</a></li>
-            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="ship-and-pay.html">Доставка и оплата</a></li>
             <li><a href="#">Обратная связь</a></li>
             <li><a href="#">Частые вопросы</a></li>
             <li><a href="#">Реквизиты</a></li>
@@ -384,17 +656,51 @@
 
                     <aside class="main-row__left">
                         <form class="search-form _aside">
-    <input class="search-form__input js-search-form__input" placeholder="Поиск в каталоге">
+    <input class="search-form__input js-search-form__input" 
+           name="q" 
+           placeholder="Поиск в каталоге">
     <button class="search-form__submit"><i class="icon-search"></i></button>
     <div class="search-res js-search-res">
     <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
         <div class="search-res__block">
             <h3 class="search-res__h">Категории</h3>
             <ul class="search-res__cats">
-                <li><a href="#">Фасадная плитка Hauberk</a></li>
-                <li><a href="#">Плита OSB</a></li>
-                <li><a href="#">Рулонный утеплитель</a></li>
-                <li><a href="#">Затирка для плитки Ceresit</a></li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Фасадные материалы</li>
+                            <li class="search-res__crumbs__item">Фасадная плитка Hauberk</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Листовые материалы</li>
+                            <li class="search-res__crumbs__item">Плита OSB</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Теплоизоляция, звукоизоляция</li>
+                            <li class="search-res__crumbs__item">Рулонный утеплитель</li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="search-res__cats__item">
+                    <a href="#" class="search-res__cats__link">
+                        <ul class="search-res__crumbs">
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Внутренняя отделка</li>
+                            <li class="search-res__crumbs__item">Затирки для плитки</li>
+                            <li class="search-res__crumbs__item">Затирка для плитки Ceresit</li>
+                        </ul>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="search-res__block">
@@ -456,7 +762,12 @@
                 </li>
             </ul>
         </div>
+        -->
     </div>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
 </div>
 </form>
                         <div class="catalog-mobile-toggler js-cm__mobile-toggler">Каталог товаров</div>
@@ -469,7 +780,7 @@
                     <i class="icon-close-circled"></i>
                 </a>
             </h3>
-            <div class="js-cm__slide">
+            <div class="catalog-menu__slide js-cm__slide">
                 <ul class="catalog-menu__list">
                     <li class="catalog-menu__list__item _expandable">
                         <a href="#" class="catalog-menu__list__link js-cm__second-link">
@@ -681,7 +992,9 @@
 
                         <div class="page-header">
                             <h1 class="page-header__h">Результаты поиска по запросу 
-                                <span class="primary">плит</span></h1>
+                                <span class="primary">плит</span>
+                                <span class="page-header__h__muted">235 товаров</span>
+                            </h1>
                             <ul class="breadcrumbs">
                                 <li class="breadcrumbs__item">
                                     <a href="index.html">Главная</a>
@@ -693,7 +1006,7 @@
                         </div>
 
                         <div class="catalog-results">
-                            
+
                             <h3 class="catalog-results__h">Найдено в категориях</h3>
 
                             <ul class="catalog">
@@ -704,8 +1017,9 @@
                                     </a>
                                     <ul class="catalog__sub">
                                         <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Фасадная плитка Hauberk</a>
-</li>
+                                            <a class="catalog__sub__item__link" href="#">Фасадная плитка Hauberk</a>
+                                            <span class="catalog__sub__item__muted">42</span>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="catalog__item">
@@ -715,10 +1029,13 @@
                                     </a>
                                     <ul class="catalog__sub">
                                         <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Рулонный утеплитель</a>
-</li><li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Минераловатный утеплитель</a>
-</li>
+                                            <a class="catalog__sub__item__link" href="#">Рулонный утеплитель</a>
+                                            <span class="catalog__sub__item__muted">12</span>
+                                        </li>
+                                        <li class="catalog__sub__item">
+                                            <a class="catalog__sub__item__link" href="#">Минераловатный утеплитель</a>
+                                            <span class="catalog__sub__item__muted">4</span>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="catalog__item">
@@ -728,14 +1045,15 @@
                                     </a>
                                     <ul class="catalog__sub">
                                         <li class="catalog__sub__item">
-    <a class="catalog__sub__item__link" href="#">Затирка для плитки Ceresit</a>
-</li>
+                                            <a class="catalog__sub__item__link" href="#">Затирка для плитки Ceresit</a>
+                                            <span class="catalog__sub__item__muted">3</span>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
 
                             <h3 class="catalog-results__h">Товары</h3>
-                            
+
                             <div class="results">
     <div class="results__header">
         <div class="results__header__col _1">
@@ -881,7 +1199,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -941,7 +1262,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
+                <button class="btn _green-dark _solid _sm catalog-list__item__btn-cart" disabled><i class="icon-in-cart"></i><span>В корзине</span></button>
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1009,7 +1333,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1083,7 +1410,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
-                <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
+                <button class="btn _green-dark _solid _sm catalog-list__item__btn-cart" disabled><i class="icon-in-cart"></i><span>В корзине</span></button>
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1163,7 +1493,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1231,7 +1564,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1317,7 +1653,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1385,7 +1724,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1471,7 +1813,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1539,7 +1884,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1613,7 +1961,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1693,7 +2044,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1761,7 +2115,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1847,7 +2204,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -1915,7 +2275,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -2001,7 +2364,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -2069,7 +2435,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -2143,7 +2512,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -2223,7 +2595,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -2291,7 +2666,10 @@
                     <input class="catalog-list__item__count__input" value="1">
                     <button class="catalog-list__item__count__btn">&plus;</button>
                 </div>
+                
                 <button class="btn _primary _solid _sm catalog-list__item__btn-cart"><i class="icon-add-to-cart"></i><span>В корзину</span></button>
+                
+                
             </div>
         </div>
         <ul class="product-badges">
@@ -2581,6 +2959,12 @@
                 </fieldset>
                 <div id="shipping-calc_map" class="shipping__map js-shipping__map"></div>
                 <fieldset class="shipping__fieldset">
+                    <legend class="shipping__legend">Дата доставки:</legend>
+                    <div class="shipping__date-input">
+                        <input class="shipping__date-input js-shipping__date-input" readonly>
+                    </div>
+                </fieldset>
+                <fieldset class="shipping__fieldset">
                     <legend class="shipping__legend">Выберите необходимый тип транспорта:</legend>
                     <div class="shipping__car-select">
                         <label class="checkbox _radio js-shipping__car-label">
@@ -2607,6 +2991,12 @@
                                 10-тонник
                             </span>
                         </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                Льготная доставка
+                            </span>
+                        </label>
                     </div>
                     <div class="shipping__car-slider js-shipping__car-slider">
                         <div class="shipping__car-slider__item">
@@ -2618,24 +3008,6 @@
     </div>
     <div class="shipping__car-slider__item__text">
         <span class="shipping__car-slider__item__h">ГАЗель</span>
-        <dl class="shipping__car-slider__item__dl">
-            <dt>Грузоподъемность</dt>
-            <dd>до 4 т</dd>
-            <dt>Макс. длина груза</dt>
-            <dd>до 5,5 м</dd>
-            <dt>Объем</dt>
-            <dd>до 24 м³</dd>
-        </dl>
-    </div>
-</div><div class="shipping__car-slider__item">
-    <div class="shipping__car-slider__item__img">
-        <img src="img/car.png"
-             srcset="img/car@2x.png 2x,
-             img/car@3x.png 3x"
-             alt="alt text">
-    </div>
-    <div class="shipping__car-slider__item__text">
-        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
         <dl class="shipping__car-slider__item__dl">
             <dt>Грузоподъемность</dt>
             <dd>до 4 т</dd>
@@ -2671,6 +3043,24 @@
              alt="alt text">
     </div>
     <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
         <span class="shipping__car-slider__item__h">10-тонник</span>
         <dl class="shipping__car-slider__item__dl">
             <dt>Грузоподъемность</dt>
@@ -2682,9 +3072,58 @@
         </dl>
     </div>
 </div>
+                        <div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img _action">
+        <img src="img/shipping.png"
+             srcset="img/shipping@2x.png 2x,
+             img/shipping@3x.png 3x"
+             alt="alt text">
+        <span class="shipping__car-slider__item__img__badge">Акция</span>
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">Льготная доставка</span>
+        <span class="shipping__car-slider__item__p">
+            Мы подберем тип транспорта, исходя из габаритов вашего заказа. 
+            <strong>Это не влияет на стоимость доставки.</strong>
+        </span>
+        <span class="shipping__car-slider__item__p _sm">
+            Льготная доставка возможна только при выборе адреса в черте города.
+        </span>
+    </div>
+</div>
                     </div>
-                    <p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>
+                    <!--<p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>-->
+                    <div class="shipping__promo">
+                        <div class="shipping__promo__content">
+                            <span class="shipping__promo__h">Льготная доставка!</span>
+                            <!--<span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>-->
+                        </div>
+                        <div class="shipping__promo__foot">
+                            <ul class="shipping__promo__list">
+                                <li class="shipping__promo__list__item">
+                                    с понедельника по пятницу
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    в пределах Н. Новгорода
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    при заказе через козину на сайте
+                                </li>
+                            </ul>
+                            <div class="shipping__promo__foot__last-col">
+                                <span class="shipping__promo__text">стоимость доставки</span>
+                                <span class="shipping__promo__accent">390 рублей</span>
+                            </div>
+                            <!--<a href="#" class="shipping__promo__link">Узнать подробнее</a>-->
+                        </div>
+                        <span class="shipping__promo__badge">
+                            <span class="shipping__promo__badge__text">
+                                Выгодно
+                            </span>
+                        </span>
+                    </div>
                 </fieldset>
+                <!--
                 <fieldset class="shipping__fieldset">
                     <legend class="shipping__legend">Срок доставки и стоимость:</legend>
                     <div class="shipping__date-select">
@@ -2722,17 +3161,18 @@
                         <input name="shipping_date_selected" class="shipping__date-input__input js-shipping__date-input__input">
                     </div>
                 </fieldset>
+                -->
                 <div class="shipping__summary _hidden js-shipping__summary">
                     <ul class="shipping__summary__list">
                         <li class="shipping__summary__list__item">
                             Расстояние до пункта назначения:
                             <span class="shipping__summary__list__accent">
-                                <span class="js-shipping__route-distance-text"></span> км
+                                <span class="js-shipping__route-distance-text"></span>&nbsp;км
                             </span>
                         </li>
                         <li class="shipping__summary__list__item">
                             Стоимость доставки:
-                            <span class="shipping__summary__list__accent">550 <span class="rub">₽</span></span>
+                            <span class="shipping__summary__list__accent">550&nbsp;<span class="rub">₽</span></span>
                         </li>
                     </ul>
                     
@@ -2750,16 +3190,16 @@
         <ul class="menu__lg">
             <li><a href="catalog-level-1.html">Каталог</a></li>
             <li><a href="#">Услуги</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
             <li><a href="create-price.html">Скачать прайс <i class="icon-download"></i></a></li>
         </ul>
     </li>
     <li>
-        <a href="#">О нас</a>
+        <a href="about.html">О нас</a>
         <ul class="menu__sm">
-            <li><a href="#">Акции</a></li>
-            <li><a href="#">Примеры работ</a></li>
-            <li><a href="#">Отзывы</a></li>
+            <li><a href="stock.html">Акции</a></li>
+            <li><a href="works.html">Примеры работ</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
         </ul>
     </li>
     <li>
@@ -2776,7 +3216,7 @@
         <a href="#">Интернет-магазин</a>
         <ul class="menu__sm">
             <li><a href="#">Как купить</a></li>
-            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="ship-and-pay.html">Доставка и оплата</a></li>
             <li><a href="#">Обратная связь</a></li>
             <li><a href="#">Частые вопросы</a></li>
             <li><a href="#">Реквизиты</a></li>
@@ -2872,22 +3312,40 @@
     <span id="dev_toggler" class="dev__toggler">&lt;/&gt;</span>
     <ul>
         <li><a href="index.html">main</a></li>
+        <li><a href="index.html#login">#login</a></li>
+        <li><a href="index.html#register">#register</a></li>
+        <li><a href="index.html#restore">#restore</a></li>
         <li><a href="content.html">content</a></li>
         <li><a href="product-card.html">product card</a></li>
         <li><a href="product-card-na.html">product card not available</a></li>
+        <li><a href="product-card.html#one-click">#one click</a></li>
         <li><a href="catalog-level-1.html">catalog level 1</a></li>
         <li><a href="catalog-level-2.html">catalog level 2</a></li>
         <li><a href="catalog-level-3.html">catalog level 3</a></li>
         <li><a href="search-results.html">search results</a></li>
         <li><a href="cart.html">cart</a></li>
+        <li><a href="cart.html#cart-shipping-calc">#shipping-calc</a></li>
+        <li><a href="cart.html#pickup">#pickup</a></li>
         <li><a href="cart-final.html">cart final</a></li>
+        <li><a href="done-pay.html">done pay</a></li>
+        <li><a href="fail-pay.html">fail pay</a></li>
         <li><a href="create-price.html">create price</a></li>
         <li><a href="price.html">price</a></li>
         <li><a href="price-title.html">price title</a></li>
+        <li><a href="login.html">login</a></li>
         <li><a href="profile.html">profile</a></li>
         <li><a href="profile-edit.html">profile edit</a></li>
         <li><a href="orders-history.html">orders history</a></li>
         <li><a href="profile-order.html">profile order</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contacts.html">contacts</a></li>
+        <li><a href="stock.html">stock</a></li>
+        <li><a href="stock-one.html">stock one</a></li>
+        <li><a href="works.html">works</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="reviews.html">reviews</a></li>
+        <li><a href="ship-and-pay.html">ship and pay</a></li>
+        <li><a href="404.html">404</a></li>
     </ul>
 </div>
 <script>

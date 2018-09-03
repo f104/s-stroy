@@ -1,0 +1,77 @@
+<p class="sp__intro">Возможны следующие варианты получения товара:</p>
+
+<h3 class="sp__h">Самовывоз</h3>
+<div class="sp-pickup">
+    <p class="sp-pickup__intro">Получить товар можно на складах:</p>
+    <ul class="sp-pickup__list">
+        <li class="sp-pickup__list__item js-sp__map-item"
+            data-geo="56.163815, 43.921608"
+            data-text="пос. Дружный, Нижегородская область">
+            пос. Дружный, Нижегородская область
+            <span class="sp-pickup__list__item__muted">
+                ПН-ПТ — 8:00-17:00
+            </span>
+        </li>
+        <li class="sp-pickup__list__item js-sp__map-item"
+            data-geo="56.311696, 43.832899"
+            data-text="г. Н. Новгород, Московское шоссе, д. 298А">
+            г. Н. Новгород, Московское шоссе, д. 298А
+            <span class="sp-pickup__list__item__muted">
+                ПН-ПТ — 8:00-17:00, СБ — 9:00-14:00, ВС — выходной
+            </span>
+        </li>
+    </ul>
+    <div id="sp_map" class="sp-pickup__map"></div>
+    @@include('../chunks/map-download.html')
+</div>
+
+<h3 class="sp__h">Доставка транспортом</h3>
+<div class="sp-shipping">
+    <p>САКСЭС доставит ваш заказ по выгодным тарифам.</p>
+    <h3 class="sp-shipping__h">География доставки:</h3>
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <p>Заказы по предоплате доставляются по всей Нижегородской области.<br>
+                Заказы с оплатой наличными при получении — до 50 км от Н. Новгорода.</p>
+        </div>
+    </div>
+    <h3 class="sp-shipping__h">Стоимость доставки:</h3>
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <p>С примерными тарифами на доставку вы можете ознакомиться <a href="#">в файле.</a>
+                Окончательная стоимость рассчитывается индивидуально и озвучивается менеджером при согласовании условий заказа.</p>
+            <p>В стоимость входит только доставка до объекта. Разгрузочные работы проводятся непосредственно заказчиком.</p>
+        </div>
+        <div class="sp-shipping__col">
+            @@include('../chunks/doc-download.html', {
+            "text": "Тарифы на доставку",
+            "type": "PDF",
+            "size": "150 KB",
+            "sm": true,
+            "left": true
+            })
+            <div class="doc-download _sm _left">
+                <i class="sprite delivery"></i>
+                <span class="doc-download__text">
+                    <a href="#" class="doc-download__title">Расчет доставки</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="sp-shipping__row">
+        <div class="sp-shipping__col">
+            <h3 class="sp-shipping__h">Сроки доставки:</h3>
+            <p>Для товаров в наличии — в течение 24 часов с момента оплаты или момента оформления заказа (для заказов с оплатой наличными).<br>
+                Для товаров по заказ — до 10 дней.</p>
+            <h3 class="sp-shipping__h">Время доставки:</h3>
+            <p>Доставка возможна с пн по пт с 9:00 до 18:00<br>
+                Время доставки обговаривается индивидуально.</p>
+        </div>
+    </div>
+    <div class="warning-block">
+        <i class="sprite warning"></i>
+        <span class="warning-block__text">
+            При больших объемах возможны индивидуальные условия. Подробности уточняйте у менеджеров.
+        </span>
+    </div>
+</div>

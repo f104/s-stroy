@@ -63,7 +63,10 @@
 }
 
 .search-res {
-    height: 450px;
+    $root: &;
+    .scroll-wrapper {
+        height: 430px;
+    }
     border-radius: $border-radius;
     background-color: $white;
     box-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.1);
@@ -72,7 +75,7 @@
     top: 43px;
     left: 0;
     right: 0;
-    padding: 12px 0;
+    padding: 12px 0 0;
     display: none;
     opacity: 0;
     @include transition(opacity);
@@ -82,14 +85,17 @@
     }
     a {
         color: $body-color;
-        &:hover {
+/*        &:hover {
             color: $body-color;                
-        }
+        }*/
     }
     &__block {
         padding: 0 22px 22px;
         margin-bottom: 12px;
         border-bottom: 1px solid $gray-border;
+        &:first-child {
+            padding-bottom: 0;
+        }
         &:last-child {
             margin-bottom: 0;
             border-bottom: none;
@@ -98,16 +104,52 @@
     &__h {
         font-size: 16px;
         font-weight: 600;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     &__cats {
         @include list-unstyled;
-        margin-bottom: 0;
+        margin-left: -22px;
+        margin-right: -22px;
+        margin-bottom: 10px;
         font-size: $font-size-base;
-        li {
-            margin-bottom: 13px;
+        &__item {
+        }
+        &__link {
+            display: block;
+            padding: 7px 22px;
+            @include transition(background-color);
+            &:hover {
+                background-color: #f4f4f4;
+                #{$root}__crumbs__item {
+                    &:last-child {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+    &__crumbs {
+        @include list-unstyled;
+        margin-bottom: 0;
+        &__item {
+            display: inline-block;
+            margin-right: 15px;
+            white-space: nowrap;
+            color: #2a2a2a;
+            opacity: .5;
+            line-height: 1.5;
+            @include transition(color);
+            &:after {
+                content: '\e810';
+                font-family: 'fontello';
+                right: -10px;
+                font-size: 13px;
+            }
             &:last-child {
-                margin-bottom: 0;
+                opacity: 1;
+                &:after {
+                    content: none;
+                }
             }
         }
     }
@@ -135,5 +177,10 @@
         &__text {
             margin-left: 23px;
         }
+    }
+    &__btn {
+        font-size: 11px;
+        width: 100%;
+        margin-top: 12px;
     }
 }
