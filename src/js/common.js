@@ -333,7 +333,7 @@ var app = {
 
     initScrollbar: function () {
         $('.js-scrollbar').scrollbar({
-            disableBodyScroll: true
+//            disableBodyScroll: true
         });
     },
 
@@ -364,8 +364,8 @@ var app = {
         var slideMenu = function () {
             $slide.slideToggle(function () {
                 $('.js-filter__counter').trigger("sticky_kit:recalc");
+                $menu.toggleClass('_opened');
             });
-            $menu.toggleClass('_opened');
             return false;
         }
 
