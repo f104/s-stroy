@@ -3,6 +3,7 @@ ymaps * {
 }
 
 .shipping {
+    $root: &;
     &__fieldset {
         margin-bottom: 20px;
         @include media-breakpoint-up(md) {
@@ -441,7 +442,6 @@ ymaps * {
             font-size: 21px;
             font-weight: 600;
             line-height: 0.95;
-            margin-right: 15px;
             @include media-breakpoint-up(md) {
                 font-size: 22px;
                 line-height: 0.91;
@@ -456,13 +456,45 @@ ymaps * {
             margin-bottom: 9px;
             padding-right: 70px;
         }
+        &__list {
+            @include list-unstyled;
+            margin-bottom: 0;
+            &__item {
+                padding-left: 18px;
+                margin-bottom: 5px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+                &:before {
+                    position: absolute;
+                    font-size: 17px;
+                    left: 0;
+                    top: -2px;
+                    content: '•';
+                    color: $primary;
+                }
+            }
+        }
         &__foot {
-            display: flex;
-            justify-content: space-between;
+            @include media-breakpoint-up(md) {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+            #{$root}__promo__text {
+                white-space: nowrap;
+                margin-bottom: 3px;
+            }
+            &__last-col {
+                margin-top: 10px;
+                @include media-breakpoint-up(md) {
+                    text-align: right;
+                }
+            }
         }
         &__badge {
             position: absolute;
-            top: 13px;
+            top: 10px;
             right: -4px;
             transform: skewX(15deg);
             display: inline-block;
