@@ -75,16 +75,16 @@ ymaps * {
                 width: 48%;
                 margin-bottom: 0;
             }
-/*            @include media-breakpoint-up(lg) {
-                width: 217px;
-                margin-bottom: 0;
-            }*/
+            /*            @include media-breakpoint-up(lg) {
+                            width: 217px;
+                            margin-bottom: 0;
+                        }*/
         }
-/*        @include media-breakpoint-up(lg) {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }*/
+        /*        @include media-breakpoint-up(lg) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }*/
     }
     &__btns {
         @include media-breakpoint-up(md) {
@@ -94,12 +94,20 @@ ymaps * {
     }
     &__car-select {
         margin-bottom: 15px;
-        @include row(20px);
+        column-count: 2;
+        column-gap: 20px;
+        @include media-breakpoint-up(lg) {
+            column-count: 3;
+            margin-right: 40px;
+        }
         .checkbox {
-            @include col(50%, 20px);
+            display: block;
             margin-bottom: 10px;
             @include media-breakpoint-up(md) {
                 margin-bottom: 15px;
+            }
+            @include media-breakpoint-up(lg) {
+                white-space: nowrap;
             }
             &__text {
                 font-size: 15px;
@@ -125,6 +133,7 @@ ymaps * {
             }
             &__img {
                 margin-bottom: 20px;
+                flex-shrink: 0;
                 @include media-breakpoint-up(md) {
                     margin-bottom: 0;
                     width: 105px;
@@ -139,6 +148,47 @@ ymaps * {
                     @include media-breakpoint-up(md) {
                         margin: 0 auto;
                         width: 100%;
+                    }
+                }
+                &._action {
+                    img {
+                        width: 105px;
+                        margin-left: 0;
+                        @include media-breakpoint-up(lg) {
+                            width: 122px;
+                        }
+                    }
+                }
+                &__badge {
+                    display: block;
+                    position: absolute;
+                    top: 5px;
+                    left: 50px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    line-height: 26px;
+                    height: 26px;
+                    color: $white;
+                    background-color: $primary;
+                    padding-left: 8px;
+                    padding-right: 2px;
+                    border-radius: 3px 0 0 3px;
+                    &:before {
+                        content: '';
+                        background-color: $primary;
+                        display: block;
+                        width: 15px;
+                        height: 26px;
+                        position: absolute;
+                        top: 0;
+                        right: -7px;
+                        transform: skewX(-15deg);
+                        border-radius: 0 0 5px;
+                        z-index: -1;
+                    }
+                    @include media-breakpoint-up(lg) {
+                        top: 10px;
+                        left: 65px;
                     }
                 }
             }
@@ -167,6 +217,19 @@ ymaps * {
                 }
                 dd {
                     padding-left: 150px;
+                }
+            }
+            &__p {
+                display: block;
+                font-size: 14px;
+                /*color: rgba(42, 42, 42, 0.6);*/
+                margin-bottom: 5px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &._sm {
+                    font-size: 12px;
+                    opacity: .6;
                 }
             }
         }
@@ -271,11 +334,12 @@ ymaps * {
             margin-right: 0;
             margin-bottom: 20px;
             width: 295px;
-            height: 485px;
+            height: 532px;
             float: right;
         }
         @include media-breakpoint-up(lg) {
             width: 475px;
+            height: 498px;
         }
     }
 
