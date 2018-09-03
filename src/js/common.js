@@ -67,9 +67,12 @@ var app = {
 
         var $header = $('header');
         var headerHeight = $header.outerHeight();
+        var $headerTop = $('.header__top');
+        var headerTopHeight = $headerTop.outerHeight();
+        console.log(headerTopHeight)
         var q = 1;
         var action = 0;
-        var pinHeader = function () {
+        var _pinHeader = function () {
             if (document.readyState !== "complete") {
                 return;
             }
@@ -93,6 +96,21 @@ var app = {
                     $('body').css({'padding-top': 0});
                     $header.removeClass('_fixed');
                 });
+            }
+        }
+        var pinHeader = function () {
+            if (document.readyState !== "complete") {
+                return;
+            }
+            if ($(this).scrollTop() > headerTopHeight) {
+                $('body').css({'padding-top': headerHeight});
+                $header.addClass('_fixed');
+            } else {
+                if (!$header.hasClass('_fixed')) {
+                    return;
+                }
+                $('body').css({'padding-top': 0});
+                $header.removeClass('_fixed');
             }
         }
         if (window.innerWidth >= appConfig.breakpoint.lg) {
