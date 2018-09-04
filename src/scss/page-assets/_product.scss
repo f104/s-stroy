@@ -66,17 +66,31 @@
         @include product-card-margins;
     }
     .nav-slider {
+        &__main {
+            .nav-slider__item {
+                display: flex;
+                align-items: center;
+                height: 303px;
+                img {
+                    width: auto;
+                    max-height: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+        @include media-breakpoint-up(md) {
+            &__main {
+                .nav-slider__item {
+                    height: 404px;
+                }
+            }
+        }
         @include media-breakpoint-up(lg) {
             @include nav-slider-vertical;
             &__main {
                 .nav-slider__item {
                     height: 540px;
-                    img {
-                        width: auto;
-                        max-height: 100%;
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
                 }
             }
         }
