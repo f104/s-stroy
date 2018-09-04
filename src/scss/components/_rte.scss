@@ -40,6 +40,7 @@
 }
 
 .rte {
+    $root: &;
     @include clearfix;
     img {
         max-width: 100%; // fix old html
@@ -129,6 +130,19 @@
                 content: counters(section,".") ".";
                 position: absolute;
                 left: 10px;
+            }
+        }
+        &.rte__long-ol {
+            li {
+                &:before {
+                    counter-increment: section;
+                    content: counters(section,".") ".";
+                    position: absolute;
+                    left: 0;
+                }
+                li {
+                    padding-left: 55px;
+                }                
             }
         }
     }

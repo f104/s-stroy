@@ -1630,50 +1630,28 @@
     <div class="block__content">
         <div class="profits-list js-slider" data-slides='{"sm":2,"md":4,"lg":4}'>
             <div class="profits-list__item">
-    <a href="#" class="profits-list__item__content">
-        <span class="profits-list__item__content__img">
-            <img src="img/icons/rouble.svg" alt="alt text">
-        </span>
-        <span class="profits-list__item__content__text">
-            Цены на сайте выгоднее розничных
-        </span>
-    </a>
-    
-</div>
-<div class="profits-list__item">
-    <a href="#" class="profits-list__item__content">
-        <span class="profits-list__item__content__img">
-            <img src="img/icons/car1.svg" alt="alt text">
-        </span>
-        <span class="profits-list__item__content__text">
-            Выгодная доставка при заказе на сайте
-        </span>
-    </a>
-    
-</div>
-<div class="profits-list__item">
-    <a href="#" class="profits-list__item__content">
-        <span class="profits-list__item__content__img">
-            <img src="img/icons/car2.svg" alt="alt text">
-        </span>
-        <span class="profits-list__item__content__text">
-            Доставка собственным транспортом
-        </span>
-    </a>
-    
-</div>
-<div class="profits-list__item">
-    <a href="#" class="profits-list__item__content">
-        <span class="profits-list__item__content__img">
-            <img src="img/icons/car3.svg" alt="alt text">
-        </span>
-        <span class="profits-list__item__content__text">
-            Доставка 24/7
-        </span>
-    </a>
-    
-</div>
+                <a href="#" class="profits-list__item__content">
+                    <span class="profits-list__item__content__img">
+                        <svg id="test" xmlns="http://www.w3.org/2000/svg" width="100%" height="65">
+                            <g fill="#2057AC" fill-rule="evenodd">
+                                <path fill-rule="nonzero" d="M27.637 17.14a1.463 1.463 0 0 0-1.324 1.464V33.24h-2.924a1.462 1.462 0 0 0-1.282 2.2c.265.457.755.734 1.282.727h2.924v3.659h-2.924a1.46 1.46 0 0 0-1.369.79 1.467 1.467 0 0 0 1.37 2.136h2.923v5.123a1.464 1.464 0 0 0 2.198 1.284c.456-.266.733-.757.725-1.284V42.75h7.31a1.462 1.462 0 0 0 1.282-2.2 1.462 1.462 0 0 0-1.283-.726h-7.309v-3.66h7.606c5.446 0 9.936-4.258 9.936-9.535 0-5.276-4.5-9.49-9.936-9.49h-9.067a1.46 1.46 0 0 0-.138 0zm1.6 2.928h7.605c3.951 0 7.012 2.946 7.012 6.562 0 3.617-3.07 6.609-7.012 6.609h-7.606V20.068z"></path>
+                                <path d="M.672 32.507c0 17.744 14.455 32.182 32.219 32.182 17.764 0 32.219-14.438 32.219-32.182S50.655.325 32.89.325C17.486.325 4.599 11.167 1.45 25.632a1.467 1.467 0 0 0 2.858.617C7.168 13.104 18.853 3.294 32.89 3.294c16.182 0 29.246 13.05 29.246 29.213 0 16.164-13.064 29.213-29.246 29.213-16.183 0-29.247-13.049-29.247-29.213a1.485 1.485 0 0 0-2.972 0z"></path>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="profits-list__item__content__text">
+                        Цены на сайте выгоднее розничных
+                    </span>
+                </a>
+            </div>
 
+
+<!--            @loop('item.html', [
+            { "img": "rouble.svg", "text": "Цены на сайте выгоднее розничных", "tooltip": 0 },
+            { "img": "car1.svg", "text": "Выгодная доставка при заказе на сайте", "tooltip": 0 },
+            { "img": "car2.svg", "text": "Доставка собственным транспортом", "tooltip": 0 },
+            { "img": "car3.svg", "text": "Доставка 24/7", "tooltip": 0 }
+            ])-->
         </div>
     </div>
 </div>
@@ -2413,6 +2391,7 @@
 <script src="js/libs/nouislider.min.js"></script>
 <script src="js/libs/sticky-kit.min.js"></script>
 <script src="js/libs/datepicker.min.js"></script>
+<script src="js/libs/svg.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/shipping.js"></script>
     </body>
