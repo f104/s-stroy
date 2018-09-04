@@ -56,6 +56,8 @@ app.shipping = {
                 fade: true
             });
             $radio.on('click', function () {
+                $radio.prop('checked', false);
+                $(this).prop('checked', true);
                 var index = $(this).parents('.js-shipping__car-label').index();
                 _that.calcPrice();
                 $slider.slick('slickGoTo', index);
@@ -289,7 +291,17 @@ app.shipping = {
             dataType: 'json',
             data: _that.$wrapper.serialize(),
             success: function success(data) {
-                _that.$wrapper.find('.j-current-price').html(data.price + ru);
+                if (data.price !== 0) {
+                    $('.j-road-wraper_price').show();
+                    $('.j-road-price_error').hide();
+                    $('.j-road-confirmation').prop('disabled', false);
+                    _that.$wrapper.find('.j-current-price').html(data.price + ru);
+                } else {
+                    $('.j-road-wraper_price').hide();
+                    $('.j-road-price_error').show();
+                    $('.j-road-confirmation').prop('disabled', true);
+                }
+
             }
         });
     },
