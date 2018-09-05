@@ -10,6 +10,7 @@ app.shipping = {
     $resetBtn: null,
     mapContainerID: null,
     map: null,
+    suggestView: null,
 
     /**
      * 
@@ -178,6 +179,13 @@ app.shipping = {
                 map.balloon.close();
             }
         });
+        
+        // Обработка смены области просмотра
+        // и отправка ее в suggestView
+        map.events.add('boundschange', function (e) {
+            app.shipping.suggestView.options.set('boundedBy', e.get('newBounds'));
+        });
+        
         app.shipping.map = map;
 
         //init suggestions
@@ -277,6 +285,8 @@ app.shipping = {
                         app.shipping.makeRoute(o.geometry._coordinates, item.value);
                     });
         });
+        
+        this.suggestView = suggestView;
         
     },
 
