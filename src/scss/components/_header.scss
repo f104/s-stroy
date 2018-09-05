@@ -223,6 +223,7 @@ body {
                 display: block;
                 font-size: 20px;
                 line-height: 1;
+                pointer-events: none;
             }
             &__muted {
                 font-size: 14px;
