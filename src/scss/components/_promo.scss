@@ -61,6 +61,7 @@
             @include media-breakpoint-up(lg) {
                 font-size: 19px;
                 font-weight: 500;
+                width: 200px;
             }
         }
         &__accent {
@@ -84,7 +85,8 @@
                 width: 70px;
             }
             @include media-breakpoint-up(lg) {
-                font-size: 15px;
+                font-size: 12px;
+                width: 120px;
             }
         }
         &__img {
@@ -92,7 +94,7 @@
             right: 0;
             bottom: 0;
             top: 0;
-            width: 185px;
+            width: 155px;
             /*            background: radial-gradient(
                             circle at 75% 120%, 
                             #347dd4 0%, #347dd4 45%, 
@@ -104,9 +106,9 @@
                 transparent 65%);
             img {
                 position: absolute;
-                right: -9px;
-                bottom: -16px;
-                height: 100px;
+                right: 12px;
+                bottom: 0;
+                height: 86px;
                 /*max-width: 100%;*/
             }
             @include media-breakpoint-up(md) {
@@ -118,16 +120,15 @@
                     #efefef 0%, #EfEfEf 65%, 
                     transparent 65%);
                 img {
-                    bottom: -20px;
-                    right: -60px;
-                    height: 130px;
+                    right: 10px;
+                    height: 110px;
                 }
             }
             @include media-breakpoint-up(lg) {
-                width: 176px;
-                height: 160px;
+                width: 195px;
+                height: 165px;
                 img {
-                    height: 170px;
+                    height: 180px;
                 }
             }
         }

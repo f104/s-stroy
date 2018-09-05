@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 appAnimate = {
-    delay: 300,
+    delay: 150,
     wrapperSelector: '.js-an__hover',
     svgSelector: '.js-an__svg',
 
@@ -59,9 +59,19 @@ appAnimate = {
                 break;
             case 'delivery':
                 var g = el.children()[0];
-                var r = el.children()[1];
+                var s = g.children()[1]; // шлейф
+                var r = el.children()[1]; // дорога
                 r.animate(300, '<>', 0).width(192);
                 g.animate(600, '<', 0).x(100);
+                s.animate(200, '<', 0).opacity(1);
+                break;
+            case 'clock':
+                var g = el.children()[0];
+                var s = g.children()[1]; // часы
+                var r = el.children()[1]; // дорога
+                r.animate(300, '<>', 0).width(192);
+                g.animate(600, '<', 0).x(100);
+                s.animate(600, '<', 0).rotate(360);
                 break;
         }
     },
@@ -77,9 +87,19 @@ appAnimate = {
                 break;
             case 'delivery':
                 var g = el.children()[0];
-                var r = el.children()[1];
+                var s = g.children()[1]; // шлейф
+                var r = el.children()[1]; // дорога
                 r.animate(600, '<>', 0).width(90);
                 g.animate(300, '>', 0).x(0);
+                s.animate(200, '<', 0).opacity(0);
+                break;
+            case 'clock':
+                var g = el.children()[0];
+                var s = g.children()[1];
+                var r = el.children()[1]; // дорога
+                r.animate(600, '<>', 0).width(90);
+                g.animate(300, '>', 0).x(0);
+                s.rotate(0).animate(300, '<', 0).rotate(360).reverse();
                 break;
         }
     },
