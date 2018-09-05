@@ -42,11 +42,13 @@
         opacity: 0;
         @include transition(opacity);
     }
-    &:hover {
-        .minicart-popup {
-            visibility: visible;
-            opacity: 1;
-        }        
+    &:not(._empty) {
+        &:hover {
+            .minicart-popup {
+                visibility: visible;
+                opacity: 1;
+            }        
+        }
     }
 }
 
