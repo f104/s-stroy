@@ -152,12 +152,6 @@ app.shipping = {
             size: 'small'
         });
 
-        //init suggestions
-        app.shipping.initSuggest();
-
-        //enable input
-        app.shipping.$addressInput.prop('disabled', false);
-
         // Обработка события, возникающего при щелчке
         // левой кнопкой мыши в любой точке карты.
         map.events.add('click', function (e) {
@@ -185,6 +179,12 @@ app.shipping = {
             }
         });
         app.shipping.map = map;
+
+        //init suggestions
+        app.shipping.initSuggest();
+
+        //enable input
+        app.shipping.$addressInput.prop('disabled', false);
     },
 
     makeRoute: function (coord, text) {
@@ -265,7 +265,8 @@ app.shipping = {
             }
         });
         var suggestView = new ymaps.SuggestView(this.$addressInput.attr('id'), {
-            offset: [-1, 3]
+            offset: [-1, 3],
+            boundedBy: app.shipping.map.getBounds()
         });
 
         suggestView.events.add('select', function (e) {
