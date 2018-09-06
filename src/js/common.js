@@ -363,9 +363,9 @@ var app = {
             e.stopPropagation();
         });
         /*
-        $input.on('focus', function () {
-            $(this).siblings('.js-search-res').addClass('_active');
-        });*/
+         $input.on('focus', function () {
+         $(this).siblings('.js-search-res').addClass('_active');
+         });*/
         $(window).on('click', function () {
             $('.js-search-res').removeClass('_active');
         });
@@ -379,13 +379,13 @@ var app = {
         let searchString = searchAll.attr('data-page');
 
         $('.search-form__submit').on('click', function () {
-           searchAll.trigger('click');
+            searchAll.trigger('click');
         });
         /**
          * обработчик нажатия
          */
         let _count = 0;
-        $input.on('input', this.debounce(function(e) {
+        $input.on('input', this.debounce(function (e) {
             searchAll.hide();
             if ($(this).val().length > 2) {
                 searchAll.attr('href', searchString + '?q=' + $(this).val());
@@ -396,11 +396,11 @@ var app = {
                     data: $(this).parent().serialize(),
                     success: function success(data) {
                         $('.j-top-search-wraper').html(data.html);
-                        if(data.html) {
+                        if (data.html) {
                             searchAll.show();
                             $('.js-search-res').addClass('_active');
                             _count = $('.b-search-count').html();
-                            $('.j-search-count').text('(' + _count +')');
+                            $('.j-search-count').text('(' + _count + ')');
                         }
                     }
                 });
@@ -416,21 +416,22 @@ var app = {
      * @returns {Function}
      *
      */
-    debounce: function(func, wait, immediate) {
+    debounce: function (func, wait, immediate) {
         var timeout;
-        return function() {
+        return function () {
             var context = this, args = arguments;
-            var later = function() {
+            var later = function () {
                 timeout = null;
-                if (!immediate) func.apply(context, args);
+                if (!immediate)
+                    func.apply(context, args);
             };
             var callNow = immediate && !timeout;
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
+            if (callNow)
+                func.apply(context, args);
         };
     },
-
 
     initCatalog: function () {
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.lg,
@@ -573,7 +574,7 @@ var app = {
 //                не работает для селектов
 //        .filter('[value=""], :not([value])').siblings('label').addClass('form__label__empty');
 
-        $('.js-form__file__input').on('change', function(){
+        $('.js-form__file__input').on('change', function () {
             var name = $(this).val();
             name = name.replace(/\\/g, '/').split('/').pop();
             $(this).parents('.js-form__file').find('.js-form__file__name').text(name);
@@ -696,7 +697,7 @@ var app = {
             $selects.styler({
                 selectPlaceholder: '',
                 selectSmartPositioning: false
-            }).each(function(){
+            }).each(function () {
                 if ($(this).val()) {
                     $(this).parent().addClass('changed');
                 }
@@ -1255,6 +1256,14 @@ var app = {
                 $('.js-pickup__map__item').removeClass('_active');
                 $(this).addClass('_active');
                 $('.js-pickup__submit').prop('disabled', false);
+            });
+            // handle click on placemark
+            $.each(placemarks, function (index, placemark) {
+                placemark.events.add('balloonopen', function () {
+                    $('.js-pickup__map__item').removeClass('_active');
+                    $('.js-pickup__map__item').eq(index).addClass('_active');
+                    $('.js-pickup__submit').prop('disabled', false);
+                });
             });
 
             $wrapper.data('init', true);
