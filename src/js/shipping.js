@@ -1,7 +1,7 @@
 app.shipping = {
 
     mapCenter: appConfig.shipping.mapCenter || [56.326887, 44.005986],
-    mapZoom: appConfig.shipping.mapZoom || 11,
+    mapZoom: appConfig.shipping.mapZoom || 9,
     $wrapper: null,
     $addressInput: null,
     $distanceInput: null,
