@@ -1,5 +1,5 @@
 .promo {
-
+    $root: &;
     margin-left: - $container-padding-sm;
     margin-right: - $container-padding-sm;
     margin-bottom: 20px;
@@ -85,7 +85,7 @@
                 width: 70px;
             }
             @include media-breakpoint-up(lg) {
-                font-size: 12px;
+                font-size: 15px;
                 width: 120px;
             }
         }
@@ -94,7 +94,7 @@
             right: 0;
             bottom: 0;
             top: 0;
-            width: 155px;
+            width: 185px;
             /*            background: radial-gradient(
                             circle at 75% 120%, 
                             #347dd4 0%, #347dd4 45%, 
@@ -106,9 +106,9 @@
                 transparent 65%);
             img {
                 position: absolute;
-                right: 12px;
-                bottom: 0;
-                height: 86px;
+                right: -9px;
+                bottom: -16px;
+                height: 100px;
                 /*max-width: 100%;*/
             }
             @include media-breakpoint-up(md) {
@@ -120,15 +120,47 @@
                     #efefef 0%, #EfEfEf 65%, 
                     transparent 65%);
                 img {
-                    right: 10px;
-                    height: 110px;
+                    bottom: -20px;
+                    right: -60px;
+                    height: 130px;
                 }
             }
             @include media-breakpoint-up(lg) {
-                width: 195px;
-                height: 165px;
+                width: 176px;
+                height: 160px;
                 img {
-                    height: 180px;
+                    height: 170px;
+                }
+            }
+        }
+        &._rub {
+            #{$root}__item {
+                &__foot {
+                    @include media-breakpoint-up(lg) {
+                        font-size: 12px;
+                        width: 90px;
+                    }
+                }
+                &__img {
+                    width: 155px;
+                    img {
+                        right: 12px;
+                        bottom: 0;
+                        height: 86px;
+                    }
+                    @include media-breakpoint-up(md) {
+                        img {
+                            right: 10px;
+                            height: 110px;
+                        }
+                    }
+                    @include media-breakpoint-up(lg) {
+                        width: 195px;
+                        height: 165px;
+                        img {
+                            height: 180px;
+                        }
+                    }
                 }
             }
         }
