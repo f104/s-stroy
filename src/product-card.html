@@ -72,7 +72,8 @@
                 </article>
                 <div class="hidden">
                     @@include('./template/popups/question.html')
-                    @@include('./template/popups/one-click.html')
+                    @@include('./template/popups/one-click.html', {"success": false})
+                    @@include('./template/popups/one-click.html', {"success": true})
                 </div>
 
             </div>

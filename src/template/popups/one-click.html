@@ -1,4 +1,4 @@
-<div id="one-click" class="popup">
+<div id="one-click@@if(success){-success}" class="popup">
     <div class="popup__wrapper _one-click">
         <div class="popup__product popup__inner">
             <div class="popup__product__head">
@@ -43,6 +43,15 @@
             </ul>
         </div>
         <div class="popup__form popup__inner">
+            @@if (success) {
+            <div class="popup__success">
+                <h3 class="popup__help__h">Ваш заказ принят, <br>его номер&nbsp;– 
+                    <span class="primary">2370</span></h3>
+                <p>Менеджер свяжется с вами в ближайшее время.</p>
+                <p>Спасибо что выбрали нас!</p>
+            </div>
+            }
+            @@if (!success) {
             <form class="form">
                 <div class="popup__form__head">
                     <h3 class="form__h">Купить в один клик</h3>
@@ -75,6 +84,7 @@
                     </div>
                 </div>
             </form>
+            }
         </div>
     </div>
 </div>
