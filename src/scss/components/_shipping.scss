@@ -413,7 +413,7 @@ ymaps * {
         padding: $container-padding-sm;
         border: solid 1px $primary;
         overflow: hidden;
-        min-height: 120px;
+        min-height: 125px;
         display: flex;
         flex-direction: column;
         @include media-breakpoint-up(md) {
