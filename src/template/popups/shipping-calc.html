@@ -75,6 +75,7 @@
                         @@include('../chunks/car-slider-item_1.html')
                     </div>
                     <!--<p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>-->
+                    @@if (promo == 1) {
                     <div class="shipping__promo">
                         <div class="shipping__promo__content">
                             <span class="shipping__promo__h">Льготная доставка!</span>
@@ -104,6 +105,21 @@
                             </span>
                         </span>
                     </div>
+                    }
+                    @@if (promo == 2) {
+                    <div class="shipping__promo">
+                        <div class="shipping__promo__content">
+                            <span class="shipping__promo__h">Быстро и бережно доставим ваш заказ по нужному адресу</span>
+                            <!--<span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>-->
+                        </div>
+                        <div class="shipping__promo__foot">
+                            <a href="#" class="shipping__promo__link">Информация о доставке</a>
+                        </div>
+                        <span class="shipping__promo__icon">
+                            <i class="sprite delivery-care"></i>
+                        </span>
+                    </div>
+                    }
                 </fieldset>
                 <!--
                 <fieldset class="shipping__fieldset">
