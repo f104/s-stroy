@@ -160,6 +160,7 @@ var app = {
 
     initSliders: function () {
         $('.js-main-slider').slick({
+            lazyLoad: 'ondemand',
             dots: true,
             arrows: false,
             infinite: true,

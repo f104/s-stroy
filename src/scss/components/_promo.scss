@@ -18,12 +18,14 @@
         margin-bottom: 10px;
         @include media-breakpoint-up(md) {
             width: 461px;
+            height: 172px;
             flex: 1;
             margin-right: 30px;
             margin-bottom: 0;
         }
         @include media-breakpoint-up(lg) {
             width: 575px;
+            height: 218px;
             margin-bottom: 0;
         }
     }
