@@ -309,6 +309,7 @@ app.shipping = {
                     _that.$wrapper.find('.j-current-price').html(data.price + ru);
                 } else {
                     $('.j-road-wraper_price').hide();
+                    $('.j-road-price_error').html(data.error);
                     $('.j-road-price_error').show();
                     $('.j-road-confirmation').prop('disabled', true);
                 }
