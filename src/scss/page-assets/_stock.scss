@@ -35,13 +35,13 @@
             &__h {
                 display: block;
                 font-family: $font-family-alt;
-                font-size: 15px;
+                font-size: 13px;
                 font-weight: 800;
                 line-height: 1.33;
                 color: $white;
                 margin-bottom: 5px;
                 @include media-breakpoint-only(md) {
-                    font-size: 14px;
+                    font-size: 12px;
                 }
             }
             &__accent {
@@ -49,12 +49,12 @@
                 background-color: $secondary;
                 padding: 0 5px;
                 font-family: $font-family-alt;
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: 800;
                 font-style: italic;
                 color: $white;
                 @include media-breakpoint-only(md) {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
                 &__small {
                     font-size: 11px;
