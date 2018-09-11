@@ -302,12 +302,19 @@ app.shipping = {
             dataType: 'json',
             data: _that.$wrapper.serialize(),
             success: function success(data) {
+                $('.js-shipping__car-label').css('opacity', 1);
                 if (data.price !== 0) {
                     $('.j-road-wraper_price').show();
                     $('.j-road-price_error').hide();
                     $('.j-road-confirmation').prop('disabled', false);
                     _that.$wrapper.find('.j-current-price').html(data.price + ru);
                 } else {
+                    let name = data.name;
+                    let id = data.id;
+                    let select = $('input[name="'+name+'"]').filter(function () {
+                        return $(this).val() == id;
+                    });
+                    select.parent().css('opacity', 0.4);
                     $('.j-road-wraper_price').hide();
                     $('.j-road-price_error').html(data.error);
                     $('.j-road-price_error').show();
