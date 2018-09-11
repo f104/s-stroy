@@ -120,6 +120,9 @@ ymaps * {
                 font-size: 15px;
                 line-height: 18px;
             }
+            @include ie10up {
+                padding-right: 0;
+            }
         }
     }
     &__car-slider {
@@ -347,7 +350,7 @@ ymaps * {
         }
         @include media-breakpoint-up(lg) {
             width: 475px;
-            height: 498px;
+            height: 515px;
         }
     }
 
