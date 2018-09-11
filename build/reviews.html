@@ -2011,6 +2011,7 @@
 </div>
                     </div>
                     <!--<p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>-->
+                    
                     <div class="shipping__promo">
                         <div class="shipping__promo__content">
                             <span class="shipping__promo__h">Льготная доставка!</span>
@@ -2040,6 +2041,8 @@
                             </span>
                         </span>
                     </div>
+                    
+                    
                 </fieldset>
                 <!--
                 <fieldset class="shipping__fieldset">
@@ -2237,6 +2240,7 @@
         <li><a href="product-card.html">product card</a></li>
         <li><a href="product-card-na.html">product card not available</a></li>
         <li><a href="product-card.html#one-click">#one click</a></li>
+        <li><a href="product-card.html#one-click-success">#one click success</a></li>
         <li><a href="catalog-level-1.html">catalog level 1</a></li>
         <li><a href="catalog-level-2.html">catalog level 2</a></li>
         <li><a href="catalog-level-3.html">catalog level 3</a></li>
@@ -2296,10 +2300,16 @@
         shipping: {
             /**
              * 
-             * @array координаты центра карты 
+             * @var array координаты центра карты 
              * @default [56.326887, 44.005986]
              */
 //            mapCenter: [56.326887, 44.005986],
+            
+            /** 
+             * @var int масштаб карты 
+             * @default 9
+             */
+//            mapZoom: 9,
             
             
             disabledDays: [0, 6], // дни, в которые невозможна доставка (0 - воскресенье)

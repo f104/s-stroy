@@ -284,4 +284,9 @@
     &__form {
         flex: 1;
     }
+    &__success {
+        @include media-breakpoint-up(md) {
+            margin-top: 50%;
+        }
+    }
 }

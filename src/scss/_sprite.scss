@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 9.8em 137.6em;
+    background-size: 11.8em 325.4em;
 }
 
 .no-svg .sprite:before {
@@ -18,7 +18,7 @@
 
 
   .sprite.brick-and-stone:before {
-      background-position: 0em 0em;
+      background-position: -1em -1em;
       width: 3.4em;
       height: 1.6em;
   }
@@ -26,8 +26,17 @@
 
 
 
+  .sprite.brick-and-stone-big:before {
+      background-position: -1em -4.6em;
+      width: 4.4em;
+      height: 2.1em;
+  }
+
+
+
+
   .sprite.brick-and-stone-o:before {
-      background-position: 0em -1.6em;
+      background-position: -1em -8.7em;
       width: 3.4em;
       height: 1.6em;
   }
@@ -36,7 +45,7 @@
 
 
   .sprite.call-center:before {
-      background-position: 0em -3.2em;
+      background-position: -1em -12.3em;
       width: 3.9em;
       height: 4.3em;
   }
@@ -45,7 +54,7 @@
 
 
   .sprite.cards:before {
-      background-position: 0em -7.5em;
+      background-position: -1em -18.6em;
       width: 9.8em;
       height: 1.4em;
   }
@@ -54,7 +63,7 @@
 
 
   .sprite.counter:before {
-      background-position: 0em -8.9em;
+      background-position: -1em -22em;
       width: 7em;
       height: 4.5em;
   }
@@ -63,7 +72,7 @@
 
 
   .sprite.delivery:before {
-      background-position: 0em -13.4em;
+      background-position: -1em -28.5em;
       width: 4.3em;
       height: 2.4em;
   }
@@ -71,8 +80,17 @@
 
 
 
+  .sprite.delivery-care:before {
+      background-position: -1em -32.9em;
+      width: 4.3em;
+      height: 5.1em;
+  }
+
+
+
+
   .sprite.facade:before {
-      background-position: 0em -15.8em;
+      background-position: -1em -40em;
       width: 2.9em;
       height: 2.3em;
   }
@@ -80,8 +98,17 @@
 
 
 
+  .sprite.facade-big:before {
+      background-position: -1em -44.3em;
+      width: 3.5em;
+      height: 2.8em;
+  }
+
+
+
+
   .sprite.facade-o:before {
-      background-position: 0em -18.1em;
+      background-position: -1em -49.1em;
       width: 2.9em;
       height: 2.3em;
   }
@@ -90,7 +117,7 @@
 
 
   .sprite.facebook:before {
-      background-position: 0em -20.4em;
+      background-position: -1em -53.4em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -99,7 +126,7 @@
 
 
   .sprite.fence:before {
-      background-position: 0em -24.6em;
+      background-position: -1em -59.6em;
       width: 2.7em;
       height: 2.7em;
   }
@@ -107,8 +134,17 @@
 
 
 
+  .sprite.fence-big:before {
+      background-position: -1em -64.3em;
+      width: 3.5em;
+      height: 3.5em;
+  }
+
+
+
+
   .sprite.fence-o:before {
-      background-position: 0em -27.3em;
+      background-position: -1em -69.8em;
       width: 2.7em;
       height: 2.7em;
   }
@@ -117,7 +153,7 @@
 
 
   .sprite.fire-protect:before {
-      background-position: 0em -30em;
+      background-position: -1em -74.5em;
       width: 2.2em;
       height: 2.7em;
   }
@@ -125,8 +161,17 @@
 
 
 
+  .sprite.fire-protect-big:before {
+      background-position: -1em -79.2em;
+      width: 2.9em;
+      height: 3.5em;
+  }
+
+
+
+
   .sprite.fire-protect-o:before {
-      background-position: 0em -32.7em;
+      background-position: -1em -84.7em;
       width: 2.2em;
       height: 2.7em;
   }
@@ -135,7 +180,7 @@
 
 
   .sprite.flat-roof:before {
-      background-position: 0em -35.4em;
+      background-position: -1em -89.4em;
       width: 3.4em;
       height: 2.1em;
   }
@@ -143,8 +188,17 @@
 
 
 
+  .sprite.flat-roof-big:before {
+      background-position: -1em -93.5em;
+      width: 4.1em;
+      height: 2.5em;
+  }
+
+
+
+
   .sprite.flat-roof-o:before {
-      background-position: 0em -37.5em;
+      background-position: -1em -98em;
       width: 3.4em;
       height: 2.1em;
   }
@@ -153,7 +207,7 @@
 
 
   .sprite.geo-office:before {
-      background-position: 0em -39.6em;
+      background-position: -1em -102.1em;
       width: 3.1em;
       height: 4.2em;
   }
@@ -162,7 +216,7 @@
 
 
   .sprite.geo-warehouse:before {
-      background-position: 0em -43.8em;
+      background-position: -1em -108.3em;
       width: 3.1em;
       height: 4.2em;
   }
@@ -171,7 +225,7 @@
 
 
   .sprite.gidro-vetro:before {
-      background-position: 0em -48em;
+      background-position: -1em -114.5em;
       width: 1.4em;
       height: 3em;
   }
@@ -179,8 +233,17 @@
 
 
 
+  .sprite.gidro-vetro-big:before {
+      background-position: -1em -119.5em;
+      width: 1.7em;
+      height: 3.6em;
+  }
+
+
+
+
   .sprite.gidro-vetro-o:before {
-      background-position: 0em -51em;
+      background-position: -1em -125.1em;
       width: 1.4em;
       height: 3em;
   }
@@ -189,7 +252,7 @@
 
 
   .sprite.groundwork:before {
-      background-position: 0em -54em;
+      background-position: -1em -130.1em;
       width: 3.4em;
       height: 2.4em;
   }
@@ -197,8 +260,17 @@
 
 
 
+  .sprite.groundwork-big:before {
+      background-position: -1em -134.5em;
+      width: 4.5em;
+      height: 3.3em;
+  }
+
+
+
+
   .sprite.groundwork-o:before {
-      background-position: 0em -56.4em;
+      background-position: -1em -139.8em;
       width: 3.4em;
       height: 2.4em;
   }
@@ -207,7 +279,7 @@
 
 
   .sprite.info:before {
-      background-position: 0em -58.8em;
+      background-position: -1em -144.2em;
       width: 2.7em;
       height: 2.7em;
   }
@@ -216,7 +288,7 @@
 
 
   .sprite.inside:before {
-      background-position: 0em -61.5em;
+      background-position: -1em -148.9em;
       width: 2.4em;
       height: 3em;
   }
@@ -224,8 +296,17 @@
 
 
 
+  .sprite.inside-big:before {
+      background-position: -1em -153.9em;
+      width: 2.8em;
+      height: 3.6em;
+  }
+
+
+
+
   .sprite.inside-o:before {
-      background-position: 0em -64.5em;
+      background-position: -1em -159.5em;
       width: 2.4em;
       height: 3em;
   }
@@ -234,7 +315,7 @@
 
 
   .sprite.instagram:before {
-      background-position: 0em -67.5em;
+      background-position: -1em -164.5em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -243,7 +324,7 @@
 
 
   .sprite.list:before {
-      background-position: 0em -71.7em;
+      background-position: -1em -170.7em;
       width: 2.9em;
       height: 2.6em;
   }
@@ -251,8 +332,17 @@
 
 
 
+  .sprite.list-big:before {
+      background-position: -1em -175.3em;
+      width: 3.8em;
+      height: 3.2em;
+  }
+
+
+
+
   .sprite.list-o:before {
-      background-position: 0em -74.3em;
+      background-position: -1em -180.5em;
       width: 2.9em;
       height: 2.6em;
   }
@@ -261,7 +351,7 @@
 
 
   .sprite.mansard:before {
-      background-position: 0em -76.9em;
+      background-position: -1em -185.1em;
       width: 2.8em;
       height: 2.1em;
   }
@@ -269,8 +359,17 @@
 
 
 
+  .sprite.mansard-big:before {
+      background-position: -1em -189.2em;
+      width: 3.6em;
+      height: 2.7em;
+  }
+
+
+
+
   .sprite.mansard-o:before {
-      background-position: 0em -79em;
+      background-position: -1em -193.9em;
       width: 2.8em;
       height: 2.1em;
   }
@@ -279,7 +378,7 @@
 
 
   .sprite.map:before {
-      background-position: 0em -81.1em;
+      background-position: -1em -198em;
       width: 4.3em;
       height: 4.3em;
   }
@@ -288,7 +387,7 @@
 
 
   .sprite.money:before {
-      background-position: 0em -85.4em;
+      background-position: -1em -204.3em;
       width: 3.2em;
       height: 1.4em;
   }
@@ -297,7 +396,7 @@
 
 
   .sprite.roof:before {
-      background-position: 0em -86.8em;
+      background-position: -1em -207.7em;
       width: 2.9em;
       height: 2em;
   }
@@ -305,8 +404,17 @@
 
 
 
+  .sprite.roof-big:before {
+      background-position: -1em -211.7em;
+      width: 3.9em;
+      height: 2.6em;
+  }
+
+
+
+
   .sprite.roof-o:before {
-      background-position: 0em -88.8em;
+      background-position: -1em -216.3em;
       width: 2.9em;
       height: 2em;
   }
@@ -315,7 +423,7 @@
 
 
   .sprite.technical-iso:before {
-      background-position: 0em -90.8em;
+      background-position: -1em -220.3em;
       width: 2.8em;
       height: 1.9em;
   }
@@ -323,8 +431,17 @@
 
 
 
+  .sprite.technical-iso-big:before {
+      background-position: -1em -224.2em;
+      width: 3.9em;
+      height: 2.7em;
+  }
+
+
+
+
   .sprite.technical-iso-o:before {
-      background-position: 0em -92.7em;
+      background-position: -1em -228.9em;
       width: 2.8em;
       height: 1.9em;
   }
@@ -333,7 +450,7 @@
 
 
   .sprite.twitter:before {
-      background-position: 0em -94.6em;
+      background-position: -1em -232.8em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -342,7 +459,7 @@
 
 
   .sprite.vent-house:before {
-      background-position: 0em -98.8em;
+      background-position: -1em -239em;
       width: 2.3em;
       height: 2.9em;
   }
@@ -350,8 +467,17 @@
 
 
 
+  .sprite.vent-house-big:before {
+      background-position: -1em -243.9em;
+      width: 3em;
+      height: 3.8em;
+  }
+
+
+
+
   .sprite.vent-house-o:before {
-      background-position: 0em -101.7em;
+      background-position: -1em -249.7em;
       width: 2.3em;
       height: 2.9em;
   }
@@ -360,7 +486,7 @@
 
 
   .sprite.view-card:before {
-      background-position: 0em -104.6em;
+      background-position: -1em -254.6em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -369,7 +495,7 @@
 
 
   .sprite.view-grid:before {
-      background-position: 0em -106.2em;
+      background-position: -1em -258.2em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -378,7 +504,7 @@
 
 
   .sprite.vk:before {
-      background-position: 0em -107.8em;
+      background-position: -1em -261.8em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -387,7 +513,7 @@
 
 
   .sprite.warmth:before {
-      background-position: 0em -112em;
+      background-position: -1em -268em;
       width: 2.4em;
       height: 3.3em;
   }
@@ -395,8 +521,17 @@
 
 
 
+  .sprite.warmth-big:before {
+      background-position: -1em -273.3em;
+      width: 2.8em;
+      height: 3.9em;
+  }
+
+
+
+
   .sprite.warmth-o:before {
-      background-position: 0em -115.3em;
+      background-position: -1em -279.2em;
       width: 2.4em;
       height: 3.3em;
   }
@@ -405,7 +540,7 @@
 
 
   .sprite.warning:before {
-      background-position: 0em -118.6em;
+      background-position: -1em -284.5em;
       width: 3.9em;
       height: 3.6em;
   }
@@ -414,7 +549,7 @@
 
 
   .sprite.wat:before {
-      background-position: 0em -122.2em;
+      background-position: -1em -290.1em;
       width: 2.7em;
       height: 2.8em;
   }
@@ -422,8 +557,17 @@
 
 
 
+  .sprite.wat-big:before {
+      background-position: -1em -294.9em;
+      width: 3.2em;
+      height: 3.3em;
+  }
+
+
+
+
   .sprite.wat-o:before {
-      background-position: 0em -125em;
+      background-position: -1em -300.2em;
       width: 2.7em;
       height: 3em;
   }
@@ -432,7 +576,7 @@
 
 
   .sprite.waterproof:before {
-      background-position: 0em -128em;
+      background-position: -1em -305.2em;
       width: 2.8em;
       height: 2.8em;
   }
@@ -440,8 +584,17 @@
 
 
 
+  .sprite.waterproof-big:before {
+      background-position: -1em -310em;
+      width: 3.6em;
+      height: 3.6em;
+  }
+
+
+
+
   .sprite.waterproof-o:before {
-      background-position: 0em -130.8em;
+      background-position: -1em -315.6em;
       width: 2.8em;
       height: 2.6em;
   }
@@ -450,7 +603,7 @@
 
 
   .sprite.youtube:before {
-      background-position: 0em -133.4em;
+      background-position: -1em -320.2em;
       width: 4.3em;
       height: 4.2em;
   }

@@ -89,10 +89,14 @@
             </div>
             <div class="header__row__col _2">
                 <form class="search-form">
-                    <input class="search-form__input _header js-search-form__input" placeholder="Поиск строительных и отделочных материалов">
+                    <input class="search-form__input _header js-search-form__input" 
+                           name="q" 
+                           placeholder="Поиск строительных и отделочных материалов">
                     <button class="search-form__submit"><i class="icon-search"></i></button>
                     <div class="search-res js-search-res">
     <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
         <div class="search-res__block">
             <h3 class="search-res__h">Категории</h3>
             <ul class="search-res__cats">
@@ -191,8 +195,12 @@
                 </li>
             </ul>
         </div>
+        -->
     </div>
-    <a href="search-results.html" class="btn _primary _solid _sm search-res__btn">Показать все</a>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
 </div>
                 </form>
                 <a href="create-price.html" class="header__main__download">Скачать прайс-лист <i class="icon-download"></i></a>
@@ -240,16 +248,16 @@
                     <td></td>
                     <td>
                         <span class="minicart-popup__t__price">
-                            1 235 <span class="rub">₽</span>
+                            99 999 <span class="rub">₽</span>
                         </span>
-                        <span class="minicart-popup__t__variant">за штуку</span>
+                        <span class="minicart-popup__t__variant">за кг</span>
                     </td>
                     <td class="minicart-popup__t__count">
                         <a href="#" class="minicart-popup__t__change">
                             <i class="icon-minus"></i>
                         </a>
                         <span class="minicart-popup__t__total">
-                            3
+                            999
                         </span>
                         <a href="#" class="minicart-popup__t__change">
                             <i class="icon-plus"></i>
@@ -614,7 +622,7 @@
         <ul class="menu__sm">
             <li><a href="stock.html">Акции</a></li>
             <li><a href="works.html">Примеры работ</a></li>
-            <li><a href="#">Отзывы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
         </ul>
     </li>
     <li>
@@ -648,10 +656,14 @@
 
                     <aside class="main-row__left">
                         <form class="search-form _aside">
-    <input class="search-form__input js-search-form__input" name="q" placeholder="Поиск в каталоге">
+    <input class="search-form__input js-search-form__input" 
+           name="q" 
+           placeholder="Поиск в каталоге">
     <button class="search-form__submit"><i class="icon-search"></i></button>
     <div class="search-res js-search-res">
     <div class="scrollbar-outer js-scrollbar">
+        <div class="j-top-search-wraper"></div>
+        <!--
         <div class="search-res__block">
             <h3 class="search-res__h">Категории</h3>
             <ul class="search-res__cats">
@@ -750,8 +762,12 @@
                 </li>
             </ul>
         </div>
+        -->
     </div>
-    <a href="search-results.html" class="btn _primary _solid _sm search-res__btn">Показать все</a>
+    <a href="#"
+       data-page = '/baseinfo/test/search.php'
+       class="btn _primary _solid _sm search-res__btn j-search-show_all">Показать все <span class="j-search-count"></span>
+    </a>
 </div>
 </form>
                         <div class="catalog-mobile-toggler js-cm__mobile-toggler">Каталог товаров</div>
@@ -764,7 +780,7 @@
                     <i class="icon-close-circled"></i>
                 </a>
             </h3>
-            <div class="js-cm__slide">
+            <div class="catalog-menu__slide js-cm__slide">
                 <ul class="catalog-menu__list">
                     <li class="catalog-menu__list__item _expandable">
                         <a href="#" class="catalog-menu__list__link js-cm__second-link">
@@ -991,7 +1007,7 @@
             <span class="im-menu__list__inner ">
                 
                 
-                <a href="#">Отзывы</a></span>
+                <a href="reviews.html">Отзывы</a></span>
                 
         </li>
     </ul>
@@ -1290,6 +1306,12 @@
                                 10-тонник
                             </span>
                         </label>
+                        <label class="checkbox _radio js-shipping__car-label">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                Льготная доставка
+                            </span>
+                        </label>
                     </div>
                     <div class="shipping__car-slider js-shipping__car-slider">
                         <div class="shipping__car-slider__item">
@@ -1301,24 +1323,6 @@
     </div>
     <div class="shipping__car-slider__item__text">
         <span class="shipping__car-slider__item__h">ГАЗель</span>
-        <dl class="shipping__car-slider__item__dl">
-            <dt>Грузоподъемность</dt>
-            <dd>до 4 т</dd>
-            <dt>Макс. длина груза</dt>
-            <dd>до 5,5 м</dd>
-            <dt>Объем</dt>
-            <dd>до 24 м³</dd>
-        </dl>
-    </div>
-</div><div class="shipping__car-slider__item">
-    <div class="shipping__car-slider__item__img">
-        <img src="img/car.png"
-             srcset="img/car@2x.png 2x,
-             img/car@3x.png 3x"
-             alt="alt text">
-    </div>
-    <div class="shipping__car-slider__item__text">
-        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
         <dl class="shipping__car-slider__item__dl">
             <dt>Грузоподъемность</dt>
             <dd>до 4 т</dd>
@@ -1354,6 +1358,24 @@
              alt="alt text">
     </div>
     <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">ГАЗ/Валдай</span>
+        <dl class="shipping__car-slider__item__dl">
+            <dt>Грузоподъемность</dt>
+            <dd>до 4 т</dd>
+            <dt>Макс. длина груза</dt>
+            <dd>до 5,5 м</dd>
+            <dt>Объем</dt>
+            <dd>до 24 м³</dd>
+        </dl>
+    </div>
+</div><div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img">
+        <img src="img/car.png"
+             srcset="img/car@2x.png 2x,
+             img/car@3x.png 3x"
+             alt="alt text">
+    </div>
+    <div class="shipping__car-slider__item__text">
         <span class="shipping__car-slider__item__h">10-тонник</span>
         <dl class="shipping__car-slider__item__dl">
             <dt>Грузоподъемность</dt>
@@ -1365,16 +1387,50 @@
         </dl>
     </div>
 </div>
+                        <div class="shipping__car-slider__item">
+    <div class="shipping__car-slider__item__img _action">
+        <img src="img/shipping.png"
+             srcset="img/shipping@2x.png 2x,
+             img/shipping@3x.png 3x"
+             alt="alt text">
+        <span class="shipping__car-slider__item__img__badge">Акция</span>
+    </div>
+    <div class="shipping__car-slider__item__text">
+        <span class="shipping__car-slider__item__h">Льготная доставка</span>
+        <span class="shipping__car-slider__item__p">
+            Мы подберем тип транспорта, исходя из габаритов вашего заказа. 
+            <strong>Это не влияет на стоимость доставки.</strong>
+        </span>
+        <span class="shipping__car-slider__item__p _sm">
+            Льготная доставка возможна только при выборе адреса в черте города.
+        </span>
+    </div>
+</div>
                     </div>
                     <!--<p class="shipping__more"><a href="#">Подробнее об условиях доставки [PDF]</a></p>-->
+                    
                     <div class="shipping__promo">
                         <div class="shipping__promo__content">
                             <span class="shipping__promo__h">Льготная доставка!</span>
-                            <span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>
+                            <!--<span class="shipping__promo__text">В пределах Нижнего Новгорода с пн по пт стоимость доставки всего:</span>-->
                         </div>
                         <div class="shipping__promo__foot">
-                            <span class="shipping__promo__accent">390 рублей</span>
-                            <a href="#" class="shipping__promo__link">Узнать подробнее</a>
+                            <ul class="shipping__promo__list">
+                                <li class="shipping__promo__list__item">
+                                    с понедельника по пятницу
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    в пределах Н. Новгорода
+                                </li>
+                                <li class="shipping__promo__list__item">
+                                    при заказе через козину на сайте
+                                </li>
+                            </ul>
+                            <div class="shipping__promo__foot__last-col">
+                                <span class="shipping__promo__text">стоимость доставки</span>
+                                <span class="shipping__promo__accent">390 рублей</span>
+                            </div>
+                            <!--<a href="#" class="shipping__promo__link">Узнать подробнее</a>-->
                         </div>
                         <span class="shipping__promo__badge">
                             <span class="shipping__promo__badge__text">
@@ -1382,6 +1438,8 @@
                             </span>
                         </span>
                     </div>
+                    
+                    
                 </fieldset>
                 <!--
                 <fieldset class="shipping__fieldset">
@@ -1459,7 +1517,7 @@
         <ul class="menu__sm">
             <li><a href="stock.html">Акции</a></li>
             <li><a href="works.html">Примеры работ</a></li>
-            <li><a href="#">Отзывы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
         </ul>
     </li>
     <li>
@@ -1579,6 +1637,7 @@
         <li><a href="product-card.html">product card</a></li>
         <li><a href="product-card-na.html">product card not available</a></li>
         <li><a href="product-card.html#one-click">#one click</a></li>
+        <li><a href="product-card.html#one-click-success">#one click success</a></li>
         <li><a href="catalog-level-1.html">catalog level 1</a></li>
         <li><a href="catalog-level-2.html">catalog level 2</a></li>
         <li><a href="catalog-level-3.html">catalog level 3</a></li>
@@ -1587,6 +1646,8 @@
         <li><a href="cart.html#cart-shipping-calc">#shipping-calc</a></li>
         <li><a href="cart.html#pickup">#pickup</a></li>
         <li><a href="cart-final.html">cart final</a></li>
+        <li><a href="done-pay.html">done pay</a></li>
+        <li><a href="fail-pay.html">fail pay</a></li>
         <li><a href="create-price.html">create price</a></li>
         <li><a href="price.html">price</a></li>
         <li><a href="price-title.html">price title</a></li>
@@ -1600,6 +1661,8 @@
         <li><a href="stock.html">stock</a></li>
         <li><a href="stock-one.html">stock one</a></li>
         <li><a href="works.html">works</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="reviews.html">reviews</a></li>
         <li><a href="ship-and-pay.html">ship and pay</a></li>
         <li><a href="404.html">404</a></li>
     </ul>
@@ -1632,6 +1695,20 @@
         sliderAutoplaySpeed: 8000, //ms
         hoverZoom: 10, //px
         shipping: {
+            /**
+             * 
+             * @var array координаты центра карты 
+             * @default [56.326887, 44.005986]
+             */
+//            mapCenter: [56.326887, 44.005986],
+            
+            /** 
+             * @var int масштаб карты 
+             * @default 9
+             */
+//            mapZoom: 9,
+            
+            
             disabledDays: [0, 6], // дни, в которые невозможна доставка (0 - воскресенье)
             from: {
                 geo: [56.311696, 43.832899], // array координаты или string адрес для геокодирования

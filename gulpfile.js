@@ -100,7 +100,8 @@ gulp.task('sprites', function () {
             common: "sprite",
             preview: false,
             cssFile: "_sprite.scss",
-            svgPath: "%f"
+            svgPath: "%f",
+            padding: 10
         }))
         .pipe(gulp.dest(path.build.sprite));
 });
