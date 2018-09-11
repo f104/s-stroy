@@ -302,7 +302,7 @@ app.shipping = {
             dataType: 'json',
             data: _that.$wrapper.serialize(),
             success: function success(data) {
-                $('.js-shipping__car-label').css('opacity', 1);
+               // $('.js-shipping__car-label').css('opacity', 1);
                 if (data.price !== 0) {
                     $('.j-road-wraper_price').show();
                     $('.j-road-price_error').hide();
@@ -314,20 +314,31 @@ app.shipping = {
                     let select = $('input[name="'+name+'"]').filter(function () {
                         return $(this).val() == id;
                     });
-                    select.parent().css('opacity', 0.4);
+                    //select.parent().css('opacity', 0.4);
                     $('.j-road-wraper_price').hide();
                     $('.j-road-price_error').html(data.error);
                     $('.j-road-price_error').show();
                     $('.j-road-confirmation').prop('disabled', true);
                 };
 
+                $('.shipping__car-select input').prop('disabled', false);
                 $('.js-shipping__car-label').removeClass('_disabled');
+                $('.j-error-tooltip').remove();
+
                $.each(data.disabled, function (index,value) {
                    let selectd = $('input[name="'+value.name+'"]').filter(function () {
                        return $(this).val() == value.id;
                    });
-                   selectd.parent().css('opacity', 0.4);
+                   selectd.prop('disabled', true);
+                   let message = '<span class="checkbox__tooltip j-error-tooltip">\n' +
+                       '<i class="sprite delivery-tooltip"></i>\n' +
+                       '<span class="checkbox__tooltip__text">\n' +
+                       value.error+'\n' +
+                       '</span>\n' +
+                       '</span>';
+                   //selectd.parent().css('opacity', 0.4);
                    selectd.parent().addClass('_disabled');
+                   selectd.parent().append(message);
                });
             }
         });

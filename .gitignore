@@ -1,3 +1,6 @@
 /_docs/
 /nbproject/
 /node_modules/
+.idea
+.idea/*
+.idea/
