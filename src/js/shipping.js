@@ -321,13 +321,24 @@ app.shipping = {
                     $('.j-road-confirmation').prop('disabled', true);
                 };
 
+                $('.shipping__car-select input').prop('disabled', false);
                 $('.js-shipping__car-label').removeClass('_disabled');
+                $('.j-error-tooltip').remove();
+
                $.each(data.disabled, function (index,value) {
                    let selectd = $('input[name="'+value.name+'"]').filter(function () {
                        return $(this).val() == value.id;
                    });
+                   selectd.prop('disabled', true);
+                   let message = '<span class="checkbox__tooltip j-error-tooltip">\n' +
+                       '<i class="sprite delivery-tooltip"></i>\n' +
+                       '<span class="checkbox__tooltip__text">\n' +
+                       value.error+'\n' +
+                       '</span>\n' +
+                       '</span>';
                    selectd.parent().css('opacity', 0.4);
                    selectd.parent().addClass('_disabled');
+                   selectd.parent().append(message);
                });
             }
         });
