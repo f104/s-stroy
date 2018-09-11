@@ -319,8 +319,14 @@ app.shipping = {
                     $('.j-road-price_error').html(data.error);
                     $('.j-road-price_error').show();
                     $('.j-road-confirmation').prop('disabled', true);
-                }
+                };
 
+               $.each(data.disabled, function (index,value) {
+                   let selectd = $('input[name="'+value.name+'"]').filter(function () {
+                       return $(this).val() == value.id;
+                   });
+                   selectd.parent().css('opacity', 0.4);
+               });
             }
         });
     },
