@@ -47,7 +47,7 @@
                             </span>
                         </label>
                         <label class="checkbox _radio js-shipping__car-label">
-                            <input type="radio" name="shipping_car" disabled class="js-shipping__car-radio">
+                            <input type="radio" name="shipping_car" class="js-shipping__car-radio">
                             <span class="checkbox__text">
                                 5-тонник
                             </span>
@@ -56,6 +56,18 @@
                             <input type="radio" name="shipping_car" class="js-shipping__car-radio">
                             <span class="checkbox__text">
                                 10-тонник
+                            </span>
+                        </label>
+                        <label class="checkbox _radio _disabled js-shipping__car-label">
+                            <input type="radio" name="shipping_car" disabled class="js-shipping__car-radio">
+                            <span class="checkbox__text">
+                                20-тонник
+                            </span>
+                            <span class="checkbox__tooltip">
+                                <i class="sprite delivery-tooltip"></i>
+                                <span class="checkbox__tooltip__text">
+                                    Льготная доставка возможна только при выборе адреса в черте города
+                                </span>
                             </span>
                         </label>
                         <label class="checkbox _radio js-shipping__car-label">
@@ -68,9 +80,10 @@
                     <div class="shipping__car-slider js-shipping__car-slider">
                         @@loop('../chunks/car-slider-item.html', [
                         {"title": "ГАЗель"},
-                        {"title": "5-тонник"},
                         {"title": "ГАЗ/Валдай"},
-                        {"title": "10-тонник"}
+                        {"title": "5-тонник"},
+                        {"title": "10-тонник"},
+                        {"title": "20-тонник"}
                         ])
                         @@include('../chunks/car-slider-item_1.html')
                     </div>

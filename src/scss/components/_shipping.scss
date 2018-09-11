@@ -94,24 +94,31 @@ ymaps * {
         }
     }
     &__car-select {
-        margin-bottom: 15px;
-        column-count: 2;
-        column-gap: 20px;
-        @include media-breakpoint-up(lg) {
-            column-count: 3;
-            margin-right: 40px;
-        }
+        /*margin-bottom: 15px;*/
+        display: flex;
+        flex-wrap: wrap;
+        /*        column-count: 2;
+                column-gap: 20px;*/
+        /*        @include media-breakpoint-up(lg) {
+                    column-count: 3;
+                    margin-right: 40px;
+                }*/
         .checkbox {
             display: block;
             margin-bottom: 10px;
+            padding-right: 10px;
+            flex-basis: 50%;
             @include media-breakpoint-up(md) {
                 margin-bottom: 15px;
             }
             @include media-breakpoint-up(lg) {
-                white-space: nowrap;
+                flex-basis: 33.33%;
+                /*white-space: nowrap;*/
+                /*padding-right: 20px;*/
             }
             &__text {
                 font-size: 15px;
+                line-height: 18px;
             }
         }
     }

@@ -388,6 +388,7 @@ form {
 }
 
 .checkbox {
+    $root: &;
     display: inline-block;
     opacity: 1;
     margin-bottom: 0;
@@ -434,8 +435,8 @@ form {
         }
     }
     &._disabled {
-        pointer-events: none;
         .checkbox__text {
+            cursor: default;
             opacity: .5;
         }
     }
@@ -445,6 +446,39 @@ form {
                 border-radius: 50%;
             }
         }
+    }
+    &__tooltip {
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            position: absolute;
+        }
+    }
+    &__tooltip {
+        display: none;
+        position: absolute;
+        border-radius: $border-radius;
+        background-color: #fff5dd;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+        padding: 10px 10px 10px 45px;
+        width: 280px;
+        white-space: normal;
+        z-index: 10;
+        top: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        .sprite {
+            position: absolute;
+            left: 13px;
+            top: 10px;
+        }
+    }
+    &:hover {
+        @include media-breakpoint-up(lg) {
+            #{$root}__tooltip {
+                display: block;
+            }
+        }        
     }
 }
 
