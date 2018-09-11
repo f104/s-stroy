@@ -252,6 +252,9 @@
             width: 100px;
             font-size: 13px;
         }
+        &:hover {
+            color: $red;
+        }
     }
     &__foot {
         &__row {
