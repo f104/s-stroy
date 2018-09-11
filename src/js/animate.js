@@ -71,7 +71,20 @@ appAnimate = {
                 var r = el.children()[1]; // дорога
                 r.animate(300, '<>', 0).width(192);
                 g.animate(600, '<', 0).x(100);
-                s.animate(600, '<', 0).rotate(360);
+                s.animate(600, '<', 0).rotate(360, 18.417, 19.893);
+                break;
+            case 'avail':
+                var d = 50; // distance
+                var g1 = el.children()[0];
+                var g2 = el.children()[1];
+                var g3 = el.children()[2];
+                var g4 = el.children()[3];
+                var n = el.children()[4]; // цифры
+                n.animate(300, '<>', 0).dx(d);
+                g1.animate(300, '<>', 100).dx(d);
+                g2.animate(300, '<>', 200).dx(d);
+                g3.animate(300, '<>', 300).dx(d);
+                g4.animate(300, '<>', 400).dx(d);
                 break;
         }
     },
@@ -99,7 +112,20 @@ appAnimate = {
                 var r = el.children()[1]; // дорога
                 r.animate(600, '<>', 0).width(90);
                 g.animate(300, '>', 0).x(0);
-                s.rotate(0).animate(300, '<', 0).rotate(360).reverse();
+                s.rotate(0).animate(300, '<', 0).rotate(360, 18.417, 19.893).reverse();
+                break;
+            case 'avail':
+                var d = 50; // distance
+                var g1 = el.children()[0];
+                var g2 = el.children()[1];
+                var g3 = el.children()[2];
+                var g4 = el.children()[3];
+                var n = el.children()[4]; // цифры
+                n.animate(300, '<>', 0).dx(-d);
+                g1.animate(300, '<>', 0).dx(-d);
+                g2.animate(300, '<>', 0).dx(-d);
+                g3.animate(300, '<>', 0).dx(-d);
+                g4.animate(300, '<>', 0).dx(-d);
                 break;
         }
     },
