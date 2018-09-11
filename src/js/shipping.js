@@ -321,11 +321,13 @@ app.shipping = {
                     $('.j-road-confirmation').prop('disabled', true);
                 };
 
+                $('.js-shipping__car-label').removeClass('_disabled');
                $.each(data.disabled, function (index,value) {
                    let selectd = $('input[name="'+value.name+'"]').filter(function () {
                        return $(this).val() == value.id;
                    });
                    selectd.parent().css('opacity', 0.4);
+                   selectd.parent().addClass('_disabled');
                });
             }
         });
