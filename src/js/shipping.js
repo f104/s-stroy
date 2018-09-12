@@ -294,6 +294,46 @@ app.shipping = {
      *
      */
     calcPrice: function () {
+        $('.j-error-tooltip').remove();
+        let message = '';
+        let $distance = $('#cart-shipping-calc_input');
+        let $date = $('.js-shipping__date-input');
+        let distance = $distance.val();
+        let date = $date.val();
+
+        $distance.removeClass('j-road_input-error');
+        $date.removeClass('j-road_input-error');
+
+        if (!distance) {
+            message = '<span class="checkbox__tooltip j-error-tooltip" style="display: block">\n' +
+                '<span class="checkbox__tooltip__text">\n' +
+                'Укажите адрес доставки\n или выберите точку на карте \n' +
+                '</span>\n' +
+                '</span>';
+            $distance.addClass('j-road_input-error');
+            $distance.parent().append(message);
+
+        }
+        if (!date) {
+            message = '<span class="checkbox__tooltip j-error-tooltip" style="display: block">\n' +
+                '<span class="checkbox__tooltip__text">\n' +
+                'Выберите дату доставки \n' +
+                '</span>\n' +
+                '</span>';
+            $date.addClass('j-road_input-error');
+            $date.parent().append(message);
+        }
+        $distance.unbind('click').on('click', function () {
+            $(this).parent().find('.j-error-tooltip').remove();
+        });
+
+        $date.unbind('click').on('click', function () {
+            $(this).parent().find('.j-error-tooltip').remove();
+        });
+
+        if (!date || !distance) {
+            return;
+        }
         let _that = this;
         let ru = ' <span class="rub">₽</span>';
         $.ajax({
@@ -323,14 +363,13 @@ app.shipping = {
 
                 $('.shipping__car-select input').prop('disabled', false);
                 $('.js-shipping__car-label').removeClass('_disabled');
-                $('.j-error-tooltip').remove();
 
                $.each(data.disabled, function (index,value) {
                    let selectd = $('input[name="'+value.name+'"]').filter(function () {
                        return $(this).val() == value.id;
                    });
                    selectd.prop('disabled', true);
-                   let message = '<span class="checkbox__tooltip j-error-tooltip">\n' +
+                   message = '<span class="checkbox__tooltip j-error-tooltip">\n' +
                        '<i class="sprite delivery-tooltip"></i>\n' +
                        '<span class="checkbox__tooltip__text">\n' +
                        value.error+'\n' +
