@@ -24,11 +24,17 @@
         padding: 5px 11px 4px;
         border-radius: $border-radius;
         background-color: #d7dee4;
-        &:hover, &._active {
+        @media (hover: hover) {
+            &:hover {
+                color: $white;
+                background-color: $primary;            
+            }
+        }
+/*        @include media-breakpoint-up(md) {
+        }*/
+        &._active {
             color: $white;
             background-color: $primary;            
-        }
-        &._active {
             #{$root}__close {
                 display: inline-block;
             }
