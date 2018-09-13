@@ -543,6 +543,9 @@ var app = {
                 if ($shipping.length && !$shipping.data('init')) {
                     app.shipping.init($shipping);
                 }
+            },
+            clickContent: function (current, event) {
+                return false;
             }
         };
         $('.js-popup').on('click', function () {
