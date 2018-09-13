@@ -1114,7 +1114,7 @@ var app = {
                                 this.constructor.superclass.build.call(this);
                                 this._$element = $('.pickup-balloon', this.getParentElement());
                             },
-
+                            
                             /**
                              * Используется для автопозиционирования (balloonAutoPan).
                              * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
@@ -1126,7 +1126,7 @@ var app = {
                                 if (!this._isElement(this._$element)) {
                                     return tplBalloon.superclass.getShape.call(this);
                                 }
-
+console.log(this._$element)
                                 var position = this._$element.position();
 
                                 return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
@@ -1146,7 +1146,7 @@ var app = {
                              * @returns {Boolean} Флаг наличия.
                              */
                             _isElement: function (element) {
-                                return element && element[0];
+                                return element && element[0] && element.find('.arrow')[0];
                             }
                         });
         $items.each(function (index) {
@@ -1256,10 +1256,12 @@ var app = {
             app.mapSetBounds(map);
             // click
             $('.js-pickup__map__item').on('click', function () {
-                placemarks[$(this).index()].balloon.open();
+                console.log($(this).index());
+//                placemarks[$(this).index()].balloon.open();
                 $('.js-pickup__map__item').removeClass('_active');
                 $(this).addClass('_active');
                 $('.js-pickup__submit').prop('disabled', false);
+                placemarks[$(this).index()].balloon.open();
             });
             // handle click on placemark
             $.each(placemarks, function (index, placemark) {
