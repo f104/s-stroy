@@ -24,7 +24,7 @@
         padding: 5px 11px 4px;
         border-radius: $border-radius;
         background-color: #d7dee4;
-        @media (hover: hover) {
+        @include hover-desktop {
             &:hover {
                 color: $white;
                 background-color: $primary;            

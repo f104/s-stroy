@@ -21,6 +21,14 @@
     padding-left: $gutter / 2;
 }
 
+@mixin hover-desktop() {
+    @media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0){
+        &:hover {
+            @content
+        }
+    }
+}
+
 @mixin bg-img-wrapper() {
     display: block;
     position: absolute;
