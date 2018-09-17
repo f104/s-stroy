@@ -1,5 +1,6 @@
 'use strict';
 var gulp = require('gulp'),
+        gutil = require('gulp-util'),
         watch = require('gulp-watch'),
         sass = require('gulp-sass'),
         sourcemaps = require('gulp-sourcemaps'),
@@ -11,6 +12,7 @@ var gulp = require('gulp'),
         fileinclude = require('gulp-file-include'),
         autoprefixer = require('gulp-autoprefixer'),
         rename = require("gulp-rename"),
+        uglify = require('gulp-uglify-es').default,
         cleanCSS = require('gulp-clean-css'),
         concat = require('gulp-concat'),
         reload = browserSync.reload;
@@ -106,21 +108,10 @@ gulp.task('sprites', function () {
             }))
             .pipe(gulp.dest(path.build.sprite));
 });
-gulp.task('css-prod', () =>
-    gulp.src('src/scss/common.scss')
-            .pipe(sass({
-                sourceMap: false,
-                errLogToConsole: true
-            }))
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
-                cascade: false
-            }))
-            .pipe(cleanCSS())
-            .pipe(rename("common.min.css"))
-            .pipe(gulp.dest(path.build.css))
-);
 
+/**
+ * Минификация и объединение всех стилей 
+ */
 gulp.task('minify-css', () => {
     gulp.src('src/scss/common.scss')
             .pipe(sass({
@@ -141,13 +132,22 @@ gulp.task('minify-css', () => {
             .pipe(gulp.dest(path.build.css));
 });
 
-gulp.task('js', function () {
-    return gulp.src('js/*.js')
-            .pipe(jshint())
-            .pipe(jshint.reporter('default'))
-            .pipe(uglify())
-            .pipe(concat('app.js'))
-            .pipe(gulp.dest('build'));
+/**
+ * Минификация и объединение всех скриптов
+ */
+gulp.task('minify-js', function () {
+    gulp.src([
+        'build/js/libs/jquery.min.js',
+        'build/js/**/*.js',
+        '!build/js/bundle.js'])
+            .pipe(uglify({
+                compress: {hoist_funs: false}
+            }))
+            .on('error', function (err) {
+                gutil.log(gutil.colors.red('[Error]'), err.toString());
+            })
+            .pipe(concat('bundle.js'))
+            .pipe(gulp.dest('build/js/'));
 });
 
 gulp.task('fonts:build', function () {
