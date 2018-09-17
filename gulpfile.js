@@ -12,6 +12,7 @@ var gulp = require('gulp'),
         autoprefixer = require('gulp-autoprefixer'),
         rename = require("gulp-rename"),
         cleanCSS = require('gulp-clean-css'),
+        concat = require('gulp-concat'),
         reload = browserSync.reload;
 var path = {
     build: {
@@ -86,39 +87,69 @@ gulp.task('image:build', function () {
             .pipe(gulp.dest(path.build.img))
             .pipe(reload({stream: true}));
 });
-gulp.task('sprite:build', function() {
-  var spriteData =
-    gulp.src(path.src.sprite)
-      .pipe(svgSprite());
+gulp.task('sprite:build', function () {
+    var spriteData =
+            gulp.src(path.src.sprite)
+            .pipe(svgSprite());
 
-  spriteData.img.pipe(gulp.dest(path.build.img));
-  spriteData.css.pipe(gulp.dest(path.build.sprite));
+    spriteData.img.pipe(gulp.dest(path.build.img));
+    spriteData.css.pipe(gulp.dest(path.build.sprite));
 });
 gulp.task('sprites', function () {
     return gulp.src(path.src.sprite)
-        .pipe(svgSprite({
-            common: "sprite",
-            preview: false,
-            cssFile: "_sprite.scss",
-            svgPath: "%f",
-            padding: 10
-        }))
-        .pipe(gulp.dest(path.build.sprite));
+            .pipe(svgSprite({
+                common: "sprite",
+                preview: false,
+                cssFile: "_sprite.scss",
+                svgPath: "%f",
+                padding: 10
+            }))
+            .pipe(gulp.dest(path.build.sprite));
 });
 gulp.task('css-prod', () =>
     gulp.src('src/scss/common.scss')
-        .pipe(sass({
-            sourceMap: false,
-            errLogToConsole: true
-        }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(cleanCSS())
-        .pipe(rename("common.min.css"))
-        .pipe(gulp.dest(path.build.css))
+            .pipe(sass({
+                sourceMap: false,
+                errLogToConsole: true
+            }))
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .pipe(cleanCSS())
+            .pipe(rename("common.min.css"))
+            .pipe(gulp.dest(path.build.css))
 );
+
+gulp.task('minify-css', () => {
+    gulp.src('src/scss/common.scss')
+            .pipe(sass({
+                sourceMap: false,
+                errLogToConsole: true
+            }))
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .pipe(gulp.dest(path.build.css))
+    gulp.src([
+        'build/css/libs/**/*.css',
+        'build/css/common.css',
+        '!build/css/bundle.css'])
+            .pipe(cleanCSS())
+            .pipe(concat("bundle.css"))
+            .pipe(gulp.dest(path.build.css));
+});
+
+gulp.task('js', function () {
+    return gulp.src('js/*.js')
+            .pipe(jshint())
+            .pipe(jshint.reporter('default'))
+            .pipe(uglify())
+            .pipe(concat('app.js'))
+            .pipe(gulp.dest('build'));
+});
+
 gulp.task('fonts:build', function () {
     gulp.src(path.src.fonts)
             .pipe(gulp.dest(path.build.fonts))
