@@ -127,7 +127,9 @@ gulp.task('minify-css', () => {
         'build/css/libs/**/*.css',
         'build/css/common.css',
         '!build/css/bundle.css'])
-            .pipe(cleanCSS())
+            .pipe(cleanCSS({
+                rebase: false
+            }))
             .pipe(concat("bundle.css"))
             .pipe(gulp.dest(path.build.css));
 });
