@@ -1065,7 +1065,7 @@ ymaps {
   content: ' ';
   vertical-align: middle;
   display: inline-block;
-  background-image: url("./svg/sprite.svg");
+  background-image: url("svg/sprite.svg");
   background-repeat: no-repeat;
   background-size: 11.8em 328.8em; }
 
