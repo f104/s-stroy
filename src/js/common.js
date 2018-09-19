@@ -1114,7 +1114,7 @@ var app = {
                                 this.constructor.superclass.build.call(this);
                                 this._$element = $('.pickup-balloon', this.getParentElement());
                             },
-                            
+
                             /**
                              * Используется для автопозиционирования (balloonAutoPan).
                              * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
@@ -1126,7 +1126,6 @@ var app = {
                                 if (!this._isElement(this._$element)) {
                                     return tplBalloon.superclass.getShape.call(this);
                                 }
-console.log(this._$element)
                                 var position = this._$element.position();
 
                                 return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
@@ -1337,6 +1336,35 @@ console.log(this._$element)
         $('.js-contacts__map').stick_in_parent({
             offset_top: 90
         });
+
+        // popups in pickup popup
+        var closePhotoPopup = function () {
+            $('.js-contacts__popup._active').fadeOut(function () {
+                $(this).remove();
+            });
+            $('.js-contacts__popup-open').removeClass('_active');
+            return false;
+        }
+        $('.js-contacts__popup-open').on('click', function () {
+            if ($(this).hasClass('_active')) {
+                return false;
+            }
+            closePhotoPopup();
+            var $popup = $(this).siblings('.js-contacts__popup');
+            var $cloned = $popup.clone();
+            if ($(window).outerWidth() >= appConfig.breakpoint.lg) {
+                $cloned.appendTo($('#contacts_map'));
+            } else {
+                $cloned.appendTo('body');
+            }
+            $cloned.fadeIn().addClass('_active');
+            $cloned.find('.js-contacts__popup-close').on('click', closePhotoPopup);
+            $(this).addClass('_active');
+            return false;
+        });
+        $('.js-contacts__popup-close').on('click', closePhotoPopup);
+
+        // map
         if (typeof (ymaps) === 'undefined') {
             $.ajax({
                 url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
