@@ -1,6 +1,10 @@
 @mixin list-unstyled {
     list-style-type: none;
     padding-left: 0;
+    // https://stackoverflow.com/questions/20356311/internet-explorer-11-ignores-list-stylenone-on-the-first-load
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+    }
 }
 
 @mixin transition($p) {
