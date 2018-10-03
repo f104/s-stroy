@@ -5,16 +5,22 @@
              img/content/@@img@3x.jpg 3x"
              alt="alt text">
         <div class="content-list__item__content">
-            @@if (title != "") {
-            <div class="content-list__item__title">@@title</div>
-            }
-            @@if (muted != "") {
-            <div class="content-list__item__muted">@@muted</div>
-            }
-            @@if (text != "") {
-            <div class="content-list__item__text">@@text</div>
+            <div class="content-list__item__content__head">
+                @@if (title != "") {
+                <div class="content-list__item__title">@@title</div>
+                }
+                @@if (muted != "") {
+                <div class="content-list__item__muted">@@muted</div>
+                }
+                @@if (text != "") {
+                <div class="content-list__item__text">@@text</div>
+                }
+            </div>
+            @@if (btnText != "") {
+            <div class="content-list__item__content__foot">
+                <a class="btn _sm _primary _solid content-list__item__btn" href="#">@@btnText</a>
+            </div>
             }
         </div>
-        <a class="btn _sm _primary _solid content-list__item__btn" href="#">@@btnText</a>
     </div>
 </div>

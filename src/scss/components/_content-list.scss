@@ -17,46 +17,45 @@
     &__item {
         display: flex;
         margin-bottom: 20px;
-        min-height: 410px;
+        /*min-height: 410px;*/
         @include media-breakpoint-up(md) {
             @include col(33.33%, 18px);
             margin-bottom: 18px;
-            min-height: 320px;
+            /*min-height: 320px;*/
         }
         @include media-breakpoint-up(lg) {
             @include col(33.33%, 32px);
             margin-bottom: 32px;
-            min-height: 398px;
+            /*min-height: 398px;*/
         }
         &__inner {
             flex-grow: 1;
             background-color: $white;
-/*            display: flex;
+            display: flex;
             flex-direction: column;
-            @include media-breakpoint-up(md) {
-            }
-            @include media-breakpoint-up(lg) {
-            }*/
         }
         &__img {
             display: block;
             width: 100%;
         }
         &__content {
-/*            flex-grow: 1;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;*/
-            padding: 23px 23px 85px;
+            justify-content: space-between;
+            padding: 23px;
             @include media-breakpoint-up(md) {
-                padding: 18px 18px 85px;
+                padding: 18px;
             }
             @include media-breakpoint-up(lg) {
-                padding: 22px 22px 85px;
+                padding: 22px;
             }
-/*            &__head {
+            &__head {
                 margin-bottom: 20px;
-            }*/
+                &:last-child, :last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
         &__title {
             font-size: 17px;
@@ -98,20 +97,6 @@
         &__btn {
             font-size: 11px;
             display: block;
-            position: absolute;
-            left: 23px;
-            right: 23px;
-            bottom: 23px;
-            @include media-breakpoint-up(md) {
-                left: 18px;
-                right: 18px;
-                bottom: 18px;
-            }
-            @include media-breakpoint-up(lg) {
-                left: 22px;
-                right: 22px;
-                bottom: 22px;
-            }
         }
     }
     &__btn {
