@@ -1025,6 +1025,9 @@ a, .link {
     .main-row__left {
       margin-bottom: 20px; } }
 
+.main-row__right .block:last-child {
+  margin-bottom: 0px; }
+
 @media (min-width: 1280px) {
   .main-row {
     display: -ms-flexbox;
@@ -1827,9 +1830,10 @@ form {
     display: none; }
     .checkbox input:checked ~ .checkbox__text:after {
       background-color: #2057ac; }
-  .checkbox._disabled .checkbox__text {
+  .checkbox._disabled .checkbox__text, .checkbox.disabled .checkbox__text {
     cursor: default;
-    opacity: .5; }
+    pointer-events: none;
+    opacity: .3; }
   .checkbox._radio .checkbox__text:before, .checkbox._radio .checkbox__text:after {
     border-radius: 50%; }
   .checkbox__tooltip {
@@ -5421,7 +5425,7 @@ body {
       width: 70px;
       height: 45px;
       color: white;
-      padding-right: 22px;
+      padding-right: 14px;
       padding-top: 9px;
       text-align: center; }
       .filter__counter__inner .sprite {
@@ -6862,10 +6866,10 @@ body {
             border-right-color: transparent; } }
   @media all and (min-width: 768px) and (max-width: 1279.98px) and (-ms-high-contrast: none), (min-width: 768px) and (max-width: 1279.98px) and (-ms-high-contrast: active) {
     .catalog-list._results .catalog-list__item {
-      -ms-flex-preferred-size: 24%;
-      flex-basis: 24%;
-      -ms-flex-positive: 1;
-      flex-grow: 1; } }
+      -ms-flex-preferred-size: 24.8%;
+      flex-basis: 24.8%;
+      -ms-flex-positive: 0;
+      flex-grow: 0; } }
       @media (min-width: 1280px) {
         .catalog-list._results .catalog-list__item {
           -ms-flex-preferred-size: 20%;
@@ -6874,10 +6878,10 @@ body {
             border-right-color: transparent; } }
   @media all and (min-width: 1280px) and (-ms-high-contrast: none), (min-width: 1280px) and (-ms-high-contrast: active) {
     .catalog-list._results .catalog-list__item {
-      -ms-flex-preferred-size: 19%;
-      flex-basis: 19%;
-      -ms-flex-positive: 1;
-      flex-grow: 1; } }
+      -ms-flex-preferred-size: 19.8%;
+      flex-basis: 19.8%;
+      -ms-flex-positive: 0;
+      flex-grow: 0; } }
       @media (min-width: 768px) {
         .catalog-list._results .catalog-list__item._card {
           -ms-flex-preferred-size: 100%;

@@ -348,8 +348,8 @@
                     border-right-color: transparent;
                 }
                 @include ie10up {
-                    flex-basis: 24%;
-                    flex-grow: 1;
+                    flex-basis: 24.8%;
+                    flex-grow: 0;
                 }
             }
             @include media-breakpoint-only(lg) {
@@ -358,8 +358,8 @@
                     border-right-color: transparent;
                 }
                 @include ie10up {
-                    flex-basis: 19%;
-                    flex-grow: 1;
+                    flex-basis: 19.8%;
+                    flex-grow: 0;
                 }
             }
             &._card {

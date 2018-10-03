@@ -434,10 +434,11 @@ form {
             }
         }
     }
-    &._disabled {
+    &._disabled, &.disabled {
         .checkbox__text {
             cursor: default;
-            opacity: .5;
+            pointer-events: none;
+            opacity: .3;
         }
     }
     &._radio {

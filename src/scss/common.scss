@@ -132,6 +132,11 @@ a, .link {
             margin-bottom: 20px;
         }
     }
+    &__right { 
+        .block:last-child{
+            margin-bottom:0px;
+        }
+    }
     @include media-breakpoint-up(lg) {
         display: flex;
         &__left {
