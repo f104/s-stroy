@@ -1,4 +1,5 @@
 .content-list {
+    $root: &;
     margin-bottom: 40px;
     @include media-breakpoint-up(md) {
         margin-bottom: 50px;
@@ -12,7 +13,21 @@
         }
         @include media-breakpoint-up(lg) {
             @include row(32px);
-        }        
+        }
+        &._4 {
+            #{$root}__item {
+                @include media-breakpoint-up(md) {
+                    @include col(25%, 18px);
+                }
+            }
+        }
+        &._5 {
+            #{$root}__item {
+                @include media-breakpoint-up(md) {
+                    @include col(20%, 18px);
+                }
+            }
+        }
     }
     &__item {
         display: flex;

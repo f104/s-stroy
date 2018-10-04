@@ -4619,6 +4619,18 @@ body {
       flex-wrap: wrap;
       margin-left: -16px;
       margin-right: -16px; } }
+  @media (min-width: 768px) {
+    .content-list__row._4 .content-list__item {
+      /*flex: 0 0 $basis;*/
+      width: 25%;
+      padding-right: 9px;
+      padding-left: 9px; } }
+  @media (min-width: 768px) {
+    .content-list__row._5 .content-list__item {
+      /*flex: 0 0 $basis;*/
+      width: 20%;
+      padding-right: 9px;
+      padding-left: 9px; } }
   .content-list__item {
     display: -ms-flexbox;
     display: flex;
