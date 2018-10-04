@@ -29,6 +29,7 @@
             /*min-height: 398px;*/
         }
         &__inner {
+            width: 100%;
             flex-grow: 1;
             background-color: $white;
             display: flex;
