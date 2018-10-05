@@ -191,12 +191,12 @@
                 padding: 20px 24px 22px;
             }
         }
-        &__text {
+        &__text-wrapper {
             display: block;
             font-family: $font-family-alt;
             font-size: 15px;
             font-weight: 800;
-            line-height: 1.25;
+            line-height: 1.21;
             color: $white;
             margin-bottom: 7px;
             @include media-breakpoint-up(md) {
@@ -207,9 +207,20 @@
                 margin-bottom: 15px;
             }
         }
+        &__text {
+            padding: 0 5px;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                padding: 0;
+            }
+            @supports (-ms-ime-align:auto) {
+                padding: 0;
+            }
+        }
         &__accent {
             background-color: $secondary;
-            padding: 0 10px 0 4px;
+            padding: 0 5px;
             font-family: $font-family-alt;
             font-size: 17px;
             font-weight: 800;

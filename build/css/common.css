@@ -3546,24 +3546,34 @@ body {
     @media (min-width: 1280px) {
       .slider__item__content {
         padding: 20px 24px 22px; } }
-  .slider__item__text {
+  .slider__item__text-wrapper {
     display: block;
     font-family: "Montserrat", "Lato", sans-serif;
     font-size: 15px;
     font-weight: 800;
-    line-height: 1.25;
+    line-height: 1.21;
     color: white;
     margin-bottom: 7px; }
     @media (min-width: 768px) {
-      .slider__item__text {
+      .slider__item__text-wrapper {
         font-size: 20px; } }
     @media (min-width: 1280px) {
-      .slider__item__text {
+      .slider__item__text-wrapper {
         font-size: 24px;
         margin-bottom: 15px; } }
+  .slider__item__text {
+    padding: 0 5px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .slider__item__text {
+        padding: 0; } }
+    @supports (-ms-ime-align: auto) {
+      .slider__item__text {
+        padding: 0; } }
   .slider__item__accent {
     background-color: #ff6716;
-    padding: 0 10px 0 4px;
+    padding: 0 5px;
     font-family: "Montserrat", "Lato", sans-serif;
     font-size: 17px;
     font-weight: 800;
