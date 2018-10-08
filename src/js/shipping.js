@@ -211,7 +211,8 @@ app.shipping = {
                 coord,
             ],
             params: {
-                results: 1
+                results: 1,
+                avoidTrafficJams: true,
             }
         }, {
             boundsAutoApply: true,
