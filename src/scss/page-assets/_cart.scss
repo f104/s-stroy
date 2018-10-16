@@ -547,13 +547,19 @@
     }
     &__payment {
         .text-radio__text {
-            height: 71px;
+            /*height: 71px;*/
+            font-size: 14px;
+            padding-bottom: 35px;
             &__muted {
                 font-size: 12px;
                 line-height: normal;
                 margin-top: 5px;
                 width: 150px;
             }
+        }
+        .text-radio__img {
+            right: auto;
+            left: 12px;
         }
     }
     &__summary {

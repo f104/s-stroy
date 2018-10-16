@@ -1073,7 +1073,7 @@ ymaps {
   display: inline-block;
   background-image: url("svg/sprite.svg");
   background-repeat: no-repeat;
-  background-size: 11.8em 328.8em; }
+  background-size: 11.8em 332.4em; }
 
 .no-svg .sprite:before {
   background-image: url("../svg/sprite.png"); }
@@ -1293,123 +1293,128 @@ ymaps {
   width: 3.2em;
   height: 1.4em; }
 
-.sprite.roof:before {
+.sprite.money-office:before {
   background-position: -1em -211.1em;
+  width: 1.9em;
+  height: 1.6em; }
+
+.sprite.roof:before {
+  background-position: -1em -214.7em;
   width: 2.9em;
   height: 2em; }
 
 .sprite.roof-big:before {
-  background-position: -1em -215.1em;
+  background-position: -1em -218.7em;
   width: 3.9em;
   height: 2.6em; }
 
 .sprite.roof-o:before {
-  background-position: -1em -219.7em;
+  background-position: -1em -223.3em;
   width: 2.9em;
   height: 2em; }
 
 .sprite.technical-iso:before {
-  background-position: -1em -223.7em;
+  background-position: -1em -227.3em;
   width: 2.8em;
   height: 1.9em; }
 
 .sprite.technical-iso-big:before {
-  background-position: -1em -227.6em;
+  background-position: -1em -231.2em;
   width: 3.9em;
   height: 2.7em; }
 
 .sprite.technical-iso-o:before {
-  background-position: -1em -232.3em;
+  background-position: -1em -235.9em;
   width: 2.8em;
   height: 1.9em; }
 
 .sprite.twitter:before {
-  background-position: -1em -236.2em;
+  background-position: -1em -239.8em;
   width: 4.2em;
   height: 4.2em; }
 
 .sprite.vent-house:before {
-  background-position: -1em -242.4em;
+  background-position: -1em -246em;
   width: 2.3em;
   height: 2.9em; }
 
 .sprite.vent-house-big:before {
-  background-position: -1em -247.3em;
+  background-position: -1em -250.9em;
   width: 3em;
   height: 3.8em; }
 
 .sprite.vent-house-o:before {
-  background-position: -1em -253.1em;
+  background-position: -1em -256.7em;
   width: 2.3em;
   height: 2.9em; }
 
 .sprite.view-card:before {
-  background-position: -1em -258em;
-  width: 1.6em;
-  height: 1.6em; }
-
-.sprite.view-grid:before {
   background-position: -1em -261.6em;
   width: 1.6em;
   height: 1.6em; }
 
-.sprite.vk:before {
+.sprite.view-grid:before {
   background-position: -1em -265.2em;
+  width: 1.6em;
+  height: 1.6em; }
+
+.sprite.vk:before {
+  background-position: -1em -268.8em;
   width: 4.2em;
   height: 4.2em; }
 
 .sprite.warmth:before {
-  background-position: -1em -271.4em;
+  background-position: -1em -275em;
   width: 2.4em;
   height: 3.3em; }
 
 .sprite.warmth-big:before {
-  background-position: -1em -276.7em;
+  background-position: -1em -280.3em;
   width: 2.8em;
   height: 3.9em; }
 
 .sprite.warmth-o:before {
-  background-position: -1em -282.6em;
+  background-position: -1em -286.2em;
   width: 2.4em;
   height: 3.3em; }
 
 .sprite.warning:before {
-  background-position: -1em -287.9em;
+  background-position: -1em -291.5em;
   width: 3.9em;
   height: 3.6em; }
 
 .sprite.wat:before {
-  background-position: -1em -293.5em;
+  background-position: -1em -297.1em;
   width: 2.7em;
   height: 2.8em; }
 
 .sprite.wat-big:before {
-  background-position: -1em -298.3em;
+  background-position: -1em -301.9em;
   width: 3.2em;
   height: 3.3em; }
 
 .sprite.wat-o:before {
-  background-position: -1em -303.6em;
+  background-position: -1em -307.2em;
   width: 2.7em;
   height: 3em; }
 
 .sprite.waterproof:before {
-  background-position: -1em -308.6em;
+  background-position: -1em -312.2em;
   width: 2.8em;
   height: 2.8em; }
 
 .sprite.waterproof-big:before {
-  background-position: -1em -313.4em;
+  background-position: -1em -317em;
   width: 3.6em;
   height: 3.6em; }
 
 .sprite.waterproof-o:before {
-  background-position: -1em -319em;
+  background-position: -1em -322.6em;
   width: 2.8em;
   height: 2.6em; }
 
 .sprite.youtube:before {
-  background-position: -1em -323.6em;
+  background-position: -1em -327.2em;
   width: 4.3em;
   height: 4.2em; }
 
@@ -8107,12 +8112,18 @@ body {
     height: 72px; }
 
 .cart-info__payment .text-radio__text {
-  height: 71px; }
+  /*height: 71px;*/
+  font-size: 14px;
+  padding-bottom: 35px; }
   .cart-info__payment .text-radio__text__muted {
     font-size: 12px;
     line-height: normal;
     margin-top: 5px;
     width: 150px; }
+
+.cart-info__payment .text-radio__img {
+  right: auto;
+  left: 12px; }
 
 @media (min-width: 768px) {
   .cart-info__summary {
