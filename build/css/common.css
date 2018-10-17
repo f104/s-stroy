@@ -6396,6 +6396,9 @@ ymaps * {
         margin-bottom: 8px; }
         .contacts-list__item__address dd:last-child {
           margin-bottom: 0; }
+      @media (min-width: 768px) {
+        .contacts-list__item__address {
+          padding-right: 140px; } }
       .contacts-list__item__address__link {
         color: inherit; }
     .contacts-list__item__icon {
