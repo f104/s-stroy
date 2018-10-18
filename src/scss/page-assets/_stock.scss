@@ -111,30 +111,19 @@
 
 .stock-one {
     $root: &;
-    @include media-breakpoint-up(md) {
-        display: flex;
-    }
     .slider__item {
         height: 117px;
         margin-left: - $container-padding-sm;
         margin-right: - $container-padding-sm;
         margin-bottom: 15px;
         @include media-breakpoint-up(md) {
-            /*height: 260px;*/
+            height: 260px;
             margin-left: 0;
-            /*margin-right: 0;*/
+            margin-right: 0;
             margin-bottom: 20px;
-
-            width: 450px;
-            flex-shrink: 0;
-            margin-right: 20px;
-            height: 168px;
         }
         @include media-breakpoint-up(lg) {
-            /*height: 328px;*/
-
-            width: 565px;
-            height: 212px;
+            height: 328px;
         }
         &__text {
             font-size: 17px;
@@ -156,21 +145,53 @@
         }
     }
     &__foot {
-        /*        @include media-breakpoint-up(md) {
-                    display: flex;
-                    justify-content: space-between;
-                }*/
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: space-between;
+        }
         #{$root}__date {
             color: $red;
             font-size: 15px;
             font-weight: 500;
             margin-bottom: 15px;
-            /*line-height: 1.47*/
         }
         #{$root}__more {
             font-size: 15px;
             margin-bottom: 0;
-            /*line-height: 1.47*/
+        }
+    }
+    &._small {
+        .slider__item {
+            @include media-breakpoint-up(md) {
+                width: 450px;
+                height: 168px;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 565px;
+                height: 212px;
+            }
+        }
+    }
+    &._text-right, &._text-left {
+        overflow: hidden;
+        #{$root}__foot {
+            display: block;
+        }
+    }
+    &._text-right {
+        .slider__item {
+            @include media-breakpoint-up(md) {
+                float: left;
+                margin-right: 20px;
+            }
+        }
+    }
+    &._text-left {
+        .slider__item {
+            @include media-breakpoint-up(md) {
+                float: right;
+                margin-left: 20px;
+            }
         }
     }
 }

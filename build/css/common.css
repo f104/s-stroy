@@ -8885,11 +8885,6 @@ body {
         .stock-list__item__content__btn {
           line-height: 36px !important; } }
 
-@media (min-width: 768px) {
-  .stock-one {
-    display: -ms-flexbox;
-    display: flex; } }
-
 .stock-one .slider__item {
   height: 117px;
   margin-left: -15px;
@@ -8897,20 +8892,13 @@ body {
   margin-bottom: 15px; }
   @media (min-width: 768px) {
     .stock-one .slider__item {
-      /*height: 260px;*/
+      height: 260px;
       margin-left: 0;
-      /*margin-right: 0;*/
-      margin-bottom: 20px;
-      width: 450px;
-      -ms-flex-negative: 0;
-      flex-shrink: 0;
-      margin-right: 20px;
-      height: 168px; } }
+      margin-right: 0;
+      margin-bottom: 20px; } }
   @media (min-width: 1280px) {
     .stock-one .slider__item {
-      /*height: 328px;*/
-      width: 565px;
-      height: 212px; } }
+      height: 328px; } }
   .stock-one .slider__item__text {
     font-size: 17px; }
     @media (min-width: 768px) {
@@ -8927,21 +8915,47 @@ body {
         .stock-one .slider__item__accent__sm {
           font-size: 15px; } }
 
-.stock-one__foot {
-  /*        @include media-breakpoint-up(md) {
-                    display: flex;
-                    justify-content: space-between;
-                }*/ }
-  .stock-one__foot .stock-one__date {
-    color: #eb3848;
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    /*line-height: 1.47*/ }
-  .stock-one__foot .stock-one__more {
-    font-size: 15px;
-    margin-bottom: 0;
-    /*line-height: 1.47*/ }
+@media (min-width: 768px) {
+  .stock-one__foot {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; } }
+
+.stock-one__foot .stock-one__date {
+  color: #eb3848;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 15px; }
+
+.stock-one__foot .stock-one__more {
+  font-size: 15px;
+  margin-bottom: 0; }
+
+@media (min-width: 768px) {
+  .stock-one._small .slider__item {
+    width: 450px;
+    height: 168px; } }
+
+@media (min-width: 1280px) {
+  .stock-one._small .slider__item {
+    width: 565px;
+    height: 212px; } }
+
+.stock-one._text-right, .stock-one._text-left {
+  overflow: hidden; }
+  .stock-one._text-right .stock-one__foot, .stock-one._text-left .stock-one__foot {
+    display: block; }
+
+@media (min-width: 768px) {
+  .stock-one._text-right .slider__item {
+    float: left;
+    margin-right: 20px; } }
+
+@media (min-width: 768px) {
+  .stock-one._text-left .slider__item {
+    float: right;
+    margin-left: 20px; } }
 
 .sp__intro {
   font-size: 15px;
