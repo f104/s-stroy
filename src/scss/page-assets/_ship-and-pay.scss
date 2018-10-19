@@ -129,7 +129,7 @@
         font-weight: 600;
         line-height: 1.28;
         margin-bottom: 8px;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         @include media-breakpoint-up(md) {
             font-size: 16px;
             margin-bottom: 12px;
@@ -168,7 +168,6 @@
             margin-bottom: 2rem;
             @include media-breakpoint-up(md) {
                 margin-top: 0;
-                margin-bottom: 3rem;
                 &:last-child {
                     margin-bottom: 0;
                 }

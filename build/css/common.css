@@ -9082,7 +9082,7 @@ body {
     font-weight: 600;
     line-height: 1.28;
     margin-bottom: 8px;
-    margin-top: 2rem; }
+    margin-top: 1.5rem; }
     @media (min-width: 768px) {
       .sp-shipping__h {
         font-size: 16px;
@@ -9111,8 +9111,7 @@ body {
     margin-bottom: 2rem; }
     @media (min-width: 768px) {
       .sp-shipping__col .doc-download {
-        margin-top: 0;
-        margin-bottom: 3rem; }
+        margin-top: 0; }
         .sp-shipping__col .doc-download:last-child {
           margin-bottom: 0; } }
     .sp-shipping__col .doc-download .map {
