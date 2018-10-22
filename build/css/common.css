@@ -8950,12 +8950,20 @@ body {
 @media (min-width: 768px) {
   .stock-one._text-right .slider__item {
     float: left;
-    margin-right: 20px; } }
+    margin-right: 20px; }
+  .stock-one._text-right .rte ul {
+    float: left; }
+    .stock-one._text-right .rte ul + * {
+      clear: both; } }
 
 @media (min-width: 768px) {
   .stock-one._text-left .slider__item {
     float: right;
-    margin-left: 20px; } }
+    margin-left: 20px; }
+  .stock-one._text-left .rte ul {
+    float: right; }
+    .stock-one._text-left .rte ul + * {
+      clear: both; } }
 
 .sp__intro {
   font-size: 15px;

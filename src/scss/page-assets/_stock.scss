@@ -179,18 +179,34 @@
         }
     }
     &._text-right {
-        .slider__item {
-            @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(md) {
+            .slider__item {
                 float: left;
                 margin-right: 20px;
+            }
+            .rte {
+                ul {
+                    float: left;
+                    + * {
+                        clear: both;
+                    }
+                }
             }
         }
     }
     &._text-left {
-        .slider__item {
-            @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(md) {
+            .slider__item {
                 float: right;
                 margin-left: 20px;
+            }
+            .rte {
+                ul {
+                    float: right;
+                    + * {
+                        clear: both;
+                    }
+                }
             }
         }
     }
