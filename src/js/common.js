@@ -689,6 +689,10 @@ var app = {
             $(this).toggleClass('_opened');
             $(this).siblings('.js-im-menu__slide').slideToggle();
         });
+        $('.js-im-menu__toggler a').on('click', function (e) {
+            window.location = $(this).attr('href');
+            return false;
+        });
     },
 
     initSelects: function () {
