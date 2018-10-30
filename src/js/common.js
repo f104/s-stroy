@@ -340,7 +340,9 @@ var app = {
                                     .appendTo($parent)
                                     .removeClass('_hover')
                                     .removeAttr('style');
-                            $parent.removeAttr('style');
+                            $parent.css({
+                                'height': 'auto'
+                            });
                             $wrap.remove();
                         });
                     });
