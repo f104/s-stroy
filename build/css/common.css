@@ -4154,6 +4154,8 @@ body {
       transform: translateY(-50%);
       width: 30px;
       text-align: center; }
+    .catalog-menu__list__link._current {
+      background-color: rgba(60, 118, 207, 0.3); }
   .catalog-menu__list__item._expandable .catalog-menu__list__link:after {
     content: '\e810';
     font-family: "fontello";
@@ -4216,6 +4218,9 @@ body {
       .catalog-menu__second__list__link:hover {
         text-decoration: underline;
         color: inherit; }
+      .catalog-menu__second__list__link._current {
+        color: #3c76cf;
+        font-weight: 600; }
 
 .catalog-ext__item {
   border-top: 1px solid #dce2e7;

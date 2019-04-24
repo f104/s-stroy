@@ -182,6 +182,9 @@ $catalog-menu-padding: 17px;
                 width: 30px;
                 text-align: center;
             }
+            &._current {
+                background-color: rgba($cart, 0.3);
+            }
         }
         &__item {
             &._expandable {
@@ -257,6 +260,10 @@ $catalog-menu-padding: 17px;
                 &:hover {
                     text-decoration: underline;
                     color: inherit;
+                }
+                &._current {
+                    color: $cart;
+                    font-weight: 600;
                 }
             }
         }
