@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.8em 343.2em;
+    background-size: 11.8em 353.2em;
 }
 
 .no-svg .sprite:before {
@@ -458,8 +458,26 @@
 
 
 
-  .sprite.technical-iso:before {
+  .sprite.screw:before {
       background-position: -1em -238.1em;
+      width: 2.4em;
+      height: 3em;
+  }
+
+
+
+
+  .sprite.screw-o:before {
+      background-position: -1em -243.1em;
+      width: 2.4em;
+      height: 3em;
+  }
+
+
+
+
+  .sprite.technical-iso:before {
+      background-position: -1em -248.1em;
       width: 2.8em;
       height: 1.9em;
   }
@@ -468,7 +486,7 @@
 
 
   .sprite.technical-iso-big:before {
-      background-position: -1em -242em;
+      background-position: -1em -252em;
       width: 3.9em;
       height: 2.7em;
   }
@@ -477,7 +495,7 @@
 
 
   .sprite.technical-iso-o:before {
-      background-position: -1em -246.7em;
+      background-position: -1em -256.7em;
       width: 2.8em;
       height: 1.9em;
   }
@@ -486,7 +504,7 @@
 
 
   .sprite.twitter:before {
-      background-position: -1em -250.6em;
+      background-position: -1em -260.6em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -495,7 +513,7 @@
 
 
   .sprite.vent-house:before {
-      background-position: -1em -256.8em;
+      background-position: -1em -266.8em;
       width: 2.3em;
       height: 2.9em;
   }
@@ -504,7 +522,7 @@
 
 
   .sprite.vent-house-big:before {
-      background-position: -1em -261.7em;
+      background-position: -1em -271.7em;
       width: 3em;
       height: 3.8em;
   }
@@ -513,7 +531,7 @@
 
 
   .sprite.vent-house-o:before {
-      background-position: -1em -267.5em;
+      background-position: -1em -277.5em;
       width: 2.3em;
       height: 2.9em;
   }
@@ -522,7 +540,7 @@
 
 
   .sprite.view-card:before {
-      background-position: -1em -272.4em;
+      background-position: -1em -282.4em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -531,7 +549,7 @@
 
 
   .sprite.view-grid:before {
-      background-position: -1em -276em;
+      background-position: -1em -286em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -540,7 +558,7 @@
 
 
   .sprite.vk:before {
-      background-position: -1em -279.6em;
+      background-position: -1em -289.6em;
       width: 4.2em;
       height: 4.2em;
   }
@@ -549,7 +567,7 @@
 
 
   .sprite.warmth:before {
-      background-position: -1em -285.8em;
+      background-position: -1em -295.8em;
       width: 2.4em;
       height: 3.3em;
   }
@@ -558,7 +576,7 @@
 
 
   .sprite.warmth-big:before {
-      background-position: -1em -291.1em;
+      background-position: -1em -301.1em;
       width: 2.8em;
       height: 3.9em;
   }
@@ -567,7 +585,7 @@
 
 
   .sprite.warmth-o:before {
-      background-position: -1em -297em;
+      background-position: -1em -307em;
       width: 2.4em;
       height: 3.3em;
   }
@@ -576,7 +594,7 @@
 
 
   .sprite.warning:before {
-      background-position: -1em -302.3em;
+      background-position: -1em -312.3em;
       width: 3.9em;
       height: 3.6em;
   }
@@ -585,7 +603,7 @@
 
 
   .sprite.wat:before {
-      background-position: -1em -307.9em;
+      background-position: -1em -317.9em;
       width: 2.7em;
       height: 2.8em;
   }
@@ -594,7 +612,7 @@
 
 
   .sprite.wat-big:before {
-      background-position: -1em -312.7em;
+      background-position: -1em -322.7em;
       width: 3.2em;
       height: 3.3em;
   }
@@ -603,7 +621,7 @@
 
 
   .sprite.wat-o:before {
-      background-position: -1em -318em;
+      background-position: -1em -328em;
       width: 2.7em;
       height: 3em;
   }
@@ -612,7 +630,7 @@
 
 
   .sprite.waterproof:before {
-      background-position: -1em -323em;
+      background-position: -1em -333em;
       width: 2.8em;
       height: 2.8em;
   }
@@ -621,7 +639,7 @@
 
 
   .sprite.waterproof-big:before {
-      background-position: -1em -327.8em;
+      background-position: -1em -337.8em;
       width: 3.6em;
       height: 3.6em;
   }
@@ -630,7 +648,7 @@
 
 
   .sprite.waterproof-o:before {
-      background-position: -1em -333.4em;
+      background-position: -1em -343.4em;
       width: 2.8em;
       height: 2.6em;
   }
@@ -639,7 +657,7 @@
 
 
   .sprite.youtube:before {
-      background-position: -1em -338em;
+      background-position: -1em -348em;
       width: 4.3em;
       height: 4.2em;
   }

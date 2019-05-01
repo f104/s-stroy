@@ -1,6 +1,6 @@
 'use strict';
 var gulp = require('gulp'),
-        gutil = require('gulp-util'),
+        //gutil = require('gulp-util'),
         watch = require('gulp-watch'),
         sass = require('gulp-sass'),
         sourcemaps = require('gulp-sourcemaps'),
@@ -12,7 +12,7 @@ var gulp = require('gulp'),
         fileinclude = require('gulp-file-include'),
         autoprefixer = require('gulp-autoprefixer'),
         rename = require("gulp-rename"),
-        uglify = require('gulp-uglify-es').default,
+        uglify = require('gulp-uglify'),
         cleanCSS = require('gulp-clean-css'),
         concat = require('gulp-concat'),
         reload = browserSync.reload;
@@ -47,7 +47,7 @@ var config = {
     server: {
         baseDir: "./build"
     },
-    tunnel: true,
+    tunnel: false,
     host: 'localhost',
     port: 9000,
     logPrefix: "Frontend_Devil"
@@ -89,14 +89,14 @@ gulp.task('image:build', function () {
             .pipe(gulp.dest(path.build.img))
             .pipe(reload({stream: true}));
 });
-gulp.task('sprite:build', function () {
-    var spriteData =
-            gulp.src(path.src.sprite)
-            .pipe(svgSprite());
-
-    spriteData.img.pipe(gulp.dest(path.build.img));
-    spriteData.css.pipe(gulp.dest(path.build.sprite));
-});
+//gulp.task('sprite:build', function () {
+//    var spriteData =
+//            gulp.src(path.src.sprite)
+//            .pipe(svgSprite());
+//
+//    spriteData.img.pipe(gulp.dest(path.build.img));
+//    spriteData.css.pipe(gulp.dest(path.build.sprite));
+//});
 gulp.task('sprites', function () {
     return gulp.src(path.src.sprite)
             .pipe(svgSprite({
@@ -181,8 +181,8 @@ gulp.task('watch', function () {
         gulp.start('fonts:build');
     });
 });
-gulp.task('default', ['build', 'watch']);
-//gulp.task('default', ['build', 'webserver', 'watch']);
+//gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build', 'webserver', 'watch']);
 
 function onError(err) {
     console.log(err);
