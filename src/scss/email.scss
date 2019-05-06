@@ -24,15 +24,6 @@ $white: #fff;
     font-weight: normal;
     font-style: normal;
 }
-a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    &:hover {
-        text-decoration: none;
-        color: inherit;
-    }
-}
 .wrapper {
     background-color: #F2F3F4;
     width: 600px;
