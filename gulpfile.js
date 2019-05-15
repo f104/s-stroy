@@ -138,18 +138,22 @@ gulp.task('minify-css', () => {
  * Минификация и объединение всех скриптов
  */
 gulp.task('minify-js', function () {
+    gulp.src(path.src.js)
+            .pipe(rigger())
+            .pipe(gulp.dest(path.build.js));
     gulp.src([
         'build/js/libs/jquery.min.js',
-        'build/js/**/*.js',
+        'build/js/libs/*.js',
+        'build/js/*.js',
         '!build/js/bundle.js'])
-            .pipe(uglify({
-                compress: {hoist_funs: false}
-            }))
-            .on('error', function (err) {
-                gutil.log(gutil.colors.red('[Error]'), err.toString());
-            })
+//            .pipe(uglify({
+//                compress: {hoist_funs: false}
+//            }))
+//            .on('error', function (err) {
+//                //gutil.log(gutil.colors.red('[Error]'), err.toString());
+//            })
             .pipe(concat('bundle.js'))
-            .pipe(gulp.dest('build/js/'));
+            .pipe(gulp.dest(path.build.js));
 });
 
 gulp.task('fonts:build', function () {

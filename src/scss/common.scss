@@ -144,6 +144,9 @@ a, .link {
             margin-bottom: 0;
             margin-right: 32px;
             flex-shrink: 0;
+            /* need to up button sticky */
+            display: flex;
+            flex-direction: column;
         }
         &__right {
             width: 892px;
@@ -216,6 +219,7 @@ ymaps {
 @import "components/contacts-list";
 @import "components/neighbors";
 @import "components/footer-down";
+@import "components/up";
 @import "page-assets/catalog";
 @import "page-assets/product";
 @import "page-assets/cart";

@@ -167,8 +167,11 @@ $catalog-menu-padding: 17px;
             display: block;
             color: #51555b;
             padding: 15px 35px 13px $catalog-menu-padding * 2 + 30;
-            &:hover {
-                color: inherit;
+            @include media-breakpoint-up(lg) {
+                // подсвечиваем только раскрывающиеся
+                /*            &:hover {
+                                color: inherit;
+                            }*/
             }
             &__text {
                 display: inline-block;
@@ -183,33 +186,65 @@ $catalog-menu-padding: 17px;
                 text-align: center;
             }
             &._current {
-                background-color: rgba($cart, 0.3);
+                background-color: $body-bg;
+                border-right: 3px solid $white;
+                border-left: 3px solid $white;
+                padding-left: $catalog-menu-padding * 2 + 30 - 3;
+                .sprite {
+                    left: $catalog-menu-padding - 3;
+                }
             }
         }
         &__item {
             &._expandable {
-                .catalog-menu__list__link:after {
-                    content: '\e810';
-                    font-family: "fontello";
-                    font-size: 19px;
-                    position: absolute;
-                    right: $catalog-menu-padding;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    color: rgba($body-color, .2);
+                .catalog-menu__list__link {
+                    &:after {
+                        content: '\e810';
+                        font-family: "fontello";
+                        font-size: 19px;
+                        position: absolute;
+                        right: $catalog-menu-padding;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: rgba($body-color, .2);
+                    }
+                    &._current {
+                        &:after {
+                            right: $catalog-menu-padding - 3;
+                        }
+                    }
                 }
                 @include media-breakpoint-up(lg) {
                     &:hover, &._active {
-                        .catalog-menu__list__link {
-                            background-color: $cart;
-                            color: $white;
-                            opacity: 1;
-                            &:after {
-                                color: rgba($white, .8);
-                            }
-                        }
                         .catalog-menu__second {
                             display: block;
+                        }
+                    }
+                    // подсвечиваем только раскрывающиеся
+                    /*                    &:hover, &._active {
+                                            .catalog-menu__list__link {
+                                                background-color: $cart;
+                                                color: $white;
+                                                opacity: 1;
+                                                &:after {
+                                                    color: rgba($white, .8);
+                                                }
+                                            }
+                                        }*/
+                }
+            }
+            @include media-breakpoint-up(lg) {
+                // подсвечиваем все
+                &:hover, &._active {
+                    .catalog-menu__list__link {
+                        background-color: $cart;
+                        color: $white;
+                        opacity: 1;
+                        &:after {
+                            color: rgba($white, .8);
+                        }
+                        &._current {
+                            border-color: $cart;
                         }
                     }
                 }

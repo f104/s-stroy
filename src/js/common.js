@@ -45,11 +45,30 @@ var app = {
         this.initSP();
         this.initTags();
         this.initContacts();
+        this.initUp();
         $(window).on('resize', function () {
             app.initHover();
         });
 
         this.initialized = true;
+    },
+    
+    initUp: function () {
+        var $btn = $(".js-up");
+        if (!$btn.length) {
+            return;
+        }
+        var breakpoint = $(window).outerHeight() / 5;
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > breakpoint) {
+                $btn.removeClass('_hidden');
+            } else {
+                $btn.addClass('_hidden');
+            }
+        });
+        $btn.on('click', function () {
+            $("html, body").animate({scrollTop: 0}, 500);
+        });
     },
 
     initMenu: function () {
@@ -443,6 +462,7 @@ var app = {
                 $menu = $('.js-cm__menu'),
                 $scrollbar = $('.js-cm__scrollbar'),
                 $mobileToggler = $('.js-cm__mobile-toggler'),
+                $link = $('.js-cm__link'),
                 $secondLink = $('.js-cm__second-link'),
                 $secondClose = $('.js-cm__menu-second__close'),
                 $wrapper = $('.js-cm__menu-wrapper');
@@ -481,7 +501,7 @@ var app = {
 
         if (!isMobile) {
             $slideTrigger.on('click', slideMenu);
-            $secondLink.parent().hover(hoverIcon, unhoverIcon)
+            $link.parent().hover(hoverIcon, unhoverIcon)
         } else {
             $secondLink.on('click', showSecond);
             initScrollbar();
@@ -505,13 +525,13 @@ var app = {
                     $slideTrigger.off('click', slideMenu);
                     $secondLink.on('click', showSecond);
                     $secondLink.off('mouseenter mouseleave');
-                    $secondLink.parent().off('mouseenter mouseleave');
+                    $link.parent().off('mouseenter mouseleave');
                     initScrollbar();
                 } else {
                     $wrapper.removeClass('_active');
                     $slideTrigger.on('click', slideMenu);
                     $secondLink.off('click', showSecond);
-                    $secondLink.parent().hover(hoverIcon, unhoverIcon);
+                    $link.parent().hover(hoverIcon, unhoverIcon);
                     destroyScrollbar();
                     if (!$menu.hasClass('_opened')) {
                         $slide.hide();

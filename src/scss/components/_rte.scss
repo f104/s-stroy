@@ -267,6 +267,10 @@
             margin-right: auto;
         }
     }
+    
+    > :last-child {
+        margin-bottom: 0;
+    }
 
 }
 
