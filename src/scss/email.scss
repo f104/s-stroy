@@ -40,31 +40,32 @@ $bp: 600px;
 }
 .table {
     width: 100%;
-    &._block {
-        display: block;
-        @media screen and (min-width: $bp) {
-            display: table;
-        }
-        tbody {
-            display: block;
-            @media screen and (min-width: $bp) {
-                display: table-row-group;
-            }
-        }
-        tr {
-            display: block;
-            @media screen and (min-width: $bp) {
-                display: table-row;
-            }
-        }
-        td {
-            display: block;
-            @media screen and (min-width: $bp) {
-                display: table-cell;
-            }
-        }
+}
+.table_block {
+    display: block;
+    @media screen and (min-width: $bp) {
+        display: table;
     }
 }
+.table_block__tbody {
+    display: block;
+    @media screen and (min-width: $bp) {
+        display: table-row-group;
+    }
+}
+.table_block__tr {
+    display: block;
+    @media screen and (min-width: $bp) {
+        display: table-row;
+    }
+}
+.table_block__td {
+    display: block;
+    @media screen and (min-width: $bp) {
+        display: table-cell;
+    }
+}
+
 .br-md {
     display: none;
     @media screen and (min-width: $bp) {
@@ -84,7 +85,7 @@ $bp: 600px;
             opacity: 0.6;
             height: 30px;
             vertical-align: middle;
-            &:last-child {
+            &_last {
                 text-align: right;
             }
             @media screen and (min-width: $bp) {
@@ -98,7 +99,7 @@ $bp: 600px;
         &__td {
             height: 48px;
             vertical-align: middle;
-            &:last-child {
+            &_last {
                 text-align: right;
             }
             @media screen and (min-width: $bp) {
@@ -134,7 +135,7 @@ $bp: 600px;
     }
     &__catalog {
         .table {
-            tr {
+            .head__catalog__tr {
                 overflow: hidden;
                 padding-top: 15px;
                 padding-bottom: 5px;
@@ -156,7 +157,7 @@ $bp: 600px;
                 width: 25%;
                 font-size: 0;
                 white-space: nowrap;
-                &:last-child {
+                &._last {
                     width: 10%;
                 }
             }
@@ -212,7 +213,7 @@ $bp: 600px;
         line-height: 18px;
         letter-spacing: 0.01em;
         margin-bottom: 11px;
-        &:last-child {
+        &_last {
             margin-bottom: 0;
         }
         @media screen and (min-width: $bp) {
@@ -221,7 +222,7 @@ $bp: 600px;
         }
     }
     &__link {
-        color: $secondary;
+        color: $secondary !important;
         cursor: pointer;
         text-decoration: none;
         border-bottom: 2px solid rgba($secondary, .4);
@@ -249,7 +250,7 @@ $bp: 600px;
         @media screen and (min-width: $bp) {
             display: table-cell;
         }
-        &._first {
+        &_first {
             display: table-cell;
             font-size: 14px;
             letter-spacing: 0.01em;
@@ -260,7 +261,7 @@ $bp: 600px;
                 padding-left: 30px;
             }
         }
-        &:last-child {
+        &_last {
             padding-right: 30px;
         }
     }
@@ -274,18 +275,22 @@ $bp: 600px;
         line-height: 14px;
         letter-spacing: 0.01em;
         color: #000000;
-        &._img {
+        &_img {
             padding-left: 13px;
             padding-right: 14px;
             @media screen and (min-width: $bp) {
                 padding-left: 23px;
             }
         }
-        &._md {
+        &_md {
             display: none;
             @media screen and (min-width: $bp) {
                 display: table-cell;
             }
+        }
+        &__muted {
+            display: block;
+            color: rgba(#000000,.6);
         }
         &__table {
             .order__td {
@@ -293,10 +298,6 @@ $bp: 600px;
                 padding-top: 6px;
                 padding-bottom: 0;
                 border-bottom-width: 0;
-                &__muted {
-                    display: block;
-                    opacity: 0.6;
-                }
             }
             @media screen and (min-width: $bp) {
                 display: none;
@@ -309,7 +310,7 @@ $bp: 600px;
     &__link {
         text-decoration: none;
         cursor: pointer;
-        color: inherit;
+        color: #000000 !important;
         &:hover {
             text-decoration: none;
             color: inherit;
@@ -348,7 +349,7 @@ $bp: 600px;
                 vertical-align: top;
                 padding-bottom: 18px;
             }
-            &._first {
+            &_first {
                 padding-bottom: 0;
                 opacity: .6;
                 @media screen and (min-width: $bp) {
@@ -358,8 +359,8 @@ $bp: 600px;
                 }
             }
         }
-        tr {
-            &:last-child {
+        &__tr {
+            &_last {
                 .detail__table__td {
                     padding-bottom: 0;
                 }
@@ -396,10 +397,10 @@ $bp: 600px;
         margin-bottom: 28px;
         &__link {
             cursor: pointer;
-            color: inherit;
+            color: rgba(#000000, .5) !important;
             text-decoration: none;
             &:hover {
-                color: inherit;
+                color: rgba(#000000, .5) !important;
                 text-decoration: none;
             }
         }
@@ -420,14 +421,14 @@ $bp: 600px;
             opacity: 0.6;
             text-align: center;
             margin-bottom: 13px;
-            &:last-child {
+            &_last {
                 margin-bottom: 0;
             }
             @media screen and (min-width: $bp) {
                 height: 43px;
                 text-align: left;
                 margin-bottom: 0;
-                &:last-child {
+                &_last {
                     text-align: right;
                 }
             }

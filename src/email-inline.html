@@ -1,16 +1,638 @@
-
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
     <head>
-        <title>E-mail</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="format-detection" content="telephone=no">
-        <link href="https://rawgit.com/f104/s-stroy/master/build/css/email.css" rel="stylesheet" type="text/css">
+        <style>
+            *,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff; }
+
+[tabindex="-1"]:focus {
+  outline: 0 !important; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+  text-decoration-skip-ink: none; }
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit; }
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0; }
+
+dt {
+  font-weight: 700; }
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; }
+
+blockquote {
+  margin: 0 0 1rem; }
+
+b,
+strong {
+  font-weight: bolder; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent; }
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline; }
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none; }
+  a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: none; }
+  a:not([href]):not([tabindex]):focus {
+    outline: 0; }
+
+pre,
+code,
+kbd,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em; }
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto; }
+
+figure {
+  margin: 0 0 1rem; }
+
+img {
+  vertical-align: middle;
+  border-style: none; }
+
+svg {
+  overflow: hidden;
+  vertical-align: middle; }
+
+table {
+  border-collapse: collapse; }
+
+caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #6c757d;
+  text-align: left;
+  caption-side: bottom; }
+
+th {
+  text-align: inherit; }
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem; }
+
+button {
+  border-radius: 0; }
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color; }
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+button,
+input {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+select {
+  word-wrap: normal; }
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: pointer; }
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none; }
+
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox; }
+
+textarea {
+  overflow: auto;
+  resize: vertical; }
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal; }
+
+progress {
+  vertical-align: baseline; }
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none; }
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button; }
+
+output {
+  display: inline-block; }
+
+summary {
+  display: list-item;
+  cursor: pointer; }
+
+template {
+  display: none; }
+
+[hidden] {
+  display: none !important; }
+
+.body {
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1A1A1A; }
+
+*, *::before, *::after {
+  position: relative;
+  /*https://github.com/kenwheeler/slick/issues/982*/
+  min-height: 0;
+  min-width: 0;
+  font-weight: normal;
+  font-style: normal; }
+
+.wrapper {
+  background-color: #F2F3F4;
+  margin: 0 auto; }
+  @media screen and (min-width: 600px) {
+    .wrapper {
+      width: 600px; } }
+
+.container {
+  padding: 0 20px; }
+  @media screen and (min-width: 600px) {
+    .container {
+      padding: 0 30px; } }
+
+.table {
+  width: 100%; }
+
+.table_block {
+  display: block; }
+  @media screen and (min-width: 600px) {
+    .table_block {
+      display: table; } }
+
+.table_block__tbody {
+  display: block; }
+  @media screen and (min-width: 600px) {
+    .table_block__tbody {
+      display: table-row-group; } }
+
+.table_block__tr {
+  display: block; }
+  @media screen and (min-width: 600px) {
+    .table_block__tr {
+      display: table-row; } }
+
+.table_block__td {
+  display: block; }
+  @media screen and (min-width: 600px) {
+    .table_block__td {
+      display: table-cell; } }
+
+.br-md {
+  display: none; }
+  @media screen and (min-width: 600px) {
+    .br-md {
+      display: initial; } }
+
+.head {
+  background-color: #fff;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05); }
+  .head__order {
+    border: 1px dashed #DCDCDC; }
+    .head__order__td {
+      font-size: 13px;
+      line-height: 14px;
+      letter-spacing: 0.01em;
+      opacity: 0.6;
+      height: 30px;
+      vertical-align: middle; }
+      .head__order__td_last {
+        text-align: right; }
+      @media screen and (min-width: 600px) {
+        .head__order__td {
+          font-size: 14px;
+          height: 36px; } }
+  .head__company {
+    border-bottom: 1px solid #F1F1F1; }
+    .head__company__td {
+      height: 48px;
+      vertical-align: middle; }
+      .head__company__td_last {
+        text-align: right; }
+      @media screen and (min-width: 600px) {
+        .head__company__td {
+          height: 60px; } }
+    .head__company__link {
+      text-decoration: none;
+      cursor: pointer;
+      display: block; }
+    .head__company__logo {
+      width: 116px; }
+      @media screen and (min-width: 600px) {
+        .head__company__logo {
+          width: 175px; } }
+    .head__company__phone {
+      font-size: 14px;
+      line-height: 16px; }
+      .head__company__phone__img {
+        width: 10px;
+        vertical-align: baseline; }
+      @media screen and (min-width: 600px) {
+        .head__company__phone {
+          font-size: 18px;
+          line-height: 18px; }
+          .head__company__phone__img {
+            width: 12px; } }
+  .head__catalog .table .head__catalog__tr {
+    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 5px; }
+    @media screen and (min-width: 600px) {
+      .head__catalog .table .head__catalog__tr {
+        padding: 0; } }
+  .head__catalog__td {
+    float: left;
+    width: 50%;
+    font-size: 0;
+    line-height: 0;
+    margin-bottom: 10px; }
+    @media screen and (min-width: 600px) {
+      .head__catalog__td {
+        float: none;
+        height: 60px;
+        vertical-align: middle;
+        width: 25%;
+        font-size: 0;
+        white-space: nowrap; }
+        .head__catalog__td._last {
+          width: 10%; } }
+  .head__catalog__icon {
+    display: none; }
+    @media screen and (min-width: 600px) {
+      .head__catalog__icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px; } }
+  .head__catalog__text {
+    font-size: 12px;
+    line-height: 13px;
+    display: inline-block;
+    vertical-align: middle; }
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 35px; }
+  @media screen and (min-width: 600px) {
+    .header {
+      padding-top: 43px;
+      padding-bottom: 56px; } }
+  .header__h {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 18px; }
+    @media screen and (min-width: 600px) {
+      .header__h {
+        font-size: 26px;
+        line-height: 34px;
+        margin-bottom: 20px; } }
+  .header__p {
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    margin-bottom: 30px; }
+    @media screen and (min-width: 600px) {
+      .header__p {
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 49px;
+        max-width: 350px; } }
+  .header__summary {
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    margin-bottom: 11px; }
+    .header__summary_last {
+      margin-bottom: 0; }
+    @media screen and (min-width: 600px) {
+      .header__summary {
+        font-size: 20px;
+        line-height: 20px; } }
+  .header__link {
+    color: #ff6716 !important;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 103, 22, 0.4);
+    /*transition: border-color .2s;*/ }
+    .header__link:hover {
+      text-decoration: none;
+      color: #ff6716;
+      /*border-bottom-color: $secondary;*/ }
+
+.order {
+  margin-bottom: 30px; }
+  @media screen and (min-width: 600px) {
+    .order {
+      margin-bottom: 48px; } }
+  .order__th {
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    opacity: 0.6;
+    height: 34px;
+    display: none; }
+    @media screen and (min-width: 600px) {
+      .order__th {
+        display: table-cell; } }
+    .order__th_first {
+      display: table-cell;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      opacity: 1;
+      padding-left: 20px;
+      vertical-align: top; }
+      @media screen and (min-width: 600px) {
+        .order__th_first {
+          padding-left: 30px; } }
+    .order__th_last {
+      padding-right: 30px; }
+  .order__td {
+    background-color: #fff;
+    border-bottom: 1px solid #F1F1F1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 22px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: #000000; }
+    .order__td_img {
+      padding-left: 13px;
+      padding-right: 14px; }
+      @media screen and (min-width: 600px) {
+        .order__td_img {
+          padding-left: 23px; } }
+    .order__td_md {
+      display: none; }
+      @media screen and (min-width: 600px) {
+        .order__td_md {
+          display: table-cell; } }
+    .order__td__muted {
+      display: block;
+      color: rgba(0, 0, 0, 0.6); }
+    .order__td__table .order__td {
+      width: 33.33%;
+      padding-top: 6px;
+      padding-bottom: 0;
+      border-bottom-width: 0; }
+    @media screen and (min-width: 600px) {
+      .order__td__table {
+        display: none; } }
+  .order__img {
+    width: 39px; }
+  .order__link {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000 !important; }
+    .order__link:hover {
+      text-decoration: none;
+      color: inherit; }
+
+.detail {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  color: #000000; }
+  @media screen and (min-width: 600px) {
+    .detail {
+      font-size: 14px;
+      line-height: 17px; } }
+  .detail__h {
+    margin-bottom: 13px; }
+    @media screen and (min-width: 600px) {
+      .detail__h {
+        margin-bottom: 17px; } }
+  .detail__content {
+    background-color: #fff;
+    padding-top: 23px;
+    padding-bottom: 44px; }
+    @media screen and (min-width: 600px) {
+      .detail__content {
+        padding-top: 35px;
+        padding-bottom: 35px; } }
+  .detail__table__td {
+    padding-bottom: 22px; }
+    @media screen and (min-width: 600px) {
+      .detail__table__td {
+        vertical-align: top;
+        padding-bottom: 18px; } }
+    .detail__table__td_first {
+      padding-bottom: 0;
+      opacity: .6; }
+      @media screen and (min-width: 600px) {
+        .detail__table__td_first {
+          padding-bottom: 18px;
+          width: 225px;
+          padding-right: 20px; } }
+  .detail__table__tr_last .detail__table__td {
+    padding-bottom: 0; }
+
+.footer {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 34px; }
+  @media screen and (min-width: 600px) {
+    .footer {
+      padding-top: 65px;
+      padding-bottom: 27px; } }
+  .footer__q {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 16px; }
+  .footer__phone {
+    font-size: 20px;
+    line-height: 23px; }
+    .footer__phone__img {
+      width: 14px;
+      vertical-align: baseline; }
+  .footer__p {
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 28px; }
+    .footer__p__link {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.5) !important;
+      text-decoration: none; }
+      .footer__p__link:hover {
+        color: rgba(0, 0, 0, 0.5) !important;
+        text-decoration: none; }
+  .footer__address {
+    padding: 20px 0;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px; }
+    @media screen and (min-width: 600px) {
+      .footer__address {
+        padding: 0; } }
+    .footer__address__td {
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.01em;
+      opacity: 0.6;
+      text-align: center;
+      margin-bottom: 13px; }
+      .footer__address__td_last {
+        margin-bottom: 0; }
+      @media screen and (min-width: 600px) {
+        .footer__address__td {
+          height: 43px;
+          text-align: left;
+          margin-bottom: 0; }
+          .footer__address__td_last {
+            text-align: right; } }
+  .footer__logo__link {
+    display: block;
+    cursor: pointer;
+    text-decoration: none; }
+  .footer__logo__img {
+    width: 139px; }
+        </style>
     </head>
     <body class="body">
-
         <div class="wrapper">
             <div class="head">
                 <div class="head__order">
@@ -18,7 +640,7 @@
                         <table class="table">
                             <tr>
                                 <td class="head__order__td">Заказ №501000</td>
-                                <td class="head__order__td">24.04.2019 13:53</td>
+                                <td class="head__order__td head__order__td_last">24.04.2019 13:53</td>
                             </tr>
                         </table>
                     </div>
@@ -32,7 +654,7 @@
                                         <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/logo.png" alt="Саксэс" class="head__company__logo">
                                     </a>
                                 </td>
-                                <td class="head__company__td head__company__phone">
+                                <td class="head__company__td head__company__td_last head__company__phone">
                                     <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/phone.png" class="head__company__phone__img">
                                     +7 (831) 262-13-01
                                 </td>
@@ -42,25 +664,27 @@
                 </div>
                 <div class="head__catalog">
                     <div class="container">
-                        <table class="table _block">
-                            <tr>
-                                <td class="head__catalog__td">
-                                    <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat1.png" alt="Скатная кровля" class="head__catalog__icon">
-                                    <span class="head__catalog__text">Скатная <br class="br-md">кровля</span>
-                                </td>
-                                <td class="head__catalog__td">
-                                    <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat2.png" alt="Плоская кровля" class="head__catalog__icon">
-                                    <span class="head__catalog__text">Плоская <br class="br-md">кровля</span>
-                                </td>
-                                <td class="head__catalog__td">
-                                    <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat3.png" alt="Фасадные материалы" class="head__catalog__icon">
-                                    <span class="head__catalog__text">Фасадные <br class="br-md">материалы</span>
-                                </td>
-                                <td class="head__catalog__td">
-                                    <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat4.png" alt="Внутренняя отделка" class="head__catalog__icon">
-                                    <span class="head__catalog__text">Внутренняя <br class="br-md">отделка</span>
-                                </td>
-                            </tr>
+                        <table class="table table_block">
+                            <tbody class="table_block__tbody">
+                                <tr class="table_block__tr head__catalog__tr">
+                                    <td class="table_block__td head__catalog__td">
+                                        <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat1.png" alt="Скатная кровля" class="head__catalog__icon">
+                                        <span class="head__catalog__text">Скатная <br class="br-md">кровля</span>
+                                    </td>
+                                    <td class="table_block__td head__catalog__td">
+                                        <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat2.png" alt="Плоская кровля" class="head__catalog__icon">
+                                        <span class="head__catalog__text">Плоская <br class="br-md">кровля</span>
+                                    </td>
+                                    <td class="table_block__td head__catalog__td">
+                                        <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat3.png" alt="Фасадные материалы" class="head__catalog__icon">
+                                        <span class="head__catalog__text">Фасадные <br class="br-md">материалы</span>
+                                    </td>
+                                    <td class="table_block__td head__catalog__td _last">
+                                        <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/cat4.png" alt="Внутренняя отделка" class="head__catalog__icon">
+                                        <span class="head__catalog__text">Внутренняя <br class="br-md">отделка</span>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -71,21 +695,21 @@
                 <p class="header__p">Алексей, в ближайшее время с Вами свяжется менеджер для уточнения деталей заказа.</p>
                 <p class="header__summary">Сумма вашего заказа: <strong>44 890 ₽</strong></p>
                 <p class="header__summary">Стоимость доставки: 600 ₽</p>
-                <p class="header__summary">Оплатите его, перейдя по <a href="#" class="header__link">ссылке</a></p>
+                <p class="header__summary header__summary_last">Оплатите его, перейдя по <a href="#" class="header__link">ссылке</a></p>
             </div>
             <table class="table order">
                 <thead>
                     <tr>
-                        <th class="order__th _first" colspan="2">Состав заказа:</th>
+                        <th class="order__th order__th_first" colspan="2">Состав заказа:</th>
                         <th class="order__th">Цена</th>
                         <th class="order__th">Кол-во</th>
-                        <th class="order__th">Сумма</th>
+                        <th class="order__th order__th_last">Сумма</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- строка таблицы с товарами в e-mail -->
 <tr class="order__tr">
-    <td class="order__td _img">
+    <td class="order__td order__td_img">
         <a href="#" class="order__link">
             <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/1.png" alt="alt text" class="order__img">
         </a>
@@ -102,13 +726,13 @@
             </tr>
         </table>
     </td>
-    <td class="order__td _md">2 445 ₽</td>
-    <td class="order__td _md">2 шт.</td>
-    <td class="order__td _md">4 890 ₽</td>
+    <td class="order__td order__td_md">2 445 ₽</td>
+    <td class="order__td order__td_md">2 шт.</td>
+    <td class="order__td order__td_md">4 890 ₽</td>
 </tr>
                     <!-- строка таблицы с товарами в e-mail -->
 <tr class="order__tr">
-    <td class="order__td _img">
+    <td class="order__td order__td_img">
         <a href="#" class="order__link">
             <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/2.png" alt="alt text" class="order__img">
         </a>
@@ -125,13 +749,13 @@
             </tr>
         </table>
     </td>
-    <td class="order__td _md">2 000 ₽</td>
-    <td class="order__td _md">2 рул.</td>
-    <td class="order__td _md">2 000 ₽</td>
+    <td class="order__td order__td_md">2 000 ₽</td>
+    <td class="order__td order__td_md">2 рул.</td>
+    <td class="order__td order__td_md">2 000 ₽</td>
 </tr>
                     <!-- строка таблицы с товарами в e-mail -->
 <tr class="order__tr">
-    <td class="order__td _img">
+    <td class="order__td order__td_img">
         <a href="#" class="order__link">
             <img src="https://rawgit.com/f104/s-stroy/master/build/img/email/3.png" alt="alt text" class="order__img">
         </a>
@@ -148,9 +772,9 @@
             </tr>
         </table>
     </td>
-    <td class="order__td _md">1 500 ₽</td>
-    <td class="order__td _md">10 шт.</td>
-    <td class="order__td _md">15 000 ₽</td>
+    <td class="order__td order__td_md">1 500 ₽</td>
+    <td class="order__td order__td_md">10 шт.</td>
+    <td class="order__td order__td_md">15 000 ₽</td>
 </tr>
                 </tbody>
             </table>
@@ -160,35 +784,37 @@
                 </div>
                 <div class="detail__content">
                     <div class="container">
-                        <table class="table _block detail__table">
-                            <tr>
-                                <td class="detail__table__td _first">Ф.И.О.:</td>
-                                <td class="detail__table__td">Алексей Иванович Петренко</td>
-                            </tr>
-                            <tr>
-                                <td class="detail__table__td _first">Телефон для связи:</td>
-                                <td class="detail__table__td">+7 (999) 999-99-99</td>
-                            </tr>
-                            <tr>
-                                <td class="detail__table__td _first">E-mail</td>
-                                <td class="detail__table__td">alex2133&#173;@gmail.&#173;com</td>
-                            </tr>
-                            <tr>
-                                <td class="detail__table__td _first">Адрес доставки:</td>
-                                <td class="detail__table__td">Юбилейная, 1 24, 1 подъезд, 4 этаж Нижний Новгород 603146</td>
-                            </tr>
-                            <tr>
-                                <td class="detail__table__td _first">Способ доставки:</td>
-                                <td class="detail__table__td">Доставка курьером</td>
-                            </tr>
-                            <tr>
-                                <td class="detail__table__td _first">Дата и время доставки:</td>
-                                <td class="detail__table__td">с 02.04.2019 по 10.04.2019 до 15:00</td>
-                            </tr>
-                            <tr>
-                                <td class="detail__table__td _first">Способ оплаты:</td>
-                                <td class="detail__table__td">Наличными или картой в офисе продаж</td>
-                            </tr>
+                        <table class="table table_block detail__table">
+                            <tbody class="table_block__tbody">
+                                <tr class="table_block__tr detail__table__tr">
+                                    <td class="table_block__td detail__table__td detail__table__td_first">Ф.И.О.:</td>
+                                    <td class="table_block__td detail__table__td">Алексей Иванович Петренко</td>
+                                </tr>
+                                <tr class="table_block__tr detail__table__tr">
+                                    <td class="table_block__td detail__table__td detail__table__td_first">Телефон для связи:</td>
+                                    <td class="table_block__td detail__table__td">+7 (999) 999-99-99</td>
+                                </tr>
+                                <tr class="table_block__tr detail__table__tr">
+                                    <td class="table_block__td detail__table__td detail__table__td_first">E-mail</td>
+                                    <td class="table_block__td detail__table__td">alex2133&#173;@gmail.&#173;com</td>
+                                </tr>
+                                <tr class="table_block__tr detail__table__tr">
+                                    <td class="table_block__td detail__table__td detail__table__td_first">Адрес доставки:</td>
+                                    <td class="table_block__td detail__table__td">Юбилейная, 1 24, 1 подъезд, 4 этаж Нижний Новгород 603146</td>
+                                </tr>
+                                <tr class="table_block__tr detail__table__tr">
+                                    <td class="table_block__td detail__table__td detail__table__td_first">Способ доставки:</td>
+                                    <td class="table_block__td detail__table__td">Доставка курьером</td>
+                                </tr>
+                                <tr class="table_block__tr detail__table__tr">
+                                    <td class="table_block__td detail__table__td detail__table__td_first">Дата и время доставки:</td>
+                                    <td class="table_block__td detail__table__td">с 02.04.2019 по 10.04.2019 до 15:00</td>
+                                </tr>
+                                <tr  class="table_block__tr detail__table__tr detail__table__tr_last">
+                                    <td class="table_block__td detail__table__td detail__table__td_first">Способ оплаты:</td>
+                                    <td class="table_block__td detail__table__td">Наличными или картой в офисе продаж</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -203,11 +829,13 @@
                 </div>
                 <div class="footer__address">
                     <div class="container">
-                        <table class="table _block">
-                            <tr>
-                                <td class="footer__address__td">Нижний Нов&#173;город, Московское шоссе, 298а</td>
-                                <td class="footer__address__td">Нижегородская обл., пос. Дружный</td>
-                            </tr>
+                        <table class="table table_block">
+                            <tbody class="table_block__tbody">
+                                <tr class="table_block__tr">
+                                    <td class="table_block__td footer__address__td">Нижний Нов&#173;город, Московское шоссе, 298а</td>
+                                    <td class="table_block__td footer__address__td footer__address__td_last">Нижегородская обл., пос. Дружный</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
