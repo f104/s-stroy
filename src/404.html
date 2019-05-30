@@ -37,16 +37,23 @@
 
                 </div>
 
-                <article class="container nf">
-                    <h3 class="nf__h">404</h3>
-                    <p class="nf__lead">Эта страница не найдена</p>
-                    <p class="nf__text">
-                        Предлагаем <a href="/">перейти на главную</a> 
-                        или <a href="catalog.html">ознакомиться с каталогом продукции</a>, 
-                        <a href="#">профнастилом</a> и <a href="#">металлочерепицой</a>
-                    </p>
-                    <a href="catalog.html" class="link-back"><i class="icon-arrow-left"></i> Вернуться к покупкам</a>
-                </article>
+                <div class="container">
+                    
+                    <article class="nf">
+                        <div class="nf__img-wrapper">
+                            <img class="nf__img" 
+                                 src="img/404-s-stroy-alpha.png" 
+                                 srcset="img/404-s-stroy-alpha@2x.png 2x,
+                                         img/404-s-stroy-alpha@3x.png 3x" alt="Страница не найдена">
+                        </div>
+                        <h3 class="nf__h">Извините, но такой страницы не существует</h3>
+                        <p class="nf__lead">Смотрите какой у нас большой ассортимент 
+                            <a href="#" class="nf__a">скатной кровли</a></p>
+                    </article>
+                    
+                    @@include('./template/catalog/recommended.html')
+                    
+                </div>
 
             </div>
 
