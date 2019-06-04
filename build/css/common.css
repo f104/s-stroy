@@ -1079,7 +1079,7 @@ ymaps {
   display: inline-block;
   background-image: url("svg/sprite.svg");
   background-repeat: no-repeat;
-  background-size: 11.8em 353.2em; }
+  background-size: 11.8em 364.2em; }
 
 .no-svg .sprite:before {
   background-image: url("../svg/sprite.png"); }
@@ -1239,208 +1239,218 @@ ymaps {
   width: 2.9em;
   height: 3.4em; }
 
-.sprite.hand-tools-o:before {
+.sprite.hand-tools-big:before {
   background-position: -1em -153em;
+  width: 2.9843em;
+  height: 3.5em; }
+
+.sprite.hand-tools-o:before {
+  background-position: -1em -158.5em;
   width: 2.9em;
   height: 3.4em; }
 
 .sprite.info:before {
-  background-position: -1em -158.4em;
+  background-position: -1em -163.9em;
   width: 2.7em;
   height: 2.7em; }
 
 .sprite.inside:before {
-  background-position: -1em -163.1em;
+  background-position: -1em -168.6em;
   width: 2.4em;
   height: 3em; }
 
 .sprite.inside-big:before {
-  background-position: -1em -168.1em;
+  background-position: -1em -173.6em;
   width: 2.8em;
   height: 3.6em; }
 
 .sprite.inside-o:before {
-  background-position: -1em -173.7em;
+  background-position: -1em -179.2em;
   width: 2.4em;
   height: 3em; }
 
 .sprite.instagram:before {
-  background-position: -1em -178.7em;
+  background-position: -1em -184.2em;
   width: 4.2em;
   height: 4.2em; }
 
 .sprite.list:before {
-  background-position: -1em -184.9em;
+  background-position: -1em -190.4em;
   width: 2.9em;
   height: 2.6em; }
 
 .sprite.list-big:before {
-  background-position: -1em -189.5em;
+  background-position: -1em -195em;
   width: 3.8em;
   height: 3.2em; }
 
 .sprite.list-o:before {
-  background-position: -1em -194.7em;
+  background-position: -1em -200.2em;
   width: 2.9em;
   height: 2.6em; }
 
 .sprite.mansard:before {
-  background-position: -1em -199.3em;
+  background-position: -1em -204.8em;
   width: 2.8em;
   height: 2.1em; }
 
 .sprite.mansard-big:before {
-  background-position: -1em -203.4em;
+  background-position: -1em -208.9em;
   width: 3.6em;
   height: 2.7em; }
 
 .sprite.mansard-o:before {
-  background-position: -1em -208.1em;
+  background-position: -1em -213.6em;
   width: 2.8em;
   height: 2.1em; }
 
 .sprite.map:before {
-  background-position: -1em -212.2em;
+  background-position: -1em -217.7em;
   width: 4.3em;
   height: 4.3em; }
 
 .sprite.money:before {
-  background-position: -1em -218.5em;
+  background-position: -1em -224em;
   width: 3.2em;
   height: 1.4em; }
 
 .sprite.money-office:before {
-  background-position: -1em -221.9em;
+  background-position: -1em -227.4em;
   width: 1.9em;
   height: 1.6em; }
 
 .sprite.roof:before {
-  background-position: -1em -225.5em;
+  background-position: -1em -231em;
   width: 2.9em;
   height: 2em; }
 
 .sprite.roof-big:before {
-  background-position: -1em -229.5em;
+  background-position: -1em -235em;
   width: 3.9em;
   height: 2.6em; }
 
 .sprite.roof-o:before {
-  background-position: -1em -234.1em;
+  background-position: -1em -239.6em;
   width: 2.9em;
   height: 2em; }
 
 .sprite.screw:before {
-  background-position: -1em -238.1em;
+  background-position: -1em -243.6em;
   width: 2.4em;
   height: 3em; }
 
+.sprite.screw-big:before {
+  background-position: -1em -248.6em;
+  width: 2.7409999999999997em;
+  height: 3.5em; }
+
 .sprite.screw-o:before {
-  background-position: -1em -243.1em;
+  background-position: -1em -254.1em;
   width: 2.4em;
   height: 3em; }
 
 .sprite.technical-iso:before {
-  background-position: -1em -248.1em;
+  background-position: -1em -259.1em;
   width: 2.8em;
   height: 1.9em; }
 
 .sprite.technical-iso-big:before {
-  background-position: -1em -252em;
+  background-position: -1em -263em;
   width: 3.9em;
   height: 2.7em; }
 
 .sprite.technical-iso-o:before {
-  background-position: -1em -256.7em;
+  background-position: -1em -267.7em;
   width: 2.8em;
   height: 1.9em; }
 
 .sprite.twitter:before {
-  background-position: -1em -260.6em;
+  background-position: -1em -271.6em;
   width: 4.2em;
   height: 4.2em; }
 
 .sprite.vent-house:before {
-  background-position: -1em -266.8em;
+  background-position: -1em -277.8em;
   width: 2.3em;
   height: 2.9em; }
 
 .sprite.vent-house-big:before {
-  background-position: -1em -271.7em;
+  background-position: -1em -282.7em;
   width: 3em;
   height: 3.8em; }
 
 .sprite.vent-house-o:before {
-  background-position: -1em -277.5em;
+  background-position: -1em -288.5em;
   width: 2.3em;
   height: 2.9em; }
 
 .sprite.view-card:before {
-  background-position: -1em -282.4em;
+  background-position: -1em -293.4em;
   width: 1.6em;
   height: 1.6em; }
 
 .sprite.view-grid:before {
-  background-position: -1em -286em;
+  background-position: -1em -297em;
   width: 1.6em;
   height: 1.6em; }
 
 .sprite.vk:before {
-  background-position: -1em -289.6em;
+  background-position: -1em -300.6em;
   width: 4.2em;
   height: 4.2em; }
 
 .sprite.warmth:before {
-  background-position: -1em -295.8em;
+  background-position: -1em -306.8em;
   width: 2.4em;
   height: 3.3em; }
 
 .sprite.warmth-big:before {
-  background-position: -1em -301.1em;
+  background-position: -1em -312.1em;
   width: 2.8em;
   height: 3.9em; }
 
 .sprite.warmth-o:before {
-  background-position: -1em -307em;
+  background-position: -1em -318em;
   width: 2.4em;
   height: 3.3em; }
 
 .sprite.warning:before {
-  background-position: -1em -312.3em;
+  background-position: -1em -323.3em;
   width: 3.9em;
   height: 3.6em; }
 
 .sprite.wat:before {
-  background-position: -1em -317.9em;
+  background-position: -1em -328.9em;
   width: 2.7em;
   height: 2.8em; }
 
 .sprite.wat-big:before {
-  background-position: -1em -322.7em;
+  background-position: -1em -333.7em;
   width: 3.2em;
   height: 3.3em; }
 
 .sprite.wat-o:before {
-  background-position: -1em -328em;
+  background-position: -1em -339em;
   width: 2.7em;
   height: 3em; }
 
 .sprite.waterproof:before {
-  background-position: -1em -333em;
+  background-position: -1em -344em;
   width: 2.8em;
   height: 2.8em; }
 
 .sprite.waterproof-big:before {
-  background-position: -1em -337.8em;
+  background-position: -1em -348.8em;
   width: 3.6em;
   height: 3.6em; }
 
 .sprite.waterproof-o:before {
-  background-position: -1em -343.4em;
+  background-position: -1em -354.4em;
   width: 2.8em;
   height: 2.6em; }
 
 .sprite.youtube:before {
-  background-position: -1em -348em;
+  background-position: -1em -359em;
   width: 4.3em;
   height: 4.2em; }
 
@@ -6244,7 +6254,11 @@ ymaps * {
   .nf__img {
     display: block;
     margin: 0 auto;
+    width: 582px;
     max-width: 100%; }
+    @media all and (min-width: 1440px) {
+      .nf__img {
+        width: auto; } }
   .nf__h {
     font-family: "Montserrat", "Lato", sans-serif;
     font-weight: 600;

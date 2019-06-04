@@ -19,9 +19,10 @@
     &__img {
         display: block;
         margin: 0 auto;
+        width: 582px;
         max-width: 100%;
         @media all and (min-width: 1440px) {
-            width: 582px;
+            width: auto;
         }
     }
     &__h {
