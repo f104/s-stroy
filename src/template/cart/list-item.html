@@ -24,7 +24,7 @@
         @@if (remove) {
         <div class="cart-list__item__count">
             <button class="btn cart-list__item__count__btn _minus js-quantity-shift js-quantity-down">&minus;</button>
-            <input type="number" min="1" class="cart-list__item__count__input no-spinners js-quantity" value="@@count">
+            <input type="number" min="1" class="cart-list__item__count__input no-spinners js-quantity" value="@@count" data-step="@@step">
             <button class="btn cart-list__item__count__btn _plus js-quantity-shift js-quantity-up">&plus;</button>
         </div>
         }

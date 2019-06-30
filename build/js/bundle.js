@@ -2111,7 +2111,8 @@ var app = {
                 var cur = parseInt($quantityInput.value),
                         shiftUp = $(this).hasClass('js-quantity-up'),
                         limit = $($quantityInput).attr(shiftUp ? 'max' : 'min'),
-                        val = shiftUp ? cur + 1 : cur - 1;
+                        step = $($quantityInput).data('step') || 1,
+                        val = shiftUp ? cur + step - ((cur + step) % step) : cur - step - ((cur - step) % step);
                 if (!limit || (shiftUp && val <= parseInt(limit)) || (!shiftUp && val >= parseInt(limit))) {
                     $quantityInput.value = val;
                     $($quantityInput).change();
