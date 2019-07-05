@@ -1057,7 +1057,9 @@
                     <article class="main-row__right">
 
                         <div class="promo">
-                            <div class="promo__slider slider js-main-slider">
+                            <div class="promo__slider slider js-main-slider"
+                                 data-autoplay="true"
+                                 data-autoplayspeed="3000">
                                 <div class="slider__item">
     <span class="slider__item__content">
         <span class="slider__item__content__head">
@@ -1150,9 +1152,12 @@
                         <div class="block">
     <h3 class="block__h _border">Товары недели</h3>
     <div class="block__content">
-        <div class="catalog-list js-slider" data-slides='{"sm":1,"md":4,"lg":5}'>
+        <div class="catalog-list js-slider" 
+             data-slides='{"sm":1,"md":4,"lg":5}'
+             data-autoplay="true"
+             data-autoplayspeed="2000">
             <div class="catalog-list__item js-catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+    <div class="catalog-list__item__content ">
         <div class="catalog-list__item__head">
             <a href="product-card.html" class="catalog-list__item__img">
                 <img src="img/products/1.jpg" 
@@ -1241,7 +1246,7 @@
         </ul>
     </div>
 </div><div class="catalog-list__item js-catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+    <div class="catalog-list__item__content ">
         <div class="catalog-list__item__head">
             <a href="product-card.html" class="catalog-list__item__img">
                 <img src="img/products/2.jpg" 
@@ -1286,7 +1291,7 @@
         </ul>
     </div>
 </div><div class="catalog-list__item js-catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+    <div class="catalog-list__item__content ">
         <div class="catalog-list__item__head">
             <a href="product-card.html" class="catalog-list__item__img">
                 <img src="img/products/3.jpg" 
@@ -1363,7 +1368,7 @@
         </ul>
     </div>
 </div><div class="catalog-list__item js-catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+    <div class="catalog-list__item__content ">
         <div class="catalog-list__item__head">
             <a href="product-card.html" class="catalog-list__item__img">
                 <img src="img/products/4.jpg" 
@@ -1446,7 +1451,7 @@
         </ul>
     </div>
 </div><div class="catalog-list__item js-catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+    <div class="catalog-list__item__content ">
         <div class="catalog-list__item__head">
             <a href="product-card.html" class="catalog-list__item__img">
                 <img src="img/products/5.jpg" 
@@ -1517,7 +1522,7 @@
         </ul>
     </div>
 </div><div class="catalog-list__item js-catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+    <div class="catalog-list__item__content ">
         <div class="catalog-list__item__head">
             <a href="product-card.html" class="catalog-list__item__img">
                 <img src="img/products/1.jpg" 
@@ -1606,7 +1611,7 @@
         </ul>
     </div>
 </div><div class="catalog-list__item js-catalog-list__item">
-    <div class="catalog-list__item__content js-hover">
+    <div class="catalog-list__item__content ">
         <div class="catalog-list__item__head">
             <a href="product-card.html" class="catalog-list__item__img">
                 <img src="img/products/2.jpg" 
@@ -2538,8 +2543,6 @@
             md: 768,
             lg: 1280
         },
-        sliderFadeSpeed: 800, //ms
-        sliderAutoplaySpeed: 8000, //ms
         hoverZoom: 10, //px
         shipping: {
             /**

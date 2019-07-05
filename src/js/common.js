@@ -178,27 +178,45 @@ var app = {
     },
 
     initSliders: function () {
-        $('.js-main-slider').slick({
-            lazyLoad: 'ondemand',
-            dots: true,
-            arrows: false,
-            infinite: true,
-            mobileFirst: true,
-            responsive: [
-                {
-                    breakpoint: appConfig.breakpoint.md - 1,
-                    settings: {
-                        arrows: true,
-                    }
-                },
-            ]
+        $('.js-main-slider').each(function(){
+            var data = $(this).data();
+            if (typeof data.autoplay == 'undefined') {
+                data.autoplay = false;
+            }
+            $(this).slick({
+                lazyLoad: 'ondemand',
+                dots: true,
+                arrows: false,
+                infinite: true,
+                mobileFirst: true,
+                autoplay: data.autoplay,
+                autoplaySpeed: data.autoplayspeed || 3000,
+                pauseOnDotsHover: true,
+                responsive: [
+                    {
+                        breakpoint: appConfig.breakpoint.md - 1,
+                        settings: {
+                            arrows: true,
+                        }
+                    },
+                ]
+            });
         });
         $('.js-slider').each(function () {
             var slides = $(this).data('slides') || {};
+            var autoplaySpeed = $(this).data('autoplayspeed') || 3000;
+            var autoplay = $(this).data('autoplay');
+            if (typeof autoplay == 'undefined') {
+                autoplay = false;
+            }
             $(this).slick({
+                autoplay: true,
+                autoplaySpeed: 1000,
                 dots: false,
                 arrows: true,
-                infinite: false,
+                infinite: autoplay,
+                autoplay: autoplay,
+                autoplaySpeed: autoplaySpeed,
                 slidesToShow: slides.sm || 1,
                 slidesToScroll: 1,
                 centerMode: false,
@@ -218,7 +236,7 @@ var app = {
                         }
                     },
                 ]
-            })
+            });
         });
         $('.js-nav-slider__main').slick({
             dots: false,
