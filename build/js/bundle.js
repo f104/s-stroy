@@ -976,6 +976,21 @@ appAnimate = {
                 g3.animate(300, '<>', 300).dx(d);
                 g4.animate(300, '<>', 400).dx(d);
                 break;
+            case 'trolley':
+                var d = 40; // distance
+                var r = -15; // rotate
+                var all = el.children()[0];
+                var g = all.children()[0];
+                var s = all.children()[1]; // шлейф
+                var b = g.children()[1]; // коробка
+                g.animate(200, '>', 0).rotate(r, 0, 60);
+                s.animate(200, '>', 0).rotate(r, 0, 60);
+                all.animate(500, '<>', 100).dx(d);
+                s.children()[2].animate(150, '>', 100).opacity(1).animate(50, '>', 250).opacity(0);
+                s.children()[1].animate(150, '>', 200).opacity(1).animate(50, '>', 150).opacity(0);
+                s.children()[0].animate(150, '>', 300).opacity(1).animate(50, '>', 50).opacity(0);
+                b.animate(100, '>', 600).dy(-10).animate(100, '>', 50).dy(10);
+                break;
         }
     },
 
@@ -1016,6 +1031,16 @@ appAnimate = {
                 g2.animate(300, '<>', 0).dx(-d);
                 g3.animate(300, '<>', 0).dx(-d);
                 g4.animate(300, '<>', 0).dx(-d);
+                break;
+            case 'trolley':
+                var d = 40; // distance
+                var all = el.children()[0];
+                var g = all.children()[0];
+                var s = all.children()[1]; // шлейф
+                var b = g.children()[1]; // коробка
+                all.animate(500, '<>', 100).dx(-d);
+                g.animate(200, '>', 0).rotate(0, 0, 60);
+                s.animate(200, '>', 0).rotate(0, 0, 60);
                 break;
         }
     },
