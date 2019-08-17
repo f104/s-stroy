@@ -1713,24 +1713,24 @@ var app = {
             var newSize = $(window).outerWidth() < appConfig.breakpoint.md;
             if (newSize != isMobile) {
                 isMobile = newSize;
-            }
-            if (isMobile) {
-                $tabs.show();
-                $togglers.removeClass('_opened');
-                $content.hide();
-            } else {
-                $tabs.hide();
-                $content.show();
-                $('.js-tabs').easytabs({
-                    updateHash: false
-                }).bind('easytabs:midTransition', function (event, $clicked, $targetPanel, settings) {
-                    var $under = $(this).find('.js-tabs__under');
-                    $under.css({
-                        left: $clicked.parent().position().left,
-                        width: $clicked.width(),
+                if (isMobile) {
+                    $tabs.show();
+                    $togglers.removeClass('_opened');
+                    $content.hide();
+                } else {
+                    $tabs.hide();
+                    $content.show();
+                    $('.js-tabs').easytabs({
+                        updateHash: false
+                    }).bind('easytabs:midTransition', function (event, $clicked, $targetPanel, settings) {
+                        var $under = $(this).find('.js-tabs__under');
+                        $under.css({
+                            left: $clicked.parent().position().left,
+                            width: $clicked.width(),
+                        });
                     });
-                });
-                $tabs.filter('.active').show();
+                    $tabs.filter('.active').show();
+                }
             }
         };
 
