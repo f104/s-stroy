@@ -1,0 +1,13 @@
+.color-checkboxes {
+    $root: &;
+    margin-top: 6px;
+    margin-bottom: -3px;
+    margin-right: -3px;
+    font-size: 0;
+    line-height: 0;
+    &__item {
+        display: inline-block;
+        margin-right: 3px;
+        margin-bottom: 3px;
+    }
+}

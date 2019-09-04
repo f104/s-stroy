@@ -1,0 +1,83 @@
+.color-checkbox {
+    $root: &;
+    $color-checked: #1f56aa;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    &__pseudo {
+        display: block;
+        width: 36px;
+        height: 36px;
+        border-radius: 3px;
+        border: solid 1px transparent;
+        @include transition(border-color);
+        padding: 3px;
+        position: relative;
+        &__inner {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 2px;
+        }
+        &:after {
+            font-family: fontello;
+            content: '\E817';
+            position: absolute;
+            right: -2px;
+            top: -2px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color: $color-checked;
+            color: white;
+            font-size: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            @include transition(opacity);
+        }
+    }
+    &__text {
+        position: absolute;
+        z-index: 1;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        font-size: 12px;
+        line-height: initial;
+        color: rgba(#2a2a2a, .5);
+        background-color: white;
+        padding: 3px 5px;
+        border: 1px solid rgba($color-checked, .2);
+        border-radius: 3px;
+        pointer-events: none;
+        @include transition(opacity);
+    }
+    @include hover-desktop {
+        #{$root} {
+            &__pseudo {
+                border-color: rgba($color-checked, .2);
+            }
+            &__text {
+                opacity: 1;
+            }
+        }
+    }
+    input {
+        display: none;
+        &:checked {
+            + #{$root}__pseudo {
+                border-color: $color-checked;
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+}
