@@ -1695,7 +1695,8 @@ var app = {
         var isMobile = $(window).outerWidth() < appConfig.breakpoint.md,
                 $tabs = $('.js-tabs__tab'),
                 $togglers = $('.js-tabs__tab .tabs__tab__toggler'),
-                $content = $('.js-tabs__tab .tabs__tab__content');
+                $content = $('.js-tabs__tab .tabs__tab__content'),
+                initialized = false;
         if (!$tabs.length)
             return;
 
@@ -1711,7 +1712,7 @@ var app = {
 
         var initEtabs = function () {
             var newSize = $(window).outerWidth() < appConfig.breakpoint.md;
-            if (newSize != isMobile) {
+            if (newSize != isMobile || !initialized) {
                 isMobile = newSize;
                 if (isMobile) {
                     $tabs.show();
@@ -1732,6 +1733,7 @@ var app = {
                     $tabs.filter('.active').show();
                 }
             }
+            initialized = true;
         };
 
         var initUnder = function () {
