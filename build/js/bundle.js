@@ -1055,6 +1055,7 @@ $(document).ready(function () {
 
 var app = {
     initialized: false,
+    ymapsUrl: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
 
     initialize: function () {
         var elemHTML = document.getElementsByTagName('html')[0];
@@ -1067,6 +1068,9 @@ var app = {
         }
         if (navigator.userAgent.indexOf('Edge') > 0 || navigator.userAgent.indexOf('Trident') > 0) {
             elemHTML.className += " ie";
+        }
+        if (typeof appConfig.yandexKey !== 'undefined') {
+            this.ymapsUrl = this.ymapsUrl + '&apikey=' + appConfig.yandexKey;
         }
         this.initSliders(); // must be first!
         this.initMenu();
@@ -2124,7 +2128,7 @@ var app = {
         }
         if (typeof (ymaps) === 'undefined') {
             $.ajax({
-                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                url: app.ymapsUrl,
                 dataType: "script",
                 cache: true,
                 success: function () {
@@ -2375,7 +2379,7 @@ var app = {
             if ($pickup.length && !$pickup.data('init')) {
                 if (typeof (ymaps) === 'undefined') {
                     $.ajax({
-                        url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                        url: app.ymapsUrl,
                         dataType: "script",
                         cache: true,
                         success: function () {
@@ -2396,7 +2400,7 @@ var app = {
         }
         if (typeof (ymaps) === 'undefined') {
             $.ajax({
-                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                url: app.ymapsUrl,
                 dataType: "script",
                 cache: true,
                 success: function () {
@@ -2461,7 +2465,7 @@ var app = {
         // map
         if (typeof (ymaps) === 'undefined') {
             $.ajax({
-                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                url: app.ymapsUrl,
                 dataType: "script",
                 cache: true,
                 success: function () {
@@ -2563,7 +2567,7 @@ app.shipping = {
         this.initDatepicker();
         if (typeof (ymaps) === 'undefined') {
             $.ajax({
-                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                url: app.ymapsUrl,
                 dataType: "script",
                 cache: true,
                 success: function () {

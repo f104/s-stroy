@@ -28,7 +28,7 @@ app.shipping = {
         this.initDatepicker();
         if (typeof (ymaps) === 'undefined') {
             $.ajax({
-                url: '//api-maps.yandex.ru/2.1/?lang=ru_RU&mode=debug',
+                url: app.ymapsUrl,
                 dataType: "script",
                 cache: true,
                 success: function () {
